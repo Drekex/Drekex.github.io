@@ -39,7 +39,7 @@ const i18n = {
     "hero.b3":"BIOS, Windows, drivers, stabilité & températures",
     "hero.cta1":"Demander une soumission",
     "hero.cta2":"Voir les tarifs",
-    "hero.micro":"Réponse rapide par SMS/email. Basé à Blainville proche de Fontainebleau — service possible autour de Laval/Montréal Nord selon le projet.",
+    "hero.micro":"Réponse rapide par SMS/email. Basé à Blainville proche de Fontainebleau. Service possible autour de Laval/Montréal Nord selon le projet.",
 
     "hero.cardTitle":"Ce que vous obtenez",
     "hero.cardSubtitle":"Un PC prêt à utiliser, propre, performant et fiable.",
@@ -58,7 +58,7 @@ const i18n = {
     "trust.d":"Bla-bla inutile",
 
     "services.title":"Services",
-    "services.subtitle":"Choisissez un forfait — ou demandez un service sur mesure.",
+    "services.subtitle":"Choisissez un forfait, ou demandez un service sur mesure.",
     "services.s1t":"Montage sur mesure",
     "services.s1d":"Gaming/travail. Assemblage propre, prêt à utiliser.",
     "services.s1b1":"Assemblage complet",
@@ -81,7 +81,7 @@ const i18n = {
     "services.noteD":"undervolt GPU, optimisation légère, PC compact (SFF), rétro-PC.",
 
     "pricing.title":"Tarifs simples",
-    "pricing.subtitle":"Transparents — les prix peuvent varier selon la complexité.",
+    "pricing.subtitle":"Transparents. Les prix peuvent varier selon la complexité.",
     "pricing.unit":"CAD",
     "pricing.p1t":"Montage de base",
     "pricing.p1d":"Pour un montage standard, rapide et propre.",
@@ -99,6 +99,8 @@ const i18n = {
     "pricing.p2b2":"Gestion des câbles",
     "pricing.p2b3":"Optimisation ventilateurs / bruit",
     "pricing.p2b4":"Ajustement GPU de base (sur demande)",
+    "pricing.p2b5":"Configuration RGB (sur demande)",
+    "pricing.p2b6":"Drivers gaming",
     "pricing.cta2":"Obtenir une soumission",
 
     "pricing.p3t":"Sur mesure / SFF / dépannage",
@@ -107,6 +109,7 @@ const i18n = {
     "pricing.p3b1":"Analyse du besoin",
     "pricing.p3b2":"Plan d’action",
     "pricing.p3b3":"Résolution / upgrade",
+    "pricing.p3b4":"Nettoyage et retrait de poussière",
     "pricing.cta3":"Décrire mon problème",
 
     "pricing.footer":"Astuce : envoyez une liste de pièces / un budget / des photos (si dépannage) pour une estimation plus rapide.",
@@ -177,14 +180,14 @@ const i18n = {
     "nav.cta":"Get a quote",
 
     "hero.eyebrow":"Local • Reliable • Optimized",
-    "hero.title":"Custom PC builds, upgrades & troubleshooting — stress-free.",
+    "hero.title":"Custom PC builds, upgrades and troubleshooting, stress-free.",
     "hero.lead":"Gaming or productivity: I help pick compatible parts, build cleanly, stress-test, and tune noise/temps so your PC stays stable long-term.",
     "hero.b1":"50+ completed builds",
     "hero.b2":"Verified 5★ reviews (Facebook Marketplace)",
     "hero.b3":"BIOS, Windows, drivers, stability & temperatures",
     "hero.cta1":"Request a quote",
     "hero.cta2":"See pricing",
-    "hero.micro":"Fast reply by text/email. Based in Blainville (North Shore) — service around Laval/Montréal depending on the project.",
+    "hero.micro":"Fast reply by text/email. Based in Blainville (North Shore). Service around Laval/Montréal depending on the project.",
 
     "hero.cardTitle":"What you get",
     "hero.cardSubtitle":"A clean, high-performing, reliable PC ready to use.",
@@ -203,7 +206,7 @@ const i18n = {
     "trust.d":"No fluff",
 
     "services.title":"Services",
-    "services.subtitle":"Pick a package — or request a custom service.",
+    "services.subtitle":"Pick a package, or request a custom service.",
     "services.s1t":"Custom PC builds",
     "services.s1d":"Gaming/work. Clean build, ready to use.",
     "services.s1b1":"Full assembly",
@@ -226,7 +229,7 @@ const i18n = {
     "services.noteD":"GPU undervolt, light tuning, compact PCs (SFF), retro PCs.",
 
     "pricing.title":"Simple pricing",
-    "pricing.subtitle":"Transparent — price may vary with complexity.",
+    "pricing.subtitle":"Transparent. Price may vary with complexity.",
     "pricing.unit":"CAD",
     "pricing.p1t":"Basic build",
     "pricing.p1d":"For a standard, clean build done right.",
@@ -244,14 +247,17 @@ const i18n = {
     "pricing.p2b2":"Cable management",
     "pricing.p2b3":"Fan/noise optimization",
     "pricing.p2b4":"Basic GPU tuning (on request)",
+    "pricing.p2b5":"RGB setup (on request)",
+    "pricing.p2b6":"Gaming drivers",
     "pricing.cta2":"Get a quote",
 
     "pricing.p3t":"Custom / SFF / troubleshooting",
     "pricing.p3price":"Quote on request",
-    "pricing.p3d":"Best for mini-PCs, SFF, retro PCs, or complex cases.",
+    "pricing.p3d":"Best for mini PCs, SFF, retro PCs, or complex cases.",
     "pricing.p3b1":"Needs analysis",
     "pricing.p3b2":"Action plan",
     "pricing.p3b3":"Fix / upgrade",
+    "pricing.p3b4":"Cleaning and dust removal",
     "pricing.cta3":"Describe my issue",
 
     "pricing.footer":"Tip: send your parts list / budget / photos (for troubleshooting) for a faster estimate.",
@@ -277,13 +283,13 @@ const i18n = {
     "faq.title":"FAQ",
     "faq.subtitle":"Most common questions.",
     "faq.q1":"Can you recommend parts based on my budget?",
-    "faq.a1":"Yes. Budget, games/resolution, goals (quiet, performance, small case) — I’ll propose a balanced compatible build.",
+    "faq.a1":"Yes. Budget, games/resolution, goals (quiet, performance, small case) - I’ll propose a balanced compatible build.",
     "faq.q2":"Is Windows included?",
     "faq.a2":"Windows is included and activated by default, but you can request unactivated Windows or a different OS (like Linux).",
     "faq.q3":"Do you do SFF / mini PCs?",
     "faq.a3":"Yes, on request. Compact builds require extra planning (clearance, airflow, cabling). For mini PCs, I can improve an existing model when possible.",
     "faq.q4":"What should I send for a fast quote?",
-    "faq.a4":"Either your parts list (cart link or PCPartPicker), or your budget + goals; for troubleshooting: symptoms + photos.",
+    "faq.a4":"Either your parts list (cart link or PCPartPicker), or your budget + goals. For troubleshooting: symptoms + photos.",
 
     "contact.title":"Contact / Quote",
     "contact.subtitle":"Describe your project (budget, goals, parts list). Fast reply.",
@@ -345,7 +351,7 @@ if (leadForm) {
     const service = (data.get("service") || "").toString().trim();
     const message = (data.get("message") || "").toString().trim();
 
-    const subject = encodeURIComponent(`[Raymond PC] Demande — ${service || "Service"}`);
+    const subject = encodeURIComponent(`[Raymond PC] Demande - ${service || "Service"}`);
     const body = encodeURIComponent(
 `Nom: ${name}
 Contact: ${reply}
