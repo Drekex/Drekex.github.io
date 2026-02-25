@@ -8,6 +8,7 @@
   <meta name="description" content="Montage de PC sur mesure, upgrades et dépannage. 50+ montages complétés, avis 5★ vérifiés. Installation Windows, BIOS, tests de stabilité, optimisation du bruit." />
   <meta name="theme-color" content="#0b1220" />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Raymond PC - Montage, mise à niveau et dépannage" />
   <meta property="og:description" content="Local, fiable, testé en charge. 50+ montages, avis 5★." />
   <meta property="og:type" content="website" />
@@ -19,6 +20,7 @@
 
   <link rel="stylesheet" href="styles.css" />
 
+  <!-- LocalBusiness schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -75,6 +77,7 @@
   </header>
 
   <main id="main">
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -143,6 +146,7 @@
       </div>
     </section>
 
+    <!-- TRUST STRIP -->
     <section class="trust">
       <div class="container trust-row" aria-label="Statistiques">
         <div class="trust-item">
@@ -164,6 +168,7 @@
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-head">
@@ -210,6 +215,7 @@
       </div>
     </section>
 
+    <!-- PRICING -->
     <section class="section alt" id="pricing">
       <div class="container">
         <div class="section-head">
@@ -282,6 +288,7 @@
       </div>
     </section>
 
+    <!-- WHY / PROOF -->
     <section class="section" id="proof">
       <div class="container">
         <div class="section-head">
@@ -317,24 +324,41 @@
       </div>
     </section>
 
+    <!-- WORK / GALLERY -->
     <section class="section alt" id="work">
       <div class="container">
         <div class="section-head">
           <h2 data-i18n="work.title">Réalisations</h2>
         </div>
 
+        <!-- Clickable thumbnails -->
         <div class="gallery" aria-label="Galerie de PC">
-          <figure class="ph"><img src="assets/build-1.jpg" alt="PC assemblé - réalisation 1" loading="lazy"></figure>
-          <figure class="ph"><img src="assets/build-2.jpg" alt="PC assemblé - réalisation 2" loading="lazy"></figure>
-          <figure class="ph"><img src="assets/build-3.jpg" alt="PC assemblé - réalisation 3" loading="lazy"></figure>
-          <figure class="ph"><img src="assets/build-4.jpg" alt="PC assemblé - réalisation 4" loading="lazy"></figure>
-          <figure class="ph"><img src="assets/build-5.jpg" alt="PC assemblé - réalisation 5" loading="lazy"></figure>
-          <figure class="ph"><img src="assets/build-6.jpg" alt="PC assemblé - réalisation 6" loading="lazy"></figure>
-          <figure class="ph"><img src="assets/build-7.jpg" alt="PC assemblé - réalisation 7" loading="lazy"></figure>
+          <button class="img-btn" type="button" data-full="assets/build-1.jpg" aria-label="Ouvrir la réalisation 1 en grand">
+            <img src="assets/build-1.jpg" alt="PC assemblé - réalisation 1" loading="lazy">
+          </button>
+          <button class="img-btn" type="button" data-full="assets/build-2.jpg" aria-label="Ouvrir la réalisation 2 en grand">
+            <img src="assets/build-2.jpg" alt="PC assemblé - réalisation 2" loading="lazy">
+          </button>
+          <button class="img-btn" type="button" data-full="assets/build-3.jpg" aria-label="Ouvrir la réalisation 3 en grand">
+            <img src="assets/build-3.jpg" alt="PC assemblé - réalisation 3" loading="lazy">
+          </button>
+          <button class="img-btn" type="button" data-full="assets/build-4.jpg" aria-label="Ouvrir la réalisation 4 en grand">
+            <img src="assets/build-4.jpg" alt="PC assemblé - réalisation 4" loading="lazy">
+          </button>
+          <button class="img-btn" type="button" data-full="assets/build-5.jpg" aria-label="Ouvrir la réalisation 5 en grand">
+            <img src="assets/build-5.jpg" alt="PC assemblé - réalisation 5" loading="lazy">
+          </button>
+          <button class="img-btn" type="button" data-full="assets/build-6.jpg" aria-label="Ouvrir la réalisation 6 en grand">
+            <img src="assets/build-6.jpg" alt="PC assemblé - réalisation 6" loading="lazy">
+          </button>
+          <button class="img-btn" type="button" data-full="assets/build-7.jpg" aria-label="Ouvrir la réalisation 7 en grand">
+            <img src="assets/build-7.jpg" alt="PC assemblé - réalisation 7" loading="lazy">
+          </button>
         </div>
       </div>
     </section>
 
+    <!-- REVIEWS -->
     <section class="section" id="reviews">
       <div class="container">
         <div class="section-head">
@@ -355,6 +379,7 @@
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="section alt" id="faq">
       <div class="container">
         <div class="section-head">
@@ -394,6 +419,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="container">
         <div class="section-head">
@@ -411,6 +437,13 @@
                 <span class="k" data-i18n="contact.sms">SMS</span>
                 <a class="v" href="sms:+15147178283">+1 (514) 717-8283</a>
               </div>
+
+              <!-- WhatsApp added -->
+              <div class="line">
+                <span class="k">WhatsApp</span>
+                <a class="v" href="https://wa.me/15147178283" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+              </div>
+
               <div class="line">
                 <span class="k" data-i18n="contact.email">E-mail</span>
                 <a class="v" href="mailto:etienneservicepc@outlook.com">etienneservicepc@outlook.com</a>
@@ -474,6 +507,7 @@
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-inner">
         <div class="micro muted">
@@ -485,6 +519,21 @@
       </div>
     </footer>
   </main>
+
+  <!-- Lightbox modal -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close></div>
+
+    <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image en grand">
+      <button class="lightbox-close" type="button" data-close aria-label="Fermer">✕</button>
+
+      <button class="lightbox-nav lightbox-prev" type="button" data-prev aria-label="Image précédente">‹</button>
+      <button class="lightbox-nav lightbox-next" type="button" data-next aria-label="Image suivante">›</button>
+
+      <img id="lightboxImg" alt="">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
