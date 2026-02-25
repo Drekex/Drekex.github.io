@@ -8,7 +8,6 @@
   <meta name="description" content="Montage de PC sur mesure, upgrades et dépannage. 50+ montages complétés, avis 5★ vérifiés. Installation Windows, BIOS, tests de stabilité, optimisation du bruit." />
   <meta name="theme-color" content="#0b1220" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Raymond PC - Montage, mise à niveau et dépannage" />
   <meta property="og:description" content="Local, fiable, testé en charge. 50+ montages, avis 5★." />
   <meta property="og:type" content="website" />
@@ -20,7 +19,6 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- LocalBusiness schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -77,7 +75,6 @@
   </header>
 
   <main id="main">
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -146,7 +143,6 @@
       </div>
     </section>
 
-    <!-- TRUST STRIP -->
     <section class="trust">
       <div class="container trust-row" aria-label="Statistiques">
         <div class="trust-item">
@@ -168,7 +164,6 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-head">
@@ -215,7 +210,6 @@
       </div>
     </section>
 
-    <!-- PRICING -->
     <section class="section alt" id="pricing">
       <div class="container">
         <div class="section-head">
@@ -288,7 +282,6 @@
       </div>
     </section>
 
-    <!-- WHY / PROOF -->
     <section class="section" id="proof">
       <div class="container">
         <div class="section-head">
@@ -324,53 +317,61 @@
       </div>
     </section>
 
-    <!-- WORK / GALLERY -->
     <section class="section alt" id="work">
       <div class="container">
         <div class="section-head">
           <h2 data-i18n="work.title">Réalisations</h2>
         </div>
 
-        <!-- Clickable thumbnails -->
-        <div class="gallery" aria-label="Galerie de PC">
-          <button class="img-btn" type="button" data-full="assets/build-1.jpg" aria-label="Ouvrir la réalisation 1 en grand">
+        <div class="gallery" aria-label="Galerie de PC" data-lightbox="builds">
+          <button class="img-btn" type="button" data-full="assets/build-1.jpg">
             <img src="assets/build-1.jpg" alt="PC assemblé - réalisation 1" loading="lazy">
           </button>
-          <button class="img-btn" type="button" data-full="assets/build-2.jpg" aria-label="Ouvrir la réalisation 2 en grand">
+          <button class="img-btn" type="button" data-full="assets/build-2.jpg">
             <img src="assets/build-2.jpg" alt="PC assemblé - réalisation 2" loading="lazy">
           </button>
-          <button class="img-btn" type="button" data-full="assets/build-3.jpg" aria-label="Ouvrir la réalisation 3 en grand">
+          <button class="img-btn" type="button" data-full="assets/build-3.jpg">
             <img src="assets/build-3.jpg" alt="PC assemblé - réalisation 3" loading="lazy">
           </button>
-          <button class="img-btn" type="button" data-full="assets/build-4.jpg" aria-label="Ouvrir la réalisation 4 en grand">
+          <button class="img-btn" type="button" data-full="assets/build-4.jpg">
             <img src="assets/build-4.jpg" alt="PC assemblé - réalisation 4" loading="lazy">
           </button>
-          <button class="img-btn" type="button" data-full="assets/build-5.jpg" aria-label="Ouvrir la réalisation 5 en grand">
+          <button class="img-btn" type="button" data-full="assets/build-5.jpg">
             <img src="assets/build-5.jpg" alt="PC assemblé - réalisation 5" loading="lazy">
           </button>
-          <button class="img-btn" type="button" data-full="assets/build-6.jpg" aria-label="Ouvrir la réalisation 6 en grand">
+          <button class="img-btn" type="button" data-full="assets/build-6.jpg">
             <img src="assets/build-6.jpg" alt="PC assemblé - réalisation 6" loading="lazy">
           </button>
-          <button class="img-btn" type="button" data-full="assets/build-7.jpg" aria-label="Ouvrir la réalisation 7 en grand">
+          <button class="img-btn" type="button" data-full="assets/build-7.jpg">
             <img src="assets/build-7.jpg" alt="PC assemblé - réalisation 7" loading="lazy">
           </button>
         </div>
       </div>
     </section>
 
-    <!-- REVIEWS -->
     <section class="section" id="reviews">
       <div class="container">
         <div class="section-head">
           <h2 data-i18n="reviews.title">Avis clients</h2>
         </div>
 
-        <div class="review-photos" aria-label="Photos d’avis clients">
-          <img class="review-img" src="assets/review-1.png" alt="Avis client 1 (flouté si nécessaire)" loading="lazy">
-          <img class="review-img" src="assets/review-2.png" alt="Avis client 2 (flouté si nécessaire)" loading="lazy">
-          <img class="review-img" src="assets/review-3.png" alt="Avis client 3 (flouté si nécessaire)" loading="lazy">
-          <img class="review-img" src="assets/review-4.png" alt="Avis client 4 (flouté si nécessaire)" loading="lazy">
-          <img class="review-img" src="assets/review-5.png" alt="Avis client 5 (flouté si nécessaire)" loading="lazy">
+        <!-- Review images are now clickable too -->
+        <div class="review-photos" aria-label="Photos d’avis clients" data-lightbox="reviews">
+          <button class="review-btn" type="button" data-full="assets/review-1.png">
+            <img class="review-img" src="assets/review-1.png" alt="Avis client 1 (flouté si nécessaire)" loading="lazy">
+          </button>
+          <button class="review-btn" type="button" data-full="assets/review-2.png">
+            <img class="review-img" src="assets/review-2.png" alt="Avis client 2 (flouté si nécessaire)" loading="lazy">
+          </button>
+          <button class="review-btn" type="button" data-full="assets/review-3.png">
+            <img class="review-img" src="assets/review-3.png" alt="Avis client 3 (flouté si nécessaire)" loading="lazy">
+          </button>
+          <button class="review-btn" type="button" data-full="assets/review-4.png">
+            <img class="review-img" src="assets/review-4.png" alt="Avis client 4 (flouté si nécessaire)" loading="lazy">
+          </button>
+          <button class="review-btn" type="button" data-full="assets/review-5.png">
+            <img class="review-img" src="assets/review-5.png" alt="Avis client 5 (flouté si nécessaire)" loading="lazy">
+          </button>
         </div>
 
         <div class="note">
@@ -379,7 +380,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="section alt" id="faq">
       <div class="container">
         <div class="section-head">
@@ -419,7 +419,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="container">
         <div class="section-head">
@@ -438,7 +437,6 @@
                 <a class="v" href="sms:+15147178283">+1 (514) 717-8283</a>
               </div>
 
-              <!-- WhatsApp added -->
               <div class="line">
                 <span class="k">WhatsApp</span>
                 <a class="v" href="https://wa.me/15147178283" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
@@ -507,7 +505,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-inner">
         <div class="micro muted">
@@ -520,7 +517,7 @@
     </footer>
   </main>
 
-  <!-- Lightbox modal -->
+  <!-- Shared Lightbox for builds + reviews -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-backdrop" data-close></div>
 
