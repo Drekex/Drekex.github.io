@@ -439,7 +439,7 @@
 
               <div class="line">
                 <span class="k">WhatsApp</span>
-                <a class="v" href="https://wa.me/15147178283" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+                <a class="v" href="https://wa.me/15147178283" target="_blank" rel="noopener" data-i18n="contact.whatsappText">Écrire sur WhatsApp</a>
               </div>
 
               <div class="line">
@@ -448,7 +448,7 @@
               </div>
               <div class="line">
                 <span class="k" data-i18n="contact.fb">Facebook</span>
-                <a class="v" href="https://www.facebook.com/marketplace/profile/100002396212351/" target="_blank" rel="noopener">
+                <a class="v" href="https://www.facebook.com/marketplace/profile/100002396212351/" target="_blank" rel="noopener" data-i18n="contact.facebookText">
                   Écrivez-moi sur Facebook
                 </a>
               </div>
@@ -471,12 +471,12 @@
 
             <label>
               <span data-i18n="contact.name">Nom</span>
-              <input name="name" autocomplete="name" required placeholder="Votre nom" />
+              <input name="name" autocomplete="name" required placeholder="Votre nom" data-i18n-placeholder="contact.phName" />
             </label>
 
             <label>
               <span data-i18n="contact.reply">Téléphone ou e-mail</span>
-              <input name="reply" autocomplete="email" required placeholder="Ex: 514-000-0000 ou email@exemple.com" />
+              <input name="reply" autocomplete="email" required placeholder="Ex: 514-000-0000 ou email@exemple.com" data-i18n-placeholder="contact.phReply" />
             </label>
 
             <label>
@@ -493,7 +493,7 @@
 
             <label>
               <span data-i18n="contact.msg">Détails (budget, pièces, symptômes)</span>
-              <textarea name="message" rows="6" required placeholder="Ex: Budget 1200$, 1440p, PC silencieux. Ou: crash en jeu, températures GPU 90°C..."></textarea>
+              <textarea name="message" rows="6" required placeholder="Ex: Budget 1200$, 1440p, PC silencieux. Ou: crash en jeu, températures GPU 90°C..." data-i18n-placeholder="contact.phMsg"></textarea>
             </label>
 
             <button class="btn btn-primary btn-full" type="submit" data-i18n="contact.send">Envoyer</button>
