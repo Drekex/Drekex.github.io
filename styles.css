@@ -290,21 +290,31 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   z-index: 2;
 }
 
-/* Gallery grid */
+/* ====== GALLERY (PC BUILDS) ====== */
+/* Square cards that match the current width */
 .gallery{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
 }
-.ph{ margin:0; height:160px; }
+.ph{
+  margin:0;
+  aspect-ratio: 1 / 1;   /* makes it a perfect square */
+  width: 100%;
+}
 
-/* Reviews grid */
+/* ====== REVIEWS ====== */
 .review-photos{
   display:grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 14px;
 }
-.review-img{ height:150px; border-radius:18px; }
+
+/* Bigger so 286x193 stays readable */
+.review-img{
+  height: 190px;         /* was 150px */
+  border-radius:18px;
+}
 
 /* Real images (gallery + reviews) */
 .gallery img,
@@ -381,6 +391,8 @@ input:focus, select:focus, textarea:focus{
   .trust-row{ grid-template-columns: repeat(2, 1fr); }
   .contact-grid{ grid-template-columns: 1fr; }
   .pricing .price.card{ min-height: auto; }
+
+  /* Tab becomes a pill on mobile to avoid layout issues */
   .featured .badge{
     position: static;
     height: auto;
@@ -388,7 +400,9 @@ input:focus, select:focus, textarea:focus{
     border-bottom: 1px solid rgba(110,231,255,.28);
     margin: 0 0 10px;
   }
-  .ph{ height: 160px; }
+
+  /* Reviews still readable on mobile */
+  .review-img{ height: 180px; }
 }
 
 @media (max-width: 760px){
