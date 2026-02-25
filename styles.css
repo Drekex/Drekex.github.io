@@ -218,9 +218,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 }
 
 /* Trust strip */
-.trust{
-  padding: 18px 0 0;
-}
+.trust{ padding: 18px 0 0; }
 .trust-row{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
@@ -240,11 +238,8 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap:16px;
-
-  /* Space above cards for the tab */
-  padding-top: 44px;
+  padding-top: 44px; /* space for the tab */
 }
-
 .price-top{ margin-bottom: 12px; }
 .price-tag{
   display:flex; align-items:baseline; gap:10px;
@@ -257,29 +252,21 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 .price.card{
   display:flex;
   flex-direction:column;
+  position: relative;
 }
-.price.card .checklist{
-  margin-bottom: 14px;
-}
-.price.card .btn{
-  margin-top:auto;
-}
-.pricing .price.card{
-  min-height: 600px; /* fits added gaming bullets */
-}
+.price.card .checklist{ margin-bottom: 14px; }
+.price.card .btn{ margin-top:auto; }
+.pricing .price.card{ min-height: 600px; }
 
 /* Featured card: SAME size as the other cards (tab is outside) */
 .featured{
   border-color: rgba(110,231,255,.35);
   box-shadow: 0 25px 80px rgba(0,0,0,.55);
   transform: translateY(-6px);
-  position: relative;
-
-  /* IMPORTANT: allow the tab to stick outside */
   overflow: visible;
 }
 
-/* Tab sits ABOVE the card, attached to the border */
+/* Tab sits ABOVE the card */
 .featured .badge{
   position:absolute;
   top:-44px;
@@ -303,28 +290,43 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   z-index: 2;
 }
 
-/* Gallery placeholders */
+/* Gallery grid */
 .gallery{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
 }
-.ph{ margin:0; }
-.ph-box{
-  border-radius: 18px;
-  border:1px dashed rgba(255,255,255,.22);
-  height: 160px;
-  display:grid; place-items:center;
-  color: var(--muted);
+.ph{ margin:0; height:160px; }
+
+/* Reviews grid */
+.review-photos{
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+.review-img{ height:150px; border-radius:18px; }
+
+/* Real images (gallery + reviews) */
+.gallery img,
+.review-photos img{
+  width:100%;
+  height:100%;
+  display:block;
+  border-radius:18px;
+  object-fit:cover;
+  border: 1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.02);
+}
+
+.gallery img:hover,
+.review-photos img:hover{
+  transform: translateY(-2px);
+  transition: transform .15s ease;
 }
 
 /* FAQ */
 .faq{ display:grid; gap:12px; }
-details summary{
-  cursor:pointer;
-  font-weight:800;
-}
+details summary{ cursor:pointer; font-weight:800; }
 details p{ margin: 10px 0 0; }
 
 /* Contact */
@@ -371,7 +373,7 @@ input:focus, select:focus, textarea:focus{
 /* Responsive */
 @media (max-width: 980px){
   .hero-grid{ grid-template-columns: 1fr; }
-  .pricing{ grid-template-columns: 1fr; }
+  .pricing{ grid-template-columns: 1fr; padding-top: 0; }
   .featured{ transform:none; }
   .grid-3{ grid-template-columns: 1fr; }
   .grid-2{ grid-template-columns: 1fr; }
@@ -379,6 +381,14 @@ input:focus, select:focus, textarea:focus{
   .trust-row{ grid-template-columns: repeat(2, 1fr); }
   .contact-grid{ grid-template-columns: 1fr; }
   .pricing .price.card{ min-height: auto; }
+  .featured .badge{
+    position: static;
+    height: auto;
+    border-radius: 999px;
+    border-bottom: 1px solid rgba(110,231,255,.28);
+    margin: 0 0 10px;
+  }
+  .ph{ height: 160px; }
 }
 
 @media (max-width: 760px){
@@ -400,15 +410,7 @@ input:focus, select:focus, textarea:focus{
   .footer-inner{ flex-direction:column; align-items:flex-start; }
 }
 
-/* Reviews photo grid (5 boxes) */
-.review-photos{
-  display:grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
-}
-.review-ph{
-  height: 150px;
-}
+/* Reviews photo grid (5 boxes) responsive */
 @media (max-width: 980px){
   .review-photos{ grid-template-columns: repeat(2, 1fr); }
 }
