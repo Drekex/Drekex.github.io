@@ -1,6 +1,4 @@
 (() => {
-  /* ========= BASIC UI ========= */
-
   // Year
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -34,7 +32,7 @@
     });
   }
 
-  // Lead form -> mailto (no backend)
+  // Lead form -> mailto
   const form = document.getElementById("leadForm");
   if (form) {
     form.addEventListener("submit", (e) => {
@@ -54,13 +52,11 @@
     });
   }
 
-  /* ========= LANGUAGE TOGGLE (FIXED) ========= */
-
+  // Language toggle
   const langBtn = document.getElementById("langToggle");
 
-  // Minimal EN translations for key sections (keeps your FR as default)
   const I18N = {
-    fr: {}, // FR is already written in HTML
+    fr: {},
     en: {
       "nav.services": "Services",
       "nav.pricing": "Pricing",
@@ -101,7 +97,6 @@
   function setLanguage(lang) {
     document.documentElement.lang = (lang === "en") ? "en" : "fr";
 
-    // Update all nodes with data-i18n
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
       const enText = I18N.en[key];
@@ -109,30 +104,24 @@
       if (lang === "en" && enText) {
         el.textContent = enText;
       } else {
-        // restore French from data-fr-original (saved once)
         const original = el.getAttribute("data-fr-original");
         if (original != null) el.textContent = original;
       }
     });
 
-    // Button label
     if (langBtn) langBtn.textContent = (lang === "en") ? "EN / FR" : "FR / EN";
-
     localStorage.setItem("raymondpc_lang", lang);
   }
 
-  // Save original FR text once
   document.querySelectorAll("[data-i18n]").forEach(el => {
     if (!el.hasAttribute("data-fr-original")) {
       el.setAttribute("data-fr-original", el.textContent);
     }
   });
 
-  // Init
   const savedLang = localStorage.getItem("raymondpc_lang") || "fr";
   setLanguage(savedLang);
 
-  // Toggle click
   if (langBtn) {
     langBtn.addEventListener("click", () => {
       const current = localStorage.getItem("raymondpc_lang") || "fr";
@@ -140,15 +129,13 @@
     });
   }
 
-  /* ========= SHARED LIGHTBOX (BUILDS + REVIEWS) ========= */
-
+  // Shared lightbox for builds + reviews
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lightboxImg");
   const lbCaption = document.getElementById("lightboxCaption");
   const btnPrev = lb?.querySelector("[data-prev]");
   const btnNext = lb?.querySelector("[data-next]");
 
-  // Two separate galleries
   const galleries = {
     builds: Array.from(document.querySelectorAll('[data-lightbox="builds"] button')),
     reviews: Array.from(document.querySelectorAll('[data-lightbox="reviews"] button'))
@@ -208,25 +195,16 @@
     openAt(activeGallery, currentIndex - 1);
   }
 
-  // Attach click handlers for builds
-  galleries.builds.forEach((btn, idx) => {
-    btn.addEventListener("click", () => openAt("builds", idx));
-  });
-
-  // Attach click handlers for reviews
-  galleries.reviews.forEach((btn, idx) => {
-    btn.addEventListener("click", () => openAt("reviews", idx));
-  });
+  galleries.builds.forEach((btn, idx) => btn.addEventListener("click", () => openAt("builds", idx)));
+  galleries.reviews.forEach((btn, idx) => btn.addEventListener("click", () => openAt("reviews", idx)));
 
   btnNext?.addEventListener("click", next);
   btnPrev?.addEventListener("click", prev);
 
-  // Close on backdrop/close button
   lb?.addEventListener("click", (e) => {
     if (e.target.matches("[data-close]")) closeLightbox();
   });
 
-  // Keyboard controls
   document.addEventListener("keydown", (e) => {
     if (!lb?.classList.contains("open")) return;
     if (e.key === "Escape") closeLightbox();
@@ -234,7 +212,6 @@
     if (e.key === "ArrowLeft") prev();
   });
 
-  // Click image to go next
   lbImg?.addEventListener("click", () => {
     const list = galleries[activeGallery] || [];
     if (list.length > 1) next();
