@@ -54,15 +54,6 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 .brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; }
 .brand-text span{ opacity:.9; }
 
-.brand-logo{
-  width:40px;
-  height:40px;
-  border-radius:12px;
-  object-fit:contain;
-  background: rgba(255,255,255,.02);
-  border:1px solid var(--line);
-}
-
 .nav{ margin-left:auto; display:flex; align-items:center; gap:12px; }
 .nav-toggle{
   display:none;
@@ -205,16 +196,23 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
 .grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
 
-/* Services: keep bullet lists aligned */
-#services .grid-3 > .card{ display:flex; flex-direction:column; }
-#services .service-desc{
+
+/* Services: align card content */
+.service-card{
+  display:flex;
+  flex-direction:column;
+}
+.service-card .service-desc{
+  /* keep descriptions consistent so bullet lists align */
+  min-height: 3.2em; /* ~2 lines */
   display:-webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow:hidden;
-  min-height: calc(1.55em * 2);
 }
-#services .checklist{ margin-top: 12px; }
+.service-card .checklist{
+  margin-top:auto;
+}
 
 /* Checklists */
 .checklist{
