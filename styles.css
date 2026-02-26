@@ -50,9 +50,14 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 .header-inner{
   display:flex; align-items:center; gap:14px;
   padding:14px 0;
+  flex-wrap: nowrap; /* ✅ keep one line on desktop, prevent FR squish */
 }
-.brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; }
-.brand-text{ white-space:nowrap; }
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:800; letter-spacing:.2px;
+  margin-right: 10px;      /* ✅ breathing room before nav */
+  white-space: nowrap;     /* ✅ never wrap "Raymond PC" */
+}
 .brand-text span{ opacity:.9; }
 
 .brand-logo{
@@ -72,11 +77,19 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   border-radius:12px;
   padding:10px 12px;
 }
-.nav-links{ display:flex; align-items:center; gap:12px; flex-wrap:nowrap; }
-.nav-links a{ opacity:.9; font-weight:600; font-size:.95rem; white-space:nowrap; }
+.nav-links{
+  display:flex; align-items:center;
+  gap:14px; /* ✅ slightly tighter to fit FR labels */
+}
+.nav-links a{ opacity:.9; font-weight:600; }
 .nav-links a:hover{ opacity:1; }
 
-.lang{ display:flex; align-items:center; }
+/* ✅ Protect FR/EN toggle from collapsing */
+.lang{
+  display:flex; align-items:center;
+  flex: 0 0 auto;
+  min-width: 64px;
+}
 
 /* Force FR/EN button text to white everywhere */
 .lang .btn,
@@ -165,38 +178,6 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 }
 .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin:16px 0 10px; }
 
-
-
-/* Steps (How it works) */
-.steps{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap:16px;
-}
-.step{
-  display:flex;
-  align-items:flex-start;
-  gap:14px;
-  padding:18px;
-}
-.step-num{
-  width:42px;
-  height:42px;
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:800;
-  background: rgba(255,255,255,.04);
-  border:1px solid var(--line);
-  flex:0 0 auto;
-}
-.step-body h3{ margin:0 0 6px; }
-.step-body p{ margin:0; }
-
-/* Checklist warning variant */
-.checklist-warn li::marker{ color: rgba(255,180,180,.9); }
-
 /* Cards */
 .card{
   background: rgba(14,23,48,.72);
@@ -266,7 +247,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 }
 
 /* Trust strip */
-.trust{ padding: 18px 0 30px; }
+.trust{ padding: 18px 0 0; }
 .trust-row{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
@@ -555,7 +536,7 @@ input:focus, select:focus, textarea:focus{
   }
 
   .review-photos{ grid-template-columns: repeat(2, 1fr); }
-  
+
   .lightbox-nav{ width:42px; height:42px; font-size:26px; }
 }
 
@@ -576,19 +557,4 @@ input:focus, select:focus, textarea:focus{
   }
   .nav-links.open{ display:flex; }
   .footer-inner{ flex-direction:column; align-items:flex-start; }
-}
-
-
-
-@media (max-width: 1100px){
-  .nav-links{ gap:10px; }
-  .nav-links a{ font-size:.9rem; }
-}
-
-@media (max-width: 980px){
-  .steps{ grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 560px){
-  .steps{ grid-template-columns: 1fr; }
 }
