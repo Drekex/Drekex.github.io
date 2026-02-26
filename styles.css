@@ -52,16 +52,16 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   padding:14px 0;
 }
 .brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; }
-.brand-text span{ opacity:.9; }
-
 .brand-logo{
   width:40px;
   height:40px;
-  border-radius:12px;
+  border-radius:10px;
   object-fit:contain;
   background: rgba(255,255,255,.02);
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
+  padding:6px;
 }
+.brand-text span{ opacity:.9; }
 
 .nav{ margin-left:auto; display:flex; align-items:center; gap:12px; }
 .nav-toggle{
@@ -205,16 +205,26 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
 .grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
 
-/* Services: keep bullet lists aligned */
-#services .grid-3 > .card{ display:flex; flex-direction:column; }
-#services .service-desc{
-  display:-webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow:hidden;
-  min-height: calc(1.55em * 2);
+/* Steps (How it works) */
+.steps{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:16px;
 }
-#services .checklist{ margin-top: 12px; }
+.step{ display:flex; gap:12px; align-items:flex-start; }
+.step-num{
+  width:40px;
+  height:40px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(139,92,246,.18));
+  border:1px solid rgba(110,231,255,.28);
+  color: rgba(234,240,255,.96);
+  flex:0 0 auto;
+}
+.step-body h3{ margin:0 0 6px; }
 
 /* Checklists */
 .checklist{
@@ -508,6 +518,7 @@ input:focus, select:focus, textarea:focus{
   .featured{ transform:none; }
   .grid-3{ grid-template-columns: 1fr; }
   .grid-2{ grid-template-columns: 1fr; }
+  .steps{ grid-template-columns: repeat(2, 1fr); }
   .gallery{ grid-template-columns: repeat(2, 1fr); }
   .trust-row{ grid-template-columns: repeat(2, 1fr); }
   .contact-grid{ grid-template-columns: 1fr; }
@@ -543,5 +554,6 @@ input:focus, select:focus, textarea:focus{
   }
   .nav-links.open{ display:flex; }
   .footer-inner{ flex-direction:column; align-items:flex-start; }
+  .steps{ grid-template-columns: 1fr; }
 }
 
