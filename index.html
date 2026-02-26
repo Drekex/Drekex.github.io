@@ -34,8 +34,9 @@
 
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
+  <div id="top" tabindex="-1"></div>
 
-  <header class="site-header" id="top">
+  <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Raymond PC, retour en haut de page">
         <img class="brand-logo" src="assets/logo.png" alt="Raymond PC" width="40" height="40" loading="eager">
@@ -50,8 +51,7 @@
 
         <div class="nav-links" id="nav-links">
           <a href="#services" data-i18n="nav.services">Services</a>
-                    <a href="#how" data-i18n="nav.how">Processus</a>
-<a href="#pricing" data-i18n="nav.pricing">Tarifs</a>
+          <a href="#pricing" data-i18n="nav.pricing">Tarifs</a>
           <a href="#proof" data-i18n="nav.proof">Pourquoi moi</a>
           <a href="#work" data-i18n="nav.work">Réalisations</a>
           <a href="#reviews" data-i18n="nav.reviews">Avis</a>
@@ -122,7 +122,7 @@
               <div class="icon-row">
                 <span class="icon" aria-hidden="true">✓</span>
                 <div>
-                  <strong data-i18n="hero.c3t">Plus silencieux</strong>
+                  <strong data-i18n="hero.c3t">Optimisation du bruit</strong>
                   <div class="muted" data-i18n="hero.c3d">Courbes de ventilateurs + réglages simples pour réduire le bruit.</div>
                 </div>
               </div>
@@ -168,7 +168,7 @@
         <div class="grid-3">
           <article class="card">
             <h3 data-i18n="services.s1t">Montage sur mesure</h3>
-            <p class="muted" data-i18n="services.s1d">Gaming/travail. Assemblage propre, prêt à utiliser.</p>
+            <p class="muted service-desc" data-i18n="services.s1d">Gaming/travail. Assemblage propre, prêt à utiliser.</p>
             <ul class="checklist">
               <li data-i18n="services.s1b1">Assemblage complet</li>
               <li data-i18n="services.s1b2">BIOS & configuration de base</li>
@@ -178,21 +178,22 @@
 
           <article class="card">
             <h3 data-i18n="services.s2t">Mise à niveau & maintenance</h3>
-            <p class="muted" data-i18n="services.s2d">Upgrade GPU/CPU/RAM/SSD, nettoyage, amélioration airflow.</p>
+            <p class="muted service-desc" data-i18n="services.s2d">Upgrade GPU/CPU/RAM/SSD, nettoyage, amélioration airflow.</p>
             <ul class="checklist">
               <li data-i18n="services.s2b1">Compatibilité & meilleurs choix</li>
-              <li data-i18n="services.s2b2">PC plus silencieux et plus froid</li>
+              <li data-i18n="services.s2b2">Optimisation ventilateurs / bruit</li>
               <li data-i18n="services.s2b3">Tests de stabilité après upgrade</li>
             </ul>
           </article>
 
           <article class="card">
             <h3 data-i18n="services.s3t">Dépannage</h3>
-            <p class="muted" data-i18n="services.s3d">Écrans bleus, crash, températures, instabilité, démarrage. Si le problème ne peut pas être réglé, vous repartez avec un diagnostic clair et des prochaines étapes.</p>
+            <p class="muted service-desc" data-i18n="services.s3d">Écrans bleus, crash, températures, instabilité, démarrage.</p>
             <ul class="checklist">
               <li data-i18n="services.s3b1">Diagnostic clair</li>
               <li data-i18n="services.s3b2">Changement de pièces et récupération</li>
               <li data-i18n="services.s3b3">Conseils pour éviter le retour du problème</li>
+              <li data-i18n="services.s3b4">Si ce n’est pas réglé tout de suite : diagnostic clair + prochaines étapes.</li>
             </ul>
           </article>
         </div>
@@ -203,51 +204,6 @@
         </div>
       </div>
     </section>
-
-
-    <section class="section alt" id="how">
-      <div class="container">
-        <div class="section-head">
-          <h2 data-i18n="how.title">Comment ça marche</h2>
-          <p class="muted" data-i18n="how.subtitle">Simple, clair, sans surprise.</p>
-        </div>
-
-        <div class="steps">
-          <div class="step card">
-            <div class="step-num" aria-hidden="true">1</div>
-            <div class="step-body">
-              <h3 data-i18n="how.s1t">Contact</h3>
-              <p class="muted" data-i18n="how.s1d">SMS, WhatsApp ou formulaire. Dites votre budget / besoins / symptômes.</p>
-            </div>
-          </div>
-
-          <div class="step card">
-            <div class="step-num" aria-hidden="true">2</div>
-            <div class="step-body">
-              <h3 data-i18n="how.s2t">Plan & soumission</h3>
-              <p class="muted" data-i18n="how.s2d">On confirme les pièces, la compatibilité, et le coût. Rien d’ambigu.</p>
-            </div>
-          </div>
-
-          <div class="step card">
-            <div class="step-num" aria-hidden="true">3</div>
-            <div class="step-body">
-              <h3 data-i18n="how.s3t">Montage / réparation</h3>
-              <p class="muted" data-i18n="how.s3d">Assemblage propre, mise à jour BIOS/Windows, drivers, réglages de base.</p>
-            </div>
-          </div>
-
-          <div class="step card">
-            <div class="step-num" aria-hidden="true">4</div>
-            <div class="step-body">
-              <h3 data-i18n="how.s4t">Tests & remise</h3>
-              <p class="muted" data-i18n="how.s4d">Tests de stabilité + températures. Pickup sur rendez-vous ou livraison locale.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
 
     <section class="section alt" id="pricing">
       <div class="container">
@@ -289,7 +245,7 @@
             <ul class="checklist">
               <li data-i18n="pricing.p2b1">Tout du montage de base</li>
               <li data-i18n="pricing.p2b2">Gestion des câbles</li>
-              <li data-i18n="pricing.p2b3">PC plus silencieux et plus froid</li>
+              <li data-i18n="pricing.p2b3">Optimisation ventilateurs / bruit</li>
               <li data-i18n="pricing.p2b4">Ajustement GPU de base (sur demande)</li>
               <li data-i18n="pricing.p2b5">Configuration RGB (sur demande)</li>
               <li data-i18n="pricing.p2b6">Drivers gaming</li>
@@ -321,37 +277,6 @@
       </div>
     </section>
 
-
-    <section class="section" id="fit">
-      <div class="container">
-        <div class="section-head">
-          <h2 data-i18n="fit.title">Pour qui c’est idéal</h2>
-          <p class="muted" data-i18n="fit.subtitle">Pour éviter les mauvaises attentes, voici le meilleur “fit”.</p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3 data-i18n="fit.goodT">Excellent si vous voulez :</h3>
-            <ul class="checklist">
-              <li data-i18n="fit.g1">Un PC stable, silencieux, et qui dure</li>
-              <li data-i18n="fit.g2">Des conseils honnêtes sur les pièces</li>
-              <li data-i18n="fit.g3">Des températures contrôlées + tests en charge</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3 data-i18n="fit.badT">Peut-être pas idéal si vous :</h3>
-            <ul class="checklist">
-              <li data-i18n="fit.b1">Cherchez le prix le plus bas possible, peu importe la qualité</li>
-              <li data-i18n="fit.b2">Voulez un “same-day build” sans planification</li>
-              <li data-i18n="fit.b3">Souhaitez de l’overclock extrême sans compromis ni risques</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
     <section class="section" id="proof">
       <div class="container">
         <div class="section-head">
@@ -361,7 +286,7 @@
 
         <div class="grid-2">
           <div class="card">
-            <h3 data-i18n="proof.aT">Tests complets</h3>
+            <h3 data-i18n="proof.aT">Testage Complet</h3>
             <p class="muted" data-i18n="proof.aD">
               Tests, vérifications, et configuration claire pour éviter les mauvaises surprises.
             </p>
@@ -378,7 +303,7 @@
               Vous savez ce qui est fait, pourquoi, et combien ça coûte. Pas de surprise.
             </p>
             <ul class="checklist">
-              <li data-i18n="proof.bB1">Tarifs clairs et justifiés</li>
+              <li data-i18n="proof.bB1">Tarifs clairs et justifié</li>
               <li data-i18n="proof.bB2">Conseils pièces / compatibilité</li>
               <li data-i18n="proof.bB3">Optimisation du bruit et performance sur demande</li>
             </ul>
@@ -386,51 +311,6 @@
         </div>
       </div>
     </section>
-
-
-    <section class="section alt" id="handover">
-      <div class="container">
-        <div class="section-head">
-          <h2 data-i18n="handover.title">Avant de vous remettre le PC</h2>
-          <p class="muted" data-i18n="handover.subtitle">Une mini check-list de qualité (QA) — pour éviter les surprises.</p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3 data-i18n="handover.c1t">Stabilité</h3>
-            <ul class="checklist">
-              <li data-i18n="handover.c1b1">Tests CPU/GPU en charge</li>
-              <li data-i18n="handover.c1b2">RAM vérifiée (XMP/EXPO)</li>
-              <li data-i18n="handover.c1b3">Aucun crash/erreur pendant les tests</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3 data-i18n="handover.c2t">Températures & bruit</h3>
-            <ul class="checklist">
-              <li data-i18n="handover.c2b1">Températures contrôlées</li>
-              <li data-i18n="handover.c2b2">Courbes de ventilateurs propres</li>
-              <li data-i18n="handover.c2b3">Airflow vérifié + câbles rangés</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3 data-i18n="handover.c3t">Configuration</h3>
-            <ul class="checklist">
-              <li data-i18n="handover.c3b1">BIOS à jour si pertinent</li>
-              <li data-i18n="handover.c3b2">Drivers essentiels installés</li>
-              <li data-i18n="handover.c3b3">Windows prêt (ou non activé sur demande)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="note">
-          <strong data-i18n="handover.noteT">Dépannage :</strong>
-          <span data-i18n="handover.noteD">si un problème ne peut pas être corrigé sur place, vous repartez avec un diagnostic clair + prochaines étapes.</span>
-        </div>
-      </div>
-    </section>
-
 
     <section class="section alt" id="work">
       <div class="container">
@@ -539,7 +419,7 @@
         <div class="section-head">
           <h2 data-i18n="contact.title">Contact / Soumission</h2>
           <p class="muted" data-i18n="contact.subtitle">
-            Décrivez votre projet (budget, objectifs, liste de pièces). Réponse généralement en moins de 24h.
+            Décrivez votre projet (budget, objectifs, liste de pièces). Réponse rapide.
           </p>
         </div>
 
@@ -554,7 +434,7 @@
 
               <div class="line">
                 <span class="k">WhatsApp</span>
-                <a class="v" href="https://wa.me/15147178283" target="_blank" rel="noopener" data-i18n="contact.whatsappText">Écrire sur WhatsApp (rapide)</a>
+                <a class="v" href="https://wa.me/15147178283" target="_blank" rel="noopener" data-i18n="contact.whatsappText">Écrire sur WhatsApp</a>
               </div>
 
               <div class="line">
