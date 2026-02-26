@@ -110,41 +110,11 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 .btn-ghost{ background: rgba(255,255,255,.02); }
 
 /* Sections */
-.section{
-  position: relative;
-  padding:70px 0;
-  overflow:hidden;
-}
-
-/* Soft section glow for continuity (subtle) */
-.section::before{
-  content:"";
-  position:absolute;
-  inset:-140px -100px;
-  pointer-events:none;
-  background:
-    radial-gradient(700px 420px at 15% 20%, rgba(110,231,255,.08), transparent 65%),
-    radial-gradient(650px 380px at 85% 0%, rgba(139,92,246,.08), transparent 65%);
-  opacity:.85;
-  filter: blur(2px);
-}
-
-/* Alternate glow placement so it doesn't look repetitive */
-.section:nth-of-type(even)::before{
-  background:
-    radial-gradient(700px 420px at 85% 25%, rgba(110,231,255,.08), transparent 65%),
-    radial-gradient(650px 380px at 15% 0%, rgba(139,92,246,.08), transparent 65%);
-}
-
+.section{ padding:70px 0; }
 .section.alt{
   background: rgba(255,255,255,.02);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-}
-
-/* Keep alt sections slightly calmer */
-.section.alt::before{
-  opacity:.55;
 }
 .section-head{ margin-bottom: 22px; }
 .section-head h2{ margin:0 0 10px; font-size: clamp(1.5rem, 1.2rem + 1vw, 2.1rem); }
