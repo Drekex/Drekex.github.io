@@ -378,9 +378,8 @@ input, select, textarea{
   color: var(--text);
   outline:none;
 }
-
-/* Desktop dropdown fix: force readable option text on white popup */
- (hover:hover) and (pointer:fine){
+@media (hover:hover) and (pointer:fine){
+  /* Desktop dropdown fix: make option text readable on desktop */
   select option,
   select optgroup{
     color: #111 !important;
