@@ -34,12 +34,12 @@
 
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
-  <div id="top" tabindex="-1"></div>
 
+
+  <div id="top"></div>
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Raymond PC, retour en haut de page">
-        <img class="brand-logo" src="assets/logo.png" alt="Raymond PC" width="40" height="40" loading="eager">
         <span class="brand-text">Raymond <span>PC</span></span>
       </a>
 
@@ -51,6 +51,9 @@
 
         <div class="nav-links" id="nav-links">
           <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#process" data-i18n="nav.process">Processus</a>
+          <a href="#fit" data-i18n="nav.fit">Pour qui</a>
+          <a href="#qa" data-i18n="nav.qa">Avant remise</a>
           <a href="#pricing" data-i18n="nav.pricing">Tarifs</a>
           <a href="#proof" data-i18n="nav.proof">Pourquoi moi</a>
           <a href="#work" data-i18n="nav.work">Réalisations</a>
@@ -158,15 +161,52 @@
       </div>
     </section>
 
+    <section class="section alt" id="process">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="process.title">Comment ça marche</h2>
+          <p class="muted" data-i18n="process.subtitle">Simple, clair, sans surprise.</p>
+        </div>
+
+        <div class="steps">
+          <article class="card step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <h3 data-i18n="process.s1t">Contact</h3>
+            <p class="muted" data-i18n="process.s1d">SMS / WhatsApp / formulaire. Dites votre budget, objectifs, ou symptômes.</p>
+          </article>
+
+          <article class="card step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <h3 data-i18n="process.s2t">Soumission</h3>
+            <p class="muted" data-i18n="process.s2d">Je confirme la compatibilité, le plan, et le prix avant de commencer.</p>
+          </article>
+
+          <article class="card step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <h3 data-i18n="process.s3t">Montage / Réparation</h3>
+            <p class="muted" data-i18n="process.s3d">Assemblage propre, câbles, nettoyage/upgrade si nécessaire.</p>
+          </article>
+
+          <article class="card step">
+            <div class="step-num" aria-hidden="true">4</div>
+            <h3 data-i18n="process.s4t">Tests & remise</h3>
+            <p class="muted" data-i18n="process.s4d">Tests de stabilité, températures, drivers. PC prêt à utiliser.</p>
+          </article>
+        </div>
+
+        <p class="micro muted" data-i18n="process.note">Astuce : un lien PCPartPicker ou des photos (dépannage) accélèrent la soumission.</p>
+      </div>
+    </section>
+
     <section class="section" id="services">
       <div class="container">
         <div class="section-head">
           <h2 data-i18n="services.title">Services</h2>
-          <p class="muted" data-i18n="services.subtitle">Choisissez un forfait, ou demandez un service sur mesure.</p>
+          <p class="muted service-desc" data-i18n="services.subtitle">Choisissez un forfait, ou demandez un service sur mesure.</p>
         </div>
 
         <div class="grid-3">
-          <article class="card">
+          <article class="card service-card">
             <h3 data-i18n="services.s1t">Montage sur mesure</h3>
             <p class="muted service-desc" data-i18n="services.s1d">Gaming/travail. Assemblage propre, prêt à utiliser.</p>
             <ul class="checklist">
@@ -176,7 +216,7 @@
             </ul>
           </article>
 
-          <article class="card">
+          <article class="card service-card">
             <h3 data-i18n="services.s2t">Mise à niveau & maintenance</h3>
             <p class="muted service-desc" data-i18n="services.s2d">Upgrade GPU/CPU/RAM/SSD, nettoyage, amélioration airflow.</p>
             <ul class="checklist">
@@ -186,14 +226,13 @@
             </ul>
           </article>
 
-          <article class="card">
+          <article class="card service-card">
             <h3 data-i18n="services.s3t">Dépannage</h3>
-            <p class="muted service-desc" data-i18n="services.s3d">Écrans bleus, crash, températures, instabilité, démarrage.</p>
+            <p class="muted service-desc" data-i18n="services.s3d">Écrans bleus, crash, températures, instabilité, démarrage. Diagnostic clair + prochaines étapes.</p>
             <ul class="checklist">
               <li data-i18n="services.s3b1">Diagnostic clair</li>
               <li data-i18n="services.s3b2">Changement de pièces et récupération</li>
               <li data-i18n="services.s3b3">Conseils pour éviter le retour du problème</li>
-              <li data-i18n="services.s3b4">Si ce n’est pas réglé tout de suite : diagnostic clair + prochaines étapes.</li>
             </ul>
           </article>
         </div>
@@ -201,6 +240,37 @@
         <div class="note">
           <strong data-i18n="services.noteT">Inclus sur demande :</strong>
           <span data-i18n="services.noteD">undervolt GPU, optimisation légère, PC compact (SFF), rétro-PC.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fit">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="fit.title">Pour qui c’est idéal</h2>
+          <p class="muted" data-i18n="fit.subtitle">Ça aide à savoir rapidement si je suis le bon fit pour votre projet.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 data-i18n="fit.goodT">Excellent si…</h3>
+            <ul class="checklist">
+              <li data-i18n="fit.good1">Vous voulez un PC stable, silencieux et bien ventilé</li>
+              <li data-i18n="fit.good2">Vous aimez les conseils honnêtes (sans upsell inutile)</li>
+              <li data-i18n="fit.good3">Vous voulez des tests réels (températures, charge, stabilité)</li>
+              <li data-i18n="fit.good4">Vous voulez comprendre ce qui a été fait (explications simples)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 data-i18n="fit.badT">Peut-être pas idéal si…</h3>
+            <ul class="checklist checklist-muted">
+              <li data-i18n="fit.bad1">Vous cherchez uniquement le prix le plus bas possible</li>
+              <li data-i18n="fit.bad2">Vous voulez un build “rush” sans planification</li>
+              <li data-i18n="fit.bad3">Vous voulez de l’overclocking agressif sans compromis</li>
+              <li data-i18n="fit.bad4">Vous ne voulez pas de tests (même rapides) après le montage</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -274,6 +344,49 @@
         <p class="micro muted" data-i18n="pricing.footer">
           Astuce : envoyez une liste de pièces / un budget / des photos (si dépannage) pour une estimation plus rapide.
         </p>
+      </div>
+    </section>
+
+    <section class="section alt" id="qa">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="qa.title">Avant de remettre le PC</h2>
+          <p class="muted" data-i18n="qa.subtitle">Une checklist simple pour que tout soit propre, stable et prêt.</p>
+        </div>
+
+        <div class="grid-3 qa-grid">
+          <article class="card">
+            <h3 data-i18n="qa.c1t">Stabilité</h3>
+            <ul class="checklist">
+              <li data-i18n="qa.c1b1">Stress tests / vérifications de base</li>
+              <li data-i18n="qa.c1b2">RAM (XMP/EXPO) validée</li>
+              <li data-i18n="qa.c1b3">Stockage vérifié</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="qa.c2t">Températures & bruit</h3>
+            <ul class="checklist">
+              <li data-i18n="qa.c2b1">Températures CPU/GPU sous charge</li>
+              <li data-i18n="qa.c2b2">Airflow & câbles sécurisés</li>
+              <li data-i18n="qa.c2b3">Courbes de ventilateurs (silence / performance)</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="qa.c3t">Configuration</h3>
+            <ul class="checklist">
+              <li data-i18n="qa.c3b1">BIOS à jour si pertinent</li>
+              <li data-i18n="qa.c3b2">Drivers essentiels installés</li>
+              <li data-i18n="qa.c3b3">Windows prêt (ou OS demandé)</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="note">
+          <strong data-i18n="qa.noteT">Dépannage :</strong>
+          <span data-i18n="qa.noteD">si le problème ne se règle pas immédiatement, vous repartez avec un diagnostic clair + prochaines étapes.</span>
+        </div>
       </div>
     </section>
 
