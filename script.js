@@ -50,7 +50,7 @@
         `Nom: ${name}\nContact: ${reply}\nService: ${service}\n\nDétails:\n${message}\n`
       );
 
-      window.location.href = `mailto:etienneservicepc@outlook.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:raymondservicepc@outlook.com?subject=${subject}&body=${body}`;
     });
   }
 
