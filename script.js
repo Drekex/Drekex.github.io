@@ -691,7 +691,7 @@
 
 
     Object.assign(I18N.en, {
-      "nav.planner": "Planner",
+      "nav.planner": "Build Planner",
       "planner.back": "Back to main site",
       "planner.eyebrow": "Guided • Clear • Bilingual",
       "planner.title": "Plan your build easily.",
