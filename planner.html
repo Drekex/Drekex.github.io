@@ -62,7 +62,8 @@
       <div class="container page-hero-grid">
         <div class="page-hero-copy">
           <a class="back-link" href="index.html" data-i18n="planner.back">Retour au site principal</a>
-                    <h1 data-i18n="planner.title">Planifiez votre build plus facilement.</h1>
+          <p class="eyebrow" data-i18n="planner.eyebrow">Guidé • Facile à maintenir • Bilingue</p>
+          <h1 data-i18n="planner.title">Planifiez votre build plus facilement.</h1>
           <p class="lead" data-i18n="planner.lead">Cette page vous aide à choisir vos préférences sans vous bloquer à des pièces précises ou à des prix qui changent souvent. Les demandes restent claires et la page reste simple à mettre à jour.</p>
 
           <ul class="hero-bullets">
@@ -122,17 +123,17 @@
             <div class="field-stack field-full choice-group">
               <span class="field-label"><span data-i18n="planner.tier">Gamme du PC</span> <span class="required">*</span></span>
               <div class="segmented">
-                <label class="pill"><input type="radio" name="tier" value="Entry" required><span data-i18n="planner.entry">Entry</span></label>
-                <label class="pill"><input type="radio" name="tier" value="Budget"><span data-i18n="planner.budgetTier">Budget</span></label>
-                <label class="pill"><input type="radio" name="tier" value="Mid-Range"><span data-i18n="planner.mid">Mid-Range</span></label>
-                <label class="pill"><input type="radio" name="tier" value="High End"><span data-i18n="planner.high">High End</span></label>
-                <label class="pill"><input type="radio" name="tier" value="Maxed Out"><span data-i18n="planner.maxed">Maxed Out</span></label>
+                <label class="pill"><input type="radio" name="tier" value="entry" required><span data-i18n="planner.entry">Entrée</span></label>
+                <label class="pill"><input type="radio" name="tier" value="budget"><span data-i18n="planner.budgetTier">Budget</span></label>
+                <label class="pill"><input type="radio" name="tier" value="mid"><span data-i18n="planner.mid">Milieu de gamme</span></label>
+                <label class="pill"><input type="radio" name="tier" value="high"><span data-i18n="planner.high">Haut de gamme</span></label>
+                <label class="pill"><input type="radio" name="tier" value="maxed"><span data-i18n="planner.maxed">Maximisé</span></label>
               </div>
             </div>
 
             <label class="field-stack field-full">
-              <span><span data-i18n="planner.useCase">Usage</span> <span class="required">*</span></span>
-              <select name="use_case" required>
+              <span><span data-i18n="planner.useCaseOther">Autre</span> <span class="required">*</span></span>
+              <select name="use_case" required id="useCaseSelect">
                 <option value="" selected disabled data-i18n="planner.choicePlaceholder">Choisir…</option>
                 <option value="Gaming" data-i18n="planner.gaming">Gaming</option>
                 <option value="Work" data-i18n="planner.work">Travail</option>
@@ -142,30 +143,30 @@
                 <option value="3D Modeling" data-i18n="planner.modeling">Modélisation 3D</option>
                 <option value="Simulations" data-i18n="planner.simulations">Simulations</option>
                 <option value="Browsing" data-i18n="planner.browsing">Navigation</option>
-                <option value="Other" data-i18n="planner.otherChoice">Autre</option>
+                <option value="other" data-i18n="planner.otherChoice">Autre</option>
               </select>
             </label>
 
             <label class="field-stack field-full">
-              <span data-i18n="planner.useCase">Usage</span>
-              <input type="text" name="use_case_other" placeholder="Ex: streaming + gaming, travail de bureau, applications d'ingénierie..." data-i18n-placeholder="planner.useCasePh">
+              <span data-i18n="planner.useCaseOther">Autre</span>
+              <input type="text" name="use_case_other" id="useCaseOtherInput" placeholder="Ex: streaming + gaming, travail de bureau, applications d'ingénierie..." data-i18n-placeholder="planner.useCasePh">
             </label>
 
             <div class="field-stack field-full choice-group">
               <span class="field-label" data-i18n="planner.cpu">Famille CPU</span>
               <div class="option-grid tight">
                 <label class="choice-card">
-                  <input type="radio" name="cpu_family" value="AMD">
+                  <input type="radio" name="cpu_family" value="amd">
                   <span class="logo-badge text-wide">AMD</span>
                   <strong>AMD</strong>
                 </label>
                 <label class="choice-card">
-                  <input type="radio" name="cpu_family" value="Intel">
+                  <input type="radio" name="cpu_family" value="intel">
                   <span class="logo-badge text-wide">intel</span>
                   <strong>Intel</strong>
                 </label>
                 <label class="choice-card">
-                  <input type="radio" name="cpu_family" value="Unsure">
+                  <input type="radio" name="cpu_family" value="unsure">
                   <span class="logo-badge icon">?</span>
                   <strong data-i18n="planner.unsure">Pas sûr</strong>
                 </label>
@@ -176,22 +177,22 @@
               <span class="field-label" data-i18n="planner.gpu">Famille GPU</span>
               <div class="option-grid">
                 <label class="choice-card">
-                  <input type="radio" name="gpu_family" value="NVIDIA">
+                  <input type="radio" name="gpu_family" value="nvidia">
                   <span class="logo-badge text-wide">NVIDIA</span>
                   <strong>NVIDIA</strong>
                 </label>
                 <label class="choice-card">
-                  <input type="radio" name="gpu_family" value="AMD">
+                  <input type="radio" name="gpu_family" value="amd">
                   <span class="logo-badge text-wide">AMD</span>
                   <strong>AMD</strong>
                 </label>
                 <label class="choice-card">
-                  <input type="radio" name="gpu_family" value="Intel">
+                  <input type="radio" name="gpu_family" value="intel">
                   <span class="logo-badge text-wide">intel</span>
                   <strong>Intel</strong>
                 </label>
                 <label class="choice-card">
-                  <input type="radio" name="gpu_family" value="Unsure">
+                  <input type="radio" name="gpu_family" value="unsure">
                   <span class="logo-badge icon">?</span>
                   <strong data-i18n="planner.unsure">Pas sûr</strong>
                 </label>
@@ -205,7 +206,7 @@
                 <label class="pill"><input type="radio" name="ram" value="16GB"><span>16GB</span></label>
                 <label class="pill"><input type="radio" name="ram" value="32GB"><span>32GB</span></label>
                 <label class="pill"><input type="radio" name="ram" value="64GB"><span>64GB</span></label>
-                <label class="pill"><input type="radio" name="ram" value="Unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
+                <label class="pill"><input type="radio" name="ram" value="unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
               </div>
             </div>
 
@@ -219,22 +220,22 @@
               <span class="field-label" data-i18n="planner.wifi">Utilisation du Wi-Fi</span>
               <div class="option-grid tight">
                 <label class="choice-card">
-                  <input type="radio" name="wifi_use" value="Will be used primarily over Wi-Fi">
+                  <input type="radio" name="wifi_use" value="primary">
                   <span class="logo-badge icon">📶</span>
-                  <strong data-i18n="planner.wifiPrimary">Surtout sur le Wi-Fi</strong>
+                  <strong data-i18n="planner.wifiPrimary">Surtout sur Wi‑Fi</strong>
                 </label>
                 <label class="choice-card">
-                  <input type="radio" name="wifi_use" value="Will be used occasionally over Wi-Fi">
+                  <input type="radio" name="wifi_use" value="occasional">
                   <span class="logo-badge icon">↔</span>
-                  <strong data-i18n="planner.wifiSometimes">Parfois sur le Wi-Fi</strong>
+                  <strong data-i18n="planner.wifiSometimes">Parfois sur Wi‑Fi</strong>
                 </label>
                 <label class="choice-card">
-                  <input type="radio" name="wifi_use" value="Ethernet Only">
+                  <input type="radio" name="wifi_use" value="ethernet">
                   <span class="logo-badge icon">🔌</span>
                   <strong data-i18n="planner.ethernetOnly">Ethernet seulement</strong>
                 </label>
                 <label class="choice-card">
-                  <input type="radio" name="wifi_use" value="Unsure">
+                  <input type="radio" name="wifi_use" value="unsure">
                   <span class="logo-badge icon">?</span>
                   <strong data-i18n="planner.unsure">Pas sûr</strong>
                 </label>
@@ -244,19 +245,19 @@
             <div class="field-stack choice-group">
               <span class="field-label" data-i18n="planner.rgb">RGB</span>
               <div class="segmented">
-                <label class="pill"><input type="radio" name="rgb" value="Yes"><span data-i18n="planner.rgbYes">Oui</span></label>
-                <label class="pill"><input type="radio" name="rgb" value="No"><span data-i18n="planner.rgbNo">Non</span></label>
-                <label class="pill"><input type="radio" name="rgb" value="Indifferent"><span data-i18n="planner.rgbIndifferent">Indifférent</span></label>
-                <label class="pill"><input type="radio" name="rgb" value="Unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
+                <label class="pill"><input type="radio" name="rgb" value="yes"><span data-i18n="planner.rgbYes">Oui</span></label>
+                <label class="pill"><input type="radio" name="rgb" value="no"><span data-i18n="planner.rgbNo">Non</span></label>
+                <label class="pill"><input type="radio" name="rgb" value="indifferent"><span data-i18n="planner.rgbIndifferent">Indifférent</span></label>
+                <label class="pill"><input type="radio" name="rgb" value="unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
               </div>
             </div>
 
             <div class="field-stack choice-group">
               <span class="field-label" data-i18n="planner.cooling">Refroidissement CPU</span>
               <div class="segmented">
-                <label class="pill"><input type="radio" name="cooling" value="Air Cooling"><span data-i18n="planner.air">Air Cooling</span></label>
-                <label class="pill"><input type="radio" name="cooling" value="Liquid Cooling"><span data-i18n="planner.liquid">Liquid Cooling</span></label>
-                <label class="pill"><input type="radio" name="cooling" value="Unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
+                <label class="pill"><input type="radio" name="cooling" value="air"><span data-i18n="planner.air">Air</span></label>
+                <label class="pill"><input type="radio" name="cooling" value="liquid"><span data-i18n="planner.liquid">Liquide</span></label>
+                <label class="pill"><input type="radio" name="cooling" value="unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
               </div>
             </div>
 
@@ -264,12 +265,12 @@
               <span class="field-label" data-i18n="planner.formFactor">Format du boîtier</span>
               <select name="form_factor">
                 <option value="" selected data-i18n="planner.choicePlaceholder">Choisir…</option>
-                <option value="Tower" data-i18n="planner.tower">Tower</option>
-                <option value="Mini Tower" data-i18n="planner.miniTower">Mini Tower</option>
-                <option value="Small Form Factor" data-i18n="planner.sff">Small Form Factor</option>
-                <option value="Fish Tank" data-i18n="planner.fishTank">Fish Tank</option>
-                <option value="Other" data-i18n="planner.otherChoice">Autre</option>
-                <option value="Unsure" data-i18n="planner.unsure">Pas sûr</option>
+                <option value="tower" data-i18n="planner.tower">Tour</option>
+                <option value="mini_tower" data-i18n="planner.miniTower">Mini-tour</option>
+                <option value="sff" data-i18n="planner.sff">Petit format (SFF)</option>
+                <option value="fish_tank" data-i18n="planner.fishTank">Boîtier vitré</option>
+                <option value="other" data-i18n="planner.otherChoice">Autre</option>
+                <option value="unsure" data-i18n="planner.unsure">Pas sûr</option>
               </select>
             </div>
 
@@ -286,7 +287,7 @@
                 <label class="pill"><input type="radio" name="resolution" value="1440p"><span data-i18n="planner.p1440">1440p</span></label>
                 <label class="pill"><input type="radio" name="resolution" value="4K"><span data-i18n="planner.p4k">4K</span></label>
                 <label class="pill"><input type="radio" name="resolution" value="8K"><span data-i18n="planner.p8k">8K</span></label>
-                <label class="pill"><input type="radio" name="resolution" value="Unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
+                <label class="pill"><input type="radio" name="resolution" value="unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
               </div>
             </div>
 
