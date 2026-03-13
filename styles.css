@@ -594,6 +594,15 @@ input:focus, select:focus, textarea:focus{
 }
 
 /* Planner */
+
+/* Planner page hero */
+.page-hero{padding:56px 0 12px}
+.page-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:24px;align-items:start}
+.page-hero-copy .hero-bullets{margin-bottom:0}
+.page-hero-card .card{height:100%}
+.back-link{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;color:var(--muted);font-weight:700}
+.back-link:hover{color:var(--text);text-decoration:none}
+
 .planner-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:18px;align-items:start}
 .planner-form .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .field-full{grid-column:1/-1}
@@ -608,7 +617,7 @@ input:focus, select:focus, textarea:focus{
 .pill:hover,.choice-card:hover{border-color:rgba(110,231,255,.35);background:rgba(255,255,255,.05);transform:translateY(-1px)}
 .pill.is-selected,.choice-card.is-selected{border-color:rgba(110,231,255,.45);background:linear-gradient(135deg, rgba(110,231,255,.14), rgba(139,92,246,.14));box-shadow:0 0 0 3px rgba(110,231,255,.08)}
 .option-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.option-grid.tight{grid-template-columns:repeat(4,minmax(0,1fr))}
+.option-grid.tight{grid-template-columns:repeat(3,minmax(0,1fr))}
 .choice-card{display:grid;place-items:center;gap:8px;min-height:110px;padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03);text-align:center}
 .logo-badge{display:grid;place-items:center;min-width:56px;height:40px;padding:0 12px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-weight:900}
 .logo-badge.icon{font-size:1.1rem}
@@ -623,16 +632,17 @@ input:focus, select:focus, textarea:focus{
 .summary-item{display:grid;gap:4px;padding:12px 0;border-top:1px solid var(--line)}
 .summary-item:first-child{border-top:none;padding-top:0}
 .summary-label{color:var(--muted);font-weight:700}
-.summary-value{font-weight:800;word-break:break-word}
+.summary-value{font-weight:800;word-break:break-word;line-height:1.45}
 .summary-storage{margin:0;padding-left:18px;display:grid;gap:6px}
 .inline-link-card{display:flex;gap:12px;align-items:flex-start}
 
 @media (max-width: 980px){
-  .planner-layout{grid-template-columns:1fr}
+  .page-hero-grid,.planner-layout{grid-template-columns:1fr}
   .summary-box{position:static}
   .option-grid,.option-grid.tight{grid-template-columns:repeat(2,minmax(0,1fr))}
   .storage-grid{grid-template-columns:1fr}
 }
 @media (max-width: 760px){
   .planner-form .form-grid{grid-template-columns:1fr}
+  .planner-actions .btn{flex:1 1 100%}
 }

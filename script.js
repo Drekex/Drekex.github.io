@@ -547,7 +547,8 @@
           optionalNote: "Note optionnelle",
           choose: "Choisir…",
           exampleStorage: "Ex : 1 To NVMe + 8 To HDD pour médias",
-          storageEmpty: "Aucun stockage ajouté pour le moment.",
+          storageEmpty: "Remplissez le formulaire pour voir un aperçu en direct.",
+          removeRow: "Supprimer cette ligne de stockage",
           budgetRule: "Le budget doit contenir 1 montant ou une plage, par exemple 1200 ou 1200-1800."
         },
         emailSubject: "[Raymond PC] Préférences de build"
@@ -628,7 +629,8 @@
           optionalNote: "Optional note",
           choose: "Choose…",
           exampleStorage: "Ex: 1TB NVMe + 8TB HDD for media",
-          storageEmpty: "No storage added yet.",
+          storageEmpty: "Fill out the form to see a live preview.",
+          removeRow: "Remove this storage row",
           budgetRule: "Budget must contain 1 amount or a range, for example 1200 or 1200-1800."
         },
         emailSubject: "[Raymond PC] Build preferences"
@@ -655,7 +657,7 @@
       "planner.addStorage": "Add another drive",
       "planner.wifi": "Wi‑Fi Use",
       "planner.wifiPrimary": "Primarily",
-      "planner.wifiSometimes": "On occasions",
+      "planner.wifiSometimes": "On occasion",
       "planner.ethernetOnly": "Ethernet only",
       "planner.rgbYes": "Yes",
       "planner.rgbNo": "No",
@@ -686,6 +688,40 @@
       "planner.budgetPh": "Ex: 1200-1800 CAD"
     });
 
+
+
+    Object.assign(I18N.en, {
+      "nav.planner": "Planner",
+      "planner.back": "Back to main site",
+      "planner.eyebrow": "Guided • Easy to maintain • Bilingual",
+      "planner.title": "Plan your build more easily.",
+      "planner.lead": "This page helps customers choose preferences without being tied to exact parts or prices that change often. Requests stay clear and the page stays easy to maintain.",
+      "planner.b1": "Required: budget, PC tier, and use case",
+      "planner.b2": "Optional fields can be left blank if you are not sure",
+      "planner.b3": "The final request opens directly in your email app",
+      "planner.cardTitle": "Why it works well",
+      "planner.cardSubtitle": "Simple for clients, flexible for you.",
+      "planner.card1t": "Easy to maintain",
+      "planner.card1d": "No live pricing and no inventory list to constantly redo.",
+      "planner.card2t": "More guided",
+      "planner.card2d": "Visual choices are easier for beginners to recognize.",
+      "planner.card3t": "Clearer requests",
+      "planner.card3d": "You receive a structured request instead of a vague message.",
+      "planner.budget": "Budget",
+      "planner.gaming": "Gaming",
+      "planner.browsing": "Browsing",
+      "planner.simulations": "Simulations",
+      "planner.cpu": "CPU Family",
+      "planner.gpu": "GPU Family",
+      "planner.ram": "RAM",
+      "planner.unsure": "Unsure",
+      "planner.p720": "720p",
+      "planner.p1080": "1080p",
+      "planner.p1440": "1440p",
+      "planner.p4k": "4K",
+      "planner.p8k": "8K"
+    });
+
     const getLang = () => (localStorage.getItem("raymondpc_lang") || "fr") === "en" ? "en" : "fr";
     const t = () => P[getLang()];
 
@@ -694,9 +730,9 @@
       const maps = {
         use_case: {
           "Gaming": "gaming", "Work": "work", "Gaming + Work": "gaming_work", "Video Editing": "video_editing",
-          "AI": "ai", "3D Modeling": "modeling", "Simulations": "simulations", "Browsing": "browsing", "Other": "other"
+          "AI": "ai", "3D Modeling": "modeling", "Simulations": "simulations", "Browsing": "browsing", "Other": "other", "other": "other"
         },
-        resolution: {"720p":"p720","1080p":"p1080","1440p":"p1440","4K":"p4k","8K":"p8k","Unsure":"unsure"}
+        resolution: {"720p":"p720","1080p":"p1080","1440p":"p1440","4K":"p4k","8K":"p8k","Unsure":"unsure","unsure":"unsure"}
       };
       return (maps[name] && maps[name][v]) || v;
     };
@@ -743,7 +779,7 @@
             <span class="sr-only">${P[lang].misc.optionalNote}</span>
             <input type="text" name="storage_note[]" data-storage-note placeholder="${P[lang].misc.exampleStorage}">
           </label>
-          <button class="btn btn-ghost btn-small storage-remove" type="button" aria-label="Remove storage row">×</button>
+          <button class="btn btn-ghost btn-small storage-remove" type="button" aria-label="${P[lang].misc.removeRow}" title="${P[lang].misc.removeRow}">×</button>
         </div>`;
       row.querySelector(".storage-remove").addEventListener("click", () => {
         row.remove();
@@ -872,6 +908,25 @@
       }
     }
 
+
+    function toggleConditionalFields() {
+      const useCaseSelect = plannerForm.querySelector('#useCaseSelect');
+      const useCaseOtherInput = plannerForm.querySelector('#useCaseOtherInput');
+      const formFactorSelect = plannerForm.querySelector('select[name="form_factor"]');
+      const formFactorOtherInput = plannerForm.querySelector('input[name="form_factor_other"]');
+
+      const toggleField = (input, show) => {
+        const wrapper = input?.closest('.field-stack');
+        if (!wrapper || !input) return;
+        wrapper.hidden = !show;
+        input.disabled = !show;
+        if (!show) input.value = '';
+      };
+
+      toggleField(useCaseOtherInput, useCaseSelect?.value === 'other');
+      toggleField(formFactorOtherInput, formFactorSelect?.value === 'other');
+    }
+
     function validBudget(value) {
       return /^\s*\$?\d+[\d\s,]*(\s*[-–]\s*\$?\d+[\d\s,]*)?\s*([A-Za-z]{3})?\s*$/.test(value);
     }
@@ -892,8 +947,8 @@
       return lines.join("\n");
     }
 
-    plannerForm.addEventListener("input", () => { syncSelectedPills(); updatePreview(); });
-    plannerForm.addEventListener("change", () => { syncSelectedPills(); updatePreview(); });
+    plannerForm.addEventListener("input", () => { syncSelectedPills(); toggleConditionalFields(); updatePreview(); });
+    plannerForm.addEventListener("change", () => { syncSelectedPills(); toggleConditionalFields(); updatePreview(); });
     plannerForm.addEventListener("reset", () => {
       setTimeout(() => {
         storageList.innerHTML = "";
@@ -925,11 +980,13 @@
     setLanguage = function(lang) {
       originalSetLanguage(lang);
       updatePlannerLanguageBits();
+      toggleConditionalFields();
     };
 
     ensureStorageRow();
     setLanguage(getLang());
     syncSelectedPills();
+    toggleConditionalFields();
     updatePlannerLanguageBits();
   }
 
