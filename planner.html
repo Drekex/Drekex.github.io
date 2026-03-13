@@ -62,9 +62,8 @@
       <div class="container page-hero-grid">
         <div class="page-hero-copy">
           <a class="back-link" href="index.html" data-i18n="planner.back">Retour au site principal</a>
-          <p class="eyebrow" data-i18n="planner.eyebrow">Guidé • Facile à maintenir • Bilingue</p>
-          <h1 data-i18n="planner.title">Planifiez votre build plus facilement.</h1>
-          <p class="lead" data-i18n="planner.lead">Cette page vous aide à choisir vos préférences sans vous bloquer à des pièces précises ou à des prix qui changent souvent. Les demandes restent claires et la page reste simple à mettre à jour.</p>
+                    <h1 data-i18n="planner.title">Planifiez votre build plus facilement.</h1>
+          <p class="lead" data-i18n="planner.lead">Cette page vous aide à choisir vos préférences sans vous limiter à des pièces précises, dont le prix et la disponibilité peuvent changer.</p>
 
           <ul class="hero-bullets">
             <li data-i18n="planner.b1">Obligatoire : budget, gamme de PC et usage</li>
@@ -82,22 +81,22 @@
             <div class="icon-row">
               <span class="icon" aria-hidden="true">✓</span>
               <div>
-                <strong data-i18n="planner.card1t">Facile à maintenir</strong>
-                <div class="muted" data-i18n="planner.card1d">Pas de prix en direct, pas de liste d'inventaire à refaire constamment.</div>
+                <strong data-i18n="planner.card1t">Facile à remplir</strong>
+                <div class="muted" data-i18n="planner.card1d">Donnez seulement votre budget, votre gamme de PC et votre usage si vous ne connaissez pas les pièces mentionnées.</div>
               </div>
             </div>
             <div class="icon-row">
               <span class="icon" aria-hidden="true">✓</span>
               <div>
-                <strong data-i18n="planner.card2t">Plus guidé</strong>
-                <div class="muted" data-i18n="planner.card2d">Les choix visuels sont plus faciles à reconnaître pour les débutants.</div>
+                <strong data-i18n="planner.card2t">Plus visuel</strong>
+                <div class="muted" data-i18n="planner.card2d">Les choix visuels sont plus faciles à reconnaître pour tout le monde.</div>
               </div>
             </div>
             <div class="icon-row">
               <span class="icon" aria-hidden="true">✓</span>
               <div>
                 <strong data-i18n="planner.card3t">Demandes plus claires</strong>
-                <div class="muted" data-i18n="planner.card3d">Vous recevez une demande structurée au lieu d'un message vague.</div>
+                <div class="muted" data-i18n="planner.card3d">Avoir le plus d'informations possible permet de déterminer le PC parfait pour votre utilisation.</div>
               </div>
             </div>
           </div>
@@ -116,18 +115,18 @@
           <div class="form-grid">
             <label class="field-stack field-full">
               <span><span data-i18n="planner.budget">Budget</span> <span class="required">*</span></span>
-              <input type="text" name="budget" required placeholder="Ex: 1200-1800 CAD" data-i18n-placeholder="planner.budgetPh">
-              <span class="field-help" data-i18n="planner.budgetHelp">Obligatoire. Exemple : 1000-1500, 2000, 2500-3000 CAD</span>
+              <input type="text" name="budget" required placeholder="Ex. : 1200-1800 CAD" data-i18n-placeholder="planner.budgetPh">
+              <span class="field-help" data-i18n="planner.budgetHelp">Obligatoire. Exemples : 1000-1500, 2000, 2500-3000 CAD</span>
             </label>
 
             <div class="field-stack field-full choice-group">
               <span class="field-label"><span data-i18n="planner.tier">Gamme du PC</span> <span class="required">*</span></span>
               <div class="segmented">
-                <label class="pill"><input type="radio" name="tier" value="Entry" required><span data-i18n="planner.entry">Entry</span></label>
+                <label class="pill"><input type="radio" name="tier" value="Entry" required><span data-i18n="planner.entry">Entrée</span></label>
                 <label class="pill"><input type="radio" name="tier" value="Budget"><span data-i18n="planner.budgetTier">Budget</span></label>
-                <label class="pill"><input type="radio" name="tier" value="Mid-Range"><span data-i18n="planner.mid">Mid-Range</span></label>
-                <label class="pill"><input type="radio" name="tier" value="High End"><span data-i18n="planner.high">High End</span></label>
-                <label class="pill"><input type="radio" name="tier" value="Maxed Out"><span data-i18n="planner.maxed">Maxed Out</span></label>
+                <label class="pill"><input type="radio" name="tier" value="Mid-Range"><span data-i18n="planner.mid">Milieu de gamme</span></label>
+                <label class="pill"><input type="radio" name="tier" value="High End"><span data-i18n="planner.high">Haut de gamme</span></label>
+                <label class="pill"><input type="radio" name="tier" value="Maxed Out"><span data-i18n="planner.maxed">Maximisé</span></label>
               </div>
             </div>
 
@@ -148,8 +147,8 @@
             </label>
 
             <label class="field-stack field-full">
-              <span data-i18n="planner.useCase">Usage</span>
-              <input type="text" name="use_case_other" placeholder="Ex: streaming + gaming, travail de bureau, applications d'ingénierie..." data-i18n-placeholder="planner.useCasePh">
+              <span data-i18n="planner.useCaseOther">Autre usage (si nécessaire)</span>
+              <input type="text" name="use_case_other" placeholder="Ex. : streaming + gaming, travail de bureau, applications d’ingénierie..." data-i18n-placeholder="planner.useCasePh">
             </label>
 
             <div class="field-stack field-full choice-group">
@@ -255,8 +254,8 @@
             <div class="field-stack choice-group">
               <span class="field-label" data-i18n="planner.cooling">Refroidissement CPU</span>
               <div class="segmented">
-                <label class="pill"><input type="radio" name="cooling" value="Air Cooling"><span data-i18n="planner.air">Air Cooling</span></label>
-                <label class="pill"><input type="radio" name="cooling" value="Liquid Cooling"><span data-i18n="planner.liquid">Liquid Cooling</span></label>
+                <label class="pill"><input type="radio" name="cooling" value="Air Cooling"><span data-i18n="planner.air">Refroidissement à air</span></label>
+                <label class="pill"><input type="radio" name="cooling" value="Liquid Cooling"><span data-i18n="planner.liquid">Refroidissement liquide</span></label>
                 <label class="pill"><input type="radio" name="cooling" value="Unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
               </div>
             </div>
@@ -265,18 +264,18 @@
               <span class="field-label" data-i18n="planner.formFactor">Format du boîtier</span>
               <select name="form_factor">
                 <option value="" selected data-i18n="planner.choicePlaceholder">Choisir…</option>
-                <option value="Tower" data-i18n="planner.tower">Tower</option>
-                <option value="Mini Tower" data-i18n="planner.miniTower">Mini Tower</option>
-                <option value="Small Form Factor" data-i18n="planner.sff">Small Form Factor</option>
-                <option value="Fish Tank" data-i18n="planner.fishTank">Fish Tank</option>
+                <option value="Tower" data-i18n="planner.tower">Tour</option>
+                <option value="Mini Tower" data-i18n="planner.miniTower">Mini-tour</option>
+                <option value="Small Form Factor" data-i18n="planner.sff">Petit format (SFF)</option>
+                <option value="Fish Tank" data-i18n="planner.fishTank">Boîtier vitré</option>
                 <option value="Other" data-i18n="planner.otherChoice">Autre</option>
                 <option value="Unsure" data-i18n="planner.unsure">Pas sûr</option>
               </select>
             </div>
 
             <label class="field-stack">
-              <span data-i18n="planner.formFactorOther">Autre format</span>
-              <input type="text" name="form_factor_other" placeholder="Ex: open-air, rackmount..." data-i18n-placeholder="planner.formFactorOtherPh">
+              <span data-i18n="planner.formFactorOther">Autre format de boîtier</span>
+              <input type="text" name="form_factor_other" placeholder="Ex. : open-air, rackmount..." data-i18n-placeholder="planner.formFactorOtherPh">
             </label>
 
             <div class="field-stack choice-group field-full">
@@ -293,7 +292,7 @@
 
             <label class="field-stack field-full">
               <span data-i18n="planner.other">Autres éléments importants</span>
-              <textarea name="other" rows="5" placeholder="Ex: PC très silencieux, thème blanc, beaucoup de ports USB, place pour des upgrades futurs..." data-i18n-placeholder="planner.otherPh"></textarea>
+              <textarea name="other" rows="5" placeholder="Ex. : PC très silencieux, thème blanc, beaucoup de ports USB, place pour de futurs upgrades..." data-i18n-placeholder="planner.otherPh"></textarea>
             </label>
           </div>
 
@@ -316,8 +315,8 @@
           <div class="card inline-link-card">
             <span class="icon" aria-hidden="true">→</span>
             <div>
-              <h3 data-i18n="planner.emailTitle">Besoin de quelque chose de plus simple?</h3>
-              <p class="muted" data-i18n="planner.emailText">Vous pouvez toujours utiliser le formulaire de contact normal si vous préférez tout décrire manuellement.</p>
+              <h3 data-i18n="planner.emailTitle">Besoin d'un autre service?</h3>
+              <p class="muted" data-i18n="planner.emailText">Si vous avez besoin d'un upgrade ou d'un dépannage, la section contact peut être mieux adaptée.</p>
               <a class="btn btn-small btn-ghost" href="index.html#contact" data-i18n="planner.emailCta">Ouvrir la section contact</a>
             </div>
           </div>

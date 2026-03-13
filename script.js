@@ -85,7 +85,6 @@
       "contact.sms": "SMS",
       "contact.subtitle": "Describe your project (budget, goals, parts list). Usually replies within 24h.",
       "contact.tipD": "Copy/paste your parts list (PCPartPicker) or your budget + goals.",
-      "contact.plannerLink": "Or use the guided build planner.",
       "contact.tipT": "Tip:",
       "contact.title": "Contact / Quote",
       "contact.type": "Service type",
@@ -122,106 +121,6 @@
       "hero.cardTitle": "What you get",
       "hero.cta1": "Request a quote",
       "hero.cta2": "See pricing",
-      "hero.cta3": "Plan my build",
-
-      "planner.metaTitle": "Raymond PC - Guided Build Planner",
-      "planner.metaDesc": "A guided PC build planner to help you send a clear request based on your budget, tier, use case, and preferred parts.",
-      "planner.back": "Back to main site",
-      "planner.eyebrow": "Guided • Easy to maintain • Bilingual",
-      "planner.title": "Plan your PC build faster.",
-      "planner.lead": "This page helps you choose your preferences without locking you to specific parts or prices. It keeps submissions clear while staying easy to update over time.",
-      "planner.b1": "Required: budget, PC tier, and use case",
-      "planner.b2": "Optional fields can be skipped if you're unsure",
-      "planner.b3": "The final request opens directly in your email app",
-      "planner.cardTitle": "Why this works well",
-      "planner.cardSubtitle": "Simple for customers, flexible for you.",
-      "planner.card1t": "Easy to maintain",
-      "planner.card1d": "No live pricing, no constantly changing inventory list.",
-      "planner.card2t": "More guided",
-      "planner.card2d": "Visual brand choices are easier for beginners to recognize.",
-      "planner.card3t": "Clear submissions",
-      "planner.card3d": "You receive a structured request instead of a vague message.",
-      "planner.formTitle": "Build planner",
-      "planner.formSubtitle": "Only the essentials are required. Everything else is optional.",
-      "planner.budget": "Budget range",
-      "planner.budgetHelp": "Required. Example: 1000-1500, 2000, 2500-3000 CAD",
-      "planner.budgetPh": "Example: 1200-1800 CAD",
-      "planner.tier": "PC tier",
-      "planner.useCase": "Use case",
-      "planner.useCasePh": "Example: Streaming + gaming, office work, engineering apps...",
-      "planner.cpu": "CPU family",
-      "planner.gpu": "GPU family",
-      "planner.ram": "Memory (RAM)",
-      "planner.storage": "Storage",
-      "planner.addStorage": "Add another drive",
-      "planner.storageType": "Drive type",
-      "planner.storageCapacity": "Capacity",
-      "planner.storageNotes": "Optional note",
-      "planner.storageNotesPh": "Example: 1TB NVMe + 8TB HDD for media",
-      "planner.wifi": "Wi-Fi usage",
-      "planner.rgb": "RGB lighting",
-      "planner.cooling": "CPU cooling",
-      "planner.formFactor": "Form factor",
-      "planner.formFactorOther": "Other form factor",
-      "planner.formFactorOtherPh": "Example: open-air, rackmount...",
-      "planner.resolution": "Monitor resolution",
-      "planner.other": "Other important details",
-      "planner.otherPh": "Example: very quiet PC, white theme, lots of USB, room for future upgrades...",
-      "planner.previewTitle": "Submission preview",
-      "planner.previewSubtitle": "This preview updates as the form is filled.",
-      "planner.requiredLabel": "Required fields",
-      "planner.requiredValue": "Budget range, PC tier, use case",
-      "planner.send": "Prepare email",
-      "planner.reset": "Reset",
-      "planner.emailTitle": "Need something simpler?",
-      "planner.emailText": "You can still use the normal contact form if you prefer to describe everything manually.",
-      "planner.emailCta": "Open contact section",
-      "planner.validation": "Please fill in the required fields: budget range, PC tier, and use case.",
-      "planner.subject": "Build planner request",
-      "planner.fieldRequired": "Required",
-      "planner.storageDefault": "Main drive",
-      "planner.remove": "Remove",
-      "planner.optional": "Optional",
-      "planner.unsure": "Unsure",
-      "planner.entry": "Entry",
-      "planner.budgetTier": "Budget",
-      "planner.mid": "Mid-range",
-      "planner.high": "High-end",
-      "planner.maxed": "Maxed out",
-      "planner.gaming": "Gaming",
-      "planner.work": "Work",
-      "planner.gamingWork": "Gaming + work",
-      "planner.videoEditing": "Video editing",
-      "planner.ai": "AI",
-      "planner.modeling": "3D modeling",
-      "planner.simulations": "Simulations",
-      "planner.browsing": "Browsing",
-      "planner.otherChoice": "Other",
-      "planner.wifiPrimary": "Mostly over Wi-Fi",
-      "planner.wifiSometimes": "Sometimes over Wi-Fi",
-      "planner.ethernetOnly": "Ethernet only",
-      "planner.rgbYes": "Yes",
-      "planner.rgbNo": "No",
-      "planner.rgbIndifferent": "Indifferent",
-      "planner.air": "Air cooling",
-      "planner.liquid": "Liquid cooling",
-      "planner.tower": "Tower",
-      "planner.miniTower": "Mini tower",
-      "planner.sff": "Small form factor",
-      "planner.fishTank": "Fish tank",
-      "planner.p720": "720p",
-      "planner.p1080": "1080p",
-      "planner.p1440": "1440p",
-      "planner.p4k": "4K",
-      "planner.p8k": "8K",
-      "planner.driveUnspecified": "No storage added yet",
-      "planner.choicePlaceholder": "Not selected",
-      "planner.typeSSD": "SSD",
-      "planner.typeNVME": "NVMe",
-      "planner.typeSATA": "SATA SSD",
-      "planner.typeHDD": "HDD",
-      "planner.typeMixed": "Not sure / mixed",
-
       "hero.eyebrow": "Local • Reliable • Optimized",
       "hero.lead": "Gaming or productivity: I help pick parts, build clean, stress test, and optimize noise and temperatures for a stable PC long-term.",
       "hero.micro": "Fast reply by SMS/email. Based in Blainville near Fontainebleau. Service around Laval/Montreal North depending on the project.",
@@ -231,7 +130,6 @@
       "nav.cta": "Get a quote",
       "nav.faq": "FAQ",
       "nav.pricing": "Pricing",
-      "nav.planner": "Planner",
       "nav.proof": "Why me",
       "nav.reviews": "Reviews",
       "nav.process": "How it works",
@@ -384,6 +282,101 @@
       "handover.c3b3": "Windows ready (or unactivated on request)",
       "handover.noteT": "Troubleshooting:",
       "handover.noteD": "if something can’t be fixed on the spot, you still get a clear diagnosis + next steps."
+,
+      "planner.meta.title": "Raymond PC - Guided Build Planner",
+      "planner.meta.desc": "A guided PC build planner to help you send a clear request based on your budget, PC tier, use case, and preferences.",
+      "planner.back": "Back to main site",
+      "planner.title": "Plan your build more easily.",
+      "planner.lead": "This page helps you choose your preferences without locking you to exact parts whose pricing and availability can change.",
+      "planner.b1": "Required: budget, PC tier, and use case",
+      "planner.b2": "Optional fields can be left blank if you are unsure",
+      "planner.b3": "The final request opens directly in your email app",
+      "planner.cardTitle": "Why this works well",
+      "planner.cardSubtitle": "Simple for customers, flexible for you.",
+      "planner.card1t": "Easy to fill out",
+      "planner.card1d": "Just enter your budget, PC tier, and use case if you do not know the parts listed.",
+      "planner.card2t": "More visual",
+      "planner.card2d": "Visual choices are easier for everyone to recognize.",
+      "planner.card3t": "Clearer requests",
+      "planner.card3d": "Having as much information as possible helps determine the perfect PC for your use case.",
+      "planner.formTitle": "Build planner",
+      "planner.formSubtitle": "Only the essentials are required. Everything else is optional.",
+      "planner.budget": "Budget range",
+      "planner.budgetHelp": "Required. Examples: 1000-1500, 2000, 2500-3000 CAD",
+      "planner.budgetPh": "e.g. 1200-1800 CAD",
+      "planner.tier": "PC tier",
+      "planner.entry": "Entry",
+      "planner.budgetTier": "Budget",
+      "planner.mid": "Mid-Range",
+      "planner.high": "High-End",
+      "planner.maxed": "Maxed Out",
+      "planner.useCase": "Use case",
+      "planner.useCaseOther": "Other use case (if needed)",
+      "planner.choicePlaceholder": "Choose…",
+      "planner.gaming": "Gaming",
+      "planner.work": "Work",
+      "planner.gamingWork": "Gaming and work",
+      "planner.videoEditing": "Video editing",
+      "planner.ai": "AI",
+      "planner.modeling": "3D modeling",
+      "planner.simulations": "Simulations",
+      "planner.browsing": "Browsing",
+      "planner.otherChoice": "Other",
+      "planner.useCasePh": "e.g. streaming + gaming, office work, engineering software...",
+      "planner.cpu": "CPU family",
+      "planner.gpu": "GPU family",
+      "planner.ram": "Memory (RAM)",
+      "planner.storage": "Storage",
+      "planner.addStorage": "Add another drive",
+      "planner.storageType": "Drive type",
+      "planner.storageCapacity": "Capacity",
+      "planner.storageNotes": "Optional note",
+      "planner.storageNotesPh": "e.g. 1TB NVMe + 8TB HDD for media",
+      "planner.wifi": "Wi-Fi usage",
+      "planner.wifiPrimary": "Mostly over Wi-Fi",
+      "planner.wifiSometimes": "Sometimes over Wi-Fi",
+      "planner.ethernetOnly": "Ethernet only",
+      "planner.rgb": "RGB",
+      "planner.rgbYes": "Yes",
+      "planner.rgbNo": "No",
+      "planner.rgbIndifferent": "Indifferent",
+      "planner.cooling": "CPU cooling",
+      "planner.air": "Air Cooling",
+      "planner.liquid": "Liquid Cooling",
+      "planner.formFactor": "Case form factor",
+      "planner.tower": "Tower",
+      "planner.miniTower": "Mini Tower",
+      "planner.sff": "Small Form Factor",
+      "planner.fishTank": "Fish Tank",
+      "planner.formFactorOther": "Other case form factor",
+      "planner.formFactorOtherPh": "e.g. open-air, rackmount...",
+      "planner.resolution": "Monitor resolution",
+      "planner.p720": "720p",
+      "planner.p1080": "1080p",
+      "planner.p1440": "1440p",
+      "planner.p4k": "4K",
+      "planner.p8k": "8K",
+      "planner.other": "Other important details",
+      "planner.otherPh": "e.g. very quiet PC, white theme, lots of USB ports, room for future upgrades...",
+      "planner.previewTitle": "Submission preview",
+      "planner.previewSubtitle": "This preview updates while the form is being filled out.",
+      "planner.emailTitle": "Need another service?",
+      "planner.emailText": "If you need an upgrade or troubleshooting, the contact section may be a better fit.",
+      "planner.emailCta": "Open contact section",
+      "planner.send": "Prepare email",
+      "planner.reset": "Reset",
+      "planner.validation": "Please fill in the required fields: budget range, PC tier, and use case.",
+      "planner.subject": "Build planner request",
+      "planner.unsure": "Unsure",
+      "planner.optional": "Optional",
+      "planner.remove": "Remove",
+      "planner.driveUnspecified": "No storage added yet",
+      "planner.storageDefault": "Main drive",
+      "planner.typeSSD": "SSD",
+      "planner.typeNVME": "NVMe",
+      "planner.typeSATA": "SATA SSD",
+      "planner.typeHDD": "HDD",
+      "planner.typeMixed": "Unsure / mixed"
     }
   };
 
@@ -430,18 +423,20 @@
       metaDesc.setAttribute("data-fr-content", metaDesc.getAttribute("content") || "");
     }
 
-    const plannerPage = document.body && document.body.dataset && document.body.dataset.page === "planner";
+    const isPlannerPage = document.body?.dataset?.page === "planner";
+    const titleKey = isPlannerPage ? "planner.meta.title" : "meta.title";
+    const descKey = isPlannerPage ? "planner.meta.desc" : "meta.desc";
+
     if (lang === "en") {
-      if (plannerPage) {
-        if (I18N.en["planner.metaTitle"]) document.title = I18N.en["planner.metaTitle"];
-        if (metaDesc && I18N.en["planner.metaDesc"]) metaDesc.setAttribute("content", I18N.en["planner.metaDesc"]);
-      } else {
-        if (I18N.en["meta.title"]) document.title = I18N.en["meta.title"];
-        if (metaDesc && I18N.en["meta.desc"]) metaDesc.setAttribute("content", I18N.en["meta.desc"]);
-      }
+      if (I18N.en[titleKey]) document.title = I18N.en[titleKey];
+      if (metaDesc && I18N.en[descKey]) metaDesc.setAttribute("content", I18N.en[descKey]);
     } else {
       document.title = document.documentElement.getAttribute("data-fr-title") || document.title;
       if (metaDesc) metaDesc.setAttribute("content", metaDesc.getAttribute("data-fr-content") || metaDesc.getAttribute("content") || "");
+    }
+
+    if (typeof window.updatePlannerLanguage === "function") {
+      window.updatePlannerLanguage(lang);
     }
 
     // Button label
@@ -470,181 +465,380 @@
   }
 
 
-  /* ========= PLANNER PAGE ========= */
+  /* ========= PLANNER ========= */
 
   const plannerForm = document.getElementById("plannerForm");
-  const plannerPreview = document.getElementById("plannerPreview");
-  const validationNote = document.getElementById("plannerValidation");
-  const storageList = document.getElementById("storageList");
-  const addStorageBtn = document.getElementById("addStorageBtn");
 
-  function getText(key, fallback = "") {
-    const lang = localStorage.getItem("raymondpc_lang") || "fr";
+  function currentLang() {
+    return localStorage.getItem("raymondpc_lang") || "fr";
+  }
+
+  function t(key, fallback = "") {
+    const lang = currentLang();
     if (lang === "en" && I18N.en[key]) return I18N.en[key];
-    const probe = document.querySelector(`[data-i18n="${key}"]`);
-    if (probe) return probe.getAttribute("data-fr-original") || probe.textContent || fallback;
-    return fallback;
+    const node = document.querySelector(`[data-i18n="${key}"]`);
+    if (node?.getAttribute("data-fr-original")) return node.getAttribute("data-fr-original");
+    if (node) return node.textContent.trim();
+    return fallback || key;
   }
 
-  function initSelectableGroups(root = document) {
-    root.querySelectorAll(".choice-group").forEach(group => {
-      const cards = group.querySelectorAll(".choice-card, .pill");
-      cards.forEach(card => {
-        const input = card.querySelector("input");
-        if (!input) return;
-        const sync = () => card.classList.toggle("is-selected", !!input.checked);
-        sync();
-        input.addEventListener("change", () => {
-          cards.forEach(other => other.classList.remove("is-selected"));
-          sync();
-        });
-      });
-    });
+  function valueMap(lang) {
+    const fr = {
+      "Entry": "Entrée",
+      "Budget": "Budget",
+      "Mid-Range": "Milieu de gamme",
+      "High End": "Haut de gamme",
+      "Maxed Out": "Maximisé",
+      "Gaming": "Gaming",
+      "Work": "Travail",
+      "Gaming + Work": "Gaming et travail",
+      "Video Editing": "Montage vidéo",
+      "AI": "IA",
+      "3D Modeling": "Modélisation 3D",
+      "Simulations": "Simulations",
+      "Browsing": "Navigation",
+      "Other": "Autre",
+      "AMD": "AMD",
+      "Intel": "Intel",
+      "NVIDIA": "NVIDIA",
+      "Unsure": "Pas sûr",
+      "Will be used primarily over Wi-Fi": "Surtout sur le Wi-Fi",
+      "Will be used occasionally over Wi-Fi": "Parfois sur le Wi-Fi",
+      "Ethernet Only": "Ethernet seulement",
+      "Yes": "Oui",
+      "No": "Non",
+      "Indifferent": "Indifférent",
+      "Air Cooling": "Refroidissement à air",
+      "Liquid Cooling": "Refroidissement liquide",
+      "Tower": "Tour",
+      "Mini Tower": "Mini-tour",
+      "Small Form Factor": "Petit format (SFF)",
+      "Fish Tank": "Boîtier vitré",
+      "720p": "720p",
+      "1080p": "1080p",
+      "1440p": "1440p",
+      "4K": "4K",
+      "8K": "8K",
+      "SSD": "SSD",
+      "NVMe": "NVMe",
+      "SATA SSD": "SSD SATA",
+      "HDD": "HDD",
+      "Unsure / mixed": "Pas sûr / mixte"
+    };
+    return lang === "en" ? {} : fr;
   }
 
-  function createStorageItem(index = 0) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "storage-item";
-    wrapper.innerHTML = `
+  function localizeValue(value) {
+    const map = valueMap(currentLang());
+    return map[value] || value;
+  }
+
+  function createStorageItem() {
+    const storageList = document.getElementById("storageList");
+    if (!storageList) return;
+
+    const item = document.createElement("div");
+    item.className = "storage-item";
+    item.innerHTML = `
       <div class="storage-grid">
         <label class="field-stack">
-          <span data-i18n="planner.storageType">Drive type</span>
+          <span class="storage-type-label">${t("planner.storageType", "Type de disque")}</span>
           <select name="storage_type[]">
-            <option value="">${getText("planner.choicePlaceholder", "Choisir…")}</option>
-            <option value="SSD">${getText("planner.typeSSD", "SSD")}</option>
-            <option value="NVMe">${getText("planner.typeNVME", "NVMe")}</option>
-            <option value="SATA SSD">${getText("planner.typeSATA", "SSD SATA")}</option>
-            <option value="HDD">${getText("planner.typeHDD", "HDD")}</option>
-            <option value="Not sure / mixed">${getText("planner.typeMixed", "Pas sûr / mixte")}</option>
+            <option value="" selected>${t("planner.choicePlaceholder", "Choisir…")}</option>
+            <option value="SSD">${localizeValue("SSD")}</option>
+            <option value="NVMe">${localizeValue("NVMe")}</option>
+            <option value="SATA SSD">${localizeValue("SATA SSD")}</option>
+            <option value="HDD">${localizeValue("HDD")}</option>
+            <option value="Unsure / mixed">${localizeValue("Unsure / mixed")}</option>
           </select>
         </label>
         <label class="field-stack">
-          <span data-i18n="planner.storageCapacity">Capacity</span>
+          <span class="storage-capacity-label">${t("planner.storageCapacity", "Capacité")}</span>
           <select name="storage_capacity[]">
-            <option value="">${getText("planner.choicePlaceholder", "Choisir…")}</option>
-            ${["500GB","1TB","2TB","4TB","8TB","12TB","16TB","20TB","24TB","28TB","32TB","36TB", getText("planner.unsure", "Unsure")].map(v => `<option value="${v}">${v}</option>`).join("")}
+            <option value="" selected>${t("planner.choicePlaceholder", "Choisir…")}</option>
+            <option value="500GB">500GB</option>
+            <option value="1TB">1TB</option>
+            <option value="2TB">2TB</option>
+            <option value="4TB">4TB</option>
+            <option value="8TB">8TB</option>
+            <option value="12TB">12TB</option>
+            <option value="16TB">16TB</option>
+            <option value="20TB">20TB</option>
+            <option value="24TB">24TB</option>
+            <option value="28TB">28TB</option>
+            <option value="32TB">32TB</option>
+            <option value="36TB">36TB</option>
+            <option value="Unsure">${localizeValue("Unsure")}</option>
           </select>
         </label>
-        <button class="btn btn-small btn-ghost remove-storage" type="button">${getText("planner.remove", "Remove")}</button>
+        <label class="field-stack storage-note">
+          <span class="storage-notes-label">${t("planner.storageNotes", "Note optionnelle")}</span>
+          <input type="text" name="storage_note[]" placeholder="${t("planner.storageNotesPh", "Ex. : 1 To NVMe + 8 To HDD pour médias")}">
+        </label>
       </div>
-      <label class="field-stack" style="margin-top:10px;">
-        <span data-i18n="planner.storageNotes">Optional note</span>
-        <input name="storage_notes[]" placeholder="${getText("planner.storageNotesPh", "Ex: 1TB NVMe + 8TB HDD for media")}">
-      </label>
+      <button class="btn btn-ghost btn-small storage-remove" type="button">${t("planner.remove", "Retirer")}</button>
     `;
-    wrapper.querySelector('.remove-storage').addEventListener('click', () => {
-      wrapper.remove();
+    storageList.appendChild(item);
+
+    item.querySelectorAll("input, select").forEach(el => {
+      el.addEventListener("input", updatePlannerPreview);
+      el.addEventListener("change", updatePlannerPreview);
+    });
+    item.querySelector(".storage-remove")?.addEventListener("click", () => {
+      item.remove();
       updatePlannerPreview();
     });
-    return wrapper;
   }
 
-  function storageSummary(formData) {
-    const types = formData.getAll('storage_type[]');
-    const caps = formData.getAll('storage_capacity[]');
-    const notes = formData.getAll('storage_notes[]');
-    const lines = [];
-    for (let i = 0; i < Math.max(types.length, caps.length, notes.length); i++) {
-      const bits = [types[i], caps[i]].filter(Boolean);
-      let line = bits.join(' • ');
-      if (notes[i]) line = line ? `${line} — ${notes[i]}` : notes[i];
-      if (line) lines.push(line);
+  function renderPlannerPreviewItem(label, value) {
+    return `<div class="summary-row"><span class="summary-label">${label}</span><span class="summary-value">${value}</span></div>`;
+  }
+
+  function getSelectedRadio(form, name) {
+    return form.querySelector(`input[name="${name}"]:checked`)?.value || "";
+  }
+
+  function getLabelMap() {
+    return {
+      budget: t("planner.budget", "Budget"),
+      tier: t("planner.tier", "Gamme de PC"),
+      use_case: t("planner.useCase", "Usage"),
+      cpu_family: t("planner.cpu", "Famille CPU"),
+      gpu_family: t("planner.gpu", "Famille GPU"),
+      ram: t("planner.ram", "Mémoire (RAM)"),
+      storage: t("planner.storage", "Stockage"),
+      wifi_use: t("planner.wifi", "Utilisation du Wi-Fi"),
+      rgb: t("planner.rgb", "RGB"),
+      cooling: t("planner.cooling", "Refroidissement CPU"),
+      form_factor: t("planner.formFactor", "Format du boîtier"),
+      resolution: t("planner.resolution", "Résolution écran"),
+      other: t("planner.other", "Autres éléments importants")
+    };
+  }
+
+  function collectPlannerData() {
+    if (!plannerForm) return null;
+    const data = new FormData(plannerForm);
+    const obj = {
+      budget: (data.get("budget") || "").toString().trim(),
+      tier: getSelectedRadio(plannerForm, "tier"),
+      use_case: (data.get("use_case") || "").toString(),
+      use_case_other: (data.get("use_case_other") || "").toString().trim(),
+      cpu_family: getSelectedRadio(plannerForm, "cpu_family"),
+      gpu_family: getSelectedRadio(plannerForm, "gpu_family"),
+      ram: getSelectedRadio(plannerForm, "ram"),
+      wifi_use: getSelectedRadio(plannerForm, "wifi_use"),
+      rgb: getSelectedRadio(plannerForm, "rgb"),
+      cooling: getSelectedRadio(plannerForm, "cooling"),
+      form_factor: (data.get("form_factor") || "").toString(),
+      form_factor_other: (data.get("form_factor_other") || "").toString().trim(),
+      resolution: getSelectedRadio(plannerForm, "resolution"),
+      other: (data.get("other") || "").toString().trim(),
+      storage: []
+    };
+
+    const types = data.getAll("storage_type[]");
+    const capacities = data.getAll("storage_capacity[]");
+    const notes = data.getAll("storage_note[]");
+    for (let i = 0; i < Math.max(types.length, capacities.length, notes.length); i += 1) {
+      const type = (types[i] || "").toString();
+      const capacity = (capacities[i] || "").toString();
+      const note = (notes[i] || "").toString().trim();
+      if (type || capacity || note) obj.storage.push({ type, capacity, note });
     }
-    return lines;
-  }
 
-  function plannerFields(formData) {
-    const fields = [
-      [getText('planner.budget', 'Budget'), formData.get('budget')],
-      [getText('planner.tier', 'PC tier'), formData.get('tier')],
-      [getText('planner.useCase', 'Use case'), formData.get('use_case') === 'Other' ? (formData.get('use_case_other') || 'Other') : formData.get('use_case')],
-      [getText('planner.cpu', 'CPU family'), formData.get('cpu_family')],
-      [getText('planner.gpu', 'GPU family'), formData.get('gpu_family')],
-      [getText('planner.ram', 'RAM'), formData.get('ram')],
-      [getText('planner.storage', 'Storage'), storageSummary(formData).join('\n')],
-      [getText('planner.wifi', 'Wi-Fi usage'), formData.get('wifi_use')],
-      [getText('planner.rgb', 'RGB'), formData.get('rgb')],
-      [getText('planner.cooling', 'Cooling'), formData.get('cooling')],
-      [getText('planner.formFactor', 'Form factor'), formData.get('form_factor') === 'Other' ? (formData.get('form_factor_other') || 'Other') : formData.get('form_factor')],
-      [getText('planner.resolution', 'Monitor resolution'), formData.get('resolution')],
-      [getText('planner.other', 'Other details'), formData.get('other')]
-    ];
-    return fields;
+    return obj;
   }
 
   function updatePlannerPreview() {
-    if (!plannerForm || !plannerPreview) return;
-    const formData = new FormData(plannerForm);
-    const lines = plannerFields(formData).filter(([, value]) => value && String(value).trim());
-    if (!lines.length) {
-      plannerPreview.innerHTML = `<div class="summary-line"><span class="summary-k">${getText('planner.previewSubtitle', 'This preview updates as the form is filled.')}</span><span class="summary-v">${getText('planner.choicePlaceholder', 'Not selected')}</span></div>`;
-      return;
-    }
-    plannerPreview.innerHTML = lines.map(([label, value]) => `
-      <div class="summary-line">
-        <span class="summary-k">${label}</span>
-        <span class="summary-v">${String(value).replace(/\n/g, '<br>')}</span>
-      </div>
-    `).join('');
-  }
+    if (!plannerForm) return;
+    const preview = document.getElementById("plannerPreview");
+    if (!preview) return;
 
-  function plannerRequiredMissing(formData) {
-    return !String(formData.get('budget') || '').trim() || !String(formData.get('tier') || '').trim() || !String(formData.get('use_case') || '').trim() || (formData.get('use_case') === 'Other' && !String(formData.get('use_case_other') || '').trim());
-  }
+    const data = collectPlannerData();
+    const labels = getLabelMap();
+    const rows = [];
 
-  if (storageList && !storageList.children.length) {
-    storageList.appendChild(createStorageItem(0));
-  }
+    if (data.budget) rows.push(renderPlannerPreviewItem(labels.budget, data.budget));
+    if (data.tier) rows.push(renderPlannerPreviewItem(labels.tier, localizeValue(data.tier)));
 
-  if (addStorageBtn && storageList) {
-    addStorageBtn.addEventListener('click', () => {
-      storageList.appendChild(createStorageItem(storageList.children.length));
-      updatePlannerPreview();
+    let useCaseValue = localizeValue(data.use_case);
+    if (data.use_case === "Other" && data.use_case_other) useCaseValue = data.use_case_other;
+    else if (data.use_case_other) useCaseValue = `${useCaseValue} — ${data.use_case_other}`;
+    if (useCaseValue) rows.push(renderPlannerPreviewItem(labels.use_case, useCaseValue));
+
+    ["cpu_family","gpu_family","ram","wifi_use","rgb","cooling","resolution"].forEach(key => {
+      if (data[key]) rows.push(renderPlannerPreviewItem(labels[key], localizeValue(data[key])));
     });
+
+    let formFactorValue = localizeValue(data.form_factor);
+    if (data.form_factor === "Other" && data.form_factor_other) formFactorValue = data.form_factor_other;
+    else if (data.form_factor_other) formFactorValue = formFactorValue ? `${formFactorValue} — ${data.form_factor_other}` : data.form_factor_other;
+    if (formFactorValue) rows.push(renderPlannerPreviewItem(labels.form_factor, formFactorValue));
+
+    if (data.storage.length) {
+      const storageText = data.storage.map((drive, index) => {
+        const bits = [];
+        if (drive.capacity) bits.push(drive.capacity);
+        if (drive.type) bits.push(localizeValue(drive.type));
+        let line = bits.join(" ");
+        if (!line) line = `${t("planner.storageDefault", "Disque principal")} ${index + 1}`;
+        if (drive.note) line += ` — ${drive.note}`;
+        return line;
+      }).join("<br>");
+      rows.push(renderPlannerPreviewItem(labels.storage, storageText));
+    } else {
+      rows.push(renderPlannerPreviewItem(labels.storage, t("planner.driveUnspecified", "Aucun stockage ajouté pour le moment")));
+    }
+
+    if (data.other) rows.push(renderPlannerPreviewItem(labels.other, data.other));
+
+    preview.innerHTML = rows.join("");
   }
 
-  initSelectableGroups(document);
+  function refreshStorageLanguage() {
+    document.querySelectorAll(".storage-item").forEach(item => {
+      const typeLabel = item.querySelector(".storage-type-label");
+      const capacityLabel = item.querySelector(".storage-capacity-label");
+      const notesLabel = item.querySelector(".storage-notes-label");
+      const removeBtn = item.querySelector(".storage-remove");
+      const typeSelect = item.querySelector('select[name="storage_type[]"]');
+      const capSelect = item.querySelector('select[name="storage_capacity[]"]');
+      const noteInput = item.querySelector('input[name="storage_note[]"]');
 
-  document.addEventListener('change', (e) => {
-    if (e.target.closest('#plannerForm')) updatePlannerPreview();
-  });
-  document.addEventListener('input', (e) => {
-    if (e.target.closest('#plannerForm')) updatePlannerPreview();
-  });
+      if (typeLabel) typeLabel.textContent = t("planner.storageType", "Type de disque");
+      if (capacityLabel) capacityLabel.textContent = t("planner.storageCapacity", "Capacité");
+      if (notesLabel) notesLabel.textContent = t("planner.storageNotes", "Note optionnelle");
+      if (removeBtn) removeBtn.textContent = t("planner.remove", "Retirer");
+      if (noteInput) noteInput.placeholder = t("planner.storageNotesPh", "Ex. : 1 To NVMe + 8 To HDD pour médias");
+
+      if (typeSelect) {
+        const current = typeSelect.value;
+        typeSelect.innerHTML = `
+          <option value="">${t("planner.choicePlaceholder", "Choisir…")}</option>
+          <option value="SSD">${localizeValue("SSD")}</option>
+          <option value="NVMe">${localizeValue("NVMe")}</option>
+          <option value="SATA SSD">${localizeValue("SATA SSD")}</option>
+          <option value="HDD">${localizeValue("HDD")}</option>
+          <option value="Unsure / mixed">${localizeValue("Unsure / mixed")}</option>
+        `;
+        typeSelect.value = current;
+      }
+
+      if (capSelect) {
+        const current = capSelect.value;
+        capSelect.innerHTML = `
+          <option value="">${t("planner.choicePlaceholder", "Choisir…")}</option>
+          <option value="500GB">500GB</option>
+          <option value="1TB">1TB</option>
+          <option value="2TB">2TB</option>
+          <option value="4TB">4TB</option>
+          <option value="8TB">8TB</option>
+          <option value="12TB">12TB</option>
+          <option value="16TB">16TB</option>
+          <option value="20TB">20TB</option>
+          <option value="24TB">24TB</option>
+          <option value="28TB">28TB</option>
+          <option value="32TB">32TB</option>
+          <option value="36TB">36TB</option>
+          <option value="Unsure">${localizeValue("Unsure")}</option>
+        `;
+        capSelect.value = current;
+      }
+    });
+
+    updatePlannerPreview();
+  }
+
+  window.updatePlannerLanguage = function updatePlannerLanguage() {
+    if (!plannerForm) return;
+    const addStorageBtn = document.getElementById("addStorageBtn");
+    if (addStorageBtn) addStorageBtn.textContent = t("planner.addStorage", "Ajouter un autre disque");
+    refreshStorageLanguage();
+  };
 
   if (plannerForm) {
-    plannerForm.addEventListener('reset', () => {
+    if (!document.getElementById("storageList")?.children.length) {
+      createStorageItem();
+    }
+
+    document.getElementById("addStorageBtn")?.addEventListener("click", createStorageItem);
+
+    plannerForm.addEventListener("input", updatePlannerPreview);
+    plannerForm.addEventListener("change", updatePlannerPreview);
+    plannerForm.addEventListener("reset", () => {
       setTimeout(() => {
-        if (storageList) {
-          storageList.innerHTML = '';
-          storageList.appendChild(createStorageItem(0));
+        const list = document.getElementById("storageList");
+        if (list) {
+          list.innerHTML = "";
+          createStorageItem();
         }
-        initSelectableGroups(document);
-        if (validationNote) validationNote.textContent = '';
+        const note = document.getElementById("plannerValidation");
+        if (note) note.textContent = "";
         updatePlannerPreview();
       }, 0);
     });
 
-    plannerForm.addEventListener('submit', (e) => {
+    plannerForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const data = new FormData(plannerForm);
-      if (plannerRequiredMissing(data)) {
-        if (validationNote) validationNote.textContent = getText('planner.validation', 'Please fill in the required fields.');
+      const data = collectPlannerData();
+      const validation = document.getElementById("plannerValidation");
+      const missing = [];
+
+      if (!data.budget) missing.push(t("planner.budget", "Budget"));
+      if (!data.tier) missing.push(t("planner.tier", "Gamme de PC"));
+      if (!data.use_case) missing.push(t("planner.useCase", "Usage"));
+
+      if (missing.length) {
+        if (validation) validation.textContent = t("planner.validation", "Veuillez remplir les champs obligatoires : budget, gamme de PC et usage.");
         return;
       }
-      if (validationNote) validationNote.textContent = '';
 
-      const lines = plannerFields(data)
-        .filter(([, value]) => value && String(value).trim())
-        .map(([label, value]) => `${label}:\n${value}`);
+      if (validation) validation.textContent = "";
 
-      const subject = encodeURIComponent(`[Raymond PC] ${getText('planner.subject', 'Build planner request')}`);
-      const body = encodeURIComponent(lines.join('\n\n'));
+      const labels = getLabelMap();
+      const lines = [];
+      lines.push(`${labels.budget}: ${data.budget}`);
+      lines.push(`${labels.tier}: ${localizeValue(data.tier)}`);
+
+      let useCaseValue = localizeValue(data.use_case);
+      if (data.use_case === "Other" && data.use_case_other) useCaseValue = data.use_case_other;
+      else if (data.use_case_other) useCaseValue = `${useCaseValue} — ${data.use_case_other}`;
+      lines.push(`${labels.use_case}: ${useCaseValue}`);
+
+      [["cpu_family", data.cpu_family],["gpu_family", data.gpu_family],["ram", data.ram],["wifi_use", data.wifi_use],["rgb", data.rgb],["cooling", data.cooling],["resolution", data.resolution]].forEach(([key, value]) => {
+        if (value) lines.push(`${labels[key]}: ${localizeValue(value)}`);
+      });
+
+      let formFactorValue = localizeValue(data.form_factor);
+      if (data.form_factor === "Other" && data.form_factor_other) formFactorValue = data.form_factor_other;
+      else if (data.form_factor_other) formFactorValue = formFactorValue ? `${formFactorValue} — ${data.form_factor_other}` : data.form_factor_other;
+      if (formFactorValue) lines.push(`${labels.form_factor}: ${formFactorValue}`);
+
+      if (data.storage.length) {
+        lines.push(`${labels.storage}:`);
+        data.storage.forEach((drive, index) => {
+          const parts = [];
+          if (drive.capacity) parts.push(drive.capacity);
+          if (drive.type) parts.push(localizeValue(drive.type));
+          let line = parts.join(" ");
+          if (!line) line = `${t("planner.storageDefault", "Disque principal")} ${index + 1}`;
+          if (drive.note) line += ` — ${drive.note}`;
+          lines.push(`- ${line}`);
+        });
+      }
+
+      if (data.other) lines.push(`${labels.other}: ${data.other}`);
+
+      const subjectPrefix = currentLang() === "en" ? "Build Planner Request" : "Demande - Planificateur de build";
+      const subject = encodeURIComponent(`[Raymond PC] ${subjectPrefix}`);
+      const body = encodeURIComponent(lines.join("\n"));
       window.location.href = `mailto:raymondservicepc@outlook.com?subject=${subject}&body=${body}`;
     });
+
+    updatePlannerPreview();
   }
 
-  updatePlannerPreview();
 
   /* ========= SHARED LIGHTBOX (BUILDS + REVIEWS) ========= */
 
