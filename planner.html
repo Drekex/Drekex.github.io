@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Raymond PC - Planificateur de build guidé</title>
+  <meta name="description" content="Un planificateur de build guidé pour envoyer une demande claire selon votre budget, votre gamme de PC, votre usage et vos préférences de pièces." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
+
+  <meta property="og:title" content="Raymond PC - Planificateur de build guidé" />
+  <meta property="og:description" content="Un formulaire visuel et bilingue pour préparer une demande de build claire sans dépendre des prix en direct." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_CA" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="planner">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div id="top" tabindex="-1"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="index.html#top" aria-label="Raymond PC, retour au site principal">
+        <img class="brand-logo" src="assets/favicon-512x512.png" alt="Raymond PC" width="48" height="48" loading="eager">
+        <span class="brand-text">Raymond <span>PC</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Ouvrir le menu</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="index.html#services" data-i18n="nav.services">Services</a>
+          <a href="planner.html" data-i18n="nav.planner">Planificateur</a>
+          <a href="index.html#pricing" data-i18n="nav.pricing">Tarifs</a>
+          <a href="index.html#work" data-i18n="nav.work">Réalisations</a>
+          <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+          <a class="btn btn-small btn-primary" href="index.html#contact" data-i18n="nav.cta">Soumission</a>
+        </div>
+      </nav>
+
+      <div class="lang">
+        <button class="btn btn-small btn-ghost" type="button" id="langToggle" aria-label="Changer la langue">FR / EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div class="page-hero-copy">
+          <a class="back-link" href="index.html" data-i18n="planner.back">Retour au site principal</a>
+          <p class="eyebrow" data-i18n="planner.eyebrow">Guidé • Facile à maintenir • Bilingue</p>
+          <h1 data-i18n="planner.title">Planifiez votre build plus facilement.</h1>
+          <p class="lead" data-i18n="planner.lead">Cette page vous aide à choisir vos préférences sans vous bloquer à des pièces précises ou à des prix qui changent souvent. Les demandes restent claires et la page reste simple à mettre à jour.</p>
+
+          <ul class="hero-bullets">
+            <li data-i18n="planner.b1">Obligatoire : budget, gamme de PC et usage</li>
+            <li data-i18n="planner.b2">Les champs optionnels peuvent être laissés vides si vous n'êtes pas sûr</li>
+            <li data-i18n="planner.b3">La demande finale s'ouvre directement dans votre application e-mail</li>
+          </ul>
+        </div>
+
+        <div class="page-hero-card">
+          <div class="card glass">
+            <div class="card-top">
+              <h2 data-i18n="planner.cardTitle">Pourquoi c'est efficace</h2>
+              <p class="muted" data-i18n="planner.cardSubtitle">Simple pour les clients, flexible pour vous.</p>
+            </div>
+            <div class="icon-row">
+              <span class="icon" aria-hidden="true">✓</span>
+              <div>
+                <strong data-i18n="planner.card1t">Facile à maintenir</strong>
+                <div class="muted" data-i18n="planner.card1d">Pas de prix en direct, pas de liste d'inventaire à refaire constamment.</div>
+              </div>
+            </div>
+            <div class="icon-row">
+              <span class="icon" aria-hidden="true">✓</span>
+              <div>
+                <strong data-i18n="planner.card2t">Plus guidé</strong>
+                <div class="muted" data-i18n="planner.card2d">Les choix visuels sont plus faciles à reconnaître pour les débutants.</div>
+              </div>
+            </div>
+            <div class="icon-row">
+              <span class="icon" aria-hidden="true">✓</span>
+              <div>
+                <strong data-i18n="planner.card3t">Demandes plus claires</strong>
+                <div class="muted" data-i18n="planner.card3d">Vous recevez une demande structurée au lieu d'un message vague.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container planner-layout">
+        <form class="card planner-form" id="plannerForm">
+          <div class="section-head">
+            <h2 data-i18n="planner.formTitle">Planificateur de build</h2>
+            <p class="muted" data-i18n="planner.formSubtitle">Seuls les éléments essentiels sont obligatoires. Tout le reste est optionnel.</p>
+          </div>
+
+          <div class="form-grid">
+            <label class="field-stack field-full">
+              <span><span data-i18n="planner.budget">Budget</span> <span class="required">*</span></span>
+              <input type="text" name="budget" required placeholder="Ex: 1200-1800 CAD" data-i18n-placeholder="planner.budgetPh">
+              <span class="field-help" data-i18n="planner.budgetHelp">Obligatoire. Exemple : 1000-1500, 2000, 2500-3000 CAD</span>
+            </label>
+
+            <div class="field-stack field-full choice-group">
+              <span class="field-label"><span data-i18n="planner.tier">Gamme du PC</span> <span class="required">*</span></span>
+              <div class="segmented">
+                <label class="pill"><input type="radio" name="tier" value="Entry" required><span data-i18n="planner.entry">Entry</span></label>
+                <label class="pill"><input type="radio" name="tier" value="Budget"><span data-i18n="planner.budgetTier">Budget</span></label>
+                <label class="pill"><input type="radio" name="tier" value="Mid-Range"><span data-i18n="planner.mid">Mid-Range</span></label>
+                <label class="pill"><input type="radio" name="tier" value="High End"><span data-i18n="planner.high">High End</span></label>
+                <label class="pill"><input type="radio" name="tier" value="Maxed Out"><span data-i18n="planner.maxed">Maxed Out</span></label>
+              </div>
+            </div>
+
+            <label class="field-stack field-full">
+              <span><span data-i18n="planner.useCase">Usage</span> <span class="required">*</span></span>
+              <select name="use_case" required>
+                <option value="" selected disabled data-i18n="planner.choicePlaceholder">Choisir…</option>
+                <option value="Gaming" data-i18n="planner.gaming">Gaming</option>
+                <option value="Work" data-i18n="planner.work">Travail</option>
+                <option value="Gaming + Work" data-i18n="planner.gamingWork">Gaming et travail</option>
+                <option value="Video Editing" data-i18n="planner.videoEditing">Montage vidéo</option>
+                <option value="AI" data-i18n="planner.ai">IA</option>
+                <option value="3D Modeling" data-i18n="planner.modeling">Modélisation 3D</option>
+                <option value="Simulations" data-i18n="planner.simulations">Simulations</option>
+                <option value="Browsing" data-i18n="planner.browsing">Navigation</option>
+                <option value="Other" data-i18n="planner.otherChoice">Autre</option>
+              </select>
+            </label>
+
+            <label class="field-stack field-full">
+              <span data-i18n="planner.useCase">Usage</span>
+              <input type="text" name="use_case_other" placeholder="Ex: streaming + gaming, travail de bureau, applications d'ingénierie..." data-i18n-placeholder="planner.useCasePh">
+            </label>
+
+            <div class="field-stack field-full choice-group">
+              <span class="field-label" data-i18n="planner.cpu">Famille CPU</span>
+              <div class="option-grid tight">
+                <label class="choice-card">
+                  <input type="radio" name="cpu_family" value="AMD">
+                  <span class="logo-badge text-wide">AMD</span>
+                  <strong>AMD</strong>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="cpu_family" value="Intel">
+                  <span class="logo-badge text-wide">intel</span>
+                  <strong>Intel</strong>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="cpu_family" value="Unsure">
+                  <span class="logo-badge icon">?</span>
+                  <strong data-i18n="planner.unsure">Pas sûr</strong>
+                </label>
+              </div>
+            </div>
+
+            <div class="field-stack field-full choice-group">
+              <span class="field-label" data-i18n="planner.gpu">Famille GPU</span>
+              <div class="option-grid">
+                <label class="choice-card">
+                  <input type="radio" name="gpu_family" value="NVIDIA">
+                  <span class="logo-badge text-wide">NVIDIA</span>
+                  <strong>NVIDIA</strong>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="gpu_family" value="AMD">
+                  <span class="logo-badge text-wide">AMD</span>
+                  <strong>AMD</strong>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="gpu_family" value="Intel">
+                  <span class="logo-badge text-wide">intel</span>
+                  <strong>Intel</strong>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="gpu_family" value="Unsure">
+                  <span class="logo-badge icon">?</span>
+                  <strong data-i18n="planner.unsure">Pas sûr</strong>
+                </label>
+              </div>
+            </div>
+
+            <div class="field-stack field-full choice-group">
+              <span class="field-label" data-i18n="planner.ram">Mémoire (RAM)</span>
+              <div class="segmented">
+                <label class="pill"><input type="radio" name="ram" value="8GB"><span>8GB</span></label>
+                <label class="pill"><input type="radio" name="ram" value="16GB"><span>16GB</span></label>
+                <label class="pill"><input type="radio" name="ram" value="32GB"><span>32GB</span></label>
+                <label class="pill"><input type="radio" name="ram" value="64GB"><span>64GB</span></label>
+                <label class="pill"><input type="radio" name="ram" value="Unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
+              </div>
+            </div>
+
+            <div class="field-stack field-full">
+              <span class="field-label" data-i18n="planner.storage">Stockage</span>
+              <div id="storageList" class="storage-list"></div>
+              <button class="btn btn-secondary" type="button" id="addStorageBtn" data-i18n="planner.addStorage">Ajouter un autre disque</button>
+            </div>
+
+            <div class="field-stack field-full choice-group">
+              <span class="field-label" data-i18n="planner.wifi">Utilisation du Wi-Fi</span>
+              <div class="option-grid tight">
+                <label class="choice-card">
+                  <input type="radio" name="wifi_use" value="Will be used primarily over Wi-Fi">
+                  <span class="logo-badge icon">📶</span>
+                  <strong data-i18n="planner.wifiPrimary">Surtout sur le Wi-Fi</strong>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="wifi_use" value="Will be used occasionally over Wi-Fi">
+                  <span class="logo-badge icon">↔</span>
+                  <strong data-i18n="planner.wifiSometimes">Parfois sur le Wi-Fi</strong>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="wifi_use" value="Ethernet Only">
+                  <span class="logo-badge icon">🔌</span>
+                  <strong data-i18n="planner.ethernetOnly">Ethernet seulement</strong>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="wifi_use" value="Unsure">
+                  <span class="logo-badge icon">?</span>
+                  <strong data-i18n="planner.unsure">Pas sûr</strong>
+                </label>
+              </div>
+            </div>
+
+            <div class="field-stack choice-group">
+              <span class="field-label" data-i18n="planner.rgb">RGB</span>
+              <div class="segmented">
+                <label class="pill"><input type="radio" name="rgb" value="Yes"><span data-i18n="planner.rgbYes">Oui</span></label>
+                <label class="pill"><input type="radio" name="rgb" value="No"><span data-i18n="planner.rgbNo">Non</span></label>
+                <label class="pill"><input type="radio" name="rgb" value="Indifferent"><span data-i18n="planner.rgbIndifferent">Indifférent</span></label>
+                <label class="pill"><input type="radio" name="rgb" value="Unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
+              </div>
+            </div>
+
+            <div class="field-stack choice-group">
+              <span class="field-label" data-i18n="planner.cooling">Refroidissement CPU</span>
+              <div class="segmented">
+                <label class="pill"><input type="radio" name="cooling" value="Air Cooling"><span data-i18n="planner.air">Air Cooling</span></label>
+                <label class="pill"><input type="radio" name="cooling" value="Liquid Cooling"><span data-i18n="planner.liquid">Liquid Cooling</span></label>
+                <label class="pill"><input type="radio" name="cooling" value="Unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
+              </div>
+            </div>
+
+            <div class="field-stack">
+              <span class="field-label" data-i18n="planner.formFactor">Format du boîtier</span>
+              <select name="form_factor">
+                <option value="" selected data-i18n="planner.choicePlaceholder">Choisir…</option>
+                <option value="Tower" data-i18n="planner.tower">Tower</option>
+                <option value="Mini Tower" data-i18n="planner.miniTower">Mini Tower</option>
+                <option value="Small Form Factor" data-i18n="planner.sff">Small Form Factor</option>
+                <option value="Fish Tank" data-i18n="planner.fishTank">Fish Tank</option>
+                <option value="Other" data-i18n="planner.otherChoice">Autre</option>
+                <option value="Unsure" data-i18n="planner.unsure">Pas sûr</option>
+              </select>
+            </div>
+
+            <label class="field-stack">
+              <span data-i18n="planner.formFactorOther">Autre format</span>
+              <input type="text" name="form_factor_other" placeholder="Ex: open-air, rackmount..." data-i18n-placeholder="planner.formFactorOtherPh">
+            </label>
+
+            <div class="field-stack choice-group field-full">
+              <span class="field-label" data-i18n="planner.resolution">Résolution écran</span>
+              <div class="segmented">
+                <label class="pill"><input type="radio" name="resolution" value="720p"><span data-i18n="planner.p720">720p</span></label>
+                <label class="pill"><input type="radio" name="resolution" value="1080p"><span data-i18n="planner.p1080">1080p</span></label>
+                <label class="pill"><input type="radio" name="resolution" value="1440p"><span data-i18n="planner.p1440">1440p</span></label>
+                <label class="pill"><input type="radio" name="resolution" value="4K"><span data-i18n="planner.p4k">4K</span></label>
+                <label class="pill"><input type="radio" name="resolution" value="8K"><span data-i18n="planner.p8k">8K</span></label>
+                <label class="pill"><input type="radio" name="resolution" value="Unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>
+              </div>
+            </div>
+
+            <label class="field-stack field-full">
+              <span data-i18n="planner.other">Autres éléments importants</span>
+              <textarea name="other" rows="5" placeholder="Ex: PC très silencieux, thème blanc, beaucoup de ports USB, place pour des upgrades futurs..." data-i18n-placeholder="planner.otherPh"></textarea>
+            </label>
+          </div>
+
+          <div class="validation-note" id="plannerValidation" aria-live="polite"></div>
+          <div class="planner-actions">
+            <button class="btn btn-primary" type="submit" data-i18n="planner.send">Préparer l'e-mail</button>
+            <button class="btn btn-secondary" type="reset" data-i18n="planner.reset">Réinitialiser</button>
+          </div>
+        </form>
+
+        <aside class="summary-box">
+          <div class="card glass">
+            <div class="card-top">
+              <h2 data-i18n="planner.previewTitle">Aperçu de la demande</h2>
+              <p class="muted" data-i18n="planner.previewSubtitle">Cet aperçu se met à jour pendant que le formulaire est rempli.</p>
+            </div>
+            <div class="summary-list" id="plannerPreview"></div>
+          </div>
+
+          <div class="card inline-link-card">
+            <span class="icon" aria-hidden="true">→</span>
+            <div>
+              <h3 data-i18n="planner.emailTitle">Besoin de quelque chose de plus simple?</h3>
+              <p class="muted" data-i18n="planner.emailText">Vous pouvez toujours utiliser le formulaire de contact normal si vous préférez tout décrire manuellement.</p>
+              <a class="btn btn-small btn-ghost" href="index.html#contact" data-i18n="planner.emailCta">Ouvrir la section contact</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="micro muted">© <span id="year"></span> Raymond PC • <span data-i18n="footer.area">Blainville, QC</span></div>
+        <div class="micro muted"><a href="#top" class="link" data-i18n="footer.top">Retour en haut</a></div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
