@@ -610,13 +610,27 @@ input:focus, select:focus, textarea:focus{
 .field-label{font-weight:800}
 .field-help,.validation-note{font-size:.92rem;color:var(--muted)}
 .required{color:var(--primary)}
-.segmented{display:flex;flex-wrap:wrap;gap:10px}
+.segmented{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
 /* Equal-width pill rows for planner sections like CPU Cooling */
-.segmented.segmented-equal-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start;margin-top:0}
-.segmented.segmented-equal-3 .pill{display:flex;width:100%;height:48px;min-height:48px;padding:0 16px}
+.segmented.segmented-equal-3,
+.segmented.segmented-equal-pills{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  align-items:stretch;
+  margin-top:0;
+}
+.segmented.segmented-equal-3 .pill,
+.segmented.segmented-equal-pills .pill{
+  display:flex;
+  width:100%;
+  height:48px;
+  min-height:48px;
+  padding:0 16px;
+}
 .pill,.choice-card{position:relative;transition:border-color .15s ease,background .15s ease,transform .15s ease,box-shadow .15s ease}
 .pill input,.choice-card input{position:absolute;inset:0;opacity:0;cursor:pointer}
-.pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);font-weight:800;white-space:nowrap}
+.pill{display:inline-flex;align-items:center;justify-content:center;height:48px;min-height:48px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);font-weight:800;white-space:nowrap;line-height:1}
 .pill:hover,.choice-card:hover{border-color:rgba(110,231,255,.35);background:rgba(255,255,255,.05);transform:translateY(-1px)}
 .pill.is-selected,.choice-card.is-selected{border-color:rgba(110,231,255,.45);background:linear-gradient(135deg, rgba(110,231,255,.14), rgba(139,92,246,.14));box-shadow:0 0 0 3px rgba(110,231,255,.08)}
 .option-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
@@ -645,7 +659,7 @@ input:focus, select:focus, textarea:focus{
   .page-hero-grid,.planner-layout{grid-template-columns:1fr}
   .summary-box{position:static}
   .option-grid,.option-grid.tight{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .segmented-equal-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .segmented-equal-3,.segmented-equal-pills{grid-template-columns:repeat(3,minmax(0,1fr))}
   .storage-grid{grid-template-columns:1fr}
 }
 @media (max-width: 760px){
