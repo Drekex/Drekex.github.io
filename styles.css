@@ -613,6 +613,8 @@ input:focus, select:focus, textarea:focus{
 .segmented{display:flex;flex-wrap:wrap;gap:10px}
 .segmented-equal-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
 .segmented-equal-3 .pill{width:100%}
+.segmented-equal-pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start}
+.segmented-equal-pills .pill{display:flex;width:100%;min-width:0;height:48px;min-height:48px;padding:0 16px;box-sizing:border-box}
 .pill,.choice-card{position:relative;transition:border-color .15s ease,background .15s ease,transform .15s ease,box-shadow .15s ease}
 .pill input,.choice-card input{position:absolute;inset:0;opacity:0;cursor:pointer}
 .pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);font-weight:800;white-space:nowrap}
