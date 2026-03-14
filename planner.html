@@ -156,15 +156,13 @@
             <div class="field-stack field-full choice-group">
               <span class="field-label" data-i18n="planner.cpu">Famille CPU</span>
               <div class="option-grid tight">
-                <label class="choice-card">
+                <label class="choice-card choice-card-logo" aria-label="AMD">
                   <input type="radio" name="cpu_family" value="amd">
-                  <span class="logo-badge text-wide">AMD</span>
-                  <strong>AMD</strong>
+                  <span class="logo-badge logo-image" aria-hidden="true"><img src="assets/amd.svg" alt="" width="56" height="56" loading="lazy"></span>
                 </label>
-                <label class="choice-card">
+                <label class="choice-card choice-card-logo" aria-label="Intel">
                   <input type="radio" name="cpu_family" value="intel">
-                  <span class="logo-badge text-wide">intel</span>
-                  <strong>Intel</strong>
+                  <span class="logo-badge logo-image" aria-hidden="true"><img src="assets/intel.svg" alt="" width="56" height="56" loading="lazy"></span>
                 </label>
                 <label class="choice-card">
                   <input type="radio" name="cpu_family" value="unsure">
@@ -177,20 +175,17 @@
             <div class="field-stack field-full choice-group">
               <span class="field-label" data-i18n="planner.gpu">Famille GPU</span>
               <div class="option-grid">
-                <label class="choice-card">
+                <label class="choice-card choice-card-logo" aria-label="NVIDIA">
                   <input type="radio" name="gpu_family" value="nvidia">
-                  <span class="logo-badge text-wide">NVIDIA</span>
-                  <strong>NVIDIA</strong>
+                  <span class="logo-badge logo-image" aria-hidden="true"><img src="assets/nvidia.svg" alt="" width="56" height="56" loading="lazy"></span>
                 </label>
-                <label class="choice-card">
+                <label class="choice-card choice-card-logo" aria-label="AMD">
                   <input type="radio" name="gpu_family" value="amd">
-                  <span class="logo-badge text-wide">AMD</span>
-                  <strong>AMD</strong>
+                  <span class="logo-badge logo-image" aria-hidden="true"><img src="assets/amd.svg" alt="" width="56" height="56" loading="lazy"></span>
                 </label>
-                <label class="choice-card">
+                <label class="choice-card choice-card-logo" aria-label="Intel">
                   <input type="radio" name="gpu_family" value="intel">
-                  <span class="logo-badge text-wide">intel</span>
-                  <strong>Intel</strong>
+                  <span class="logo-badge logo-image" aria-hidden="true"><img src="assets/intel.svg" alt="" width="56" height="56" loading="lazy"></span>
                 </label>
                 <label class="choice-card">
                   <input type="radio" name="gpu_family" value="unsure">
@@ -255,7 +250,7 @@
 
             <div class="field-stack choice-group">
               <span class="field-label" data-i18n="planner.cooling">Refroidissement CPU</span>
-              <div class="segmented">
+              <div class="segmented segmented-equal-3">
                 <label class="pill"><input type="radio" name="cooling" value="air"><span data-i18n="planner.air">Air</span></label>
                 <label class="pill"><input type="radio" name="cooling" value="liquid"><span data-i18n="planner.liquid">Liquide</span></label>
                 <label class="pill"><input type="radio" name="cooling" value="unsure"><span data-i18n="planner.unsure">Pas sûr</span></label>

@@ -611,6 +611,8 @@ input:focus, select:focus, textarea:focus{
 .field-help,.validation-note{font-size:.92rem;color:var(--muted)}
 .required{color:var(--primary)}
 .segmented{display:flex;flex-wrap:wrap;gap:10px}
+.segmented-equal-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.segmented-equal-3 .pill{width:100%}
 .pill,.choice-card{position:relative;transition:border-color .15s ease,background .15s ease,transform .15s ease,box-shadow .15s ease}
 .pill input,.choice-card input{position:absolute;inset:0;opacity:0;cursor:pointer}
 .pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);font-weight:800;white-space:nowrap}
@@ -619,9 +621,14 @@ input:focus, select:focus, textarea:focus{
 .option-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .option-grid.tight{grid-template-columns:repeat(3,minmax(0,1fr))}
 .choice-card{display:grid;place-items:center;gap:8px;min-height:110px;padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03);text-align:center}
+.choice-card.choice-card-logo{gap:0;padding:18px}
+.choice-card.choice-card-logo .logo-badge.logo-image{width:84px;min-width:84px;height:84px;padding:0;background:transparent;border:none;border-radius:0}
+.choice-card.choice-card-logo .logo-badge.logo-image img{width:100%;height:100%;object-fit:contain}
 .logo-badge{display:grid;place-items:center;min-width:56px;height:40px;padding:0 12px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-weight:900}
 .logo-badge.icon{font-size:1.1rem}
 .logo-badge.text-wide{min-width:86px}
+.logo-badge.logo-image{width:56px;min-width:56px;height:56px;padding:8px;border-radius:14px}
+.logo-badge.logo-image img{display:block;width:100%;height:100%;object-fit:contain}
 .storage-list{display:grid;gap:12px}
 .storage-row{padding:12px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}
 .storage-grid{display:grid;grid-template-columns:1fr 1fr 1.2fr auto;gap:10px;align-items:end}
@@ -640,6 +647,7 @@ input:focus, select:focus, textarea:focus{
   .page-hero-grid,.planner-layout{grid-template-columns:1fr}
   .summary-box{position:static}
   .option-grid,.option-grid.tight{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .segmented-equal-3{grid-template-columns:repeat(3,minmax(0,1fr))}
   .storage-grid{grid-template-columns:1fr}
 }
 @media (max-width: 760px){
