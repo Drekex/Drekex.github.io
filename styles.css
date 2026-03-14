@@ -618,14 +618,21 @@ input:focus, select:focus, textarea:focus{
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:10px;
   align-items:stretch;
-  margin-top:0;
+
+  /* ensures same spacing as RGB / RAM / Resolution */
+  margin-top:6px;
 }
+
 .segmented.segmented-equal-3 .pill,
 .segmented.segmented-equal-pills .pill{
   display:flex;
+  align-items:center;
+  justify-content:center;
+
   width:100%;
   height:48px;
   min-height:48px;
+
   padding:0 16px;
 }
 .pill,.choice-card{position:relative;transition:border-color .15s ease,background .15s ease,transform .15s ease,box-shadow .15s ease}
