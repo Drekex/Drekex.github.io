@@ -85,6 +85,7 @@
       "contact.sms": "SMS",
       "contact.subtitle": "Describe your project (budget, goals, parts list). Usually replies within 24h.",
       "contact.tipD": "Copy/paste your parts list (PCPartPicker) or your budget + goals.",
+      "contact.plannerLink": "Or use the guided build planner.",
       "contact.tipT": "Tip:",
       "contact.title": "Contact / Quote",
       "contact.type": "Service type",
@@ -121,6 +122,7 @@
       "hero.cardTitle": "What you get",
       "hero.cta1": "Request a quote",
       "hero.cta2": "See pricing",
+      "hero.cta3": "Plan my build",
       "hero.eyebrow": "Local • Reliable • Optimized",
       "hero.lead": "Gaming or productivity: I help pick parts, build clean, stress test, and optimize noise and temperatures for a stable PC long-term.",
       "hero.micro": "Fast reply by SMS/email. Based in Blainville near Fontainebleau. Service around Laval/Montreal North depending on the project.",
@@ -319,21 +321,44 @@
       }
     });
 
-    // Update <title> + meta description
+    // Update <title> + meta description + OG tags
     const metaDesc = document.querySelector('meta[name="description"]');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    const isPlannerPage = document.body?.dataset?.page === "planner";
+    const pageMeta = isPlannerPage
+      ? {
+          enTitle: "Raymond PC - Guided Build Planner",
+          enDesc: "A guided build planner to send a clear request based on your budget, PC tier, use case, and part preferences."
+        }
+      : {
+          enTitle: I18N.en["meta.title"],
+          enDesc: I18N.en["meta.desc"]
+        };
+
     if (!document.documentElement.hasAttribute("data-fr-title")) {
       document.documentElement.setAttribute("data-fr-title", document.title || "");
     }
     if (metaDesc && !metaDesc.hasAttribute("data-fr-content")) {
       metaDesc.setAttribute("data-fr-content", metaDesc.getAttribute("content") || "");
     }
+    if (ogTitle && !ogTitle.hasAttribute("data-fr-content")) {
+      ogTitle.setAttribute("data-fr-content", ogTitle.getAttribute("content") || "");
+    }
+    if (ogDesc && !ogDesc.hasAttribute("data-fr-content")) {
+      ogDesc.setAttribute("data-fr-content", ogDesc.getAttribute("content") || "");
+    }
 
     if (lang === "en") {
-      if (I18N.en["meta.title"]) document.title = I18N.en["meta.title"];
-      if (metaDesc && I18N.en["meta.desc"]) metaDesc.setAttribute("content", I18N.en["meta.desc"]);
+      if (pageMeta.enTitle) document.title = pageMeta.enTitle;
+      if (metaDesc && pageMeta.enDesc) metaDesc.setAttribute("content", pageMeta.enDesc);
+      if (ogTitle && pageMeta.enTitle) ogTitle.setAttribute("content", pageMeta.enTitle);
+      if (ogDesc && pageMeta.enDesc) ogDesc.setAttribute("content", pageMeta.enDesc);
     } else {
       document.title = document.documentElement.getAttribute("data-fr-title") || document.title;
       if (metaDesc) metaDesc.setAttribute("content", metaDesc.getAttribute("data-fr-content") || metaDesc.getAttribute("content") || "");
+      if (ogTitle) ogTitle.setAttribute("content", ogTitle.getAttribute("data-fr-content") || ogTitle.getAttribute("content") || "");
+      if (ogDesc) ogDesc.setAttribute("content", ogDesc.getAttribute("data-fr-content") || ogDesc.getAttribute("content") || "");
     }
 
     // Button label
