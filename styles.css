@@ -89,20 +89,6 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   .nav-links a{ font-size: .92rem; }
 }
 
-/* ✅ Protect FR/EN toggle from collapsing */
-.lang{
-  display:flex; align-items:center;
-  flex: 0 0 auto;
-  min-width: 64px;
-}
-
-/* Force FR/EN button text to white everywhere */
-.lang .btn,
-.lang button{
-  color: var(--text) !important;
-  -webkit-text-fill-color: var(--text) !important;
-}
-
 /* Buttons */
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
