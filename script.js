@@ -252,7 +252,7 @@
           removeRow: "Supprimer cette ligne de stockage",
           budgetRule: "Le budget doit contenir 1 montant ou une plage, par exemple 1200 ou 1200-1800."
         },
-        emailSubject: "[Raymond PC] Préférences de build"
+        emailSubject: "[Raymond PC] Demande de montage pc"
       },
       en: {
         labels: {
