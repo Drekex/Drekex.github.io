@@ -620,6 +620,10 @@ input:focus, select:focus, textarea:focus{
 .storage-grid{display:grid;grid-template-columns:1fr 1fr 1.2fr auto;gap:10px;align-items:end}
 .storage-remove{min-width:44px;padding:10px 12px}
 .planner-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.planner-send-note{margin:12px 0 0}
+.planner-quick-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.planner-actions .btn{flex:1 1 calc(50% - 12px)}
+.planner-actions .btn-primary{flex:1 1 100%}
 .summary-box{display:grid;gap:16px;position:sticky;top:88px}
 .summary-list{display:grid;gap:12px}
 .summary-item{display:grid;gap:4px;padding:12px 0;border-top:1px solid var(--line)}
@@ -644,5 +648,5 @@ input:focus, select:focus, textarea:focus{
 }
 @media (max-width: 760px){
   .planner-form .form-grid{grid-template-columns:1fr}
-  .planner-actions .btn{flex:1 1 100%}
+  .planner-actions .btn,.planner-quick-links .btn{flex:1 1 100%}
 }

@@ -341,6 +341,8 @@
 
     const getLang = () => "fr";
     const t = () => P[getLang()];
+    const plannerEmail = "raymondservicepc@outlook.com";
+    const plannerPhone = "+15147178283";
 
     const normalizeValue = (name, raw) => {
       const v = (raw || "").toString();
@@ -549,7 +551,12 @@
     }
 
     function plannerMailBody() {
-      const lines = [];
+      const lines = [
+        "Bonjour,",
+        "",
+        "Voici ma demande de montage PC :",
+        ""
+      ];
       previewEl.querySelectorAll('.summary-item').forEach((item) => {
         const label = item.querySelector('.summary-label')?.textContent || '';
         const list = item.querySelectorAll('li');
@@ -561,7 +568,54 @@
           lines.push(`${label}: ${value}`);
         }
       });
+      lines.push('', 'Merci.');
       return lines.join("\n");
+    }
+
+    function openPlannerRequest(mode) {
+      const budget = (new FormData(plannerForm).get("budget") || "").toString().trim();
+      if (!validBudget(budget)) {
+        validationEl.textContent = t().misc.budgetRule;
+        return;
+      }
+
+      validationEl.textContent = "";
+      const subject = t().emailSubject;
+      const body = plannerMailBody();
+      const encodedSubject = encodeURIComponent(subject);
+      const encodedBody = encodeURIComponent(body);
+
+      if (mode === "email") {
+        window.location.href = `mailto:${plannerEmail}?subject=${encodedSubject}&body=${encodedBody}`;
+        return;
+      }
+
+      if (mode === "sms") {
+        window.location.href = `sms:${plannerPhone}?&body=${encodedBody}`;
+        return;
+      }
+
+      if (mode === "whatsapp") {
+        const text = encodeURIComponent(`${subject}\n\n${body}`);
+        window.open(`https://wa.me/${plannerPhone.replace(/\D/g, "")}?text=${text}`, "_blank", "noopener");
+        return;
+      }
+
+      if (mode === "copy") {
+        const textToCopy = `${subject}\n\n${body}`;
+        const onSuccess = () => {
+          validationEl.textContent = "Le texte de la demande a été copié.";
+        };
+        const onFailure = () => {
+          validationEl.textContent = "Impossible de copier automatiquement. Sélectionnez puis copiez l'aperçu.";
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(textToCopy).then(onSuccess).catch(onFailure);
+        } else {
+          onFailure();
+        }
+      }
     }
 
     plannerForm.addEventListener("input", () => { syncSelectedPills(); toggleConditionalFields(); updatePreview(); });
@@ -577,15 +631,13 @@
     });
     plannerForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const budget = (new FormData(plannerForm).get("budget") || "").toString().trim();
-      if (!validBudget(budget)) {
-        validationEl.textContent = t().misc.budgetRule;
-        return;
-      }
-      validationEl.textContent = "";
-      const subject = encodeURIComponent(t().emailSubject);
-      const body = encodeURIComponent(plannerMailBody());
-      window.location.href = `mailto:raymondservicepc@outlook.com?subject=${subject}&body=${body}`;
+      openPlannerRequest("email");
+    });
+
+    plannerForm.querySelectorAll('[data-send-mode]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        openPlannerRequest(btn.getAttribute('data-send-mode'));
+      });
     });
 
     addStorageBtn?.addEventListener("click", () => {
