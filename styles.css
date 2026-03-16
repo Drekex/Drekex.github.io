@@ -251,8 +251,10 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 /* Checklists */
 .checklist{
   list-style:none;
-  padding:0; margin: 12px 0 0;
-  display:grid; gap:8px;
+  padding:0;
+  margin:12px 0; /* equal spacing top and bottom */
+  display:grid;
+  gap:8px;
 }
 .checklist li{
   padding-left: 22px; position:relative; color: rgba(234,240,255,.92);
