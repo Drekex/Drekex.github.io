@@ -650,3 +650,13 @@ input:focus, select:focus, textarea:focus{
   .planner-form .form-grid{grid-template-columns:1fr}
   .planner-actions .btn,.planner-quick-links .btn{flex:1 1 100%}
 }
+
+
+
+/* Center content vertically inside feature boxes on landing pages */
+.feature-grid .card{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:220px;
+}
