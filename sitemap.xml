@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://raymondpc.ca/</loc>
+    <lastmod>2026-03-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://raymondpc.ca/planner.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://raymondpc.ca/montage-pc-gaming-blainville.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://raymondpc.ca/reparation-pc-blainville.html</loc>
+    <lastmod>2026-03-15</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

@@ -4,8 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Raymond PC - Montage, mise à niveau et dépannage (Blainville / Laval / Montréal)</title>
-  <meta name="description" content="Montage de PC sur mesure, upgrades et dépannage. 50+ montages complétés, avis 5★ vérifiés. Installation Windows, BIOS, tests de stabilité, optimisation du bruit." />
+  <title>Montage PC Gaming, Réparation et Upgrade PC | Raymond PC Blainville Laval</title>
+  <meta name="description" content="Montage PC gaming sur mesure, réparation PC, upgrade et dépannage à Blainville, Laval et Mirabel. 50+ montages complétés, tests de stabilité, Windows, BIOS et optimisation du bruit." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://raymondpc.ca/" />
   <meta name="theme-color" content="#0b1220" />
 
   <!-- FAVICONS -->
@@ -28,26 +30,89 @@
   <!-- Android / PWA -->
   <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
 
-  <meta property="og:title" content="Raymond PC - Montage, mise à niveau et dépannage" />
-  <meta property="og:description" content="Local, fiable, testé en charge. 50+ montages, avis 5★." />
+  <meta property="og:title" content="Montage PC Gaming, Réparation et Upgrade PC | Raymond PC" />
+  <meta property="og:description" content="Montage PC gaming, réparation PC et upgrades à Blainville, Laval et Mirabel. Service local, fiable et testé." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_CA" />
+  <meta property="og:url" content="https://raymondpc.ca/" />
+  <meta property="og:site_name" content="Raymond PC" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css" />
 
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Raymond PC",
-    "telephone":"+1-514-717-8283",
-    "email":"mailto:raymondservicepc@outlook.com",
-    "areaServed":["Blainville","Laval","Montréal Nord","Rive-Nord"],
-    "priceRange":"$"
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ComputerRepair",
+        "@id": "https://raymondpc.ca/#business",
+        "name": "Raymond PC",
+        "url": "https://raymondpc.ca/",
+        "telephone": "+1-514-717-8283",
+        "email": "raymondservicepc@outlook.com",
+        "priceRange": "$$",
+        "image": "https://raymondpc.ca/assets/favicon-512x512.png",
+        "logo": "https://raymondpc.ca/assets/favicon-512x512.png",
+        "areaServed": ["Blainville", "Laval", "Mirabel", "Montréal Nord", "Rive-Nord"],
+        "serviceType": [
+          "Montage PC gaming",
+          "Réparation PC",
+          "Upgrade PC",
+          "Dépannage informatique",
+          "PC sur mesure"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://raymondpc.ca/#website",
+        "url": "https://raymondpc.ca/",
+        "name": "Raymond PC",
+        "inLanguage": "fr-CA"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://raymondpc.ca/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Est-ce que tu peux recommander des pièces selon mon budget?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Selon le budget, la résolution, les jeux et les objectifs, je peux proposer un build équilibré et compatible."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Est-ce que Windows est inclus?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Les ordinateurs peuvent être remis avec Windows installé et activé, ou avec une autre option comme Linux ou Windows non activé sur demande."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tu fais du SFF / mini-PC?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, sur demande. Les builds compacts et mini-PC demandent plus de planification pour l’espace, l’airflow et le câblage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quoi envoyer pour une soumission rapide?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous pouvez envoyer une liste de pièces, un lien PCPartPicker, un budget avec vos objectifs, ou des photos et symptômes pour un dépannage."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -59,7 +124,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Raymond PC, retour en haut de page">
-        <img class="brand-logo" src="assets/favicon-512x512.png" alt="Raymond PC" width="48" height="48" loading="eager">
+        <img class="brand-logo" src="assets/favicon-512x512.png" alt="Raymond PC montage PC gaming et réparation à Blainville" width="48" height="48" loading="eager">
         <span class="brand-text">Raymond <span>PC</span></span>
       </a>
 
@@ -87,7 +152,7 @@
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="hero.eyebrow">Local • Fiable • Optimisé</p>
 
-          <h1 data-i18n="hero.title">Montage de PC sur mesure, upgrades et dépannage sans stress.</h1>
+          <h1 data-i18n="hero.title">Montage PC gaming, réparation et upgrade PC à Blainville et Laval.</h1>
 
           <p class="lead" data-i18n="hero.lead">
             Gaming ou productivité: je sélectionne les pièces, j’assemble proprement, je teste en charge,
@@ -107,7 +172,7 @@
           </div>
 
           <p class="micro" data-i18n="hero.micro">
-            Réponse rapide par SMS/email. Basé à Blainville proche de Fontainebleau. Service possible autour de Laval/Montréal Nord selon le projet.
+            Réponse rapide par SMS ou e-mail. Basé à Blainville proche de Fontainebleau. Service possible autour de Laval, Mirabel et Montréal Nord selon le projet.
           </p>
         </div>
 
@@ -260,6 +325,35 @@
         <div class="note">
           <strong data-i18n="services.noteT">Inclus sur demande :</strong>
           <span data-i18n="services.noteD">undervolt GPU, optimisation légère, PC compact (SFF), rétro-PC.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="local-pages">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pages utiles</h2>
+          <p class="muted">Des pages dédiées pour trouver plus rapidement le bon service selon votre besoin.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Montage PC gaming</h3>
+            <p class="muted">Pour un PC gamer sur mesure à Blainville, Laval ou Mirabel, avec sélection de pièces, assemblage et tests.</p>
+            <a class="btn btn-secondary" href="montage-pc-gaming-blainville.html">Voir la page</a>
+          </article>
+
+          <article class="card">
+            <h3>Réparation et dépannage PC</h3>
+            <p class="muted">Pour crashs, températures, instabilité, écrans bleus, upgrades ou entretien d’ordinateur.</p>
+            <a class="btn btn-secondary" href="reparation-pc-blainville.html">Voir la page</a>
+          </article>
+
+          <article class="card">
+            <h3>Planificateur de build</h3>
+            <p class="muted">L’option la plus simple pour décrire votre futur PC sans devoir choisir vous-même les pièces exactes.</p>
+            <a class="btn btn-primary" href="planner.html">Ouvrir le planificateur</a>
+          </article>
         </div>
       </div>
     </section>
