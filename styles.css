@@ -671,3 +671,16 @@ input:focus, select:focus, textarea:focus{
   justify-content:center;
   min-height:220px;
 }
+
+
+/* Fix top/bottom spacing for simple content cards */
+.card > h2:first-child,
+.card > h3:first-child,
+.card > p:first-child,
+.card > ul:first-child{
+  margin-top:0;
+}
+
+.card > :last-child{
+  margin-bottom:0;
+}
