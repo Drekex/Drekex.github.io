@@ -156,16 +156,19 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   display:grid; gap:8px;
 }
 .hero-bullets li{
-  padding-left: 22px;
+  padding-left: 28px;
   position:relative;
   color: var(--muted);
   font-weight:600;
 }
 .hero-bullets li::before{
-  content:"✓";
+  content:"";
   position:absolute;
-  left:0; top:0;
-  color: var(--primary);
+  left:0;
+  top:2px;
+  width:16px;
+  height:16px;
+  background: url("assets/checkmark-icon.svg") center / contain no-repeat;
 }
 .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin:16px 0 10px; }
 
