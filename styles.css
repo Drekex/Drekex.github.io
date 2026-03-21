@@ -719,3 +719,12 @@ input:focus, select:focus, textarea:focus{
   padding: 22px;
   min-height: 0;
 }
+
+
+/* Fix for stacked sections (prevents double spacing) */
+.section.join-next {
+  padding-bottom: 35px;
+}
+.section.join-prev {
+  padding-top: 35px;
+}
