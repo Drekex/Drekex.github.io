@@ -136,7 +136,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 }
 
 /* Hero */
-.hero{ padding:64px 0 28px; }
+.hero{ padding:34px 0 20px; }
 .hero-grid{
   display:grid;
   grid-template-columns: 1.2fr .9fr;
@@ -275,7 +275,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 }
 
 /* Trust strip */
-.trust{ padding: 18px 0 0; }
+.trust{ padding: 8px 0 0; }
 .trust-row{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
@@ -699,4 +699,20 @@ input:focus, select:focus, textarea:focus{
 
 .feature-grid > .card .muted{
   margin-top:auto;
+}
+
+
+/* Homepage spacing refinements */
+#choose-service.section.alt{
+  padding-top: 44px;
+  padding-bottom: 26px;
+}
+
+#process.section{
+  padding-top: 52px;
+}
+
+.feature-grid > .card{
+  padding: 28px 22px 22px;
+  min-height: 0;
 }
