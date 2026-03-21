@@ -702,17 +702,17 @@ input:focus, select:focus, textarea:focus{
 }
 
 
-/* Homepage spacing refinements */
-#choose-service.section.alt{
-  padding-top: 44px;
-  padding-bottom: 26px;
+/* Consistent section spacing */
+.section > .container > :first-child{
+  margin-top: 0;
 }
 
-#process.section{
-  padding-top: 52px;
+.section > .container > :last-child{
+  margin-bottom: 0;
 }
 
+/* Keep homepage feature cards top-aligned without changing section spacing */
 .feature-grid > .card{
-  padding: 28px 22px 22px;
+  padding: 22px;
   min-height: 0;
 }
