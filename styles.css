@@ -664,16 +664,7 @@ input:focus, select:focus, textarea:focus{
 
 
 
-/* Center content vertically inside feature boxes on landing pages */
-.feature-grid .card{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  min-height:220px;
-}
-
-
-/* Fix top/bottom spacing for simple content cards */
+/* Simple content cards */
 .card > h2:first-child,
 .card > h3:first-child,
 .card > p:first-child,
@@ -682,28 +673,30 @@ input:focus, select:focus, textarea:focus{
 }
 
 .card > :last-child{
-  /* === Fix: "Quel service choisir" cards alignment + spacing === */
-
-/* Force cards to align content to the top */
-.feature-grid > .card{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* Improve internal spacing (prevents text touching borders) */
-.card{
-  padding: 22px 22px 20px;
-}
-
-/* Better paragraph spacing */
-.card p{
-  margin-top: 10px;
-}
-
-/* Keep bottom paragraph aligned across all cards */
-.feature-grid .muted{
-  margin-top: auto;
-}
   margin-bottom:0;
+}
+
+/* "Quel service choisir" cards: keep content top-aligned and evenly spaced */
+.feature-grid > .card{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  min-height:320px;
+  padding:22px;
+}
+
+.feature-grid > .card h3{
+  margin:0 0 18px;
+}
+
+.feature-grid > .card p{
+  margin:0;
+}
+
+.feature-grid > .card p + p{
+  margin-top:28px;
+}
+
+.feature-grid > .card .muted{
+  margin-top:auto;
 }
