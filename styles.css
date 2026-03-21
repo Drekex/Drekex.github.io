@@ -136,7 +136,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 }
 
 /* Hero */
-.hero{ padding:34px 0 34px; }
+.hero{ padding:70px 0; }
 .hero-copy > .micro:last-child{ margin:18px 0 0; }
 .hero-grid{
   display:grid;
@@ -276,7 +276,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 }
 
 /* Trust strip */
-.trust{ padding: 30px 0; }
+.trust{ padding:0; margin:70px 0 0; }
 .trust-row{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
@@ -595,7 +595,7 @@ input:focus, select:focus, textarea:focus{
 /* Planner */
 
 /* Planner page hero */
-.page-hero{padding:56px 0 12px}
+.page-hero{padding:70px 0}
 .page-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:24px;align-items:start}
 .page-hero-copy .hero-bullets{margin-bottom:0}
 .page-hero-card .card{height:100%}
