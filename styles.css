@@ -682,5 +682,28 @@ input:focus, select:focus, textarea:focus{
 }
 
 .card > :last-child{
+  /* === Fix: "Quel service choisir" cards alignment + spacing === */
+
+/* Force cards to align content to the top */
+.feature-grid > .card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Improve internal spacing (prevents text touching borders) */
+.card{
+  padding: 22px 22px 20px;
+}
+
+/* Better paragraph spacing */
+.card p{
+  margin-top: 10px;
+}
+
+/* Keep bottom paragraph aligned across all cards */
+.feature-grid .muted{
+  margin-top: auto;
+}
   margin-bottom:0;
 }
