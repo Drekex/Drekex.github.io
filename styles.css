@@ -701,7 +701,7 @@ input:focus, select:focus, textarea:focus{
 }
 
 .feature-grid > .card .muted{
-  margin-top:auto;
+  margin-top:12px;
 }
 
 
