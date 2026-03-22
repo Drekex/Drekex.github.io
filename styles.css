@@ -257,7 +257,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   overflow:hidden;
   min-height: calc(1.55em * 2);
 }
-#services .checklist{ margin-top: 12px; }
+#services .checklist{ margin-top: 0px; }
 
 /* Checklists */
 .checklist{
