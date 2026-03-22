@@ -140,7 +140,8 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 
 .hero-copy > .micro:last-child{ margin:18px 0 0; }
 
-.hero-copy{
+.hero-copy,
+.page-hero-copy{
   padding-right: 30px;
 }
 
