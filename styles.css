@@ -797,3 +797,9 @@ input:focus, select:focus, textarea:focus{
 .section.join-prev {
   padding-top: 35px;
 }
+
+
+/* Fix spacing between grids and article cards */
+.article.card {
+  margin-top: 16px;
+}
