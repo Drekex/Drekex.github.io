@@ -798,8 +798,8 @@ input:focus, select:focus, textarea:focus{
   padding-top: 35px;
 }
 
-
 /* Fix spacing between grids and article cards */
 .article.card {
   margin-top: 16px;
 }
+
