@@ -10,6 +10,19 @@
   --shadow: 0 10px 28px rgba(0,0,0,.32);
   --radius: 18px;
   --max: 1120px;
+
+  /* spacing system */
+  --space-1: 8px;
+  --space-2: 10px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 18px;
+  --space-6: 22px;
+  --space-7: 24px;
+  --space-8: 28px;
+  --section-space: 70px;
+  --card-padding: 18px;
+  --grid-gap: 16px;
 }
 
 *{ box-sizing:border-box; }
@@ -120,7 +133,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 .btn-ghost{ background: rgba(255,255,255,.02); }
 
 /* Sections */
-.section{ padding:70px 0; }
+.section{ padding:var(--section-space) 0; }
 .section.alt{
   background: rgba(255,255,255,.02);
   border-top: 1px solid var(--line);
@@ -134,7 +147,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   content-visibility: auto;
   contain-intrinsic-size: 1px 900px;
 }
-.section-head{ margin-bottom: 22px; }
+.section-head{ margin-bottom: var(--space-6); }
 .section-head h2{ margin:0 0 10px; font-size: clamp(1.5rem, 1.2rem + 1vw, 2.1rem); }
 .muted{ color:var(--muted); }
 .micro{ font-size:.92rem; }
@@ -149,7 +162,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 }
 
 /* Hero */
-.hero{ padding:70px 0; }
+.hero{ padding:var(--section-space) 0; }
 
 .hero-copy > .micro:last-child{ margin:18px 0 0; }
 
@@ -191,14 +204,14 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   height:16px;
   background: url("assets/checkmark-icon.svg") center / contain no-repeat;
 }
-.hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin:16px 0 10px; }
+.hero-cta{ display:flex; gap:var(--space-3); flex-wrap:wrap; margin:var(--space-4) 0 var(--space-2); }
 
 /* Cards */
 .card{
   background: rgba(14,23,48,.72);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 18px;
+  padding: var(--card-padding);
   box-shadow: var(--shadow);
 }
 .glass{
@@ -238,8 +251,8 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 }
 
 /* Grids */
-.grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
-.grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+.grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap:var(--grid-gap); }
+.grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:var(--grid-gap); }
 
 /* Steps (How it works) */
 .steps{
@@ -296,7 +309,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 }
 
 /* Trust strip */
-.trust{ padding:0; margin:70px 0 0; }
+.trust{ padding:0; margin:var(--section-space) 0 0; }
 .trust-row{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
@@ -317,7 +330,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 .pricing{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap:16px;
+  gap:var(--grid-gap);
   padding-top: 44px; /* space for the tab */
 }
 .price-top{ margin-bottom: 0px; }
@@ -664,14 +677,14 @@ input:focus, select:focus, textarea:focus{
 /* Planner */
 
 /* Planner page hero */
-.page-hero{padding:70px 0}
+.page-hero{padding:var(--section-space) 0}
 .page-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:24px;align-items:start}
 .page-hero-copy .hero-bullets{margin-bottom:0}
 .page-hero-card .card{height:100%}
 .back-link{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;color:var(--muted);font-weight:700}
 .back-link:hover{color:var(--text);text-decoration:none}
 
-.planner-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:18px;align-items:start}
+.planner-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:var(--space-5);align-items:start}
 .planner-form .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .field-full{grid-column:1/-1}
 .field-stack{display:grid;gap:8px}
@@ -736,29 +749,33 @@ input:focus, select:focus, textarea:focus{
 
 
 
-/* Simple content cards */
-.card > h2:first-child,
-.card > h3:first-child,
-.card > p:first-child,
-.card > ul:first-child{
-  margin-top:0;
+/* Consistent content spacing */
+.card > :first-child{ margin-top:0; }
+.card > :last-child{ margin-bottom:0; }
+
+.section > .container:not(.grid-2):not(.grid-3):not(.hero-grid):not(.page-hero-grid):not(.planner-layout):not(.pricing):not(.steps):not(.gallery):not(.trust-row):not(.contact-grid) > :first-child{
+  margin-top: 0;
 }
 
-.card > :last-child{
-  margin-bottom:0;
+.section > .container:not(.grid-2):not(.grid-3):not(.hero-grid):not(.page-hero-grid):not(.planner-layout):not(.pricing):not(.steps):not(.gallery):not(.trust-row):not(.contact-grid) > :last-child{
+  margin-bottom: 0;
 }
 
-/* "Quel service choisir" cards: keep content top-aligned and evenly spaced */
+.section > .container:not(.grid-2):not(.grid-3):not(.hero-grid):not(.page-hero-grid):not(.planner-layout):not(.pricing):not(.steps):not(.gallery):not(.trust-row):not(.contact-grid) > * + *{
+  margin-top: var(--space-4);
+}
+
+/* "Quel service choisir" cards */
 .feature-grid > .card{
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
-  min-height:320px;
+  min-height:0;
   padding:22px;
 }
 
 .feature-grid > .card h3{
-  margin:0 0 18px;
+  margin:0 0 var(--space-5);
 }
 
 .feature-grid > .card p{
@@ -766,40 +783,31 @@ input:focus, select:focus, textarea:focus{
 }
 
 .feature-grid > .card p + p{
-  margin-top:28px;
+  margin-top: var(--space-8);
 }
 
 .feature-grid > .card .muted{
-  margin-top:12px;
+  margin-top: var(--space-3);
 }
-
-
-/* Consistent section spacing */
-.section > .container > :first-child{
-  margin-top: 0;
-}
-
-.section > .container > :last-child{
-  margin-bottom: 0;
-}
-
-/* Keep homepage feature cards top-aligned without changing section spacing */
-.feature-grid > .card{
-  padding: 22px;
-  min-height: 0;
-}
-
 
 /* Fix for stacked sections (prevents double spacing) */
 .section.join-next {
-  padding-bottom: 35px;
+  padding-bottom: calc(var(--section-space) / 2);
 }
 .section.join-prev {
-  padding-top: 35px;
+  padding-top: calc(var(--section-space) / 2);
 }
 
-/* Fix spacing between grids and article cards */
-.article.card {
-  margin-top: 16px;
+/* Fix spacing between grids and following cards */
+article.card {
+  margin-top: 0;
 }
 
+.grid-2 + article.card,
+.grid-3 + article.card,
+.feature-grid + article.card,
+.grid-2 + .note,
+.grid-3 + .note,
+.feature-grid + .note{
+  margin-top: var(--space-4);
+}
