@@ -22,7 +22,17 @@
   </url>
   <url>
     <loc>https://raymondpc.ca/guide-pc-gaming-budget-canada-2026.html</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-09</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raymondpc.ca/guides.html</loc>
+    <lastmod>2026-04-09</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raymondpc.ca/guide-air-vs-aio-cooling-2026.html</loc>
+    <lastmod>2026-04-09</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>
