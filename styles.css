@@ -857,3 +857,56 @@ article.card {
     grid-template-columns:1fr;
   }
 }
+
+
+/* Article metadata + soft conversion blocks */
+.article-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:16px 0 0;
+}
+.article-meta span{
+  display:inline-flex;
+  align-items:center;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  color:var(--muted);
+  font-size:.92rem;
+  font-weight:700;
+}
+.soft-trust-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+.soft-trust-card,
+.guide-preview-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.guide-preview-card .card-actions,
+.guide-preview-card .btn{
+  margin-top:auto;
+}
+.inline-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:14px;
+}
+.inline-links .btn{margin-top:0;}
+.related-guides-head{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:end;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:var(--space-6);
+}
+@media (max-width: 900px){
+  .soft-trust-grid{grid-template-columns:1fr;}
+}
