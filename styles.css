@@ -156,20 +156,21 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   align-items:center;
   gap:10px;
 
-  padding:6px 12px;
+  padding:8px 14px;          /* 🔥 slightly wider than before */
   border-radius:999px;
 
   background: rgba(255,255,255,.03);
   border:1px solid var(--line);
 
   color: var(--muted);
-  font-size:0.85rem;
+  font-size:0.9rem;          /* 🔥 closer to original */
   font-weight:700;
 
   white-space:nowrap;
 
-  width:fit-content;      /* ✅ prevents full-width stretch */
+  width:fit-content;
   max-width:100%;
+  align-self:flex-start;
 }
 
 /* Hero */
