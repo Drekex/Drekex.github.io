@@ -811,3 +811,49 @@ article.card {
 .feature-grid + .note{
   margin-top: var(--space-4);
 }
+
+
+/* Guides hub + comparison cards */
+.guides-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.guide-link-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.guide-link-card .card-actions,
+.guide-link-card .btn{
+  margin-top:auto;
+}
+.comparison-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.comparison-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.comparison-card .verdict{
+  margin-top:auto;
+  padding-top:var(--space-6);
+}
+.comparison-card h3{
+  margin:0 0 var(--space-5);
+}
+.comparison-card p{
+  margin:0;
+}
+.comparison-card p + p{
+  margin-top:var(--space-4);
+}
+@media (max-width: 780px){
+  .guides-list,
+  .comparison-grid{
+    grid-template-columns:1fr;
+  }
+}
