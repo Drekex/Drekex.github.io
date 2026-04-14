@@ -57,7 +57,7 @@
   /* ========= FRENCH-ONLY MODE ========= */
 
   function setLanguage() {
-    document.documentElement.lang = "fr";
+    document.documentElement.lang = "fr-CA";
   }
 
   setLanguage();
