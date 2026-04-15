@@ -840,6 +840,15 @@ article.card {
 .guide-link-card .btn{
   margin-top:auto;
 }
+
+#local-pages .grid-3 > .card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+#local-pages .grid-3 > .card .btn{
+  margin-top:auto;
+}
 .comparison-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
