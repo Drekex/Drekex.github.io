@@ -697,7 +697,7 @@ input:focus, select:focus, textarea:focus{
 .back-link:hover{color:var(--text);text-decoration:none}
 
 .planner-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:var(--space-5);align-items:start}
-.planner-form .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.planner-form .form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .field-full{grid-column:1/-1}
 .field-stack{display:grid;gap:8px}
 .field-label{display:block;margin:0;line-height:1.2;font-weight:800}
