@@ -26,7 +26,6 @@
 }
 
 *{ box-sizing:border-box; }
-
 [hidden]{display:none !important;}
 html{ scroll-behavior:smooth; }
 img{ max-width:100%; height:auto; }
@@ -711,6 +710,11 @@ input:focus, select:focus, textarea:focus{
 /* Equal-width pill rows for planner sections like CPU Cooling */
 .segmented.segmented-equal-3,.segmented.segmented-equal-pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start;margin-top:0!important}
 .segmented.segmented-equal-3 .pill,.segmented.segmented-equal-pills .pill{display:flex;align-items:center;justify-content:center;width:100%;height:48px;min-height:48px;padding:0 16px}
+.planner-top-field{gap:6px;align-content:start}
+.planner-top-field .field-label{min-height:38px;display:flex;align-items:flex-end}
+.planner-top-field select,.planner-top-field .segmented{align-self:start}
+.planner-top-field select{min-height:48px}
+.segmented.segmented-rgb{grid-template-columns:repeat(2,minmax(0,1fr))}
 .pill,.choice-card{position:relative;transition:border-color .15s ease,background .15s ease,transform .15s ease,box-shadow .15s ease}
 .pill input,.choice-card input{position:absolute;inset:0;opacity:0;cursor:pointer}
 .pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);font-weight:800;white-space:nowrap;line-height:1}
