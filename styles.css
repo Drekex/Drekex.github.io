@@ -614,6 +614,33 @@ article.card{ margin-top:0; }
 .summary-storage{ margin:0; padding-left:18px; display:grid; gap:6px; }
 .inline-link-card{ display:flex; gap:14px; align-items:flex-start; }
 
+/* ===================== Equal button alignment across cards ===================== */
+/* Cards in a multi-column grid are already stretched to equal height by the grid.
+   Making each one a flex column lets its action row (button or wrapper) pin to the
+   bottom, so buttons in side-by-side cards always line up. On mobile the grids drop
+   to a single column, the cards size to their content, and buttons simply sit under
+   their text — so this only affects the multi-column (desktop/tablet) view. */
+.grid-2 > .card,
+.grid-3 > .card,
+.feature-grid > .card,
+.guides-list > .card,
+.comparison-grid > .card,
+.soft-trust-grid > .card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+:is(.grid-2, .grid-3, .feature-grid, .guides-list, .comparison-grid) > .card
+  > :is(.card-actions, .inline-links, .hero-cta, .verdict, .btn){
+  margin-top:auto;
+}
+/* Guaranteed gap above the pinned action so the tallest card in a row never crowds
+   its button against the content above it (bare .btn keeps the gap from its text). */
+:is(.grid-2, .grid-3, .feature-grid, .guides-list, .comparison-grid) > .card
+  > :is(.card-actions, .inline-links, .hero-cta, .verdict){
+  padding-top: var(--space-4);
+}
+
 /* ===================== Responsive ===================== */
 @media (max-width:980px){
   :root{ --section-space:64px; }
