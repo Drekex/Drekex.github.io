@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://raymondpc.ca/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://raymondpc.ca/planner.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://raymondpc.ca/montage-pc-gaming-blainville.html</loc>
+    <lastmod>2026-06-17</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://raymondpc.ca/montage-pc-gaming-blainville.html</loc>
-    <lastmod>2026-04-13</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://raymondpc.ca/reparation-pc-blainville.html</loc>
-    <lastmod>2026-04-13</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-06-17</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://raymondpc.ca/guide-pc-gaming-budget-canada-2026.html</loc>
-    <lastmod>2026-04-13</lastmod>
-    <priority>0.7</priority>
+    <loc>https://raymondpc.ca/planner.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://raymondpc.ca/guides.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raymondpc.ca/guide-pc-gaming-budget-canada-2026.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://raymondpc.ca/guide-air-vs-aio-cooling-2026.html</loc>
-    <lastmod>2026-04-13</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-06-17</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://raymondpc.ca/guide-pc-preassemble-vs-pc-sur-mesure-2026.html</loc>
-    <lastmod>2026-04-13</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-06-17</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>
