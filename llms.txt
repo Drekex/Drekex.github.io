@@ -1,0 +1,21 @@
+# Raymond PC
+
+> Service local de montage de PC sur mesure et de réparation d'ordinateur à Blainville, Laval et Mirabel (Rive-Nord, Québec). Montage gaming et de travail, dépannage, upgrades, tests de stabilité et optimisation. Contact rapide par SMS, WhatsApp ou courriel.
+
+Coordonnées : SMS/WhatsApp +1 (514) 717-8283 · courriel raymondservicepc@outlook.com
+Zone desservie : Blainville, Laval, Mirabel, Sainte-Thérèse et la Rive-Nord.
+Tarifs : montage de base 100 $ CAD, montage gaming 150 $ CAD, sur mesure / SFF / dépannage sur demande (main-d'œuvre; pièces non incluses).
+
+## Pages principales
+
+- [Accueil — montage PC et réparation d'ordinateur](https://raymondpc.ca/): Services, tarifs, réalisations, avis et contact pour Blainville, Laval et Mirabel.
+- [Montage PC sur mesure](https://raymondpc.ca/montage-pc-gaming-blainville.html): Montage de PC gaming, de travail ou de maison sur mesure, avec sélection des pièces, assemblage, Windows, BIOS, drivers et tests.
+- [Réparation d'ordinateur](https://raymondpc.ca/reparation-pc-blainville.html): Diagnostic, dépannage, nettoyage, entretien et upgrades pour ordinateurs lents, instables, bruyants ou qui ne démarrent plus.
+- [Planificateur de build](https://raymondpc.ca/planner.html): Outil guidé pour décrire un PC sur mesure (budget, usage, RAM, stockage, format) et préparer une demande claire en moins d'une minute.
+
+## Guides
+
+- [Guides PC et conseils](https://raymondpc.ca/guides.html): Bibliothèque de guides simples sur le montage PC et les composants pour le marché canadien.
+- [Guide PC gaming budget au Canada en 2026](https://raymondpc.ca/guide-pc-gaming-budget-canada-2026.html): Comment répartir un budget entre CPU, GPU, RAM, alimentation et stockage.
+- [Air cooling vs AIO en 2026](https://raymondpc.ca/guide-air-vs-aio-cooling-2026.html): Comparatif prix, bruit, performance et durée de vie entre ventirad et refroidissement liquide.
+- [PC préassemblé ou sur mesure en 2026](https://raymondpc.ca/guide-pc-preassemble-vs-pc-sur-mesure-2026.html): Comparer la valeur, les pièces, l'évolutivité et le service.

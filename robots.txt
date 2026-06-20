@@ -1,4 +1,38 @@
+# Raymond PC — robots.txt
+# Tous les robots sont autorisés à explorer l'ensemble du site.
 User-agent: *
+Allow: /
+
+# Robots de recherche et de citation IA — explicitement bienvenus
+# (permet d'être cité dans ChatGPT, Perplexity, Google AI Overviews, Gemini, Claude)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://raymondpc.ca/sitemap.xml
