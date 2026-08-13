@@ -42,6 +42,11 @@
   const CONTACT_EMAIL = "raymondservicepc@outlook.com";
   const CONTACT_PHONE = "+15147178283";
 
+  // Web3Forms traite un champ « email » comme Reply-To. Si le client laisse un
+  // courriel, « Répondre » dans Outlook lui écrit directement.
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const replyTo = (contact) => (EMAIL_RE.test(contact) ? { email: contact } : {});
+
   // Envoi vers Web3Forms. Rejette si l'API refuse : l'appelant retombe sur mailto.
   async function postToWeb3Forms(fields) {
     const res = await fetch(WEB3FORMS_URL, {
@@ -94,7 +99,8 @@
       try {
         await postToWeb3Forms({
           subject: leadSubject(lead),
-          from_name: "Site raymondpc.ca",
+          from_name: `${lead.name || "Client"} — raymondpc.ca`,
+          ...replyTo(lead.reply),
           name: lead.name,
           contact: lead.reply,
           service: lead.service,
@@ -250,6 +256,8 @@
     const P = {
       fr: {
         labels: {
+          name: "Nom",
+          contact: "Téléphone ou courriel",
           budget: "Budget",
           tier: "Gamme du PC",
           use_case: "Usage",
@@ -332,6 +340,8 @@
       },
       en: {
         labels: {
+          name: "Name",
+          contact: "Phone or email",
           budget: "Budget",
           tier: "PC Tier",
           use_case: "Use Case",
@@ -562,6 +572,8 @@
       previewEl.innerHTML = "";
       const fd = new FormData(plannerForm);
       const values = {
+        name: (fd.get("name") || "").toString().trim(),
+        contact: (fd.get("contact") || "").toString().trim(),
         budget: (fd.get("budget") || "").toString().trim(),
         tier: normalizeValue("tier", fd.get("tier")),
         use_case: normalizeValue("use_case", fd.get("use_case")),
@@ -577,6 +589,8 @@
         use_case_other: (fd.get("use_case_other") || "").toString().trim(),
         form_factor_other: (fd.get("form_factor_other") || "").toString().trim(),
       };
+      addPreviewItem(t().labels.name, values.name);
+      addPreviewItem(t().labels.contact, values.contact);
       addPreviewItem(t().labels.budget, values.budget);
       addPreviewItem(t().labels.tier, t().values[values.tier] || values.tier);
       let useText = t().values[values.use_case] || values.use_case;
@@ -662,10 +676,17 @@
       const encodedBody = encodeURIComponent(body);
 
       if (mode === "email") {
+        const fd = new FormData(plannerForm);
+        const clientName = (fd.get("name") || "").toString().trim();
+        const clientContact = (fd.get("contact") || "").toString().trim();
+
         validationEl.textContent = "Envoi en cours…";
         postToWeb3Forms({
           subject,
-          from_name: "Planificateur raymondpc.ca",
+          from_name: `${clientName || "Client"} — Planificateur raymondpc.ca`,
+          ...replyTo(clientContact),
+          name: clientName,
+          contact: clientContact,
           message: body
         })
           .then(() => {

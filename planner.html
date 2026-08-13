@@ -158,6 +158,17 @@
 
           <div class="form-grid">
             <label class="field-stack field-full">
+              <span><span data-i18n="planner.name">Nom</span> <span class="required">*</span></span>
+              <input type="text" name="name" autocomplete="name" required placeholder="Votre nom" data-i18n-placeholder="planner.namePh">
+            </label>
+
+            <label class="field-stack field-full">
+              <span><span data-i18n="planner.contact">Téléphone ou courriel</span> <span class="required">*</span></span>
+              <input type="text" name="contact" autocomplete="email" required placeholder="Ex : 514-000-0000 ou courriel@exemple.com" data-i18n-placeholder="planner.contactPh">
+              <span class="field-help" data-i18n="planner.contactHelp">Obligatoire. C'est ainsi que je vous réponds avec votre soumission.</span>
+            </label>
+
+            <label class="field-stack field-full">
               <span><span data-i18n="planner.budget">Budget</span> <span class="required">*</span></span>
               <input type="text" name="budget" required placeholder="Ex: 1200-1800 CAD" data-i18n-placeholder="planner.budgetPh">
               <span class="field-help" data-i18n="planner.budgetHelp">Obligatoire. Exemple : 1000-1500, 2000, 2500-3000 CAD</span>
