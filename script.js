@@ -34,23 +34,99 @@
     });
   }
 
-  // Lead form -> mailto (no backend)
+  /* ========= CONTACT CONFIG ========= */
+
+  // Clé publique Web3Forms (sans danger côté client). Un seul endroit à changer.
+  const WEB3FORMS_KEY = "6a913f0b-3127-4563-ba95-920b98ade156";
+  const WEB3FORMS_URL = "https://api.web3forms.com/submit";
+  const CONTACT_EMAIL = "raymondservicepc@outlook.com";
+  const CONTACT_PHONE = "+15147178283";
+
+  // Envoi vers Web3Forms. Rejette si l'API refuse : l'appelant retombe sur mailto.
+  async function postToWeb3Forms(fields) {
+    const res = await fetch(WEB3FORMS_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({ access_key: WEB3FORMS_KEY, ...fields })
+    });
+    const out = await res.json().catch(() => ({}));
+    if (!res.ok || out.success === false) throw new Error(out.message || "Envoi refusé");
+    return out;
+  }
+
+  // Lead form -> Web3Forms, avec mailto en filet de sécurité
   const form = document.getElementById("leadForm");
   if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+    const statusEl = document.getElementById("leadStatus");
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    function readLead() {
       const data = new FormData(form);
-      const name = (data.get("name") || "").toString().trim();
-      const reply = (data.get("reply") || "").toString().trim();
-      const service = (data.get("service") || "").toString().trim();
-      const message = (data.get("message") || "").toString().trim();
+      const get = (key) => (data.get(key) || "").toString().trim();
+      return {
+        name: get("name"),
+        reply: get("reply"),
+        service: get("service"),
+        message: get("message"),
+        botcheck: get("botcheck")
+      };
+    }
 
-      const subject = encodeURIComponent(`[Raymond PC] Demande - ${service || "Service"}`);
-      const body = encodeURIComponent(
-        `Nom: ${name}\nContact: ${reply}\nService: ${service}\n\nDétails:\n${message}\n`
-      );
+    const leadSubject = (lead) => `[Raymond PC] Demande - ${lead.service || "Service"}`;
+    const leadBody = (lead) =>
+      `Nom: ${lead.name}\nContact: ${lead.reply}\nService: ${lead.service}\n\nDétails:\n${lead.message}\n`;
 
-      window.location.href = `mailto:raymondservicepc@outlook.com?subject=${subject}&body=${body}`;
+    function setStatus(text, kind) {
+      if (!statusEl) return;
+      statusEl.textContent = text;
+      statusEl.className = kind ? `form-status is-${kind}` : "form-status";
+      statusEl.hidden = !text;
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const lead = readLead();
+      if (lead.botcheck) return; // robot : on ignore silencieusement
+
+      setStatus("Envoi en cours…", "pending");
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        await postToWeb3Forms({
+          subject: leadSubject(lead),
+          from_name: "Site raymondpc.ca",
+          name: lead.name,
+          contact: lead.reply,
+          service: lead.service,
+          message: lead.message
+        });
+        form.reset();
+        setStatus("Merci! Votre demande a bien été envoyée. Je vous réponds rapidement.", "ok");
+      } catch (err) {
+        setStatus("L'envoi automatique a échoué. Ouverture de votre application courriel…", "error");
+        const subject = encodeURIComponent(leadSubject(lead));
+        const body = encodeURIComponent(leadBody(lead));
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+
+    // Mêmes champs, envoyés par WhatsApp ou SMS
+    form.querySelectorAll("[data-lead-mode]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const lead = readLead();
+        const text = `${leadSubject(lead)}\n\n${leadBody(lead)}`;
+        if (btn.getAttribute("data-lead-mode") === "whatsapp") {
+          window.open(
+            `https://wa.me/${CONTACT_PHONE.replace(/\D/g, "")}?text=${encodeURIComponent(text)}`,
+            "_blank",
+            "noopener"
+          );
+        } else {
+          window.location.href = `sms:${CONTACT_PHONE}?&body=${encodeURIComponent(text)}`;
+        }
+      });
     });
   }
 
@@ -586,7 +662,19 @@
       const encodedBody = encodeURIComponent(body);
 
       if (mode === "email") {
-        window.location.href = `mailto:${plannerEmail}?subject=${encodedSubject}&body=${encodedBody}`;
+        validationEl.textContent = "Envoi en cours…";
+        postToWeb3Forms({
+          subject,
+          from_name: "Planificateur raymondpc.ca",
+          message: body
+        })
+          .then(() => {
+            validationEl.textContent = "Merci! Votre demande a bien été envoyée. Je vous réponds rapidement.";
+          })
+          .catch(() => {
+            validationEl.textContent = "L'envoi automatique a échoué. Ouverture de votre application courriel…";
+            window.location.href = `mailto:${plannerEmail}?subject=${encodedSubject}&body=${encodedBody}`;
+          });
         return;
       }
 

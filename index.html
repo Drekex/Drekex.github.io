@@ -715,8 +715,22 @@
               <textarea name="message" rows="6" required placeholder="Ex : budget 1200 $, 1440p, PC silencieux. Ou : crash en jeu, GPU à 90 °C, écran bleu…"></textarea>
             </label>
 
+            <!-- Piège à robots : masqué en CSS, laissé vide par les humains -->
+            <input class="hp-field" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
             <button class="btn btn-primary btn-full" type="submit">Envoyer</button>
-            <p class="micro muted">En envoyant, vous acceptez d'être contacté pour cette demande. Pas de spam.</p>
+
+            <div class="form-status" id="leadStatus" role="status" aria-live="polite" hidden></div>
+
+            <div class="lead-alt">
+              <span class="micro muted">Ou envoyez le même message directement :</span>
+              <div class="lead-alt-actions">
+                <button class="btn btn-secondary" type="button" data-lead-mode="whatsapp">WhatsApp</button>
+                <button class="btn btn-secondary" type="button" data-lead-mode="sms">SMS</button>
+              </div>
+            </div>
+
+            <p class="micro muted">En envoyant, vous acceptez d'être contacté pour cette demande. Pas de spam. Le formulaire est acheminé par Web3Forms, qui me transmet votre message par courriel.</p>
           </form>
         </div>
       </div>

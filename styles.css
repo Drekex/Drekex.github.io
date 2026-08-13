@@ -690,4 +690,27 @@ article.card{ margin-top:0; }
   *, *::before, *::after{ animation:none !important; transition:none !important; }
 }
 
+/* ===================== Lead form status + fallbacks ===================== */
+.hp-field{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
+
+.form-status{
+  margin-top:14px; padding:12px 14px;
+  border:1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+  font-size:.95rem; line-height:1.45;
+}
+.form-status[hidden]{ display:none; }
+.form-status.is-pending{ color: var(--muted); }
+.form-status.is-ok{ border-color:#2f7d4f; background:rgba(47,125,79,.12); color:#8ce0ab; }
+.form-status.is-error{ border-color:#8a4b2a; background:rgba(138,75,42,.14); color:#f0b48c; }
+
+.lead-alt{ margin-top:16px; padding-top:16px; border-top:1px solid var(--line); display:grid; gap:10px; }
+.lead-alt-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+.lead-alt-actions .btn{ flex:1 1 calc(50% - 10px); }
+
+@media (max-width: 760px){
+  .lead-alt-actions .btn{ flex:1 1 100%; }
+}
+
 /* Raymond PC — refined dark theme. End of stylesheet. */
