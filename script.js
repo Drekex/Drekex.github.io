@@ -334,7 +334,7 @@
           exampleStorage: "Ex : 1 To NVMe + 8 To HDD pour médias",
           storageEmpty: "Remplissez le formulaire pour voir un aperçu en direct.",
           removeRow: "Supprimer cette ligne de stockage",
-          budgetRule: "Le budget doit contenir 1 montant ou une plage, par exemple 1200 ou 1200-1800."
+          budgetRule: "Le budget doit contenir un montant ou une plage, par exemple 1200 $, 1200-1800 ou 1500 CAD."
         },
         emailSubject: "[Raymond PC] Demande de montage pc"
       },
@@ -418,7 +418,7 @@
           exampleStorage: "Ex: 1TB NVMe + 8TB HDD for media",
           storageEmpty: "Fill out the form to see a live preview.",
           removeRow: "Remove this storage row",
-          budgetRule: "Budget must contain 1 amount or a range, for example 1200 or 1200-1800."
+          budgetRule: "Budget must contain an amount or a range, for example $1200, 1200-1800 or 1500 CAD."
         },
         emailSubject: "[Raymond PC] Build preferences"
       }
@@ -636,8 +636,16 @@
       toggleField(formFactorOtherInput, formFactorSelect?.value === 'other');
     }
 
+    // Un montant : 1200, $1200, 1200 $, 1 200,00 $ (le symbole va après en français)
+    const MONEY = String.raw`\$?\s*\d[\d\s.,]*\$?`;
+    // Séparateur de plage : trait d'union, tirets longs, « à », « to »
+    const RANGE = String.raw`\s*(?:[-–—]|à|a|to)\s*`;
+    // Devise optionnelle en fin : CAD, CAN, USD, EUR, $, dollar(s)
+    const CURRENCY = String.raw`(?:\s*(?:CAD|CAN|USD|EUR|dollars?|\$))?`;
+    const BUDGET_RE = new RegExp(`^\\s*${MONEY}(?:${RANGE}${MONEY})?${CURRENCY}\\s*$`, "i");
+
     function validBudget(value) {
-      return /^\s*\$?\d+[\d\s,]*(\s*[-–]\s*\$?\d+[\d\s,]*)?\s*([A-Za-z]{3})?\s*$/.test(value);
+      return BUDGET_RE.test(value);
     }
 
     function plannerMailBody() {
