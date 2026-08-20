@@ -1,9 +1,9 @@
-# Raymond PC — robots.txt
+# Raymond PC, robots.txt
 # Tous les robots sont autorisés à explorer l'ensemble du site.
 User-agent: *
 Allow: /
 
-# Robots de recherche et de citation IA — explicitement bienvenus
+# Robots de recherche et de citation IA, explicitement bienvenus
 # (permet d'être cité dans ChatGPT, Perplexity, Google AI Overviews, Gemini, Claude)
 User-agent: OAI-SearchBot
 Allow: /
