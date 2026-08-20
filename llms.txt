@@ -5,12 +5,14 @@
 Coordonnées : SMS/WhatsApp +1 (514) 717-8283 · courriel raymondservicepc@outlook.com
 Zone desservie : Blainville, Laval, Mirabel, Sainte-Thérèse et la Rive-Nord.
 Tarifs : montage de base 100 $ CAD, montage gaming 150 $ CAD, sur mesure / SFF / dépannage sur demande (main-d'œuvre; pièces non incluses).
+Sauvegarde de disques : numérisation à partir de 15 $ CAD le premier disque (20 $ DVD, 30 $ Blu-ray 1080p, 45 $ Blu-ray 4K), disques suivants 6 à 25 $; création de DVD-Vidéo 35 $ et de Blu-ray 1080p 50 $. Médias personnels seulement; aucun contournement de protection sur les disques du commerce.
 
 ## Pages principales
 
 - [Accueil — montage PC et réparation d'ordinateur](https://raymondpc.ca/): Services, tarifs, réalisations, avis et contact pour Blainville, Laval et Mirabel.
 - [Montage PC sur mesure](https://raymondpc.ca/montage-pc-gaming-blainville.html): Montage de PC gaming, de travail ou de maison sur mesure, avec sélection des pièces, assemblage, Windows, BIOS, drivers et tests.
 - [Réparation d'ordinateur](https://raymondpc.ca/reparation-pc-blainville.html): Diagnostic, dépannage, nettoyage, entretien et upgrades pour ordinateurs lents, instables, bruyants ou qui ne démarrent plus.
+- [Sauvegarde et création de disques](https://raymondpc.ca/sauvegarde-disque-blainville.html): Numérisation de DVD, Blu-ray, CD et disques de données vers PC, clé USB ou disque externe, copie de disque à disque, récupération de disque abîmé et création de DVD et Blu-ray lisibles sur un lecteur de salon.
 - [Planificateur de build](https://raymondpc.ca/planner.html): Outil guidé pour décrire un PC sur mesure (budget, usage, RAM, stockage, format) et préparer une demande claire en moins d'une minute.
 
 ## Guides
