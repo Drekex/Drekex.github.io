@@ -21,3 +21,4 @@ Sauvegarde de disques : numérisation à partir de 15 $ CAD le premier disque (2
 - [Guide PC gaming budget au Canada en 2026](https://raymondpc.ca/guide-pc-gaming-budget-canada-2026.html): Comment répartir un budget entre CPU, GPU, RAM, alimentation et stockage.
 - [Air cooling vs AIO en 2026](https://raymondpc.ca/guide-air-vs-aio-cooling-2026.html): Comparatif prix, bruit, performance et durée de vie entre ventirad et refroidissement liquide.
 - [PC préassemblé ou sur mesure en 2026](https://raymondpc.ca/guide-pc-preassemble-vs-pc-sur-mesure-2026.html): Comparer la valeur, les pièces, l'évolutivité et le service.
+- [Upgrader son PC ou en acheter un neuf en 2026](https://raymondpc.ca/guide-upgrade-pc-ou-acheter-neuf-2026.html): Quatre scénarios pour décider entre améliorer une pièce, changer la vocation du PC ou repartir à neuf, avec l'effet cascade des pièces et le contexte du prix de la RAM et des GPU.

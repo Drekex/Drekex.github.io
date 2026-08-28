@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://raymondpc.ca/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -27,7 +27,7 @@
   </url>
   <url>
     <loc>https://raymondpc.ca/guides.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -43,6 +43,11 @@
   <url>
     <loc>https://raymondpc.ca/guide-pc-preassemble-vs-pc-sur-mesure-2026.html</loc>
     <lastmod>2026-06-17</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://raymondpc.ca/guide-upgrade-pc-ou-acheter-neuf-2026.html</loc>
+    <lastmod>2026-08-28</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
