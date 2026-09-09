@@ -60,7 +60,9 @@
           "PC de travail et de bureau",
           "Sauvegarde et numérisation de disques",
           "Numérisation de DVD, Blu-ray et CD",
-          "Création de DVD et de Blu-ray"
+          "Création de DVD et de Blu-ray",
+          "Rachat de PC usagé",
+          "Vente de PC usagé remis à neuf"
         ],
         "address": {
           "@type": "PostalAddress",
@@ -180,6 +182,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Vos fichiers ne sont jamais partagés ni téléversés en ligne, rien n'est visionné au-delà de la vérification nécessaire, et tout est supprimé de mes appareils 30 jours après la remise. La suppression immédiate est possible sur demande. Vos disques d'origine vous sont toujours rendus."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Est-ce que vous rachetez les PC usagés?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Je rachète des PC de bureau, des PC gaming et des portables usagés à Blainville, Laval et Mirabel. L'offre est basée sur l'âge des pièces, leur état et ce que la configuration vaut en usagé aujourd'hui. Le PC est testé avant de conclure et le paiement se fait par virement Interac ou une autre méthode au besoin."
             }
           },
           {
@@ -318,7 +328,7 @@
         <div class="section-head">
           <h2>Services</h2>
           <p class="muted">
-            Quatre façons d'avancer selon votre besoin, à Blainville, Laval et Mirabel.
+            Cinq façons d'avancer selon votre besoin, à Blainville, Laval et Mirabel.
             Choisissez un service ou demandez une option sur mesure.
           </p>
         </div>
@@ -386,6 +396,23 @@
             </ul>
             <div class="card-actions">
               <a class="btn btn-primary btn-full" href="/planner.html">Ouvrir le planificateur</a>
+            </div>
+          </article>
+
+          <article class="card" style="grid-column:1 / -1;">
+            <h3>Rachat de PC usagé</h3>
+            <p class="muted">
+              Un PC de bureau ou un portable qui ne sert plus? Je le rachète, je le teste et je le remets
+              en état pour le revendre localement. Estimation à partir de votre liste de composants,
+              sans démontage ni déplacement avant d'avoir un montant en main.
+            </p>
+            <ul class="checklist">
+              <li>Offre basée sur la valeur usagée réelle du moment</li>
+              <li>Test complet avant de conclure la transaction</li>
+              <li>Paiement par virement Interac ou autre option</li>
+            </ul>
+            <div class="card-actions">
+              <a class="btn btn-secondary btn-full" href="/achat-pc-usage-blainville.html">Voir le rachat de PC</a>
             </div>
           </article>
         </div>
@@ -836,6 +863,11 @@
           </details>
 
           <details class="card">
+            <summary>Est-ce que vous rachetez les PC usagés?</summary>
+            <p class="muted">Oui, autant les PC de bureau que les PC gaming et les portables récents. L'offre dépend de l'âge des pièces, de leur état et de ce que la configuration vaut en usagé aujourd'hui. Le PC est testé avant de conclure et le paiement se fait par virement Interac ou autrement au besoin. Détails et marche à suivre sur la page <a href="/achat-pc-usage-blainville.html">rachat de PC usagé</a>.</p>
+          </details>
+
+          <details class="card">
             <summary>Faites-vous des PC gaming sur mesure?</summary>
             <p class="muted">Oui. Je monte des PC gaming sur mesure pour le 1080p, 1440p ou 4K selon votre budget, avec sélection des pièces, assemblage propre, installation de Windows, tests de stabilité et optimisation des températures et du bruit.</p>
           </details>
@@ -908,6 +940,7 @@
                 <option value="Upgrade / maintenance">Upgrade / maintenance</option>
                 <option value="Réparation / dépannage">Réparation / dépannage</option>
                 <option value="Sauvegarde / création de disques">Sauvegarde / création de disques</option>
+                <option value="Vendre mon PC (rachat)">Vendre mon PC (rachat)</option>
                 <option value="SFF / sur mesure">SFF / sur mesure</option>
               </select>
             </label>
