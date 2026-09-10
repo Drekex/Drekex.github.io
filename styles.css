@@ -418,30 +418,63 @@ h1,h2,h3{ letter-spacing:-.02em; }
 /* ===================== FAQ ===================== */
 .faq{ display:grid; gap:12px; max-width:840px; }
 .faq .card{ padding:0; }
-details summary{
+/* Ces regles ne visent que les cartes de la FAQ : le bloc des tarifs de
+   disques est un <details> lui aussi, avec sa propre mise en forme. */
+.faq summary{
   cursor:pointer; font-weight:700; padding:18px 22px; list-style:none;
   display:flex; align-items:center; justify-content:space-between; gap:14px;
 }
-details summary::-webkit-details-marker{ display:none; }
-details summary::after{
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{
   content:"+"; color:var(--brand); font-size:1.3rem; font-weight:600; line-height:1; flex:0 0 auto;
 }
-details[open] summary::after{ content:"–"; }
-details p{ margin:0; padding:0 22px 20px; }
+.faq details[open] summary::after{ content:"–"; }
+.faq details p{ margin:0; padding:0 22px 20px; }
+
+/* ===================== Tarifs de disques (repliable) ===================== */
+/* Ce bloc pesait a lui seul environ deux ecrans de telephone. Il reste
+   ouvert sur grand ecran; script.js le referme sous 760px, ou le detail
+   complet vit de toute facon sur sauvegarde-disque-blainville.html. */
+.disc-pricing{ margin-top:56px; }
+.disc-pricing > summary{
+  cursor:pointer; list-style:none;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:18px;
+}
+.disc-pricing > summary::-webkit-details-marker{ display:none; }
+.disc-pricing > summary::after{
+  content:"+"; color:var(--brand); font-size:1.6rem; font-weight:600;
+  line-height:1; flex:0 0 auto; margin-top:4px;
+}
+.disc-pricing[open] > summary::after{ content:"–"; }
+.disc-pricing > summary:focus-visible{ outline:2px solid var(--brand); outline-offset:4px; border-radius:8px; }
+.disc-pricing > summary h2{
+  margin:0;
+  font-size: clamp(1.55rem, 1.2rem + 1.3vw, 2.25rem);
+  font-weight:800; line-height:1.12;
+}
+.disc-pricing-lead{ margin:12px 0 0; max-width:760px; }
+.disc-pricing-body{ margin-top: var(--space-6); }
 
 /* ===================== Contact ===================== */
 .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+/* Sans min-width:0, la colonne prend la largeur minimale de son contenu :
+   l'adresse courriel poussait les deux cartes hors de l'ecran sur un 360px. */
+.contact-grid > *{ min-width:0; }
 .contact-lines{ display:grid; gap:0; margin-top:12px; }
 .line{
   display:flex; align-items:baseline; gap:12px;
   padding:13px 0; border-top:1px solid var(--line);
+  min-width:0;
 }
 .line:first-child{ border-top:none; }
 .k{ width:96px; color:var(--muted); font-weight:600; flex:0 0 auto; }
-.v{ font-weight:700; color:var(--brand); }
+.v{ font-weight:700; color:var(--brand); min-width:0; overflow-wrap:anywhere; }
 .v:hover{ text-decoration:underline; text-underline-offset:3px; }
 
 .form label{ display:grid; gap:8px; margin-top:14px; font-weight:600; font-size:.95rem; }
+input:not([type="checkbox"]):not([type="radio"]), select, textarea{
+  width:100%; min-width:0;
+}
 input, select, textarea{
   font-family:inherit; font-size:1rem;
   background: var(--bg-2);
@@ -749,6 +782,14 @@ article.card{ margin-top:0; }
   .storage-grid{ grid-template-columns:1fr; }
   .hero-cta .btn{ flex:1 1 100%; }
   .quote-grid{ grid-template-columns:1fr; }
+}
+
+/* Sur un petit telephone, l'etiquette de 96px vole trop de place a la valeur :
+   on empile pour que l'adresse courriel tienne sur une seule ligne. */
+@media (max-width:480px){
+  .line{ flex-direction:column; align-items:flex-start; gap:3px; }
+  .k{ width:auto; }
+  .planner-callout{ padding:18px; }
 }
 
 @media (prefers-reduced-motion: reduce){
