@@ -177,6 +177,10 @@ h1,h2,h3{ letter-spacing:-.02em; }
 .footer{ content-visibility:auto; contain-intrinsic-size:1px 900px; }
 
 .section-head{ margin-bottom: var(--space-6); max-width: 760px; }
+/* La mesure de 760px reste (une ligne de 130 caracteres serait trop longue a
+   lire), mais on repartit les lignes egalement au lieu de laisser une ligne
+   pleine suivie d'un court reste. Sans support, le rendu actuel est conserve. */
+.section-head h2, .section-head p{ text-wrap: balance; }
 .section-head h2{
   margin:0 0 12px;
   font-size: clamp(1.55rem, 1.2rem + 1.3vw, 2.25rem);
