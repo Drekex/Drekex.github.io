@@ -762,6 +762,17 @@ article.card{ margin-top:0; }
 
 @media (max-width:760px){
   .container{ width:min(var(--max), calc(100% - 36px)); }
+
+  /* Sur telephone, une carte de service se resume au titre, a deux lignes de
+     presentation et au bouton. Le detail complet (et la meme liste) vit sur la
+     page du service, que le bouton juste en dessous ouvre. */
+  #local-pages > .card > p.muted{
+    display:-webkit-box; -webkit-box-orient:vertical;
+    -webkit-line-clamp:2; line-clamp:2;
+    overflow:hidden;
+  }
+  #local-pages > .card > .checklist{ display:none; }
+
   .action-bar{ display:flex; }
   body{ padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
   .nav-toggle{ display:inline-flex; }
