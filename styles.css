@@ -801,6 +801,57 @@ article.card{ margin-top:0; }
 
 /* Sur un petit telephone, l'etiquette de 96px vole trop de place a la valeur :
    on empile pour que l'adresse courriel tienne sur une seule ligne. */
+/* ===================== Bandes glissables (telephone) ===================== */
+/* Sur telephone, ces trois grilles empilaient 18 elements sur pres de quatre
+   ecrans. En bande horizontale, le pouce fait le travail et la section tient
+   dans un ecran ou deux. Les bandes debordent volontairement jusqu'aux bords
+   de l'ecran : l'element suivant qui depasse indique qu'il y a une suite.
+   Sur grand ecran les grilles restent intactes, tout reste visible d'un coup. */
+@media (max-width:760px){
+  .gallery,
+  .quote-grid,
+  .review-photos{
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overscroll-behavior-x:contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling:touch;
+    /* pleine largeur d'ecran, puis on remet la gouttiere en padding */
+    margin-inline:-18px;
+    padding-inline:18px;
+    scroll-padding-left:18px;
+    padding-bottom:12px;
+  }
+  .gallery > *,
+  .quote-grid > *,
+  .review-photos > *{
+    flex:0 0 auto;
+    scroll-snap-align:start;
+  }
+  .gallery > *{ width:44%; }
+  .review-photos > *{ width:76%; }
+  .quote-grid > *{ width:82%; }
+
+  /* Rail fin plutot qu'une barre de defilement brute : il sert d'indicateur
+     de progression dans la bande. */
+  .gallery, .quote-grid, .review-photos{
+    scrollbar-width:thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+  .gallery::-webkit-scrollbar,
+  .quote-grid::-webkit-scrollbar,
+  .review-photos::-webkit-scrollbar{ height:4px; }
+  .gallery::-webkit-scrollbar-track,
+  .quote-grid::-webkit-scrollbar-track,
+  .review-photos::-webkit-scrollbar-track{ background:transparent; }
+  .gallery::-webkit-scrollbar-thumb,
+  .quote-grid::-webkit-scrollbar-thumb,
+  .review-photos::-webkit-scrollbar-thumb{
+    background: var(--line-strong); border-radius:999px;
+  }
+}
+
 @media (max-width:480px){
   .line{ flex-direction:column; align-items:flex-start; gap:3px; }
   .k{ width:auto; }
