@@ -34,6 +34,19 @@
     });
   }
 
+  // Barre d'action mobile : inutile de la garder devant le formulaire quand la
+  // section contact est deja a l'ecran, elle recouvrirait le bouton Envoyer.
+  const actionBar = document.getElementById("actionBar");
+  const contactSection = document.getElementById("contact");
+  if (actionBar && contactSection && "IntersectionObserver" in window) {
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        actionBar.classList.toggle("is-hidden", entry.isIntersecting);
+      });
+    }, { threshold: 0.15 });
+    barObserver.observe(contactSection);
+  }
+
   /* ========= CONTACT CONFIG ========= */
 
   // Clé publique Web3Forms (sans danger côté client). Un seul endroit à changer.

@@ -50,7 +50,7 @@
 
 *{ box-sizing:border-box; }
 [hidden]{ display:none !important; }
-html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; scroll-padding-top:92px; }
 img,svg{ max-width:100%; height:auto; }
 
 body{
@@ -476,6 +476,30 @@ input:focus, select:focus, textarea:focus{
 .planner-callout-btn{ flex:0 0 auto; white-space:nowrap; }
 
 /* ===================== Footer ===================== */
+/* ===================== Barre d'action mobile ===================== */
+/* Le formulaire de contact est en bas d'une longue page : cette barre garde
+   SMS, WhatsApp et la soumission a portee de pouce. Affichee sous 760px,
+   comme le menu hamburger. */
+.action-bar{
+  display:none;
+  position:fixed; left:0; right:0; bottom:0; z-index:60;
+  gap:8px; padding:10px 14px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  background: rgba(10,14,23,.94);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  backdrop-filter: saturate(140%) blur(12px);
+  border-top:1px solid var(--line-strong);
+  transition: transform .22s ease;
+}
+.action-bar .btn{
+  flex:1 1 0; min-width:0;
+  padding:13px 8px; font-size:.92rem;
+  white-space:nowrap;
+}
+.action-bar .btn:hover{ transform:none; }
+/* Masquee quand la section contact est deja a l'ecran. */
+.action-bar.is-hidden{ transform: translateY(120%); }
+
 .footer{ border-top:1px solid var(--line); padding:28px 0; background: var(--bg-2); }
 .footer-inner{ display:flex; justify-content:space-between; align-items:center; gap:14px; }
 .link{ color:var(--muted); }
@@ -705,6 +729,8 @@ article.card{ margin-top:0; }
 
 @media (max-width:760px){
   .container{ width:min(var(--max), calc(100% - 36px)); }
+  .action-bar{ display:flex; }
+  body{ padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
   .nav-toggle{ display:inline-flex; }
   .nav-links{
     position:absolute; right:18px; top:66px; display:none;
