@@ -47,13 +47,13 @@
     barObserver.observe(contactSection);
   }
 
-  // Les tarifs de disques valent environ deux ecrans de telephone. On les
-  // replie sous 760px : le detail complet reste dans le DOM, et la page
-  // sauvegarde-disque-blainville.html couvre le sujet au long.
-  const discPricing = document.getElementById("discPricing");
-  if (discPricing && window.matchMedia) {
+  // Les tarifs de disques et de cassettes valent environ deux ecrans de
+  // telephone chacun. On les replie sous 760px : le detail complet reste dans
+  // le DOM, et les pages de service couvrent le sujet au long.
+  const foldPricing = document.querySelectorAll(".disc-pricing");
+  if (foldPricing.length && window.matchMedia) {
     const narrow = window.matchMedia("(max-width:760px)");
-    const syncDiscPricing = () => { discPricing.open = !narrow.matches; };
+    const syncDiscPricing = () => { foldPricing.forEach((d) => { d.open = !narrow.matches; }); };
     syncDiscPricing();
     // On ne resuit que sur un vrai changement de palier, pas a chaque resize,
     // pour ne pas refermer le bloc que le visiteur vient d'ouvrir.
