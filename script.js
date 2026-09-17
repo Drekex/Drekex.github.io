@@ -171,7 +171,7 @@
 
   setLanguage();
 
-  /* ========= SHARED LIGHTBOX (BUILDS + REVIEWS) ========= */
+  /* ========= SHARED LIGHTBOX (BUILDS + REVIEWS + TUTORIAL) ========= */
 
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lightboxImg");
@@ -182,7 +182,8 @@
   // Two separate galleries
   const galleries = {
     builds: Array.from(document.querySelectorAll('[data-lightbox="builds"] button')),
-    reviews: Array.from(document.querySelectorAll('[data-lightbox="reviews"] button'))
+    reviews: Array.from(document.querySelectorAll('[data-lightbox="reviews"] button')),
+    tutorial: Array.from(document.querySelectorAll('[data-lightbox="tutorial"] button'))
   };
 
   let activeGallery = "builds";
@@ -247,6 +248,11 @@
   // Attach click handlers for reviews
   galleries.reviews.forEach((btn, idx) => {
     btn.addEventListener("click", () => openAt("reviews", idx));
+  });
+
+  // Attach click handlers for tutorial screenshots
+  galleries.tutorial.forEach((btn, idx) => {
+    btn.addEventListener("click", () => openAt("tutorial", idx));
   });
 
   btnNext?.addEventListener("click", next);

@@ -370,6 +370,27 @@ h1,h2,h3{ letter-spacing:-.02em; }
 }
 .img-btn:hover img{ transform: translateY(-3px); border-color: var(--brand-border); }
 
+/* ===================== Tutorial screenshots ===================== */
+.tuto-steps{ margin:0; padding-left:1.6em; display:grid; gap:10px; }
+.tuto-steps li{ padding-left:4px; }
+.tuto-steps li::marker{ color:var(--brand); font-weight:800; }
+.tuto-shots{ display:grid; grid-template-columns:1fr 1fr; gap: var(--grid-gap); align-items:start; margin-top:20px; }
+.tuto-shots.single{ grid-template-columns:1fr; }
+.tuto-shot{ margin:0; }
+.tuto-shot button{
+  display:block; width:100%; padding:0; border:0; background:transparent;
+  cursor:zoom-in; border-radius: var(--radius-sm); text-align:left;
+}
+.tuto-shot img{
+  display:block; width:100%; height:auto; border-radius: var(--radius-sm);
+  border:1px solid var(--line-strong); transition: border-color .18s ease;
+}
+.tuto-shot button:hover img, .tuto-shot button:focus-visible img{ border-color: var(--brand-border); }
+.tuto-shot.narrow button{ width:auto; max-width:100%; }
+.tuto-shot.narrow img{ width:auto; max-width:100%; max-height:560px; }
+.tuto-shot figcaption{ margin-top:8px; color:var(--muted); font-size:.88rem; }
+.tuto-part > .micro, .tuto-part > .note{ margin-top:18px; }
+
 /* ===================== Reviews ===================== */
 .rating-summary{
   display:grid; grid-template-columns: 200px 1fr; gap:26px; align-items:center;
@@ -761,6 +782,7 @@ article.card{ margin-top:0; }
   .option-grid, .option-grid.tight{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   .soft-trust-grid{ grid-template-columns:1fr; }
   .guides-list, .comparison-grid{ grid-template-columns:1fr; }
+  .tuto-shots{ grid-template-columns:1fr; }
   .lightbox-nav{ width:42px; height:42px; font-size:24px; }
 }
 
