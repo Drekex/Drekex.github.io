@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "updated": "2026-09-23",
+  "boxes": [
+    {
+      "name": "Petite boîte",
+      "length_cm": 30,
+      "width_cm": 23,
+      "height_cm": 10,
+      "weight_kg": 0.3
+    },
+    {
+      "name": "Boîte moyenne",
+      "length_cm": 45,
+      "width_cm": 35,
+      "height_cm": 15,
+      "weight_kg": 0.6
+    },
+    {
+      "name": "Boîte de PC (tour)",
+      "length_cm": 65,
+      "width_cm": 35,
+      "height_cm": 60,
+      "weight_kg": 2
+    }
+  ],
+  "products": [
+    {
+      "id": "amd-ryzen-5-5600x",
+      "name": "AMD Ryzen 5 5600X",
+      "category": "cpu",
+      "condition": "new",
+      "condition_note": "Commandé directement du manufacturier, neuf et scellé.",
+      "status": "available",
+      "price": 224.99,
+      "promo": {
+        "active": true,
+        "price": null,
+        "label": "Recevez DOOM en cadeau à l'achat de l'article!",
+        "details": "À l'achat de cet article, vous recevrez gratuitement par courriel une clé de produit Steam pour DOOM! L'achat doit être effectué avant la fin de la promotion. Les quantités peuvent être limitées.",
+        "ends": "2026-10-22"
+      },
+      "summary": "AMD Ryzen 5 5600X",
+      "description": "AMD Ryzen 5 5600X, Processeur de bureau série Ryzen 5 5000, 6 cœurs, 3,7 GHz, socle AM4, 65 W, sans processeur graphique intégré. Le refroidisseur AMD Wraith Stealth n'est pas inclus avec ce produit.",
+      "specs": [
+        [
+          "Nom",
+          "AMD Ryzen™ 5 5600X "
+        ],
+        [
+          "Famille",
+          "Ryzen "
+        ],
+        [
+          "Série",
+          "Série Ryzen 5000"
+        ],
+        [
+          "Format",
+          "Ordinateurs de bureau, processeur en boîte"
+        ],
+        [
+          "Ancien nom de code",
+          "Vermeer"
+        ],
+        [
+          "Nombre de cœurs",
+          "6"
+        ],
+        [
+          "Nombre de fils d'exécution (threads)",
+          "12"
+        ],
+        [
+          "Fréquence d'accélération max.",
+          "Jusqu'à 4,6 GHz"
+        ],
+        [
+          "Fréquence de base",
+          "3,7 GHz"
+        ],
+        [
+          "Mémoire cache L2",
+          "3 Mo"
+        ],
+        [
+          "Mémoire cache L3",
+          "32 Mo"
+        ],
+        [
+          "TDP par défaut",
+          "65 W"
+        ],
+        [
+          "Technologie de fabrication des cœurs",
+          "TSMC 7 nm FinFET"
+        ],
+        [
+          "Débloqué pour le surcadençage (overclocking)",
+          "Oui"
+        ],
+        [
+          "Socle du processeur",
+          "AM4"
+        ],
+        [
+          "Refroidisseur inclus",
+          "Non"
+        ],
+        [
+          "Température de fonctionnement max. (Tjmax)",
+          "95 °C"
+        ],
+        [
+          "Date de lancement",
+          "2020-11-05"
+        ],
+        [
+          "*Systèmes d'exploitation pris en charge",
+          "Windows 11 (64 bits), Windows 10 (64 bits), RHEL x86 64 bits, Ubuntu x86 64 bits"
+        ]
+      ],
+      "thumb": "assets/store/amd-ryzen-5-5600x-mudlcqpq302-apercu.jpg",
+      "images": [
+        "assets/store/amd-ryzen-5-5600x-mudi52fcdf1.jpg"
+      ],
+      "package": {
+        "box": "",
+        "length_cm": 15.3,
+        "width_cm": 10.2,
+        "height_cm": 10.2,
+        "item_kg": null,
+        "pack_kg": null,
+        "weight_kg": 0.13,
+        "notes": ""
+      },
+      "date_added": "2026-09-22"
+    }
+  ]
+}
