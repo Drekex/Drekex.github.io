@@ -590,12 +590,11 @@
               <input name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(514) 555-1234" maxlength="20">
               <span class="hint">10 chiffres, avec l'indicatif régional.</span>
               <span class="err" data-err="phone" hidden></span></label>
-            <label class="field"><span>Courriel <span class="opt">(facultatif, recommandé)</span></span>
+            <label class="field"><span>Courriel <span class="req">*</span></span>
               <input name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" maxlength="120">
-              <span class="hint">Nécessaire pour recevoir les mises à jour du colis.</span>
+              <span class="hint">C'est là que je vous envoie le total avec la livraison et le suivi du colis.</span>
               <span class="err" data-err="email" hidden></span></label>
           </div>
-          <span class="err" data-err="contact" hidden style="display:block;margin-top:10px"></span>
 
           <label class="field"><span>Note <span class="opt">(facultatif)</span></span>
             <textarea name="note" rows="3" maxlength="800" placeholder="Une question, une précision pour la livraison…"></textarea></label>
@@ -670,18 +669,18 @@
         if (d.length !== 10) e.phone = "Le numéro doit contenir 10 chiffres, indicatif régional compris.";
         else if (!/^[2-9]\d{2}[2-9]\d{6}$/.test(d)) e.phone = "Indicatif régional ou numéro invalide.";
       }
-      if (email && !EMAIL_RE.test(email)) e.email = "Adresse courriel invalide.";
-      if (!phone && !email) e.contact = "Laissez au moins un téléphone ou un courriel pour que je puisse vous envoyer le total.";
+      if (!email) e.email = "Entrez votre courriel : c'est par là que je vous envoie le total et le suivi.";
+      else if (!EMAIL_RE.test(email)) e.email = "Adresse courriel invalide.";
       return e;
     }
 
-    const LABELS = { fullname: "nom complet", street: "adresse", city: "ville", province: "province", postal: "code postal", phone: "téléphone", email: "courriel", contact: "téléphone ou courriel" };
+    const LABELS = { fullname: "nom complet", street: "adresse", city: "ville", province: "province", postal: "code postal", phone: "téléphone", email: "courriel" };
 
     function refresh() {
       const errs = validate();
       form.querySelectorAll("[data-err]").forEach((el) => {
         const k = el.dataset.err;
-        const show = errs[k] && (touched.has(k) || (k === "contact" && touched.has("phone") && touched.has("email")));
+        const show = errs[k] && touched.has(k);
         el.textContent = show ? errs[k] : "";
         el.hidden = !show;
         const input = f[k];
@@ -906,7 +905,7 @@
     });
 
     function showDone(o) {
-      const how = o.email && o.phone ? "par courriel ou par texto" : o.email ? "par courriel" : "par texto";
+      const how = o.phone ? "par courriel, ou par texto si c'est plus rapide," : "par courriel";
       $("#orderRoot").innerHTML = `
         <div class="card glass order-done" style="max-width:760px">
           <p class="eyebrow">Commande reçue</p>

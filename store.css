@@ -229,7 +229,10 @@
 .order-form .form-row{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
 .order-form .form-row.three{ grid-template-columns: 1.3fr 1fr .8fr; }
 .order-form label{ margin-top:0; }
-.order-form .field{ display:grid; gap:7px; margin-top:16px; font-weight:600; font-size:.95rem; position:relative; }
+/* align-content:start : sans ça, la colonne la plus courte étire ses rangées
+   pour suivre la plus haute (indice de deux lignes sous le courriel) et les
+   deux champs ne sont plus alignés. */
+.order-form .field{ display:grid; gap:7px; align-content:start; margin-top:16px; font-weight:600; font-size:.95rem; position:relative; }
 .order-form .field > span .opt{ color:var(--muted); font-weight:500; font-size:.85rem; }
 .order-form .field > span .req{ color:var(--brand); }
 .order-form .hint{ font-size:.84rem; color:var(--muted); font-weight:500; }
