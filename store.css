@@ -103,7 +103,9 @@
   position:relative; aspect-ratio: 4/3; background: var(--bg-2);
   border-bottom:1px solid var(--line); overflow:hidden;
 }
-.product-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+/* contain plutôt que cover : une photo qui n'est pas en 4:3 est affichée en
+   entier sur la carte, comme sur la fiche, au lieu d'être coupée. */
+.product-thumb img{ width:100%; height:100%; object-fit:contain; display:block; }
 .product-badges{
   position:absolute; top:10px; left:10px; right:10px;
   display:flex; justify-content:space-between; align-items:flex-start; gap:6px; pointer-events:none;
@@ -276,7 +278,7 @@
 
 .order-summary{ position:sticky; top:92px; }
 .order-item{ display:flex; gap:14px; align-items:flex-start; }
-.order-item img{ width:92px; height:92px; object-fit:cover; border-radius:12px; border:1px solid var(--line); flex:0 0 auto; background:var(--bg-2); }
+.order-item img{ width:92px; height:92px; object-fit:contain; border-radius:12px; border:1px solid var(--line); flex:0 0 auto; background:var(--bg-2); }
 .order-item h3{ font-size:1.02rem !important; margin:0 0 6px !important; line-height:1.3; }
 .order-lines{ margin:16px 0 0; padding:0; list-style:none; }
 .order-lines li{ display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-top:1px solid var(--line); font-size:.94rem; }
