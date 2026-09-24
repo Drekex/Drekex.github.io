@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-09-23",
+  "updated": "2026-09-24",
   "boxes": [
     {
       "name": "Petite boîte",
@@ -40,7 +40,7 @@
         "details": "À l'achat de cet article, vous recevrez gratuitement par courriel une clé de produit Steam pour DOOM! L'achat doit être effectué avant la fin de la promotion. Les quantités peuvent être limitées.",
         "ends": "2026-10-22"
       },
-      "summary": "AMD Ryzen 5 5600X",
+      "summary": "Un CPU excellent pour le gaming sur la plateforme AM4",
       "description": "AMD Ryzen 5 5600X, Processeur de bureau série Ryzen 5 5000, 6 cœurs, 3,7 GHz, socle AM4, 65 W, sans processeur graphique intégré. Le refroidisseur AMD Wraith Stealth n'est pas inclus avec ce produit.",
       "specs": [
         [
@@ -135,6 +135,88 @@
         "notes": ""
       },
       "date_added": "2026-09-22"
+    },
+    {
+      "id": "crucial-barette-identique-2x16gb-ddr4-3200-sodimm-1-2v-cl22",
+      "name": "Crucial barette identique 2x16GB DDR4 3200 SODIMM 1.2V CL22",
+      "category": "memory",
+      "condition": "like_new",
+      "condition_note": "Test prolongé effectué avec MemTest86 sans aucune erreur (voir les photos). Le kit de RAM a été utilisé précédemment, mais fonctionne comme neuf.",
+      "status": "available",
+      "price": 208,
+      "promo": {
+        "active": false,
+        "price": null,
+        "label": "",
+        "details": "",
+        "ends": ""
+      },
+      "summary": "Passez à 32 Go dans votre portable ou mini-PC: kit Crucial DDR4 3200 testé à fond avec MemTest86, zéro erreur.",
+      "description": "",
+      "specs": [
+        [
+          "Marque",
+          "Crucial (par Micron)"
+        ],
+        [
+          "Capacité",
+          "32 Go (2 x 16 Go), deux barrettes identiques"
+        ],
+        [
+          "Type",
+          "DDR4 SO-DIMM, 260 broches (pour portables, mini-PC et NUC)"
+        ],
+        [
+          "Vitesse",
+          "3200 MT/s (PC4-25600)"
+        ],
+        [
+          "Latence",
+          "CL22 (22-22-22)"
+        ],
+        [
+          "Tension",
+          "1.2V"
+        ],
+        [
+          "Organisation",
+          "double rang (2Rx8)"
+        ],
+        [
+          "Non-ECC",
+          "non tamponnée (unbuffered)"
+        ],
+        [
+          "Numéro de pièce",
+          "CT16G4SFD832A"
+        ],
+        [
+          "Compatible Intel et AMD",
+          "rétrocompatible avec les systêmes DDR4 plus lents (2400, 2666, 2933 MT/s), ou elle s'ajuste automatiquement à la vitesse maximale supportée"
+        ],
+        [
+          "Non compatible",
+          "sur ordinateurs de bureau (DIMM) ni avec la DDR5"
+        ]
+      ],
+      "thumb": "assets/store/crucial-kit-2x16gb-ddr4-3200-sodimm-1-2v-cl22-mug4g9xssgi-apercu.jpg",
+      "images": [
+        "assets/store/crucial-kit-16gb-ddr4-3200-sodimm-1-2v-cl22-mug48uvtgyo.jpg",
+        "assets/store/crucial-kit-16gb-ddr4-3200-sodimm-1-2v-cl22-mug48uv6vrg.jpg",
+        "assets/store/crucial-kit-16gb-ddr4-3200-sodimm-1-2v-cl22-mug49uaadir.jpg",
+        "assets/store/crucial-kit-16gb-ddr4-3200-sodimm-1-2v-cl22-mug49u9ljt2.jpg"
+      ],
+      "package": {
+        "box": "",
+        "length_cm": 15.3,
+        "width_cm": 10.2,
+        "height_cm": 10.2,
+        "item_kg": null,
+        "pack_kg": null,
+        "weight_kg": 0.09,
+        "notes": ""
+      },
+      "date_added": "2026-09-24"
     }
   ]
 }
