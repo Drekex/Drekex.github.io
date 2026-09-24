@@ -217,6 +217,96 @@
         "notes": ""
       },
       "date_added": "2026-09-24"
+    },
+    {
+      "id": "ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2to",
+      "name": "Ediloca EN600 PRO M.2 SSD PCle 3.0x4 2To",
+      "category": "storage",
+      "condition": "like_new",
+      "condition_note": "SSD presque neuf, avec seulement quelques heures d'activité. Vérifié avec CrystalDiskInfo et testé avec CrystalDiskMark + H2testw v1.4, aucun problème retrouvé.",
+      "status": "available",
+      "price": 271,
+      "promo": {
+        "active": false,
+        "price": null,
+        "label": "",
+        "details": "",
+        "ends": ""
+      },
+      "summary": "2 To de stockage NVMe rapide (jusqu'à 3500 Mo/s), presque neuf et testé: idéal pour agrandir l'espace de jeu d'un PC de bureau ou d'un portable.",
+      "description": "",
+      "specs": [
+        [
+          "Marque",
+          "Ediloca"
+        ],
+        [
+          "Modèle",
+          "Ediloca EN600 PRO"
+        ],
+        [
+          "Capacité",
+          "2To"
+        ],
+        [
+          "Format",
+          "M.2 2280"
+        ],
+        [
+          "Interface",
+          "NVMe 1.3, PCIe 3.0 x4"
+        ],
+        [
+          "Lecture séquentielle",
+          "jusqu'à 3500 Mo/s"
+        ],
+        [
+          "Écriture séquentielle",
+          "jusqu'à 3000 Mo/s"
+        ],
+        [
+          "Mémoire",
+          "3D NAND TLC avec cache SLC dynamique"
+        ],
+        [
+          "Refroidissement",
+          "étiquette de dissipation en graphène"
+        ],
+        [
+          "Aucune pièce mobile",
+          "silencieux et résistant aux chocs"
+        ],
+        [
+          "Compatibilité",
+          "PC de bureau et les portables munis d'un emplacement M.2 NVMe"
+        ],
+        [
+          "OS",
+          "Compatible Windows 10/11 et macOS"
+        ],
+        [
+          "Non compatible",
+          "PS5, Ne fonctionne pas dans un emplacement M.2 SATA seulement"
+        ]
+      ],
+      "thumb": "assets/store/ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2tb-mug5ibm6blw-apercu.jpg",
+      "images": [
+        "assets/store/ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2tb-mug5hz5w2qu.jpg",
+        "assets/store/ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2tb-mug5hz4vizl.jpg",
+        "assets/store/ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2tb-mug5hz6zx2y.jpg",
+        "assets/store/ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2tb-mug5hz6d5dl.jpg"
+      ],
+      "package": {
+        "box": "",
+        "length_cm": 15.3,
+        "width_cm": 10.2,
+        "height_cm": 10.2,
+        "item_kg": null,
+        "pack_kg": null,
+        "weight_kg": 0.07,
+        "notes": ""
+      },
+      "date_added": "2026-09-24"
     }
   ]
 }
