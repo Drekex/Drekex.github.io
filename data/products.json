@@ -307,6 +307,89 @@
         "notes": ""
       },
       "date_added": "2026-09-24"
+    },
+    {
+      "id": "amd-ryzen-7-7700",
+      "name": "AMD Ryzen 7 7700",
+      "category": "cpu",
+      "condition": "new",
+      "condition_note": "Commandé directement du manufacturier, neuf et scellé.",
+      "status": "available",
+      "price": 299.99,
+      "promo": {
+        "active": true,
+        "price": null,
+        "label": "Recevez DOOM en cadeau à l'achat de l'article!",
+        "details": "À l'achat de cet article, vous recevrez gratuitement par courriel une clé de produit Steam pour DOOM! L'achat doit être effectué avant la fin de la promotion. Les quantités peuvent être limitées.",
+        "ends": "2026-10-22"
+      },
+      "summary": "8 cœurs Zen 4 jusqu'à 5,3 GHz pour seulement 65 W: un excellent processeur de jeu AM5, avec graphiques intégrés en prime.",
+      "description": "Le refroidisseur AMD Wraith Prism n'est pas inclus avec ce produit.",
+      "specs": [
+        [
+          "Modèle",
+          "AMD Ryzen 7 7700"
+        ],
+        [
+          "Architecture",
+          "Zen 4 (gravure 5 nm)"
+        ],
+        [
+          "Cœurs / fils",
+          "8 cœurs, 16 fils"
+        ],
+        [
+          "Fréquence",
+          "3,8 GHz de base, jusqu'à 5,3 GHz en boost"
+        ],
+        [
+          "Mémoire cache",
+          "32 Mo L3, 8 Mo L2"
+        ],
+        [
+          "Enveloppe thermique",
+          "65 W"
+        ],
+        [
+          "Socket",
+          "AM5 (chipsets A620, B650, B650E, B840, B850, X670, X670E, X870, X870E)"
+        ],
+        [
+          "Mémoire",
+          "DDR5 double canal, jusqu'à 128 Go; support AMD EXPO PCIe 5.0"
+        ],
+        [
+          "Graphiques intégrés AMD Radeon",
+          "permet d'utiliser le PC sans carte graphique"
+        ],
+        [
+          "Overclocking",
+          "Déverrouillé pour l'overclocking (Precision Boost Overdrive, Ryzen Master)"
+        ],
+        [
+          "Compatibilité",
+          "Windows 10/11 64 bits et Linux"
+        ],
+        [
+          "Prérequis",
+          "Nécessite une carte mère AM5 et de la mémoire DDR5. Non compatible avec les cartes mères AM4 ni la DDR4."
+        ]
+      ],
+      "thumb": "assets/store/amd-ryzen-7-7700-mug6xrgninx-apercu.jpg",
+      "images": [
+        "assets/store/amd-ryzen-7-7700-mug6bcqbrza.jpg"
+      ],
+      "package": {
+        "box": "",
+        "length_cm": 15.3,
+        "width_cm": 10.2,
+        "height_cm": 10.2,
+        "item_kg": null,
+        "pack_kg": null,
+        "weight_kg": 0.12,
+        "notes": ""
+      },
+      "date_added": "2026-09-24"
     }
   ]
 }
