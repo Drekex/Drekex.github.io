@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#0c111d"/>
-  <g fill="none" stroke="#2a3754" stroke-width="10" stroke-linejoin="round">
-    <rect x="290" y="210" width="220" height="180" rx="16"/>
-    <rect x="345" y="260" width="110" height="80" rx="8"/>
-    <path d="M320 210v-30M360 210v-30M400 210v-30M440 210v-30M480 210v-30M320 420v-30M360 420v-30M400 420v-30M440 420v-30M480 420v-30M260 240h30M260 280h30M260 320h30M260 360h30M510 240h30M510 280h30M510 320h30M510 360h30"/>
-  </g>
-  <text x="400" y="490" fill="#5e6b86" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="600" text-anchor="middle">Photo à venir</text>
-</svg>
