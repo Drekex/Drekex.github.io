@@ -45,11 +45,11 @@
       "specs": [
         [
           "Nom",
-          "AMD Ryzen™ 5 5600X "
+          "AMD Ryzen™ 5 5600X"
         ],
         [
           "Famille",
-          "Ryzen "
+          "Ryzen"
         ],
         [
           "Série",
@@ -134,7 +134,8 @@
         "weight_kg": 0.13,
         "notes": ""
       },
-      "date_added": "2026-09-22"
+      "date_added": "2026-09-22",
+      "updated": "2026-09-22"
     },
     {
       "id": "crucial-barette-identique-2x16gb-ddr4-3200-sodimm-1-2v-cl22",
@@ -216,7 +217,8 @@
         "weight_kg": 0.09,
         "notes": ""
       },
-      "date_added": "2026-09-24"
+      "date_added": "2026-09-24",
+      "updated": "2026-09-24"
     },
     {
       "id": "ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2to",
@@ -306,7 +308,8 @@
         "weight_kg": 0.07,
         "notes": ""
       },
-      "date_added": "2026-09-24"
+      "date_added": "2026-09-24",
+      "updated": "2026-09-24"
     },
     {
       "id": "amd-ryzen-7-7700",
@@ -389,7 +392,8 @@
         "weight_kg": 0.12,
         "notes": ""
       },
-      "date_added": "2026-09-24"
+      "date_added": "2026-09-24",
+      "updated": "2026-09-24"
     }
   ]
 }
