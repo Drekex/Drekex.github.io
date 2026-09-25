@@ -126,7 +126,7 @@
       try {
         await postToWeb3Forms({
           subject: leadSubject(lead),
-          from_name: `${lead.name || "Client"} — raymondpc.ca`,
+          from_name: `${lead.name || "Client"} - raymondpc.ca`,
           ...replyTo(lead.reply),
           name: lead.name,
           contact: lead.reply,
@@ -570,7 +570,7 @@
         if (type) pieces.push(t().values[type] || (type === "other" ? t().misc.otherLabel : type));
         let line = pieces.join(" ").trim();
         if (!line) line = t().misc.otherLabel;
-        if (note) line += ` — ${note}`;
+        if (note) line += `, ${note}`;
         items.push(line);
       });
       return items;
@@ -627,7 +627,7 @@
       addPreviewItem(t().labels.budget, values.budget);
       addPreviewItem(t().labels.tier, t().values[values.tier] || values.tier);
       let useText = t().values[values.use_case] || values.use_case;
-      if (values.use_case === "other" && values.use_case_other) useText = `${t().misc.otherLabel} — ${values.use_case_other}`;
+      if (values.use_case === "other" && values.use_case_other) useText = `${t().misc.otherLabel} : ${values.use_case_other}`;
       addPreviewItem(t().labels.use_case, useText);
       addPreviewItem(t().labels.cpu_family, t().values[values.cpu_family] || values.cpu_family);
       addPreviewItem(t().labels.gpu_family, t().values[values.gpu_family] || values.gpu_family);
@@ -638,7 +638,7 @@
       addPreviewItem(t().labels.rgb, t().values[values.rgb] || values.rgb);
       addPreviewItem(t().labels.cooling, t().values[values.cooling] || values.cooling);
       let formText = t().values[values.form_factor] || values.form_factor;
-      if (values.form_factor === "other" && values.form_factor_other) formText = `${t().misc.otherLabel} — ${values.form_factor_other}`;
+      if (values.form_factor === "other" && values.form_factor_other) formText = `${t().misc.otherLabel} : ${values.form_factor_other}`;
       addPreviewItem(t().labels.form_factor, formText);
       addPreviewItem(t().labels.resolution, t().values[values.resolution] || values.resolution);
       addPreviewItem(t().labels.other, values.other);
@@ -724,7 +724,7 @@
         validationEl.textContent = "Envoi en cours…";
         postToWeb3Forms({
           subject,
-          from_name: `${clientName || "Client"} — Planificateur raymondpc.ca`,
+          from_name: `${clientName || "Client"} - Planificateur raymondpc.ca`,
           ...replyTo(clientContact),
           name: clientName,
           contact: clientContact,

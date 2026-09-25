@@ -49,7 +49,13 @@
   const moneyFmt = new Intl.NumberFormat("fr-CA", { style: "currency", currency: "CAD" });
   const money = (n) => moneyFmt.format(Number(n) || 0);
   const kg = (n) => `${String(n).replace(".", ",")} kg`;
-  const today = () => new Date().toISOString().slice(0, 10);
+  // Date locale, pas UTC : avec toISOString(), une promo « jusqu'au 22 inclusivement »
+  // disparaissait vers 20 h le 22 au Quebec (minuit UTC).
+  const today = () => {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  };
+  const norm = (s) => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   const fmtDate = (iso) => {
     const d = new Date(iso + "T12:00:00");
     return isNaN(d) ? iso : d.toLocaleDateString("fr-CA", { day: "numeric", month: "long", year: "numeric" });
@@ -85,6 +91,49 @@
     }
     return `<span class="price-now">${money(p.price)}</span>`;
   }
+  // Un aperçu qui repete le nom n'apporte rien sous le titre de la carte.
+  const cardSummary = (p) => (p.summary && norm(p.summary).trim() !== norm(p.name).trim() ? p.summary : "");
+
+  // Carte d'article, partagee par le catalogue et l'apercu de la page d'accueil.
+  function cardHtml(p) {
+    const st = statusLabel(p);
+    const summary = cardSummary(p);
+    const promo = promoActive(p);
+    return `<a class="card product-card${st ? " is-unavailable" : ""}" href="${productUrl(p)}">
+      <div class="product-thumb">
+        <img src="${esc(thumbOf(p))}" alt="${esc(p.name)}" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER}'">
+        <div class="product-badges">${condBadge(p.condition)}${promo ? `<span class="badge-promo">Promo</span>` : ""}</div>
+        ${st ? `<div class="status-ribbon">${st}</div>` : ""}
+      </div>
+      <div class="product-body">
+        <div class="product-cat">${esc(CAT_LABEL[p.category] || "")}</div>
+        <h3 class="product-name">${esc(p.name)}</h3>
+        ${promo && p.promo.label ? `<p class="product-promo">${esc(p.promo.label)}</p>` : ""}
+        ${summary ? `<p class="product-summary">${esc(summary)}</p>` : ""}
+        <div class="product-price">${priceHtml(p)}<span class="price-tax">taxes incl.</span></div>
+      </div>
+    </a>`;
+  }
+
+  // Une photo sur fond blanc dans un cadre sombre laissait deux bandes noires.
+  // On lit la couleur des coins : si elle est uniforme, le cadre la reprend.
+  function tintFrame(img, frame) {
+    const run = () => {
+      try {
+        const n = 24;
+        const c = document.createElement("canvas");
+        c.width = c.height = n;
+        const x = c.getContext("2d", { willReadFrequently: true });
+        x.drawImage(img, 0, 0, n, n);
+        const px = [[0, 0], [n - 1, 0], [0, n - 1], [n - 1, n - 1]].map(([a, b]) => x.getImageData(a, b, 1, 1).data);
+        const avg = [0, 1, 2].map((k) => Math.round(px.reduce((s, p) => s + p[k], 0) / px.length));
+        const spread = Math.max(...px.map((p) => Math.abs(p[0] - avg[0]) + Math.abs(p[1] - avg[1]) + Math.abs(p[2] - avg[2])));
+        frame.style.backgroundColor = spread < 36 ? `rgb(${avg.join(",")})` : "";
+      } catch (e) { frame.style.backgroundColor = ""; }
+    };
+    img.addEventListener("load", run);
+    if (img.complete && img.naturalWidth) run();
+  }
 
   async function loadProducts() {
     const res = await fetch(DATA_URL, { cache: "no-cache" });
@@ -104,6 +153,21 @@
   if (page === "store") initStore();
   if (page === "product") initProduct();
   if (page === "order") initOrder();
+  if ($("#shopTeaser")) initTeaser($("#shopTeaser"));
+
+  /* =========================================================
+     APERCU SUR LA PAGE D'ACCUEIL
+     Les derniers articles disponibles; le bloc reste cache s'il n'y en a aucun.
+     ========================================================= */
+  async function initTeaser(box) {
+    let all = [];
+    try { all = await loadProducts(); } catch (e) { return; }
+    const recent = (a, b) => String(b.date_added || "").localeCompare(String(a.date_added || ""));
+    const list = all.filter(isBuyable).sort((a, b) => (promoActive(b) - promoActive(a)) || recent(a, b)).slice(0, 4);
+    if (!list.length) return;
+    $("#shopTeaserGrid", box).innerHTML = list.map(cardHtml).join("");
+    box.hidden = false;
+  }
 
   /* =========================================================
      CATALOGUE
@@ -196,8 +260,6 @@
       history.replaceState(null, "", location.pathname + (qs ? "?" + qs : ""));
     }
 
-    const norm = (s) => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
-
     function render() {
       const min = parseFloat(String(state.min).replace(",", "."));
       const max = parseFloat(String(state.max).replace(",", "."));
@@ -237,22 +299,7 @@
         return;
       }
 
-      grid.innerHTML = list.map((p) => {
-        const st = statusLabel(p);
-        return `<a class="card product-card${st ? " is-unavailable" : ""}" href="${productUrl(p)}">
-          <div class="product-thumb">
-            <img src="${esc(thumbOf(p))}" alt="${esc(p.name)}" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER}'">
-            <div class="product-badges">${condBadge(p.condition)}${promoActive(p) ? `<span class="badge-promo">Promo</span>` : ""}</div>
-            ${st ? `<div class="status-ribbon">${st}</div>` : ""}
-          </div>
-          <div class="product-body">
-            <div class="product-cat">${esc(CAT_LABEL[p.category] || "")}</div>
-            <h3 class="product-name">${esc(p.name)}</h3>
-            ${p.summary ? `<p class="product-summary">${esc(p.summary)}</p>` : ""}
-            <div class="product-price">${priceHtml(p)}<span class="price-tax">taxes incl.</span></div>
-          </div>
-        </a>`;
-      }).join("");
+      grid.innerHTML = list.map(cardHtml).join("");
     }
 
     function update() { syncControls(); writeUrl(); render(); }
@@ -321,9 +368,15 @@
 
     document.title = `${p.name} | Boutique Raymond PC`;
     const metaDesc = $('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", (p.summary || p.name) + " Prix taxes incluses, livraison partout au Canada.");
-    const canon = $('link[rel="canonical"]');
-    if (canon) canon.setAttribute("href", `${SITE_URL}/${productUrl(p)}`);
+    if (metaDesc) {
+      const lead = (cardSummary(p) || String(p.description || "").split(/(?<=[.!?])\s/)[0] || p.name).trim();
+      metaDesc.setAttribute("content", `${lead}${/[.!?]$/.test(lead) ? "" : "."} Prix taxes incluses, livraison partout au Canada.`);
+    }
+    // produit.html n'a pas de canonique fixe : une canonique vers boutique.html
+    // dans le HTML poussait Google a ignorer chaque fiche comme doublon.
+    let canon = $('link[rel="canonical"]');
+    if (!canon) { canon = document.createElement("link"); canon.rel = "canonical"; document.head.appendChild(canon); }
+    canon.setAttribute("href", `${SITE_URL}/${productUrl(p)}`);
 
     const imgs = imagesOf(p);
     const st = statusLabel(p);
@@ -433,6 +486,23 @@
     document.head.appendChild(s);
 
     setupGallery(imgs, p.name);
+
+    // Sur telephone, le bouton Acheter tombe sous la ligne de flottaison (photo,
+    // prix, promo). La barre du bas le reprend, puis s'efface quand le vrai
+    // bouton est a l'ecran pour ne pas l'afficher en double.
+    const bar = $("#actionBar");
+    const barBuy = bar && $(".btn-primary", bar);
+    if (barBuy && isBuyable(p)) {
+      barBuy.href = `commande.html?id=${encodeURIComponent(p.id)}`;
+      barBuy.textContent = `Acheter · ${money(finalPrice(p))}`;
+      barBuy.classList.add("btn-buy");
+      const buyRow = $(".buy-row", root);
+      if (buyRow && "IntersectionObserver" in window) {
+        new IntersectionObserver((entries) => {
+          entries.forEach((en) => bar.classList.toggle("is-hidden", en.isIntersecting));
+        }, { threshold: 0.4 }).observe(buyRow);
+      }
+    }
   }
 
   function setupGallery(imgs, name) {
@@ -443,6 +513,8 @@
     const lbImg = $("#shopLightboxImg");
     const lbCap = $("#shopLightboxCaption");
     let cur = 0;
+    tintFrame(mainImg, main);
+    thumbs?.querySelectorAll("button").forEach((b) => tintFrame(b.querySelector("img"), b));
 
     function show(i) {
       cur = (i + imgs.length) % imgs.length;
@@ -619,7 +691,7 @@
               <li><span class="muted">Livraison</span><span>Calculée après la commande</span></li>
             </ul>
           </div>
-          <div class="card" style="margin-top:16px">
+          <div class="card order-after">
             <h3 style="font-size:1.05rem">Après l'envoi</h3>
             <ol class="how-steps">
               <li>Je calcule la livraison vers votre adresse.</li>
@@ -630,6 +702,8 @@
         </aside>
       </div>`;
 
+    const orderImg = $(".order-item img", root);
+    if (orderImg) tintFrame(orderImg, orderImg);
     setupOrderForm(p);
   }
 
