@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-09-23",
+  "updated": "2026-09-24",
   "boxes": [
     {
       "name": "Petite boîte",
@@ -40,7 +40,7 @@
         "details": "À l'achat de cet article, vous recevrez gratuitement par courriel une clé de produit Steam pour DOOM! L'achat doit être effectué avant la fin de la promotion. Les quantités peuvent être limitées.",
         "ends": "2026-10-22"
       },
-      "summary": "AMD Ryzen 5 5600X",
+      "summary": "Un CPU excellent pour le gaming sur la plateforme AM4",
       "description": "AMD Ryzen 5 5600X, Processeur de bureau série Ryzen 5 5000, 6 cœurs, 3,7 GHz, socle AM4, 65 W, sans processeur graphique intégré. Le refroidisseur AMD Wraith Stealth n'est pas inclus avec ce produit.",
       "specs": [
         [
@@ -135,6 +135,261 @@
         "notes": ""
       },
       "date_added": "2026-09-22"
+    },
+    {
+      "id": "crucial-barette-identique-2x16gb-ddr4-3200-sodimm-1-2v-cl22",
+      "name": "Crucial barette identique 2x16GB DDR4 3200 SODIMM 1.2V CL22",
+      "category": "memory",
+      "condition": "like_new",
+      "condition_note": "Test prolongé effectué avec MemTest86 sans aucune erreur (voir les photos). Le kit de RAM a été utilisé précédemment, mais fonctionne comme neuf.",
+      "status": "available",
+      "price": 208,
+      "promo": {
+        "active": false,
+        "price": null,
+        "label": "",
+        "details": "",
+        "ends": ""
+      },
+      "summary": "Passez à 32 Go dans votre portable ou mini-PC: kit Crucial DDR4 3200 testé à fond avec MemTest86, zéro erreur.",
+      "description": "",
+      "specs": [
+        [
+          "Marque",
+          "Crucial (par Micron)"
+        ],
+        [
+          "Capacité",
+          "32 Go (2 x 16 Go), deux barrettes identiques"
+        ],
+        [
+          "Type",
+          "DDR4 SO-DIMM, 260 broches (pour portables, mini-PC et NUC)"
+        ],
+        [
+          "Vitesse",
+          "3200 MT/s (PC4-25600)"
+        ],
+        [
+          "Latence",
+          "CL22 (22-22-22)"
+        ],
+        [
+          "Tension",
+          "1.2V"
+        ],
+        [
+          "Organisation",
+          "double rang (2Rx8)"
+        ],
+        [
+          "Non-ECC",
+          "non tamponnée (unbuffered)"
+        ],
+        [
+          "Numéro de pièce",
+          "CT16G4SFD832A"
+        ],
+        [
+          "Compatible Intel et AMD",
+          "rétrocompatible avec les systêmes DDR4 plus lents (2400, 2666, 2933 MT/s), ou elle s'ajuste automatiquement à la vitesse maximale supportée"
+        ],
+        [
+          "Non compatible",
+          "sur ordinateurs de bureau (DIMM) ni avec la DDR5"
+        ]
+      ],
+      "thumb": "assets/store/crucial-kit-2x16gb-ddr4-3200-sodimm-1-2v-cl22-mug4g9xssgi-apercu.jpg",
+      "images": [
+        "assets/store/crucial-kit-16gb-ddr4-3200-sodimm-1-2v-cl22-mug48uvtgyo.jpg",
+        "assets/store/crucial-kit-16gb-ddr4-3200-sodimm-1-2v-cl22-mug48uv6vrg.jpg",
+        "assets/store/crucial-kit-16gb-ddr4-3200-sodimm-1-2v-cl22-mug49uaadir.jpg",
+        "assets/store/crucial-kit-16gb-ddr4-3200-sodimm-1-2v-cl22-mug49u9ljt2.jpg"
+      ],
+      "package": {
+        "box": "",
+        "length_cm": 15.3,
+        "width_cm": 10.2,
+        "height_cm": 10.2,
+        "item_kg": null,
+        "pack_kg": null,
+        "weight_kg": 0.09,
+        "notes": ""
+      },
+      "date_added": "2026-09-24"
+    },
+    {
+      "id": "ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2to",
+      "name": "Ediloca EN600 PRO M.2 SSD PCle 3.0x4 2To",
+      "category": "storage",
+      "condition": "like_new",
+      "condition_note": "SSD presque neuf, avec seulement quelques heures d'activité. Vérifié avec CrystalDiskInfo et testé avec CrystalDiskMark + H2testw v1.4, aucun problème retrouvé.",
+      "status": "available",
+      "price": 271,
+      "promo": {
+        "active": false,
+        "price": null,
+        "label": "",
+        "details": "",
+        "ends": ""
+      },
+      "summary": "2 To de stockage NVMe rapide (jusqu'à 3500 Mo/s), presque neuf et testé: idéal pour agrandir l'espace de jeu d'un PC de bureau ou d'un portable.",
+      "description": "",
+      "specs": [
+        [
+          "Marque",
+          "Ediloca"
+        ],
+        [
+          "Modèle",
+          "Ediloca EN600 PRO"
+        ],
+        [
+          "Capacité",
+          "2To"
+        ],
+        [
+          "Format",
+          "M.2 2280"
+        ],
+        [
+          "Interface",
+          "NVMe 1.3, PCIe 3.0 x4"
+        ],
+        [
+          "Lecture séquentielle",
+          "jusqu'à 3500 Mo/s"
+        ],
+        [
+          "Écriture séquentielle",
+          "jusqu'à 3000 Mo/s"
+        ],
+        [
+          "Mémoire",
+          "3D NAND TLC avec cache SLC dynamique"
+        ],
+        [
+          "Refroidissement",
+          "étiquette de dissipation en graphène"
+        ],
+        [
+          "Aucune pièce mobile",
+          "silencieux et résistant aux chocs"
+        ],
+        [
+          "Compatibilité",
+          "PC de bureau et les portables munis d'un emplacement M.2 NVMe"
+        ],
+        [
+          "OS",
+          "Compatible Windows 10/11 et macOS"
+        ],
+        [
+          "Non compatible",
+          "PS5, Ne fonctionne pas dans un emplacement M.2 SATA seulement"
+        ]
+      ],
+      "thumb": "assets/store/ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2tb-mug5ibm6blw-apercu.jpg",
+      "images": [
+        "assets/store/ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2tb-mug5hz5w2qu.jpg",
+        "assets/store/ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2tb-mug5hz4vizl.jpg",
+        "assets/store/ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2tb-mug5hz6zx2y.jpg",
+        "assets/store/ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2tb-mug5hz6d5dl.jpg"
+      ],
+      "package": {
+        "box": "",
+        "length_cm": 15.3,
+        "width_cm": 10.2,
+        "height_cm": 10.2,
+        "item_kg": null,
+        "pack_kg": null,
+        "weight_kg": 0.07,
+        "notes": ""
+      },
+      "date_added": "2026-09-24"
+    },
+    {
+      "id": "amd-ryzen-7-7700",
+      "name": "AMD Ryzen 7 7700",
+      "category": "cpu",
+      "condition": "new",
+      "condition_note": "Commandé directement du manufacturier, neuf et scellé.",
+      "status": "available",
+      "price": 299.99,
+      "promo": {
+        "active": true,
+        "price": null,
+        "label": "Recevez DOOM en cadeau à l'achat de l'article!",
+        "details": "À l'achat de cet article, vous recevrez gratuitement par courriel une clé de produit Steam pour DOOM! L'achat doit être effectué avant la fin de la promotion. Les quantités peuvent être limitées.",
+        "ends": "2026-10-22"
+      },
+      "summary": "8 cœurs Zen 4 jusqu'à 5,3 GHz pour seulement 65 W: un excellent processeur de jeu AM5, avec graphiques intégrés en prime.",
+      "description": "Le refroidisseur AMD Wraith Prism n'est pas inclus avec ce produit.",
+      "specs": [
+        [
+          "Modèle",
+          "AMD Ryzen 7 7700"
+        ],
+        [
+          "Architecture",
+          "Zen 4 (gravure 5 nm)"
+        ],
+        [
+          "Cœurs / fils",
+          "8 cœurs, 16 fils"
+        ],
+        [
+          "Fréquence",
+          "3,8 GHz de base, jusqu'à 5,3 GHz en boost"
+        ],
+        [
+          "Mémoire cache",
+          "32 Mo L3, 8 Mo L2"
+        ],
+        [
+          "Enveloppe thermique",
+          "65 W"
+        ],
+        [
+          "Socket",
+          "AM5 (chipsets A620, B650, B650E, B840, B850, X670, X670E, X870, X870E)"
+        ],
+        [
+          "Mémoire",
+          "DDR5 double canal, jusqu'à 128 Go; support AMD EXPO PCIe 5.0"
+        ],
+        [
+          "Graphiques intégrés AMD Radeon",
+          "permet d'utiliser le PC sans carte graphique"
+        ],
+        [
+          "Overclocking",
+          "Déverrouillé pour l'overclocking (Precision Boost Overdrive, Ryzen Master)"
+        ],
+        [
+          "Compatibilité",
+          "Windows 10/11 64 bits et Linux"
+        ],
+        [
+          "Prérequis",
+          "Nécessite une carte mère AM5 et de la mémoire DDR5. Non compatible avec les cartes mères AM4 ni la DDR4."
+        ]
+      ],
+      "thumb": "assets/store/amd-ryzen-7-7700-mug6xrgninx-apercu.jpg",
+      "images": [
+        "assets/store/amd-ryzen-7-7700-mug6bcqbrza.jpg"
+      ],
+      "package": {
+        "box": "",
+        "length_cm": 15.3,
+        "width_cm": 10.2,
+        "height_cm": 10.2,
+        "item_kg": null,
+        "pack_kg": null,
+        "weight_kg": 0.12,
+        "notes": ""
+      },
+      "date_added": "2026-09-24"
     }
   ]
 }
