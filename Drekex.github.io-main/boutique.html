@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Boutique : pièces PC et PC testés, neufs ou usagés | Raymond PC</title>
+  <meta name="description" content="Processeurs, cartes graphiques, mémoire, stockage, boîtiers et PC complets neufs, comme neufs ou remis à neuf. Pièces testées, prix taxes incluses, livraison partout au Canada." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://raymondpc.ca/boutique.html" />
+  <meta name="theme-color" content="#0a0e17" />
+
+  <link rel="icon" type="image/x-icon" href="/assets/favicon-48x48.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="/assets/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180x180.png">
+
+  <meta property="og:title" content="Boutique Raymond PC : pièces et PC testés" />
+  <meta property="og:description" content="Pièces PC et PC complets neufs, comme neufs ou remis à neuf. Testés, prix taxes incluses, livraison au Canada." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:url" content="https://raymondpc.ca/boutique.html" />
+  <meta property="og:site_name" content="Raymond PC" />
+  <meta property="og:image" content="https://raymondpc.ca/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="store.css?v=4" />
+  <link rel="preload" href="/data/products.json" as="fetch" crossorigin>
+</head>
+
+<body data-page="store">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div id="top" tabindex="-1"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="/#top" aria-label="Raymond PC, retour au site principal">
+        <img class="brand-logo" src="assets/favicon-512x512.png" alt="Logo Raymond PC" width="40" height="40" loading="eager">
+        <span class="brand-text">Raymond <span>PC</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Ouvrir le menu</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="/#services">Services</a>
+          <a href="/boutique.html" aria-current="page" style="color:var(--text)">Boutique</a>
+          <a href="/#pricing">Tarifs</a>
+          <a href="/#work">Réalisations</a>
+          <a href="/guides.html">Guides</a>
+          <a href="/#faq">FAQ</a>
+          <a class="btn btn-small btn-primary" href="/#contact">Soumission</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="shop-hero">
+      <div class="container">
+        <p class="eyebrow">Boutique</p>
+        <h1>Pièces et PC testés, prêts à partir.</h1>
+        <p class="lead">Chaque article est vérifié avant la mise en vente, avec son état clairement indiqué.
+          Prix taxes incluses, livraison partout au Canada.</p>
+      </div>
+    </section>
+
+    <section class="shop-section">
+      <div class="container">
+        <div class="cat-chips" id="catChips" role="group" aria-label="Catégories"></div>
+
+        <div class="shop-layout">
+          <details class="card shop-filters" id="shopFilters" open>
+            <summary>Filtres</summary>
+            <div class="filters-body">
+              <div class="filter-group">
+                <h3>Catégorie</h3>
+                <div id="filterCats"></div>
+              </div>
+              <div class="filter-group">
+                <h3>État</h3>
+                <div id="filterConds"></div>
+              </div>
+              <div class="filter-group">
+                <h3>Prix (taxes incluses)</h3>
+                <div class="price-range">
+                  <input id="priceMin" type="number" inputmode="decimal" min="0" step="10" placeholder="Min $" aria-label="Prix minimum">
+                  <span>à</span>
+                  <input id="priceMax" type="number" inputmode="decimal" min="0" step="10" placeholder="Max $" aria-label="Prix maximum">
+                </div>
+              </div>
+              <div class="filter-group">
+                <h3>Autres</h3>
+                <label class="check"><input type="checkbox" id="filterPromo"><span class="dot" style="background:var(--c-promo)"></span><span class="lbl">En promotion</span></label>
+                <label class="check"><input type="checkbox" id="filterSold"><span class="lbl">Afficher les articles vendus</span></label>
+              </div>
+              <button class="btn btn-ghost btn-small filter-reset" type="button" id="filterReset">Effacer les filtres</button>
+            </div>
+          </details>
+
+          <div>
+            <div class="shop-toolbar">
+              <span class="count" id="resultCount" aria-live="polite">Chargement…</span>
+              <div class="shop-toolbar-right">
+                <input type="search" id="shopSearch" placeholder="Rechercher (ex. : RTX, DDR5, AM4)" aria-label="Rechercher un article">
+                <select id="shopSort" aria-label="Trier">
+                  <option value="recent">Plus récents</option>
+                  <option value="prix_asc">Prix croissant</option>
+                  <option value="prix_desc">Prix décroissant</option>
+                  <option value="promo">Promotions d'abord</option>
+                </select>
+              </div>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+          </div>
+        </div>
+
+        <div class="note" style="margin-top:28px">
+          <strong>Vous cherchez une pièce précise?</strong>
+          Écrivez-moi par <a class="v" href="sms:+15147178283">SMS</a> ou <a class="v" href="mailto:raymondservicepc@outlook.com">courriel</a>,
+          je peux souvent la trouver ou l'inclure dans un <a class="v" href="/montage-pc-gaming-blainville.html">montage sur mesure</a>.
+          Vous avez un PC à vendre? Voyez le <a class="v" href="/achat-pc-usage-blainville.html">rachat de PC usagé</a>.
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a class="brand" href="/">
+              <img class="brand-logo" src="/assets/favicon-512x512.png" alt="" width="40" height="40" loading="lazy">
+              <span class="brand-text">Raymond <span>PC</span></span>
+            </a>
+            <p class="micro muted">Montage PC sur mesure, réparation d'ordinateur et pièces testées. Basé à Blainville, au service de Laval, Mirabel, Sainte-Thérèse et la Rive-Nord.</p>
+          </div>
+          <nav class="footer-col" aria-label="Services">
+            <h2>Services</h2>
+            <a href="/montage-pc-gaming-blainville.html">Montage PC sur mesure</a>
+            <a href="/reparation-pc-blainville.html">Réparation d'ordinateur</a>
+            <a href="/sauvegarde-disque-blainville.html">Sauvegarde de disques</a>
+            <a href="/numerisation-vhs-blainville.html">Numérisation VHS</a>
+            <a href="/achat-pc-usage-blainville.html">Vendre mon PC usagé</a>
+          </nav>
+          <nav class="footer-col" aria-label="Boutique et outils">
+            <h2>Boutique et outils</h2>
+            <a href="/boutique.html">Boutique</a>
+            <a href="/planner.html">Planificateur de build</a>
+            <a href="/guides.html">Guides et conseils</a>
+            <a href="/#pricing">Tarifs</a>
+          </nav>
+          <div class="footer-col">
+            <h2>Contact</h2>
+            <a href="sms:+15147178283">SMS : (514) 717-8283</a>
+            <a href="https://wa.me/15147178283" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="mailto:raymondservicepc@outlook.com">raymondservicepc<wbr>@outlook.com</a>
+            <a href="/#contact">Demander une soumission</a>
+          </div>
+        </div>
+        <div class="footer-inner">
+          <div class="micro muted">© <span id="year"></span> Raymond PC • Blainville, QC</div>
+          <div class="micro muted"><a href="#top" class="link">Retour en haut</a></div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <nav class="action-bar" id="actionBar" aria-label="Contact rapide">
+    <a class="btn btn-secondary" href="sms:+15147178283">SMS</a>
+    <a class="btn btn-secondary" href="https://wa.me/15147178283" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn-primary" href="/#contact">Soumission</a>
+  </nav>
+
+  <script src="script.js"></script>
+  <script src="store.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Article | Boutique Raymond PC</title>
+  <meta name="description" content="Article de la boutique Raymond PC. Prix taxes incluses, livraison partout au Canada." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0a0e17" />
+
+  <link rel="icon" type="image/x-icon" href="/assets/favicon-48x48.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="/assets/favicon-180x180.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180x180.png">
+
+  <meta property="og:site_name" content="Raymond PC" />
+  <meta property="og:type" content="product" />
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:image" content="https://raymondpc.ca/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="store.css?v=4" />
+  <link rel="preload" href="/data/products.json" as="fetch" crossorigin>
+</head>
+
+<body data-page="product">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div id="top" tabindex="-1"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="/#top" aria-label="Raymond PC, retour au site principal">
+        <img class="brand-logo" src="assets/favicon-512x512.png" alt="Logo Raymond PC" width="40" height="40" loading="eager">
+        <span class="brand-text">Raymond <span>PC</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Ouvrir le menu</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="/#services">Services</a>
+          <a href="/boutique.html" aria-current="page" style="color:var(--text)">Boutique</a>
+          <a href="/#pricing">Tarifs</a>
+          <a href="/#work">Réalisations</a>
+          <a href="/guides.html">Guides</a>
+          <a href="/#faq">FAQ</a>
+          <a class="btn btn-small btn-primary" href="/#contact">Soumission</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="product-page">
+      <div class="container" id="productRoot">
+        <p class="muted">Chargement de l'article…</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a class="brand" href="/">
+              <img class="brand-logo" src="/assets/favicon-512x512.png" alt="" width="40" height="40" loading="lazy">
+              <span class="brand-text">Raymond <span>PC</span></span>
+            </a>
+            <p class="micro muted">Montage PC sur mesure, réparation d'ordinateur et pièces testées. Basé à Blainville, au service de Laval, Mirabel, Sainte-Thérèse et la Rive-Nord.</p>
+          </div>
+          <nav class="footer-col" aria-label="Services">
+            <h2>Services</h2>
+            <a href="/montage-pc-gaming-blainville.html">Montage PC sur mesure</a>
+            <a href="/reparation-pc-blainville.html">Réparation d'ordinateur</a>
+            <a href="/sauvegarde-disque-blainville.html">Sauvegarde de disques</a>
+            <a href="/numerisation-vhs-blainville.html">Numérisation VHS</a>
+            <a href="/achat-pc-usage-blainville.html">Vendre mon PC usagé</a>
+          </nav>
+          <nav class="footer-col" aria-label="Boutique et outils">
+            <h2>Boutique et outils</h2>
+            <a href="/boutique.html">Boutique</a>
+            <a href="/planner.html">Planificateur de build</a>
+            <a href="/guides.html">Guides et conseils</a>
+            <a href="/#pricing">Tarifs</a>
+          </nav>
+          <div class="footer-col">
+            <h2>Contact</h2>
+            <a href="sms:+15147178283">SMS : (514) 717-8283</a>
+            <a href="https://wa.me/15147178283" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="mailto:raymondservicepc@outlook.com">raymondservicepc<wbr>@outlook.com</a>
+            <a href="/#contact">Demander une soumission</a>
+          </div>
+        </div>
+        <div class="footer-inner">
+          <div class="micro muted">© <span id="year"></span> Raymond PC • Blainville, QC</div>
+          <div class="micro muted"><a href="#top" class="link">Retour en haut</a></div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="lightbox shop-lightbox" id="shopLightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close></div>
+    <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image en grand">
+      <button class="lightbox-close" type="button" data-close aria-label="Fermer">✕</button>
+      <button class="lightbox-nav lightbox-prev" type="button" data-prev aria-label="Image précédente">‹</button>
+      <button class="lightbox-nav lightbox-next" type="button" data-next aria-label="Image suivante">›</button>
+      <img id="shopLightboxImg" alt="">
+      <div class="lightbox-caption" id="shopLightboxCaption"></div>
+    </div>
+  </div>
+
+  <nav class="action-bar" id="actionBar" aria-label="Contact rapide">
+    <a class="btn btn-secondary" href="sms:+15147178283">SMS</a>
+    <a class="btn btn-secondary" href="https://wa.me/15147178283" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn-primary" href="/boutique.html">Boutique</a>
+  </nav>
+
+  <script src="script.js"></script>
+  <script src="store.js?v=4"></script>
+</body>
+</html>
