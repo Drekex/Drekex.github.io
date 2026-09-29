@@ -34,22 +34,72 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Réparation d'ordinateur et dépannage informatique",
-  "provider": {
-    "@type": "ComputerRepair",
-    "name": "Raymond PC",
-    "url": "https://raymondpc.ca/"
-  },
-  "areaServed": [
-    "Blainville",
-    "Laval",
-    "Mirabel",
-    "Sainte-Thérèse",
-    "Rive-Nord"
-  ],
-  "serviceType": "Réparation d'ordinateur, réparation PC, diagnostic, entretien et upgrade",
-  "url": "https://raymondpc.ca/reparation-pc-blainville.html"
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Réparation d'ordinateur et dépannage informatique",
+      "provider": {
+        "@type": "ComputerRepair",
+        "@id": "https://raymondpc.ca/#business",
+        "name": "Raymond PC",
+        "url": "https://raymondpc.ca/"
+      },
+      "areaServed": [
+        "Blainville",
+        "Laval",
+        "Mirabel",
+        "Sainte-Thérèse",
+        "Rive-Nord"
+      ],
+      "serviceType": "Réparation d'ordinateur, réparation PC, diagnostic, entretien et upgrade",
+      "url": "https://raymondpc.ca/reparation-pc-blainville.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien coûte une réparation d'ordinateur à Blainville?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le prix dépend du diagnostic et des pièces nécessaires. Envoyez les symptômes et quelques photos pour une estimation rapide. Le diagnostic, le plan d'action et le prix vous sont confirmés avant toute réparation, sans surprise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quoi envoyer pour obtenir une estimation de réparation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Décrivez les symptômes et quand ils se produisent, ajoutez des photos ou les messages d'erreur, précisez les pièces déjà changées ou testées et joignez la liste de vos composants. Le tutoriel msinfo32 sur raymondpc.ca montre comment la trouver en quelques minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mon PC est lent : faut-il le remplacer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pas forcément. Un ordinateur lent vient souvent d'un disque vieillissant, d'un manque de mémoire ou de trop de logiciels au démarrage. L'ajout d'un SSD ou de RAM, un nettoyage ou une réinstallation règlent souvent le problème pour une fraction du prix d'un PC neuf."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mon ordinateur ne démarre plus, est-ce que ça vaut la peine de le réparer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Souvent oui, parce que la panne vient généralement d'une seule pièce. Un diagnostic évite de remplacer des pièces inutilement. Si la réparation n'en vaut plus la peine, Raymond PC peut aussi racheter le PC tel quel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels secteurs sont desservis pour la réparation d'ordinateur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Raymond PC est basé à Blainville et dessert Laval, Mirabel, Sainte-Thérèse et les environs de la Rive-Nord. Livraison locale et ramassage sur rendez-vous."
+          }
+        }
+      ]
+    }
+  ]
 }
   </script>
 </head>
@@ -178,6 +228,76 @@
           <p class="muted">Réparation d'ordinateur, réparation PC, diagnostic, entretien et upgrades à Blainville, Laval, Mirabel, Sainte-Thérèse et secteurs voisins de la Rive-Nord.</p>
         </div>
         <p>Cette page vise surtout les besoins de dépannage local : ordinateur lent, crashs, températures, bruit, stockage, mémoire ou conseils avant remplacement. Que ce soit un PC gaming, un poste de travail ou un ordinateur plus simple pour l’école et la maison, le but est de trouver la bonne solution avant de remplacer inutilement. Pour voir les autres options disponibles, vous pouvez revenir à la <a href="/">page principale</a> ou consulter la page <a href="/montage-pc-gaming-blainville.html">montage PC sur mesure</a>.</p>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Questions fréquentes sur la réparation d'ordinateur</h2>
+          <p class="muted">Ce qu'on me demande le plus souvent avant un diagnostic.</p>
+        </div>
+
+        <div class="faq">
+          <details class="card" open>
+            <summary>Combien coûte une réparation d'ordinateur?</summary>
+            <p class="muted">Le prix dépend du diagnostic et des pièces nécessaires. Envoyez les symptômes et quelques photos pour une estimation rapide. Le diagnostic, le plan d'action et le prix vous sont confirmés avant toute réparation, sans surprise.</p>
+          </details>
+
+          <details class="card">
+            <summary>Quoi envoyer pour obtenir une estimation?</summary>
+            <p class="muted">Les symptômes et le moment où ils se produisent, des photos ou les messages d'erreur, les pièces déjà changées ou testées, et la liste de vos composants. Le <a href="/liste-composants-pc-windows.html">tutoriel msinfo32</a> montre comment la trouver en quelques minutes.</p>
+          </details>
+
+          <details class="card">
+            <summary>Mon PC est lent : faut-il le remplacer?</summary>
+            <p class="muted">Pas forcément. Un ordinateur lent vient souvent d'un disque vieillissant, d'un manque de mémoire ou de trop de logiciels au démarrage. L'ajout d'un SSD ou de RAM, un nettoyage ou une réinstallation règlent souvent le problème pour une fraction du prix d'un PC neuf. Pour peser le pour et le contre, voir le guide <a href="/guide-upgrade-pc-ou-acheter-neuf-2026.html">upgrader son PC ou en acheter un neuf</a>.</p>
+          </details>
+
+          <details class="card">
+            <summary>Mon ordinateur ne démarre plus, est-ce que ça vaut la peine de le réparer?</summary>
+            <p class="muted">Souvent oui, parce que la panne vient généralement d'une seule pièce. Un diagnostic évite de remplacer des pièces inutilement. Et si la réparation n'en vaut plus la peine, je peux aussi <a href="/achat-pc-usage-blainville.html">racheter le PC</a> tel quel.</p>
+          </details>
+
+          <details class="card">
+            <summary>Quels secteurs sont desservis?</summary>
+            <p class="muted">Je suis basé à Blainville et je dessers Laval, Mirabel, Sainte-Thérèse et les environs de la Rive-Nord. Livraison locale et ramassage sur rendez-vous.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GUIDES ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="related-guides-head">
+          <div class="section-head">
+            <h2>Guides utiles avant une réparation</h2>
+            <p class="muted">Pour mieux comprendre vos options avant de dépenser.</p>
+          </div>
+          <a class="btn btn-secondary" href="/guides.html">Voir tous les guides</a>
+        </div>
+
+        <div class="guides-list">
+          <article class="card guide-preview-card">
+            <p class="eyebrow">Upgrade</p>
+            <h3>Upgrader son PC ou en acheter un neuf?</h3>
+            <p class="muted">Quatre scénarios concrets pour décider entre remplacer une pièce et repartir à neuf.</p>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="/guide-upgrade-pc-ou-acheter-neuf-2026.html">Lire l'article</a>
+            </div>
+          </article>
+
+          <article class="card guide-preview-card">
+            <p class="eyebrow">Tutoriel</p>
+            <h3>Trouver la liste des composants de son PC</h3>
+            <p class="muted">Le tutoriel en images pour préparer une demande de réparation claire en quelques minutes.</p>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="/liste-composants-pc-windows.html">Voir le tutoriel</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
