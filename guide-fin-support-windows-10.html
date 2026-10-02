@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fin du support de Windows 10 : quoi faire maintenant? | Raymond PC</title>
+  <meta name="description" content="Fin du support de Windows 10 : ce que ça change, comment obtenir les mises à jour ESU gratuites jusqu'en 2027, les exigences de Windows 11 et quoi faire si votre PC n'est pas compatible." />
+  <meta name="theme-color" content="#0a0e17" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://raymondpc.ca/guide-fin-support-windows-10.html" />
+  <link rel="icon" type="image/x-icon" href="/assets/favicon-48x48.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="/assets/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180x180.png">
+  <meta property="og:title" content="Fin du support de Windows 10 : quoi faire maintenant? | Raymond PC" />
+  <meta property="og:description" content="Mises à jour ESU gratuites jusqu'en octobre 2027, exigences de Windows 11, réglages BIOS à vérifier et options pour les PC non compatibles." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:url" content="https://raymondpc.ca/guide-fin-support-windows-10.html" />
+  <meta property="og:site_name" content="Raymond PC" />
+  <meta property="og:image" content="https://raymondpc.ca/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://raymondpc.ca/assets/og-image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Fin du support de Windows 10 : ce que ça change et quoi faire maintenant",
+      "description": "Guide sur la fin du support de Windows 10 : programme ESU jusqu'en octobre 2027, exigences de Windows 11, réglages TPM et UEFI à vérifier, configuration recommandée et alternatives pour les PC non compatibles.",
+      "author": {
+        "@type": "Person",
+        "name": "Étienne Raymond"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Raymond PC",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://raymondpc.ca/assets/favicon-512x512.png"
+        }
+      },
+      "mainEntityOfPage": "https://raymondpc.ca/guide-fin-support-windows-10.html",
+      "inLanguage": "fr-CA",
+      "datePublished": "2026-10-01",
+      "dateModified": "2026-10-01"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://raymondpc.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://raymondpc.ca/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Fin du support de Windows 10",
+          "item": "https://raymondpc.ca/guide-fin-support-windows-10.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mon PC sous Windows 10 va-t-il arrêter de fonctionner?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Votre PC démarre et fonctionne comme avant. Ce qui s'arrête, ce sont les mises à jour de sécurité, les correctifs et l'assistance de Microsoft. Le risque augmente avec le temps, parce que les nouvelles failles de Windows ne sont plus corrigées."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment obtenir les mises à jour de sécurité gratuites pour Windows 10?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En vous inscrivant au programme Extended Security Updates (ESU) pour les particuliers, qui couvre les PC jusqu'au 12 octobre 2027. L'inscription est gratuite si vous synchronisez vos paramètres avec Windows Sauvegarde ou si vous échangez 1 000 points Microsoft Rewards. Sinon, c'est un achat unique de 30 $ US. Le lien S'inscrire se trouve dans Paramètres, Mise à jour et sécurité, Windows Update."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mon antivirus me protège-t-il encore sous Windows 10?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Microsoft Defender continue de recevoir ses définitions de virus jusqu'en octobre 2028 au moins. Par contre, un antivirus à jour ne corrige pas les failles de Windows lui-même. Sans les mises à jour de sécurité du système, le PC reste exposé."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment savoir si mon PC est compatible avec Windows 11?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'application gratuite Contrôle d'intégrité du PC (PC Health Check) de Microsoft indique exactement quelle exigence votre PC ne respecte pas. Le point qui bloque le plus souvent est le processeur : il faut au minimum un Intel Core de 8e génération ou un AMD Ryzen 2000. Un TPM désactivé ou un démarrage en mode Legacy peuvent aussi faire échouer la vérification sur un PC pourtant compatible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La mise à niveau de Windows 10 vers Windows 11 est-elle gratuite?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, pour un PC Windows 10 avec une licence valide qui respecte les exigences de Windows 11. La mise à niveau est offerte dans Windows Update."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que faire si mon PC n'est pas compatible avec Windows 11?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "À court terme, rester sur Windows 10 avec le programme ESU jusqu'en octobre 2027. À long terme, passer à Linux (Linux Mint ou MX Linux) ou à ChromeOS Flex donne une seconde vie au PC. Si le PC date d'avant 2018 et commence déjà à ralentir, un PC neuf ou remis à neuf est souvent le meilleur choix."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div id="top" tabindex="-1"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="/#top" aria-label="Raymond PC, retour au site principal">
+        <img class="brand-logo" src="assets/favicon-512x512.png" alt="Raymond PC guide fin du support de Windows 10" width="48" height="48" loading="eager">
+        <span class="brand-text">Raymond <span>PC</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Ouvrir le menu</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="/#services">Services</a>
+          <a href="/boutique.html">Boutique</a>
+          <a href="/#pricing">Tarifs</a>
+          <a href="/#work">Réalisations</a>
+          <a href="/guides.html">Guides</a>
+          <a href="/#faq">FAQ</a>
+          <a class="btn btn-small btn-primary" href="/#contact">Soumission</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div class="page-hero-copy">
+          <a class="back-link" href="/guides.html">Retour aux guides</a>
+          <p class="eyebrow">Guide • Windows 10 et 11 • 2026</p>
+          <h1>Fin du support de Windows 10 : ce que ça change et quoi faire maintenant</h1>
+          <p class="lead">Microsoft a officiellement mis fin au support de Windows 10 le 14 octobre 2025. Votre PC démarre encore et fonctionne normalement, mais il ne reçoit plus les protections qui le gardaient à jour. Voici ce que ça veut dire concrètement, comment gagner du temps gratuitement, et comment choisir entre Windows 11, une autre option ou un nouveau PC.</p>
+          <ul class="hero-bullets">
+            <li>Ce que Microsoft arrête vraiment, et ce qui continue encore quelques années</li>
+            <li>Comment recevoir les mises à jour de sécurité gratuitement jusqu'en octobre 2027</li>
+            <li>Les exigences de Windows 11, les réglages BIOS à vérifier et les options pour les PC non compatibles</li>
+          </ul>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="/#contact">Faire vérifier mon PC</a>
+            <a class="btn btn-secondary" href="/planner.html">Planifier un nouveau PC</a>
+          </div>
+          <div class="article-meta">
+            <span>Publié le 1er octobre 2026</span>
+            <span>Marché canadien</span>
+            <span>Lecture estimée : 10 à 12 min</span>
+          </div>
+        </div>
+
+        <div class="page-hero-card">
+          <div class="card glass">
+            <div class="card-top">
+              <h2>Le résumé rapide</h2>
+              <p class="muted">Pas de panique, mais il faut un plan avant octobre 2027.</p>
+            </div>
+            <div class="icon-row"><span class="icon" aria-hidden="true"><img src="assets/checkmark-icon.svg" alt="" width="16" height="16" loading="lazy"></span><div><strong>Votre PC fonctionne encore</strong><div class="muted">Ce sont les correctifs de sécurité de Windows qui s'arrêtent, pas l'ordinateur.</div></div></div>
+            <div class="icon-row"><span class="icon" aria-hidden="true"><img src="assets/checkmark-icon.svg" alt="" width="16" height="16" loading="lazy"></span><div><strong>Un an de plus, gratuitement</strong><div class="muted">Le programme ESU prolonge les mises à jour de sécurité jusqu'au 12 octobre 2027.</div></div></div>
+            <div class="icon-row"><span class="icon" aria-hidden="true"><img src="assets/checkmark-icon.svg" alt="" width="16" height="16" loading="lazy"></span><div><strong>Ensuite, trois chemins</strong><div class="muted">Windows 11 si le PC est compatible, Linux ou ChromeOS Flex sinon, ou un nouveau PC.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ce que la fin du support veut dire</h2>
+          <p class="muted">Microsoft ne fournit plus trois choses à Windows 10. Elles n'ont pas toutes la même importance.</p>
+        </div>
+        <div class="soft-trust-grid">
+          <article class="card soft-trust-card">
+            <h3>Les mises à jour de sécurité</h3>
+            <p class="muted">C'est la plus importante. Les nouvelles failles découvertes dans Windows lui-même (le noyau, les pilotes, le réseau, le moteur du navigateur, etc.) ne sont plus corrigées, ce qui les laisse ouvertes aux attaques.</p>
+          </article>
+          <article class="card soft-trust-card">
+            <h3>Les correctifs logiciels</h3>
+            <p class="muted">Moins urgent pour l'instant, puisque Windows 10 est un système mature. Mais à mesure que ses utilisateurs diminuent, les développeurs le testent moins et finissent par l'abandonner, et plus de bogues passent entre les mailles.</p>
+          </article>
+          <article class="card soft-trust-card">
+            <h3>L'assistance technique</h3>
+            <p class="muted">Surtout utile si vous dépendez des services et des applications de Microsoft, dans les cas plus rares où un problème ne peut être réglé que de leur côté.</p>
+          </article>
+        </div>
+        <div class="note">
+          <p><strong>Et l'antivirus?</strong> C'est une autre histoire. Microsoft Defender continue de recevoir ses définitions de virus jusqu'en octobre 2028 au moins, et les applications Microsoft 365 (Office) reçoivent leurs mises à jour de sécurité sur Windows 10 jusqu'au 10 octobre 2028. Microsoft est clair par contre : un antivirus à jour ne protège pas un système qui ne reçoit plus ses correctifs de sécurité. L'antivirus bloque des logiciels malveillants connus, il ne bouche pas les trous dans Windows.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Rester sur Windows 10 : le programme ESU</h2>
+          <p class="muted">Les Extended Security Updates (ESU) pour particuliers prolongent les correctifs critiques et importants jusqu'au 12 octobre 2027.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Trois façons de s'inscrire</h3>
+            <ul class="checklist">
+              <li><strong>Gratuit</strong>, en synchronisant les paramètres de votre PC avec votre compte Microsoft grâce à Windows Sauvegarde</li>
+              <li><strong>Gratuit</strong>, en échangeant 1 000 points Microsoft Rewards</li>
+              <li><strong>Un achat unique</strong> de 30 $ US (l'équivalent en dollars canadiens, plus les taxes)</li>
+            </ul>
+            <p>Une seule licence ESU couvre jusqu'à 10 PC associés au même compte Microsoft. Pratique pour toute la maison.</p>
+          </article>
+          <article class="card">
+            <h3>Comment s'inscrire</h3>
+            <ul class="checklist">
+              <li>Le PC doit être sous Windows 10 version 22H2, avec les dernières mises à jour installées</li>
+              <li>Vous devez être connecté avec un compte Microsoft qui a les droits d'administrateur</li>
+              <li>Allez dans <strong>Paramètres &gt; Mise à jour et sécurité &gt; Windows Update</strong> et cherchez le lien <strong>S'inscrire maintenant</strong></li>
+            </ul>
+            <p>Le programme devait se terminer en octobre 2026, mais Microsoft l'a prolongé d'un an en juin 2026. Si vous étiez déjà inscrit, votre couverture continue automatiquement.</p>
+          </article>
+        </div>
+        <div class="note">
+          <p><strong>Un pont, pas un plan.</strong> L'ESU couvre seulement les correctifs de sécurité : pas de nouvelles fonctionnalités, pas de correction de bogues et pas d'assistance technique. Ça sert à gagner du temps pour faire la transition calmement, pas à rester sur Windows 10 indéfiniment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ce que Windows 11 ajoute</h2>
+          <p class="muted">Au-delà des mises à jour qui continuent, quelques fonctions que Windows 10 n'a pas.</p>
+        </div>
+        <div class="grid-3 feature-grid">
+          <article class="card">
+            <h3>Contrôle intelligent des applications</h3>
+            <p>Smart App Control vérifie la signature et la réputation d'une application avant de la laisser s'exécuter, et bloque celles qui sont malveillantes ou peu fiables. Depuis la mise à jour d'avril 2026, on peut l'activer ou le désactiver en tout temps sans réinstaller Windows.</p>
+          </article>
+          <article class="card">
+            <h3>L'intégration de l'iPhone</h3>
+            <p>Avec Lien avec Windows (Phone Link), vous pouvez voir les notifications de votre iPhone, envoyer des textos et faire des appels directement à partir du PC.</p>
+          </article>
+          <article class="card">
+            <h3>La sauvegarde et restauration complète</h3>
+            <p>Windows Sauvegarde peut enregistrer vos fichiers, paramètres et applications sur Windows 10, mais la restauration en un seul coup se fait seulement en configurant un PC sous Windows 11.</p>
+          </article>
+        </div>
+        <div class="note">
+          <p>Un PC sous Windows 10 continue de fonctionner sans ces fonctions, vous n'en profitez simplement pas. Bonne nouvelle par contre : si votre PC est compatible, la mise à niveau vers Windows 11 est gratuite avec une licence Windows 10 valide, directement dans Windows Update.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Les exigences minimales de Windows 11</h2>
+          <p class="muted">Windows 11 en demande beaucoup plus au matériel que les versions précédentes. Voici les minimums officiels de Microsoft.</p>
+        </div>
+        <article class="card">
+          <div class="table-wrap">
+            <table class="spec-table">
+              <caption class="sr-only">Exigences minimales officielles de Windows 11</caption>
+              <thead>
+                <tr><th scope="col">Composant</th><th scope="col">Exigence minimale</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Processeur</th><td>1 GHz ou plus, 2 cœurs ou plus, 64 bits, <strong>et présent sur la liste des processeurs supportés par Microsoft</strong></td></tr>
+                <tr><th scope="row">Mémoire (RAM)</th><td>4 Go</td></tr>
+                <tr><th scope="row">Stockage</th><td>64 Go</td></tr>
+                <tr><th scope="row">Micrologiciel</th><td>UEFI, compatible Secure Boot</td></tr>
+                <tr><th scope="row">Puce de sécurité</th><td>TPM 2.0</td></tr>
+                <tr><th scope="row">Carte graphique</th><td>Compatible DirectX 12, pilote WDDM 2.0</td></tr>
+                <tr><th scope="row">Écran</th><td>720p, plus de 9 pouces en diagonale</td></tr>
+                <tr><th scope="row">Installation</th><td>Connexion Internet et compte Microsoft (éditions Famille et Pro pour usage personnel)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <div class="note">
+          <p><strong>La ligne qui bloque le plus de monde : le processeur.</strong> Les processeurs officiellement supportés commencent aux <strong>Intel Core de 8e génération</strong> et aux <strong>AMD Ryzen 2000</strong>, sortis vers 2017 et 2018. Un Intel Core de 7e génération ou un Ryzen de première génération échoue la vérification, même s'il est assez rapide par ailleurs. En pratique, ça exclut la plupart des PC de 8 à 9 ans et plus, ainsi que les appareils peu puissants conçus pour des systèmes plus légers.</p>
+          <p>Vous ne savez pas quel processeur se trouve dans votre PC? Le <a class="link" href="/liste-composants-pc-windows.html">tutoriel pour trouver la liste de vos composants</a> vous le montre en quelques clics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Quand un PC compatible échoue quand même la vérification</h2>
+          <p class="muted">Parfois, le PC a tout ce qu'il faut, mais un réglage n'a simplement pas été activé.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Les causes les plus fréquentes</h3>
+            <ul class="checklist">
+              <li><strong>Le TPM est désactivé dans le BIOS.</strong> La plupart des processeurs de la liste supportée ont un TPM 2.0 intégré (appelé fTPM chez AMD et PTT chez Intel), mais il est souvent désactivé à la sortie de l'usine.</li>
+              <li><strong>Le PC démarre en mode Legacy (CSM) plutôt qu'en UEFI.</strong> Windows 11 exige l'UEFI, ce qui veut aussi dire que le disque système doit utiliser le partitionnement GPT plutôt que l'ancien MBR. Windows inclut un outil, MBR2GPT, qui convertit le disque sans l'effacer.</li>
+              <li><strong>Secure Boot n'est pas disponible</strong> parce que le système est encore en mode Legacy.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Comment savoir ce qui bloque</h3>
+            <p>L'application gratuite <strong>Contrôle d'intégrité du PC</strong> (PC Health Check) de Microsoft vous dit exactement quelle exigence votre PC ne respecte pas.</p>
+            <p>Si c'est le processeur, il n'y a pas de réglage magique. Si c'est le TPM, l'UEFI ou Secure Boot, c'est souvent une question de quelques minutes dans le BIOS, à condition de faire les étapes dans le bon ordre pour ne pas se retrouver avec un PC qui ne démarre plus.</p>
+            <p class="verdict"><strong>À retenir : un échec ne veut pas toujours dire « PC trop vieux »</strong></p>
+          </article>
+        </div>
+        <div class="note">
+          <p><strong>Une histoire vécue.</strong> Une fois, j'ai monté un PC gaming budget avec une RX 580. En passant la carte mère en mode UEFI pur, ce dont Secure Boot a besoin, je me suis retrouvé avec un écran noir : le BIOS de cette carte graphique en particulier ne supportait pas le démarrage UEFI. Techniquement, Windows 11 exige seulement un PC <em>compatible</em> Secure Boot, pas qu'il soit activé. Mais certains jeux multijoueurs récents, comme Battlefield 6, exigent maintenant que Secure Boot soit activé pour leur anti-triche. Pour un joueur, une carte comme celle-là devient donc un vrai problème.</p>
+          <p>Il existe des outils pour contourner les exigences de Windows 11, mais Microsoft précise que les PC non supportés n'ont aucune garantie de recevoir les mises à jour. Ce n'est pas une solution que je recommande pour un PC principal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ce qu'il faut vraiment pour utiliser Windows 11 confortablement</h2>
+          <p class="muted">Les minimums officiels permettent d'installer Windows 11, pas de l'utiliser agréablement. Si vous achetez ou montez un PC, voici ce que je recommande.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Mémoire (RAM)</h3>
+            <p>8 Go, c'est le strict minimum pour la navigation et les applications légères. 16 Go, c'est confortable pour un usage quotidien. Pour le gaming, 16 Go fait encore tourner la plupart des jeux, mais 32 Go est la cible la plus sûre : Windows utilise facilement plusieurs gigaoctets à lui seul, les applications en arrière-plan en prennent quelques-uns de plus, et les jeux modernes peuvent dépasser 10 Go à eux seuls.</p>
+          </article>
+          <article class="card">
+            <h3>Processeur</h3>
+            <p>Avec un petit budget, la plupart des processeurs encore vendus neufs sont sur la plateforme AM4 d'AMD (Ryzen 3000 et 5000), même si les prix sont gonflés. Les Ryzen 2000 et plus anciens se trouvent encore, mais surtout usagés.</p>
+            <p>Pour un PC budget sans carte graphique, le Ryzen 5 5500GT offre une belle expérience pour le prix. Attention au nom du modèle : le Ryzen 5 5500 ordinaire n'a <strong>aucun graphique intégré</strong>. Si vous branchez votre écran sur la carte mère, vous n'aurez aucune image. Choisissez le 5500 seulement si vous ajoutez une carte graphique dédiée.</p>
+          </article>
+          <article class="card">
+            <h3>Stockage</h3>
+            <p>64 Go ne fonctionne pas en pratique, il ne reste presque plus de place pour installer quoi que ce soit. Pour un usage général, 512 Go est le minimum réaliste. Pour le gaming moderne, visez 1 To, ou 2 To si vous ne voulez plus penser à l'espace. 2 To devient la nouvelle norme, mais le prix des SSD et de la mémoire a beaucoup monté récemment, ce qui complique les choses avec un budget serré.</p>
+          </article>
+          <article class="card">
+            <h3>Carte graphique</h3>
+            <p>Si vous ne jouez pas, le graphique intégré fait l'affaire. Une carte dédiée donne quand même un résultat plus fluide, parce que plusieurs applications de tous les jours (navigateurs, lecteurs vidéo, logiciels de montage) utilisent le GPU plus qu'on pense. Pour le gaming :</p>
+            <ul class="checklist">
+              <li><strong>NVIDIA :</strong> choisissez une RTX 20 ou plus récente (les GTX 16 sont aussi encore supportées). Les GTX 10 et 900 ne reçoivent plus d'optimisations pour les jeux depuis octobre 2025, seulement des mises à jour de sécurité trimestrielles jusqu'en octobre 2028.</li>
+              <li><strong>AMD :</strong> favorisez la série RX 7000 ou plus récente. Depuis la fin 2025, les RX 5000 et 6000 sont en « mode maintenance » : AMD dit qu'elles reçoivent encore le support des jeux, mais que les nouvelles optimisations arrivent selon la demande du marché plutôt qu'en priorité.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="note">
+          <p><strong>Joueurs sur Windows 10 avec une carte RTX.</strong> NVIDIA a annoncé que ses derniers pilotes Game Ready réguliers pour Windows 10 sortiraient en octobre 2026. Ensuite, Windows 10 ne reçoit plus que des mises à jour de sécurité trimestrielles, donc plus d'optimisations pour les nouveaux jeux. C'est une raison de plus de passer à Windows 11 si votre PC est compatible.</p>
+          <p>Comme pour les processeurs, les cartes graphiques d'anciennes générations se vendent souvent à prix gonflé, alors les modèles récents offrent généralement une meilleure valeur. Le reste du build est simple une fois ces choix faits : un Ryzen 3000 ou 5000 vous place sur une carte mère AM4, et l'alimentation, le boîtier et le refroidisseur n'ont aucun impact sur la compatibilité avec Windows 11. Pour aller plus loin, voir le <a class="link" href="/guide-meilleure-carte-graphique-canada-2026.html">guide des cartes graphiques en 2026</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Les options pour un PC qui ne peut pas passer à Windows 11</h2>
+          <p class="muted">Rester sur Windows 10 avec l'ESU est une bonne solution à court terme. Avec environ un an de couverture restante, Linux est un bien meilleur choix à long terme.</p>
+        </div>
+        <div class="grid-3 feature-grid">
+          <article class="card">
+            <h3>Linux Mint (édition Xfce)</h3>
+            <p>Parfait pour les utilisateurs de Windows qui essaient Linux pour la première fois. Courriels, documents et vidéos se font sans problème, et la disposition de l'écran vous semblera familière.</p>
+          </article>
+          <article class="card">
+            <h3>MX Linux (Xfce)</h3>
+            <p>Un excellent choix pour les machines plus faibles. Linux utilise en général beaucoup moins de RAM et d'espace disque que Windows, alors un vieux PC tourne souvent nettement plus vite dessus.</p>
+          </article>
+          <article class="card">
+            <h3>ChromeOS Flex</h3>
+            <p>La solution de Google. Stable, difficile à briser et presque sans entretien, mais pensée autour du navigateur Chrome, sans les applications Android. Fonctionne mieux sur les modèles certifiés par Google, alors vérifiez la liste de compatibilité d'abord.</p>
+          </article>
+        </div>
+        <div class="note">
+          <p><strong>Et le gaming sur Linux?</strong> Linux a fait énormément de chemin grâce à Proton, l'outil de Steam qui fait tourner une bonne partie des jeux Windows. Par contre, plusieurs jeux multijoueurs populaires avec un système anti-triche (comme Valorant, Fortnite ou Call of Duty) ne fonctionnent pas du tout sur Linux. Vérifiez vos jeux préférés avant de faire le saut.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Alors, qu'est-ce que je fais avec mon PC?</h2>
+          <p class="muted">Deux listes simples pour trouver votre prochaine étape.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Passez à Windows 11 si…</h3>
+            <ul class="checklist">
+              <li>Contrôle d'intégrité du PC confirme que tout est compatible</li>
+              <li>seul le TPM, l'UEFI ou Secure Boot bloque, et le processeur est sur la liste</li>
+              <li>vous jouez à des jeux récents ou utilisez des logiciels qui vont abandonner Windows 10</li>
+              <li>votre PC a au moins 8 Go de RAM et un SSD, idéalement 16 Go</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Regardez une autre option si…</h3>
+            <ul class="checklist">
+              <li>votre processeur est plus vieux qu'un Intel de 8e génération ou un Ryzen 2000</li>
+              <li>le PC sert surtout aux courriels, au web et aux documents (Linux ou ChromeOS Flex)</li>
+              <li>le PC est déjà lent sous Windows 10 et devrait changer plusieurs pièces</li>
+              <li>vous voulez simplement gagner du temps (ESU jusqu'en octobre 2027)</li>
+            </ul>
+          </article>
+        </div>
+        <article class="card">
+          <h3>Le mot de la fin</h3>
+          <p>Il y a une bonne raison pour laquelle la plupart des PC d'avant 2018 ne sont pas supportés par Windows 11 : ce même matériel commence souvent déjà à avoir de la difficulté sous Windows 10. Dans bien des cas, passer à un PC neuf ou remis à neuf est la bonne décision.</p>
+          <p>Microsoft affirme que ses exigences sont là pour la sécurité et la fiabilité, et elles lui évitent aussi les plaintes de gens qui feraient tourner Windows 11 sur du matériel qui n'arrive pas à suivre. Difficile d'ignorer, par contre, qu'elles poussent aussi les gens à acheter de nouveaux PC. Avant de faire ce pas, assurez-vous que votre PC ne demande pas simplement un réglage dans le BIOS.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Questions fréquentes</h2>
+          <p class="muted">Les questions qui reviennent le plus souvent sur la fin de Windows 10.</p>
+        </div>
+        <div class="faq">
+          <details class="card" open>
+            <summary>Mon PC sous Windows 10 va-t-il arrêter de fonctionner?</summary>
+            <p class="muted">Non. Votre PC démarre et fonctionne comme avant. Ce qui s'arrête, ce sont les mises à jour de sécurité, les correctifs et l'assistance de Microsoft. Le risque augmente avec le temps, parce que les nouvelles failles de Windows ne sont plus corrigées.</p>
+          </details>
+
+          <details class="card">
+            <summary>Comment obtenir les mises à jour de sécurité gratuites pour Windows 10?</summary>
+            <p class="muted">En vous inscrivant au programme Extended Security Updates (ESU) pour les particuliers, qui couvre les PC jusqu'au 12 octobre 2027. L'inscription est gratuite si vous synchronisez vos paramètres avec Windows Sauvegarde ou si vous échangez 1 000 points Microsoft Rewards. Sinon, c'est un achat unique de 30 $ US. Le lien S'inscrire se trouve dans Paramètres, Mise à jour et sécurité, Windows Update.</p>
+          </details>
+
+          <details class="card">
+            <summary>Mon antivirus me protège-t-il encore sous Windows 10?</summary>
+            <p class="muted">Microsoft Defender continue de recevoir ses définitions de virus jusqu'en octobre 2028 au moins. Par contre, un antivirus à jour ne corrige pas les failles de Windows lui-même. Sans les mises à jour de sécurité du système, le PC reste exposé.</p>
+          </details>
+
+          <details class="card">
+            <summary>Comment savoir si mon PC est compatible avec Windows 11?</summary>
+            <p class="muted">L'application gratuite Contrôle d'intégrité du PC (PC Health Check) de Microsoft indique exactement quelle exigence votre PC ne respecte pas. Le point qui bloque le plus souvent est le processeur : il faut au minimum un Intel Core de 8e génération ou un AMD Ryzen 2000. Un TPM désactivé ou un démarrage en mode Legacy peuvent aussi faire échouer la vérification sur un PC pourtant compatible.</p>
+          </details>
+
+          <details class="card">
+            <summary>La mise à niveau de Windows 10 vers Windows 11 est-elle gratuite?</summary>
+            <p class="muted">Oui, pour un PC Windows 10 avec une licence valide qui respecte les exigences de Windows 11. La mise à niveau est offerte dans Windows Update.</p>
+          </details>
+
+          <details class="card">
+            <summary>Que faire si mon PC n'est pas compatible avec Windows 11?</summary>
+            <p class="muted">À court terme, rester sur Windows 10 avec le programme ESU jusqu'en octobre 2027. À long terme, passer à Linux (Linux Mint ou MX Linux) ou à ChromeOS Flex donne une seconde vie au PC. Si le PC date d'avant 2018 et commence déjà à ralentir, un PC neuf ou remis à neuf est souvent le meilleur choix.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="related-guides-head">
+          <div class="section-head">
+            <h2>Lecture complémentaire</h2>
+            <p class="muted">Pour savoir si votre PC vaut la peine d'être amélioré, ou pour trouver ce qu'il y a dedans.</p>
+          </div>
+          <a class="btn btn-secondary" href="/guides.html">Retour aux guides</a>
+        </div>
+        <div class="grid-2 guides-list">
+          <article class="card guide-link-card">
+            <p class="eyebrow">Upgrade PC</p>
+            <h3>Upgrader son PC ou en acheter un neuf en 2026?</h3>
+            <p>Si votre PC n'est pas compatible avec Windows 11, ce guide vous aide à décider entre changer quelques pièces et repartir à neuf.</p>
+            <div class="card-actions"><a class="btn btn-secondary" href="/guide-upgrade-pc-ou-acheter-neuf-2026.html">Lire ce guide</a></div>
+          </article>
+          <article class="card guide-link-card">
+            <p class="eyebrow">Tutoriel</p>
+            <h3>Trouver la liste des composants de son PC sous Windows</h3>
+            <p>Pour savoir en quelques clics quel processeur, quelle carte mère et combien de RAM se trouvent dans votre PC.</p>
+            <div class="card-actions"><a class="btn btn-secondary" href="/liste-composants-pc-windows.html">Voir le tutoriel</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pas certain de la situation de votre PC?</h2>
+          <p class="muted">Je peux vérifier s'il est compatible avec Windows 11, activer les bons réglages s'il ne lui manque qu'un ajustement, ou vous aider à choisir entre changer des pièces et remplacer la machine.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card guide-link-card">
+            <h3>Vérification et mise à niveau</h3>
+            <p>Diagnostic de compatibilité, activation du TPM, de l'UEFI et de Secure Boot, conversion du disque en GPT et passage à Windows 11.</p>
+            <div class="card-actions"><a class="btn btn-primary" href="/reparation-pc-blainville.html">Voir la page réparation</a></div>
+          </article>
+          <article class="card guide-link-card">
+            <h3>Nouveau PC sur mesure</h3>
+            <p>Si votre PC actuel ne peut pas suivre, un PC monté sur mesure pour Windows 11, avec réutilisation des pièces qui valent encore la peine d'être gardées.</p>
+            <div class="card-actions"><a class="btn btn-secondary" href="/montage-pc-gaming-blainville.html">Voir la page montage PC</a></div>
+          </article>
+        </div>
+        <div class="note">
+          <p>Basé à Blainville, au service de Laval, Mirabel, Sainte-Thérèse et la Rive-Nord. Écrivez-moi par <a class="link" href="sms:+15147178283">SMS</a> ou <a class="link" href="/#contact">demandez une soumission</a> avec la liste de vos composants.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a class="brand" href="/">
+              <img class="brand-logo" src="/assets/favicon-512x512.png" alt="" width="40" height="40" loading="lazy">
+              <span class="brand-text">Raymond <span>PC</span></span>
+            </a>
+            <p class="micro muted">Montage PC sur mesure, réparation d'ordinateur et pièces testées. Basé à Blainville, au service de Laval, Mirabel, Sainte-Thérèse et la Rive-Nord.</p>
+          </div>
+          <nav class="footer-col" aria-label="Services">
+            <h2>Services</h2>
+            <a href="/montage-pc-gaming-blainville.html">Montage PC sur mesure</a>
+            <a href="/reparation-pc-blainville.html">Réparation d'ordinateur</a>
+            <a href="/sauvegarde-disque-blainville.html">Sauvegarde de disques</a>
+            <a href="/numerisation-vhs-blainville.html">Numérisation VHS</a>
+            <a href="/achat-pc-usage-blainville.html">Vendre mon PC usagé</a>
+          </nav>
+          <nav class="footer-col" aria-label="Boutique et outils">
+            <h2>Boutique et outils</h2>
+            <a href="/boutique.html">Boutique</a>
+            <a href="/planner.html">Planificateur de build</a>
+            <a href="/guides.html">Guides et conseils</a>
+            <a href="/#pricing">Tarifs</a>
+          </nav>
+          <div class="footer-col">
+            <h2>Contact</h2>
+            <a href="sms:+15147178283">SMS : (514) 717-8283</a>
+            <a href="https://wa.me/15147178283" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="mailto:raymondservicepc@outlook.com">raymondservicepc<wbr>@outlook.com</a>
+            <a href="/#contact">Demander une soumission</a>
+          </div>
+        </div>
+        <div class="footer-inner">
+          <div class="micro muted">© <span id="year"></span> Raymond PC • Blainville, QC</div>
+          <div class="micro muted"><a href="#top" class="link">Retour en haut</a></div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Barre d'action mobile : le contact reste a portee de pouce sur telephone -->
+  <nav class="action-bar" id="actionBar" aria-label="Contact rapide">
+    <a class="btn btn-secondary" href="sms:+15147178283">SMS</a>
+    <a class="btn btn-secondary" href="https://wa.me/15147178283" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn-primary" href="/#contact">Soumission</a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>

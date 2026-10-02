@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://raymondpc.ca/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://raymondpc.ca/guides.html</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -74,6 +74,11 @@
     <loc>https://raymondpc.ca/liste-composants-pc-windows.html</loc>
     <lastmod>2026-09-16</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://raymondpc.ca/guide-fin-support-windows-10.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.7</priority>
   </url>
   <!-- boutique:debut : articles de la boutique, écrits par l'éditeur à chaque enregistrement -->
   <url>

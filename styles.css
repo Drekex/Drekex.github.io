@@ -281,6 +281,19 @@ h1,h2,h3{ letter-spacing:-.02em; }
 }
 .note strong{ color:var(--text); }
 
+/* ===================== Spec table ===================== */
+.table-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.spec-table{ width:100%; border-collapse:collapse; font-size:.97rem; line-height:1.5; }
+.spec-table th, .spec-table td{ padding:12px 14px; text-align:left; vertical-align:top; border-top:1px solid var(--line); }
+.spec-table thead th{ border-top:none; color:var(--muted); font-size:.85rem; font-weight:600; text-transform:uppercase; letter-spacing:.04em; }
+.spec-table tbody th{ color:var(--text); font-weight:600; white-space:nowrap; width:1%; }
+.spec-table td{ color:var(--muted); }
+.spec-table td strong{ color:var(--text); }
+@media (max-width: 560px){
+  .spec-table th, .spec-table td{ padding:10px 8px; }
+  .spec-table tbody th{ white-space:normal; }
+}
+
 /* ===================== Grids ===================== */
 .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap: var(--grid-gap); }
 .grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap: var(--grid-gap); }
