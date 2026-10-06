@@ -452,6 +452,13 @@ h1,h2,h3{ letter-spacing:-.02em; }
 }
 .review-btn:hover .review-img{ transform: translateY(-3px); border-color: var(--brand-border); }
 
+.video-demo-grid{ align-items:center; }
+.video-demo{ margin:0; }
+.video-demo video{
+  display:block; width:100%; height:auto; aspect-ratio:616/472;
+  border-radius: var(--radius); border:1px solid var(--line); background:#000;
+}
+
 /* ===================== FAQ ===================== */
 .faq{ display:grid; gap:12px; max-width:840px; }
 .faq .card{ padding:0; }
