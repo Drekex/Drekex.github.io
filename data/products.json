@@ -38,7 +38,7 @@
         "price": null,
         "label": "Recevez DOOM en cadeau à l'achat de l'article!",
         "details": "À l'achat de cet article, vous recevrez gratuitement par courriel une clé de produit Steam pour DOOM! L'achat doit être effectué avant la fin de la promotion. Les quantités peuvent être limitées.",
-        "ends": "2026-10-22"
+        "ends": ""
       },
       "summary": "Un CPU excellent pour le gaming sur la plateforme AM4",
       "description": "AMD Ryzen 5 5600X, Processeur de bureau série Ryzen 5 5000, 6 cœurs, 3,7 GHz, socle AM4, 65 W, sans processeur graphique intégré. Le refroidisseur AMD Wraith Stealth n'est pas inclus avec ce produit.",
@@ -135,7 +135,7 @@
         "notes": ""
       },
       "date_added": "2026-09-22",
-      "updated": "2026-09-22"
+      "updated": "2026-10-07"
     },
     {
       "id": "crucial-barette-identique-2x16gb-ddr4-3200-sodimm-1-2v-cl22",
@@ -324,7 +324,7 @@
         "price": null,
         "label": "Recevez DOOM en cadeau à l'achat de l'article!",
         "details": "À l'achat de cet article, vous recevrez gratuitement par courriel une clé de produit Steam pour DOOM! L'achat doit être effectué avant la fin de la promotion. Les quantités peuvent être limitées.",
-        "ends": "2026-10-22"
+        "ends": ""
       },
       "summary": "8 cœurs Zen 4 jusqu'à 5,3 GHz pour seulement 65 W: un excellent processeur de jeu AM5, avec graphiques intégrés en prime.",
       "description": "Le refroidisseur AMD Wraith Prism n'est pas inclus avec ce produit.",
@@ -393,7 +393,7 @@
         "notes": ""
       },
       "date_added": "2026-09-24",
-      "updated": "2026-09-24"
+      "updated": "2026-10-07"
     },
     {
       "id": "samsung-9100-pro-ssd-nvme-m-2-pcie-5-0-x4-1-to",
@@ -404,10 +404,10 @@
       "status": "available",
       "price": 450,
       "promo": {
-        "active": false,
+        "active": true,
         "price": null,
-        "label": "",
-        "details": "",
+        "label": "Recevez DOOM en cadeau à l'achat de l'article!",
+        "details": "À l'achat de cet article, vous recevrez gratuitement par courriel une clé de produit Steam pour DOOM! L'achat doit être effectué avant la fin de la promotion. Les quantités peuvent être limitées.",
         "ends": ""
       },
       "summary": "Chargez vos jeux en un clin d'œil : SSD PCIe 5.0 de 1 To, jusqu'à 14 700 Mo/s. Neuf et scellé, garantie Samsung de 5 ans.",
