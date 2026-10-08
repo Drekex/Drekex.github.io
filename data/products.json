@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-09-24",
+  "updated": "2026-10-07",
   "boxes": [
     {
       "name": "Petite boîte",
@@ -394,6 +394,92 @@
       },
       "date_added": "2026-09-24",
       "updated": "2026-09-24"
+    },
+    {
+      "id": "samsung-9100-pro-ssd-nvme-m-2-pcie-5-0-x4-1-to",
+      "name": "Samsung 9100 PRO SSD NVMe M.2 PCIe 5.0 x4 1 To",
+      "category": "storage",
+      "condition": "new",
+      "condition_note": "Neuf dans la boîte d'origine du manufacturier jamais ouverte.",
+      "status": "available",
+      "price": 450,
+      "promo": {
+        "active": false,
+        "price": null,
+        "label": "",
+        "details": "",
+        "ends": ""
+      },
+      "summary": "Chargez vos jeux en un clin d'œil : SSD PCIe 5.0 de 1 To, jusqu'à 14 700 Mo/s. Neuf et scellé, garantie Samsung de 5 ans.",
+      "description": "Le Samsung 9100 PRO de 1 To est un SSD NVMe M.2 2280 à interface PCIe 5.0 x4. Il atteint des vitesses de lecture séquentielle allant jusqu'à 14 700 Mo/s et d'écriture séquentielle allant jusqu'à 13 300 Mo/s, pour des chargements de jeux, de logiciels et de gros fichiers presque instantanés.\n\nCôté performances aléatoires, il offre jusqu'à 1 850 000 IOPS en lecture et 2 600 000 IOPS en écriture. Il est équipé de mémoire Samsung V-NAND TLC, d'un contrôleur Samsung maison et d'un cache de 1 Go de SDRAM LPDDR4X, ce qui assure des performances constantes même lors de transferts soutenus.\n\nIl prend aussi en charge le chiffrement AES 256 bits (TCG/Opal et IEEE 1667), le TRIM, la surveillance S.M.A.R.T. et un mode veille à très faible consommation (environ 3,3 mW). Compact et léger (environ 9 g), il convient aussi bien aux PC de bureau et portables compatibles qu'aux consoles de jeu.\n\nCompatibilité : pour profiter pleinement des vitesses PCIe 5.0, votre carte mère doit offrir un emplacement M.2 compatible PCIe 5.0 x4. Sur un emplacement PCIe 4.0 ou 3.0, le SSD fonctionne, mais à des vitesses plus basses. Les vitesses indiquées sont des maximums et peuvent varier selon votre matériel et votre configuration.\n\nÉtat : produit neuf, jamais ouvert, scellé dans sa boîte d'origine. Garantie limitée du fabricant de 5 ans ou 600 To écrits (TBW), selon la première éventualité.",
+      "specs": [
+        [
+          "Marque",
+          "Samsung"
+        ],
+        [
+          "Capacité",
+          "1 To (1000 Go)"
+        ],
+        [
+          "Interface",
+          "PCIe 5.0 x4, NVME 2.0"
+        ],
+        [
+          "Format",
+          "M.2 2280"
+        ],
+        [
+          "Vitesse de lecture séquentielle",
+          "jusqu'à 14 700 Mo/s"
+        ],
+        [
+          "Vitesse d'écriture séquentielle",
+          "jusqu'à 13 300 Mo/s"
+        ],
+        [
+          "Lecture aléatoire",
+          "jusqu'à 1 850 000 IOPS"
+        ],
+        [
+          "Écriture aléatoire",
+          "jusqu'à 2 600 000 IOPS"
+        ],
+        [
+          "Mémoire NAND",
+          "Samsung V-NAND TLC"
+        ],
+        [
+          "Cache",
+          "1 Go LPDDR4X SDRAM Samsung"
+        ],
+        [
+          "Contrôleur",
+          "contrôleur Samsung propriétaire"
+        ],
+        [
+          "Utilisation",
+          "PC de bureau et portables, consoles de jeu"
+        ]
+      ],
+      "thumb": "assets/store/samsung-9100-pro-series-1to-pcie-5-0-muyvg73efes-apercu.jpg",
+      "images": [
+        "assets/store/samsung-9100-pro-series-1to-pcie-5-0-muyvfoe8gd5.jpg",
+        "assets/store/samsung-9100-pro-series-1to-pcie-5-0-muyvfoh9018.jpg",
+        "assets/store/samsung-9100-pro-series-1to-pcie-5-0-muyvfogk5b7.jpg"
+      ],
+      "package": {
+        "box": "",
+        "length_cm": 15.3,
+        "width_cm": 10.2,
+        "height_cm": 10.2,
+        "item_kg": null,
+        "pack_kg": null,
+        "weight_kg": 0.13,
+        "notes": ""
+      },
+      "date_added": "2026-10-07",
+      "updated": "2026-10-07"
     }
   ]
 }
