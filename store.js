@@ -14,6 +14,16 @@
   const WEB3FORMS_URL = "https://api.web3forms.com/submit";
   const CONTACT_EMAIL = "raymondservicepc@outlook.com";
   const CONTACT_PHONE = "+15147178283";
+  const PICKUP_CITY = "Blainville";
+  // Etapes « Après l'envoi » de la commande, selon le mode de réception choisi.
+  const AFTER_STEPS = {
+    ship: `<li>Je calcule la livraison vers votre adresse.</li>
+              <li>Vous recevez le total, livraison incluse, avec le courriel ou le numéro pour le virement Interac.</li>
+              <li>Le colis part dès la réception du virement.</li>`,
+    pickup: `<li>Je vous écris pour confirmer la commande et fixer le moment du ramassage à ${PICKUP_CITY}.</li>
+              <li>Vous recevez le total, sans frais de livraison, avec le courriel ou le numéro pour le virement Interac.</li>
+              <li>L'article est réservé à votre nom dès la réception du virement.</li>`
+  };
 
   const CATEGORIES = [
     ["cpu",     "Processeur (CPU)"],
@@ -42,6 +52,45 @@
     light_wear: "https://schema.org/UsedCondition",
     refurbished: "https://schema.org/RefurbishedCondition"
   };
+
+  /* ---------- Retours et garantie ---------- */
+  // Tout article : retour 30 jours. Usagé (testé ici) : garantie Raymond PC de
+  // 90 jours. Neuf : garantie du fabricant (p.warranty la précise, ex. « Samsung,
+  // 5 ans »), avec aide pour le RMA. Un PC complet neuf a aussi la garantie
+  // légale de bon fonctionnement de 3 ans (LPC, depuis le 5 octobre 2026),
+  // dont la durée doit être affichée près du prix.
+  // Garder ces règles identiques à l'aide du champ Garantie dans editor.html.
+  const RETURN_DAYS = 30;
+  const USED_WARRANTY_DAYS = 90;
+  const isUsed = (p) => p.condition !== "new";
+  const hasLegalPcWarranty = (p) => p.category === "pc" && p.condition === "new";
+  const makerWarranty = (p) => String(p.warranty || "").trim();
+  function warrantyShort(p) {
+    if (isUsed(p)) return `${USED_WARRANTY_DAYS} jours (Raymond PC)` + (makerWarranty(p) ? ` + fabricant : ${makerWarranty(p)}` : "");
+    return makerWarranty(p) ? `Fabricant : ${makerWarranty(p)}` : "Garantie du fabricant";
+  }
+  function policyLines(p) {
+    const lines = [
+      `<strong>Retour ${RETURN_DAYS} jours.</strong> Vous avez ${RETURN_DAYS} jours après la réception ou le ramassage pour demander un retour.
+        L'article me revient d'abord, dans l'état où vous l'avez reçu, avec sa boîte et ses accessoires. Après vérification, je vous rembourse.
+        Les frais de retour sont à votre charge, sauf si l'article est défectueux.`,
+      `<strong>Défectueux dans les ${RETURN_DAYS} jours?</strong> Je vous rembourse, ou je remplace l'article si j'en ai un identique.
+        Je m'occupe moi-même de la garantie du fabricant.`
+    ];
+    if (isUsed(p)) {
+      lines.push(`<strong>Garantie Raymond PC de ${USED_WARRANTY_DAYS} jours.</strong> Cet article usagé a été testé ici. S'il cesse de fonctionner
+        normalement dans les ${USED_WARRANTY_DAYS} jours suivant la réception, je le répare, le remplace ou vous rembourse.`
+        + (makerWarranty(p) ? ` Garantie du fabricant : ${esc(makerWarranty(p))}.` : ""));
+    } else {
+      lines.push(`<strong>Après ${RETURN_DAYS} jours : garantie du fabricant${makerWarranty(p) ? ` (${esc(makerWarranty(p))})` : ""}.</strong>
+        Je vous aide avec la démarche de réclamation (RMA) auprès du fabricant.`);
+    }
+    if (hasLegalPcWarranty(p)) {
+      lines.push(`<strong>Garantie légale de bon fonctionnement : 3 ans.</strong> Comme tout ordinateur neuf vendu au Québec, ce PC est couvert
+        pendant 3 ans : réparation gratuite, pièces, main-d'œuvre et transport raisonnable compris.`);
+    }
+    return lines;
+  }
 
   /* ---------- Utilitaires ---------- */
   const $ = (s, root = document) => root.querySelector(s);
@@ -370,7 +419,7 @@
     const metaDesc = $('meta[name="description"]');
     if (metaDesc) {
       const lead = (cardSummary(p) || String(p.description || "").split(/(?<=[.!?])\s/)[0] || p.name).trim();
-      metaDesc.setAttribute("content", `${lead}${/[.!?]$/.test(lead) ? "" : "."} Prix taxes incluses, livraison partout au Canada.`);
+      metaDesc.setAttribute("content", `${lead}${/[.!?]$/.test(lead) ? "" : "."} Prix taxes incluses, livraison partout au Canada ou ramassage gratuit à Blainville.`);
     }
     // produit.html n'a pas de canonique fixe : une canonique vers boutique.html
     // dans le HTML poussait Google a ignorer chaque fiche comme doublon.
@@ -406,6 +455,10 @@
             <ul class="price-meta">
               <li><span class="k muted">Taxes</span><span class="v">Incluses dans le prix</span></li>
               <li><span class="k muted">Livraison</span><span class="v">Calculée à la commande (Canada)</span></li>
+              <li><span class="k muted">Ramassage</span><span class="v">Gratuit à Blainville</span></li>
+              <li><span class="k muted">Retours</span><span class="v">${RETURN_DAYS} jours après la réception</span></li>
+              <li><span class="k muted">Garantie</span><span class="v">${esc(warrantyShort(p))}</span></li>
+              ${hasLegalPcWarranty(p) ? `<li><span class="k muted">Garantie légale</span><span class="v">3 ans (bon fonctionnement)</span></li>` : ""}
               <li><span class="k muted">Paiement</span><span class="v">Virement Interac</span></li>
               <li><span class="k muted">Référence</span><span class="v">${esc(p.id)}</span></li>
             </ul>
@@ -451,11 +504,16 @@
           <article class="card">
             <h2 style="margin:0 0 4px;font-size:1.25rem">Comment se passe l'achat</h2>
             <ol class="how-steps">
-              <li>Vous remplissez le formulaire de commande avec votre adresse de livraison.</li>
-              <li>Je vous envoie le total, livraison incluse, avec les coordonnées pour le virement Interac.</li>
+              <li>Vous remplissez le formulaire de commande : livraison à votre adresse, ou ramassage gratuit à Blainville.</li>
+              <li>Je vous envoie le total (livraison incluse s'il y a lieu) avec les coordonnées pour le virement Interac.</li>
               <li>Vous envoyez le virement. L'article est réservé à votre nom.</li>
-              <li>J'expédie le colis et vous recevez le numéro de suivi.</li>
+              <li>J'expédie le colis et vous recevez le numéro de suivi, ou on fixe ensemble le moment du ramassage.</li>
             </ol>
+          </article>
+          <article class="card">
+            <h2 style="margin:0 0 4px;font-size:1.25rem">Retours et garantie</h2>
+            <ul class="policy-list">${policyLines(p).map((l) => `<li>${l}</li>`).join("")}</ul>
+            <p class="micro muted" style="margin:12px 0 0">Ces garanties s'ajoutent aux garanties légales prévues par la Loi sur la protection du consommateur du Québec.</p>
           </article>
         </div>
       </div>`;
@@ -477,7 +535,15 @@
         price: finalPrice(p).toFixed(2),
         availability: p.status === "sold" ? "https://schema.org/SoldOut" : p.status === "reserved" ? "https://schema.org/LimitedAvailability" : "https://schema.org/InStock",
         itemCondition: SCHEMA_COND[p.condition] || "https://schema.org/UsedCondition",
-        seller: { "@type": "Organization", name: "Raymond PC" }
+        seller: { "@type": "Organization", name: "Raymond PC" },
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          applicableCountry: "CA",
+          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+          merchantReturnDays: RETURN_DAYS,
+          returnMethod: "https://schema.org/ReturnByMail",
+          returnFees: "https://schema.org/ReturnFeesCustomerResponsibility"
+        }
       }
     };
     const s = document.createElement("script");
@@ -612,8 +678,16 @@
       <a class="back-link" href="${productUrl(p)}">Retour à l'article</a>
       <div class="order-layout">
         <form class="card order-form" id="orderForm" novalidate>
-          <h2 style="margin:0 0 6px;font-size:1.45rem">Informations de livraison</h2>
+          <h2 style="margin:0 0 6px;font-size:1.45rem">Livraison ou ramassage</h2>
           <p class="muted" style="margin:0">Les champs marqués <span class="required">*</span> sont obligatoires. Rien n'est payé à cette étape.</p>
+
+          <div class="fieldset-title">Réception</div>
+          <div class="ship-choice" role="radiogroup" aria-label="Mode de réception">
+            <label class="ship-opt"><input type="radio" name="reception" value="ship" checked>
+              <span>Livraison au Canada<small>Calculée après la commande</small></span></label>
+            <label class="ship-opt"><input type="radio" name="reception" value="pickup">
+              <span>Ramassage à ${PICKUP_CITY}<small>Gratuit, sur rendez-vous</small></span></label>
+          </div>
 
           <div class="fieldset-title">Destinataire</div>
           <div class="form-row">
@@ -624,6 +698,7 @@
               <input name="company" autocomplete="organization" placeholder="Nom de l'entreprise" maxlength="80"></label>
           </div>
 
+          <div class="addr-block" id="addrBlock">
           <div class="fieldset-title">Adresse</div>
           <label class="field"><span>Pays</span>
             <select name="country" disabled><option selected>Canada</option></select>
@@ -654,6 +729,7 @@
             <label class="field"><span>Code postal <span class="req">*</span></span>
               <input name="postal" autocomplete="postal-code" placeholder="A1A 1A1" maxlength="7" style="text-transform:uppercase">
               <span class="err" data-err="postal" hidden></span></label>
+          </div>
           </div>
 
           <div class="fieldset-title">Pour vous joindre</div>
@@ -688,16 +764,15 @@
             <ul class="order-lines">
               <li><span class="muted">Prix (taxes incluses)</span><span>${hasPromoPrice(p) ? `<span class="price-old" style="margin-right:6px">${money(p.price)}</span>` : ""}${money(finalPrice(p))}</span></li>
               ${promo ? `<li><span class="muted">Promotion</span><span style="color:#ff8a8d">${esc(p.promo.label || "Promo")}</span></li>` : ""}
-              <li><span class="muted">Livraison</span><span>Calculée après la commande</span></li>
+              <li><span class="muted" id="shipLabel">Livraison</span><span id="shipValue">Calculée après la commande</span></li>
+              <li><span class="muted">Retours</span><span>${RETURN_DAYS} jours</span></li>
+              <li><span class="muted">Garantie</span><span>${esc(warrantyShort(p))}</span></li>
+              ${hasLegalPcWarranty(p) ? `<li><span class="muted">Garantie légale</span><span>3 ans (bon fonctionnement)</span></li>` : ""}
             </ul>
           </div>
           <div class="card order-after">
             <h3 style="font-size:1.05rem">Après l'envoi</h3>
-            <ol class="how-steps">
-              <li>Je calcule la livraison vers votre adresse.</li>
-              <li>Vous recevez le total, livraison incluse, avec le courriel ou le numéro pour le virement Interac.</li>
-              <li>Le colis part dès la réception du virement.</li>
-            </ol>
+            <ol class="how-steps" id="afterSteps">${AFTER_STEPS.ship}</ol>
           </div>
         </aside>
       </div>`;
@@ -718,23 +793,26 @@
     const hint = $("#addrHint");
     const touched = new Set();
     let verified = false; // adresse choisie dans les suggestions et non modifiee depuis
+    const isPickup = () => f.reception.value === "pickup";
 
     function validate() {
       const e = {};
       const name = f.fullname.value.trim();
       if (name.length < 2) e.fullname = "Entrez votre nom complet.";
-      const st = f.street.value.trim();
-      if (!st) e.street = "Entrez votre adresse.";
-      else if (!/\d/.test(st)) e.street = "Incluez le numéro civique (ex. : 123 rue Principale).";
-      if (!f.city.value.trim()) e.city = "Entrez la ville.";
-      const prov = f.province.value;
-      if (!prov) e.province = "Choisissez la province.";
-      const postal = f.postal.value.trim().toUpperCase();
-      if (!postal) e.postal = "Entrez le code postal.";
-      else if (!POSTAL_RE.test(postal)) e.postal = "Format attendu : A1A 1A1.";
-      else if (prov && !(POSTAL_PROV[postal[0]] || []).includes(prov)) {
-        const guess = (POSTAL_PROV[postal[0]] || []).map((c) => PROVINCES.find((x) => x[0] === c)?.[1]).join(" ou ");
-        e.postal = `Ce code postal ne correspond pas à la province choisie (${postal[0]}… : ${guess}).`;
+      if (!isPickup()) {
+        const st = f.street.value.trim();
+        if (!st) e.street = "Entrez votre adresse.";
+        else if (!/\d/.test(st)) e.street = "Incluez le numéro civique (ex. : 123 rue Principale).";
+        if (!f.city.value.trim()) e.city = "Entrez la ville.";
+        const prov = f.province.value;
+        if (!prov) e.province = "Choisissez la province.";
+        const postal = f.postal.value.trim().toUpperCase();
+        if (!postal) e.postal = "Entrez le code postal.";
+        else if (!POSTAL_RE.test(postal)) e.postal = "Format attendu : A1A 1A1.";
+        else if (prov && !(POSTAL_PROV[postal[0]] || []).includes(prov)) {
+          const guess = (POSTAL_PROV[postal[0]] || []).map((c) => PROVINCES.find((x) => x[0] === c)?.[1]).join(" ou ");
+          e.postal = `Ce code postal ne correspond pas à la province choisie (${postal[0]}… : ${guess}).`;
+        }
       }
       const phone = f.phone.value.trim();
       const email = f.email.value.trim();
@@ -784,7 +862,17 @@
       if (["street", "city", "province", "postal"].includes(e.target.name) && verified) setVerified(false);
       refresh();
     });
+    function setReception() {
+      const pickup = isPickup();
+      $("#addrBlock").hidden = pickup;
+      $("#shipLabel").textContent = pickup ? "Ramassage" : "Livraison";
+      $("#shipValue").textContent = pickup ? `Gratuit (${PICKUP_CITY})` : "Calculée après la commande";
+      $("#afterSteps").innerHTML = AFTER_STEPS[pickup ? "pickup" : "ship"];
+      if (pickup) closeBox();
+    }
+
     form.addEventListener("change", (e) => {
+      if (e.target.name === "reception") setReception();
       if (e.target.name) touched.add(e.target.name);
       if (e.target.name === "province" && verified) setVerified(false);
       refresh();
@@ -890,6 +978,7 @@
       const g = (k) => (f[k].value || "").trim();
       const d = phoneDigits(g("phone"));
       return {
+        pickup: isPickup(),
         fullname: g("fullname"), company: g("company"), street: g("street"), unit: g("unit"),
         city: g("city"), province: g("province"), postal: formatPostal(g("postal")),
         phone: d.length === 10 ? formatPhone(d) : g("phone"), email: g("email"), note: g("note"),
@@ -907,19 +996,20 @@
         `État : ${COND[p.condition]?.label || p.condition}`,
         `Prix affiché : ${money(finalPrice(p))} (taxes incluses)` + (hasPromoPrice(p) ? `, prix régulier ${money(p.price)}` : ""),
         ...(promoActive(p) ? [`Promo : ${p.promo.label || "oui"}${p.promo.details ? " : " + p.promo.details : ""}`] : []),
+        `Retour : ${RETURN_DAYS} jours après la réception`,
+        `Garantie : ${warrantyShort(p)}`,
+        ...(hasLegalPcWarranty(p) ? ["Garantie légale de bon fonctionnement : 3 ans"] : []),
         `Lien : ${SITE_URL}/${productUrl(p)}`,
         "",
-        "EXPÉDIER À",
-        o.fullname,
-        ...(o.company ? [o.company] : []),
-        o.street + (o.unit ? `, ${o.unit}` : ""),
-        `${o.city} ${o.province}  ${o.postal}`,
-        "CANADA",
+        ...(o.pickup
+          ? [`RAMASSAGE À ${PICKUP_CITY.toUpperCase()} (gratuit)`, o.fullname, ...(o.company ? [o.company] : [])]
+          : ["EXPÉDIER À", o.fullname, ...(o.company ? [o.company] : []),
+             o.street + (o.unit ? `, ${o.unit}` : ""), `${o.city} ${o.province}  ${o.postal}`, "CANADA"]),
         ...(o.phone ? [`Tél. : ${o.phone}`] : []),
         ...(o.email ? [`Courriel : ${o.email}`] : []),
-        ...(forSeller ? [`Adresse choisie dans les suggestions : ${verified ? "oui" : "non, saisie manuelle"}`] : [])
+        ...(forSeller && !o.pickup ? [`Adresse choisie dans les suggestions : ${verified ? "oui" : "non, saisie manuelle"}`] : [])
       ];
-      if (forSeller) {
+      if (forSeller && !o.pickup) {
         lines.push("", "COLIS",
           `Poids total : ${pk.weight_kg ? kg(pk.weight_kg) : "à peser"}`,
           `Dimensions : ${dims}${pk.box ? ` (${pk.box})` : ""}`,
@@ -941,7 +1031,7 @@
       statusEl.hidden = true;
 
       const pk = p.package || {};
-      const subject = `[Raymond PC] Commande boutique : ${p.name}`;
+      const subject = `[Raymond PC] Commande boutique${o.pickup ? " (ramassage)" : ""} : ${p.name}`;
       const body = recap(o, true);
       try {
         const res = await fetch(WEB3FORMS_URL, {
@@ -959,9 +1049,10 @@
             entreprise: o.company || "-",
             telephone: o.phone || "-",
             courriel: o.email || "-",
-            adresse: `${o.street}${o.unit ? ", " + o.unit : ""}\n${o.city} ${o.province}  ${o.postal}\nCANADA`,
-            colis_poids: pk.weight_kg ? kg(pk.weight_kg) : "à peser",
-            colis_dimensions: [pk.length_cm, pk.width_cm, pk.height_cm].every((n) => Number(n) > 0) ? `${pk.length_cm} x ${pk.width_cm} x ${pk.height_cm} cm` : "à mesurer",
+            reception: o.pickup ? `Ramassage à ${PICKUP_CITY} (gratuit)` : "Livraison",
+            adresse: o.pickup ? "-" : `${o.street}${o.unit ? ", " + o.unit : ""}\n${o.city} ${o.province}  ${o.postal}\nCANADA`,
+            colis_poids: o.pickup ? "-" : pk.weight_kg ? kg(pk.weight_kg) : "à peser",
+            colis_dimensions: o.pickup ? "-" : [pk.length_cm, pk.width_cm, pk.height_cm].every((n) => Number(n) > 0) ? `${pk.length_cm} x ${pk.width_cm} x ${pk.height_cm} cm` : "à mesurer",
             message: body
           })
         });
@@ -984,8 +1075,11 @@
         <div class="card glass order-done" style="max-width:760px">
           <p class="eyebrow">Commande reçue</p>
           <h2 style="margin-top:14px">Merci ${esc(o.fullname.split(" ")[0])}, votre commande est envoyée.</h2>
-          <p class="muted">Je calcule la livraison vers votre adresse et je vous écris ${how} avec le total, livraison incluse,
-          et les coordonnées pour le virement Interac. Le colis part dès la réception du paiement.</p>
+          <p class="muted">${o.pickup
+            ? `Je vous écris ${how} pour fixer le moment du ramassage à ${PICKUP_CITY}, avec le total et les coordonnées
+          pour le virement Interac. L'article est réservé à votre nom dès la réception du paiement.`
+            : `Je calcule la livraison vers votre adresse et je vous écris ${how} avec le total, livraison incluse,
+          et les coordonnées pour le virement Interac. Le colis part dès la réception du paiement.`}</p>
           <div class="order-recap">${esc(recap(o, false))}</div>
           <div class="inline-links" style="margin-top:18px">
             <a class="btn btn-primary" href="boutique.html">Retour à la boutique</a>

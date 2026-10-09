@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "boxes": [
     {
       "name": "Petite boîte",
@@ -31,17 +31,18 @@
       "category": "cpu",
       "condition": "new",
       "condition_note": "Commandé directement du manufacturier, neuf et scellé.",
+      "warranty": "",
       "status": "available",
       "price": 224.99,
       "promo": {
         "active": true,
         "price": null,
-        "label": "Recevez DOOM en cadeau à l'achat de l'article!",
-        "details": "À l'achat de cet article, vous recevrez gratuitement par courriel une clé de produit Steam pour DOOM! L'achat doit être effectué avant la fin de la promotion. Les quantités peuvent être limitées.",
+        "label": "Recevez DOOM (2016) en cadeau à l'achat de l'article!",
+        "details": "À l'achat de cet article, vous recevez gratuitement par courriel une clé Steam pour DOOM (2016). Offre valide jusqu'à épuisement des clés.",
         "ends": ""
       },
-      "summary": "Un CPU excellent pour le gaming sur la plateforme AM4",
-      "description": "AMD Ryzen 5 5600X, Processeur de bureau série Ryzen 5 5000, 6 cœurs, 3,7 GHz, socle AM4, 65 W, sans processeur graphique intégré. Le refroidisseur AMD Wraith Stealth n'est pas inclus avec ce produit.",
+      "summary": "6 cœurs, 12 fils, jusqu'à 4,6 GHz : la mise à niveau idéale pour un PC AM4, souvent sans changer de carte mère. Neuf et scellé.",
+      "description": "Le Ryzen 5 5600X est un processeur de bureau 6 cœurs et 12 fils (architecture Zen 3, 7 nm) qui monte jusqu'à 4,6 GHz, avec 32 Mo de cache L3, pour seulement 65 W. C'est l'un des meilleurs choix pour le jeu sur la plateforme AM4.\n\nIl s'installe sur les cartes mères AM4 X570, B550 et A520. Sur une carte mère des séries 400 ou 300 (B450, X470, B350, X370), il faut d'abord une mise à jour du BIOS, offerte par la plupart des fabricants. Il fonctionne avec la mémoire DDR4.\n\nCe processeur n'a pas de graphiques intégrés : une carte graphique dédiée est nécessaire pour avoir un affichage.\n\nVendu sans refroidisseur, ce qui me permet d'offrir un meilleur prix. La plupart des gens qui montent un bon PC ajoutent de toute façon un refroidisseur à air de 25 à 30 $, qui refroidit beaucoup mieux que le Wraith Stealth d'origine.",
       "specs": [
         [
           "Nom",
@@ -60,7 +61,7 @@
           "Ordinateurs de bureau, processeur en boîte"
         ],
         [
-          "Ancien nom de code",
+          "Nom de code",
           "Vermeer"
         ],
         [
@@ -104,8 +105,24 @@
           "AM4"
         ],
         [
+          "Cartes mères compatibles",
+          "X570, B550, A520; B450, X470, B350, X370 avec mise à jour du BIOS"
+        ],
+        [
+          "Mémoire",
+          "DDR4 double canal, jusqu'à 3200 MT/s"
+        ],
+        [
+          "PCIe",
+          "4.0 (sur carte mère X570 ou B550)"
+        ],
+        [
+          "Graphiques intégrés",
+          "Non (carte graphique requise)"
+        ],
+        [
           "Refroidisseur inclus",
-          "Non"
+          "Non (voir la description)"
         ],
         [
           "Température de fonctionnement max. (Tjmax)",
@@ -116,7 +133,7 @@
           "2020-11-05"
         ],
         [
-          "*Systèmes d'exploitation pris en charge",
+          "Systèmes d'exploitation pris en charge",
           "Windows 11 (64 bits), Windows 10 (64 bits), RHEL x86 64 bits, Ubuntu x86 64 bits"
         ]
       ],
@@ -135,14 +152,15 @@
         "notes": ""
       },
       "date_added": "2026-09-22",
-      "updated": "2026-10-07"
+      "updated": "2026-10-08"
     },
     {
       "id": "crucial-barette-identique-2x16gb-ddr4-3200-sodimm-1-2v-cl22",
-      "name": "Crucial barette identique 2x16GB DDR4 3200 SODIMM 1.2V CL22",
+      "name": "Crucial 32 Go (2x16 Go) DDR4-3200 SO-DIMM CL22, RAM pour portable",
       "category": "memory",
       "condition": "like_new",
       "condition_note": "Test prolongé effectué avec MemTest86 sans aucune erreur (voir les photos). Le kit de RAM a été utilisé précédemment, mais fonctionne comme neuf.",
+      "warranty": "",
       "status": "available",
       "price": 208,
       "promo": {
@@ -152,8 +170,8 @@
         "details": "",
         "ends": ""
       },
-      "summary": "Passez à 32 Go dans votre portable ou mini-PC: kit Crucial DDR4 3200 testé à fond avec MemTest86, zéro erreur.",
-      "description": "",
+      "summary": "Passez à 32 Go dans votre portable ou mini-PC : kit Crucial DDR4 3200 testé à fond avec MemTest86, zéro erreur.",
+      "description": "Kit de deux barrettes identiques Crucial de 16 Go (32 Go au total) en DDR4-3200 SO-DIMM, le format utilisé par les portables, les mini-PC et les NUC. Deux barrettes identiques permettent le mode double canal, pour de meilleures performances qu'une seule barrette.\n\nIl fonctionne avec les plateformes Intel et AMD. Sur un système DDR4 plus lent (2400, 2666 ou 2933 MT/s), il s'ajuste automatiquement à la vitesse maximale supportée.\n\nAvant d'acheter, vérifiez que votre portable a deux emplacements SO-DIMM DDR4 et qu'il accepte 32 Go. Ce kit n'est pas compatible avec les ordinateurs de bureau (format DIMM) ni avec la DDR5.\n\nÉtat : le kit a déjà servi, mais il a passé un test prolongé avec MemTest86 sans aucune erreur (voir les photos).",
       "specs": [
         [
           "Marque",
@@ -177,27 +195,27 @@
         ],
         [
           "Tension",
-          "1.2V"
+          "1,2 V"
         ],
         [
           "Organisation",
-          "double rang (2Rx8)"
+          "Double rang (2Rx8)"
         ],
         [
-          "Non-ECC",
-          "non tamponnée (unbuffered)"
+          "ECC",
+          "Non (non tamponnée, unbuffered)"
         ],
         [
           "Numéro de pièce",
           "CT16G4SFD832A"
         ],
         [
-          "Compatible Intel et AMD",
-          "rétrocompatible avec les systêmes DDR4 plus lents (2400, 2666, 2933 MT/s), ou elle s'ajuste automatiquement à la vitesse maximale supportée"
+          "Compatibilité",
+          "Intel et AMD; rétrocompatible avec la DDR4 plus lente (2400, 2666, 2933 MT/s), s'ajuste automatiquement"
         ],
         [
           "Non compatible",
-          "sur ordinateurs de bureau (DIMM) ni avec la DDR5"
+          "Ordinateurs de bureau (DIMM) et DDR5"
         ]
       ],
       "thumb": "assets/store/crucial-kit-2x16gb-ddr4-3200-sodimm-1-2v-cl22-mug4g9xssgi-apercu.jpg",
@@ -218,14 +236,15 @@
         "notes": ""
       },
       "date_added": "2026-09-24",
-      "updated": "2026-09-24"
+      "updated": "2026-10-08"
     },
     {
       "id": "ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2to",
-      "name": "Ediloca EN600 PRO M.2 SSD PCle 3.0x4 2To",
+      "name": "Ediloca EN600 PRO 2 To SSD NVMe M.2 PCIe 3.0 x4",
       "category": "storage",
       "condition": "like_new",
-      "condition_note": "SSD presque neuf, avec seulement quelques heures d'activité. Vérifié avec CrystalDiskInfo et testé avec CrystalDiskMark + H2testw v1.4, aucun problème retrouvé.",
+      "condition_note": "Presque neuf : 4 heures de fonctionnement, 3 démarrages et santé à 100 % selon CrystalDiskInfo, aucune erreur. Les 2 To écrits viennent du test H2testw, qui remplit le disque au complet pour vérifier chaque cellule. Mesuré à 3565 Mo/s en lecture et 3050 Mo/s en écriture avec CrystalDiskMark (voir les photos).",
+      "warranty": "",
       "status": "available",
       "price": 271,
       "promo": {
@@ -235,8 +254,8 @@
         "details": "",
         "ends": ""
       },
-      "summary": "2 To de stockage NVMe rapide (jusqu'à 3500 Mo/s), presque neuf et testé: idéal pour agrandir l'espace de jeu d'un PC de bureau ou d'un portable.",
-      "description": "",
+      "summary": "2 To NVMe rapide, mesuré à 3565 Mo/s, seulement 4 heures d'utilisation et santé à 100 % : idéal pour agrandir l'espace de jeu d'un PC ou d'un portable.",
+      "description": "Le Ediloca EN600 PRO est un SSD NVMe M.2 2280 de 2 To, en PCIe 3.0 x4. Il atteint jusqu'à 3500 Mo/s en lecture et 3000 Mo/s en écriture séquentielle, soit environ six fois plus vite qu'un SSD SATA de 2,5 pouces.\n\nIl utilise de la mémoire 3D NAND TLC avec un cache SLC dynamique, et une étiquette en graphène aide à dissiper la chaleur. Sans pièce mobile, il est silencieux et résiste aux chocs.\n\nCompatibilité : il fonctionne dans les PC de bureau et les portables qui ont un emplacement M.2 NVMe (PCIe). Il ne fonctionne pas dans un emplacement M.2 SATA seulement, et il n'est pas compatible avec la PS5, qui demande un SSD PCIe 4.0.\n\nÉtat : presque neuf, avec 4 heures de fonctionnement et une santé à 100 % selon CrystalDiskInfo. Testé avec H2testw (le disque est rempli au complet, ce qui explique les 2 To écrits) et CrystalDiskMark : 3565 Mo/s en lecture et 3050 Mo/s en écriture, au-dessus des vitesses annoncées. Aucun problème trouvé.",
       "specs": [
         [
           "Marque",
@@ -248,7 +267,7 @@
         ],
         [
           "Capacité",
-          "2To"
+          "2 To"
         ],
         [
           "Format",
@@ -256,7 +275,7 @@
         ],
         [
           "Interface",
-          "NVMe 1.3, PCIe 3.0 x4"
+          "NVMe 1.4, PCIe 3.0 x4"
         ],
         [
           "Lecture séquentielle",
@@ -267,28 +286,32 @@
           "jusqu'à 3000 Mo/s"
         ],
         [
+          "Vitesse mesurée",
+          "3565 Mo/s en lecture, 3050 Mo/s en écriture (CrystalDiskMark)"
+        ],
+        [
           "Mémoire",
           "3D NAND TLC avec cache SLC dynamique"
         ],
         [
           "Refroidissement",
-          "étiquette de dissipation en graphène"
+          "Étiquette de dissipation en graphène"
         ],
         [
-          "Aucune pièce mobile",
-          "silencieux et résistant aux chocs"
+          "Pièces mobiles",
+          "Aucune (silencieux et résistant aux chocs)"
         ],
         [
           "Compatibilité",
-          "PC de bureau et les portables munis d'un emplacement M.2 NVMe"
+          "PC de bureau et portables munis d'un emplacement M.2 NVMe"
         ],
         [
-          "OS",
-          "Compatible Windows 10/11 et macOS"
+          "Systèmes d'exploitation",
+          "Windows 10/11"
         ],
         [
           "Non compatible",
-          "PS5, Ne fonctionne pas dans un emplacement M.2 SATA seulement"
+          "PS5, emplacements M.2 SATA seulement"
         ]
       ],
       "thumb": "assets/store/ediloca-en600-pro-m-2-ssd-pcle-3-0x4-2tb-mug5ibm6blw-apercu.jpg",
@@ -309,7 +332,7 @@
         "notes": ""
       },
       "date_added": "2026-09-24",
-      "updated": "2026-09-24"
+      "updated": "2026-10-08"
     },
     {
       "id": "amd-ryzen-7-7700",
@@ -317,17 +340,18 @@
       "category": "cpu",
       "condition": "new",
       "condition_note": "Commandé directement du manufacturier, neuf et scellé.",
+      "warranty": "",
       "status": "available",
       "price": 299.99,
       "promo": {
         "active": true,
         "price": null,
-        "label": "Recevez DOOM en cadeau à l'achat de l'article!",
-        "details": "À l'achat de cet article, vous recevrez gratuitement par courriel une clé de produit Steam pour DOOM! L'achat doit être effectué avant la fin de la promotion. Les quantités peuvent être limitées.",
+        "label": "Recevez DOOM (2016) en cadeau à l'achat de l'article!",
+        "details": "À l'achat de cet article, vous recevez gratuitement par courriel une clé Steam pour DOOM (2016). Offre valide jusqu'à épuisement des clés.",
         "ends": ""
       },
-      "summary": "8 cœurs Zen 4 jusqu'à 5,3 GHz pour seulement 65 W: un excellent processeur de jeu AM5, avec graphiques intégrés en prime.",
-      "description": "Le refroidisseur AMD Wraith Prism n'est pas inclus avec ce produit.",
+      "summary": "8 cœurs Zen 4 jusqu'à 5,3 GHz pour seulement 65 W : un excellent processeur de jeu AM5, avec graphiques intégrés en prime. Neuf et scellé.",
+      "description": "Le Ryzen 7 7700 offre 8 cœurs et 16 fils (architecture Zen 4, 5 nm) jusqu'à 5,3 GHz, avec 32 Mo de cache L3, pour seulement 65 W. Il donne d'excellentes performances en jeu et en multitâche tout en restant facile à refroidir.\n\nIl s'installe sur toutes les cartes mères AM5 (A620, B650, B650E, X670, X670E, B840, B850, X870, X870E) et fonctionne avec la mémoire DDR5. Il n'est pas compatible avec les cartes mères AM4 ni avec la DDR4.\n\nSes graphiques intégrés AMD Radeon permettent d'utiliser le PC sans carte graphique : pratique pour un PC de bureau, ou en attendant d'acheter une carte graphique.\n\nVendu sans refroidisseur, ce qui me permet d'offrir un meilleur prix. La plupart des gens qui montent un bon PC ajoutent de toute façon un refroidisseur à air de 25 à 30 $, qui refroidit beaucoup mieux que le Wraith Prism d'origine.",
       "specs": [
         [
           "Modèle",
@@ -354,20 +378,28 @@
           "65 W"
         ],
         [
-          "Socket",
+          "Socle",
           "AM5 (chipsets A620, B650, B650E, B840, B850, X670, X670E, X870, X870E)"
         ],
         [
           "Mémoire",
-          "DDR5 double canal, jusqu'à 128 Go; support AMD EXPO PCIe 5.0"
+          "DDR5 double canal, jusqu'à 128 Go, support AMD EXPO"
         ],
         [
-          "Graphiques intégrés AMD Radeon",
-          "permet d'utiliser le PC sans carte graphique"
+          "PCIe",
+          "5.0"
+        ],
+        [
+          "Graphiques intégrés",
+          "AMD Radeon (2 cœurs graphiques), permet d'utiliser le PC sans carte graphique"
         ],
         [
           "Overclocking",
           "Déverrouillé pour l'overclocking (Precision Boost Overdrive, Ryzen Master)"
+        ],
+        [
+          "Refroidisseur inclus",
+          "Non (voir la description)"
         ],
         [
           "Compatibilité",
@@ -393,29 +425,42 @@
         "notes": ""
       },
       "date_added": "2026-09-24",
-      "updated": "2026-10-07"
+      "updated": "2026-10-08"
     },
     {
       "id": "samsung-9100-pro-ssd-nvme-m-2-pcie-5-0-x4-1-to",
       "name": "Samsung 9100 PRO SSD NVMe M.2 PCIe 5.0 x4 1 To",
       "category": "storage",
       "condition": "new",
-      "condition_note": "Neuf dans la boîte d'origine du manufacturier jamais ouverte.",
+      "condition_note": "Neuf, dans sa boîte d'origine jamais ouverte (fabriqué en mai 2026).",
+      "warranty": "Samsung, 5 ans ou 600 TBW",
       "status": "available",
       "price": 450,
       "promo": {
         "active": true,
         "price": null,
-        "label": "Recevez DOOM en cadeau à l'achat de l'article!",
-        "details": "À l'achat de cet article, vous recevrez gratuitement par courriel une clé de produit Steam pour DOOM! L'achat doit être effectué avant la fin de la promotion. Les quantités peuvent être limitées.",
+        "label": "Recevez DOOM (2016) en cadeau à l'achat de l'article!",
+        "details": "À l'achat de cet article, vous recevez gratuitement par courriel une clé Steam pour DOOM (2016). Offre valide jusqu'à épuisement des clés.",
         "ends": ""
       },
       "summary": "Chargez vos jeux en un clin d'œil : SSD PCIe 5.0 de 1 To, jusqu'à 14 700 Mo/s. Neuf et scellé, garantie Samsung de 5 ans.",
-      "description": "Le Samsung 9100 PRO de 1 To est un SSD NVMe M.2 2280 à interface PCIe 5.0 x4. Il atteint des vitesses de lecture séquentielle allant jusqu'à 14 700 Mo/s et d'écriture séquentielle allant jusqu'à 13 300 Mo/s, pour des chargements de jeux, de logiciels et de gros fichiers presque instantanés.\n\nCôté performances aléatoires, il offre jusqu'à 1 850 000 IOPS en lecture et 2 600 000 IOPS en écriture. Il est équipé de mémoire Samsung V-NAND TLC, d'un contrôleur Samsung maison et d'un cache de 1 Go de SDRAM LPDDR4X, ce qui assure des performances constantes même lors de transferts soutenus.\n\nIl prend aussi en charge le chiffrement AES 256 bits (TCG/Opal et IEEE 1667), le TRIM, la surveillance S.M.A.R.T. et un mode veille à très faible consommation (environ 3,3 mW). Compact et léger (environ 9 g), il convient aussi bien aux PC de bureau et portables compatibles qu'aux consoles de jeu.\n\nCompatibilité : pour profiter pleinement des vitesses PCIe 5.0, votre carte mère doit offrir un emplacement M.2 compatible PCIe 5.0 x4. Sur un emplacement PCIe 4.0 ou 3.0, le SSD fonctionne, mais à des vitesses plus basses. Les vitesses indiquées sont des maximums et peuvent varier selon votre matériel et votre configuration.\n\nÉtat : produit neuf, jamais ouvert, scellé dans sa boîte d'origine. Garantie limitée du fabricant de 5 ans ou 600 To écrits (TBW), selon la première éventualité.",
+      "description": "Le Samsung 9100 PRO de 1 To (MZ-VAP1T0B/AM, version sans dissipateur) est un SSD NVMe M.2 2280 à interface PCIe 5.0 x4. Il atteint des vitesses de lecture séquentielle allant jusqu'à 14 700 Mo/s et d'écriture séquentielle allant jusqu'à 13 300 Mo/s, pour des chargements de jeux, de logiciels et de gros fichiers presque instantanés.\n\nCôté performances aléatoires, il offre jusqu'à 1 850 000 IOPS en lecture et 2 600 000 IOPS en écriture. Il est équipé de mémoire Samsung V-NAND TLC, d'un contrôleur Samsung maison et d'un cache de 1 Go de SDRAM LPDDR4X, ce qui assure des performances constantes même lors de transferts soutenus.\n\nIl prend aussi en charge le chiffrement AES 256 bits (TCG/Opal et IEEE 1667), le TRIM, la surveillance S.M.A.R.T. et un mode veille à très faible consommation (environ 3,3 mW). Compact et léger (environ 9 g), il convient aussi bien aux PC de bureau et portables compatibles qu'à la PS5 (à la vitesse PCIe 4.0; il faut alors y ajouter un dissipateur thermique, comme Sony le demande).\n\nCompatibilité : pour profiter pleinement des vitesses PCIe 5.0, votre carte mère doit offrir un emplacement M.2 compatible PCIe 5.0 x4. Sur un emplacement PCIe 4.0 ou 3.0, le SSD fonctionne, mais à des vitesses plus basses. Les vitesses indiquées sont des maximums et peuvent varier selon votre matériel et votre configuration.\n\nÉtat : produit neuf, jamais ouvert, scellé dans sa boîte d'origine, fabriqué en mai 2026. Garantie limitée du fabricant de 5 ans ou 600 To écrits (TBW), selon la première éventualité.",
       "specs": [
         [
           "Marque",
           "Samsung"
+        ],
+        [
+          "Numéro de modèle",
+          "MZ-VAP1T0B/AM"
+        ],
+        [
+          "Dissipateur thermique",
+          "Non (version sans dissipateur)"
+        ],
+        [
+          "Date de fabrication",
+          "Mai 2026"
         ],
         [
           "Capacité",
@@ -423,7 +468,7 @@
         ],
         [
           "Interface",
-          "PCIe 5.0 x4, NVME 2.0"
+          "PCIe 5.0 x4, NVMe 2.0"
         ],
         [
           "Format",
@@ -459,7 +504,19 @@
         ],
         [
           "Utilisation",
-          "PC de bureau et portables, consoles de jeu"
+          "PC de bureau et portables avec emplacement M.2 NVMe, PS5 (avec un dissipateur ajouté)"
+        ],
+        [
+          "Endurance",
+          "600 To écrits (TBW)"
+        ],
+        [
+          "Chiffrement",
+          "AES 256 bits (TCG/Opal, IEEE 1667)"
+        ],
+        [
+          "Garantie",
+          "5 ans du fabricant ou 600 TBW, selon la première éventualité"
         ]
       ],
       "thumb": "assets/store/samsung-9100-pro-series-1to-pcie-5-0-muyvg73efes-apercu.jpg",
@@ -479,7 +536,7 @@
         "notes": ""
       },
       "date_added": "2026-10-07",
-      "updated": "2026-10-07"
+      "updated": "2026-10-08"
     }
   ]
 }

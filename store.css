@@ -213,6 +213,9 @@
 .cond-step .badge-cond{ grid-row: span 2; -webkit-backdrop-filter:none; backdrop-filter:none; }
 .cond-step p{ margin:0; font-size:.9rem; color: rgba(238,242,249,.86); }
 .cond-note{ margin-top:12px; }
+.policy-list{ margin:12px 0 0; padding:0; list-style:none; display:grid; gap:10px; }
+.policy-list li{ color: rgba(238,242,249,.88); font-size:.94rem; padding-left:14px; border-left:2px solid var(--line-strong); }
+.policy-list strong{ color: var(--text); }
 
 .product-details{ margin-top: var(--space-7); display:grid; grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr); gap: 24px; align-items:start; }
 .product-desc p{ margin:0 0 14px; color: rgba(238,242,249,.88); }
@@ -254,6 +257,24 @@
   font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:700;
 }
 .fieldset-title:first-of-type{ margin-top:18px; }
+.addr-block > .fieldset-title:first-of-type{ margin-top:26px; }
+
+/* Choix livraison / ramassage */
+.ship-choice{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+.ship-opt{
+  display:flex; align-items:flex-start; gap:10px; padding:12px 14px; cursor:pointer;
+  border:1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--bg-2);
+  font-weight:600; font-size:.95rem;
+}
+.ship-opt small{ display:block; margin-top:2px; color:var(--muted); font-weight:500; font-size:.84rem; }
+.ship-opt input{
+  appearance:none; -webkit-appearance:none; margin:2px 0 0; flex:0 0 auto;
+  width:18px; height:18px; border-radius:50%; border:1px solid var(--line-strong); background: var(--bg-2); cursor:pointer;
+}
+.ship-opt input:checked{ border:5px solid var(--brand); }
+.ship-opt input:focus-visible{ outline:2px solid var(--brand); outline-offset:2px; }
+.ship-opt:has(input:checked){ border-color: var(--brand); background: rgba(59,155,255,.08); }
+@media (max-width: 520px){ .ship-choice{ grid-template-columns:1fr; } }
 
 .addr-suggest{
   position:absolute; top:100%; left:0; right:0; z-index:30; margin-top:4px;
