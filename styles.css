@@ -172,9 +172,11 @@ h1,h2,h3{ letter-spacing:-.02em; }
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
-.section,
-.trust,
-.footer{ content-visibility:auto; contain-intrinsic-size:1px 900px; }
+/* Seulement le pied de page : aucune ancre n'est plus bas que lui. Sur les
+   sections, le rendu differe faisait arriver les liens d'ancre (#contact,
+   #envoyer, #english) trop court ou trop loin, parce que chaque section pas
+   encore affichee comptait pour 900px pendant le defilement. */
+.footer{ content-visibility:auto; contain-intrinsic-size:auto 1px auto 900px; }
 
 .section-head{ margin-bottom: var(--space-6); max-width: 760px; }
 /* La mesure de 760px reste (une ligne de 130 caracteres serait trop longue a
