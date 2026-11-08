@@ -31,6 +31,9 @@
   // ou livraison en personne seulement. Champ « local_only » dans products.json,
   // case « Pas d'expédition » dans editor.html.
   const isLocalOnly = (p) => p.local_only === true;
+  // Secteurs de livraison en personne (environ 15 km de Blainville).
+  const LOCAL_AREA_SHORT = "15 km autour de Blainville";
+  const LOCAL_AREA_CITIES = "Blainville, Sainte-Thérèse, Boisbriand, Rosemère, Lorraine, Bois-des-Filion et Sainte-Anne-des-Plaines";
 
   const CATEGORIES = [
     ["cpu",     "Processeur (CPU)"],
@@ -426,7 +429,7 @@
     const metaDesc = $('meta[name="description"]');
     if (metaDesc) {
       const lead = (cardSummary(p) || String(p.description || "").split(/(?<=[.!?])\s/)[0] || p.name).trim();
-      metaDesc.setAttribute("content", `${lead}${/[.!?]$/.test(lead) ? "" : "."} Prix taxes incluses, ${isLocalOnly(p) ? "livraison en personne" : "livraison partout au Canada"} ou ramassage gratuit à Blainville.`);
+      metaDesc.setAttribute("content", `${lead}${/[.!?]$/.test(lead) ? "" : "."} Prix taxes incluses, ${isLocalOnly(p) ? "livraison en personne à Blainville et environs" : "livraison partout au Canada"} ou ramassage gratuit à Blainville.`);
     }
     // produit.html n'a pas de canonique fixe : une canonique vers boutique.html
     // dans le HTML poussait Google a ignorer chaque fiche comme doublon.
@@ -464,6 +467,7 @@
               <li><span class="k muted">Taxes</span><span class="v">Incluses dans le prix</span></li>
               ${local
                 ? `<li><span class="k muted">Livraison</span><span class="v">En personne, frais selon la distance</span></li>
+              <li><span class="k muted">Secteurs</span><span class="v">${LOCAL_AREA_CITIES}</span></li>
               <li><span class="k muted">Expédition</span><span class="v">Non offerte pour cet article</span></li>`
                 : `<li><span class="k muted">Livraison</span><span class="v">Calculée à la commande (Canada)</span></li>`}
               <li><span class="k muted">Ramassage</span><span class="v">Gratuit à Blainville</span></li>
@@ -515,7 +519,7 @@
           <article class="card">
             <h2 style="margin:0 0 4px;font-size:1.25rem">Comment se passe l'achat</h2>
             <ol class="how-steps">
-              <li>Vous remplissez le formulaire de commande : ${local ? "livraison en personne à votre adresse" : "livraison à votre adresse"}, ou ramassage gratuit à Blainville.</li>
+              <li>Vous remplissez le formulaire de commande : ${local ? `livraison en personne à votre adresse (${LOCAL_AREA_SHORT})` : "livraison à votre adresse"}, ou ramassage gratuit à Blainville.</li>
               <li>Je vous envoie le total (livraison incluse s'il y a lieu) avec les coordonnées pour le virement Interac.</li>
               <li>Vous envoyez le virement. L'article est réservé à votre nom.</li>
               <li>${local ? "On fixe ensemble le moment de la livraison ou du ramassage." : "J'expédie le colis et vous recevez le numéro de suivi, ou on fixe ensemble le moment du ramassage."}</li>
@@ -697,12 +701,12 @@
           <div class="ship-choice" role="radiogroup" aria-label="Mode de réception">
             <label class="ship-opt"><input type="radio" name="reception" value="ship" checked>
               ${local
-                ? `<span>Livraison en personne<small>Frais selon la distance, confirmés avant le paiement</small></span>`
+                ? `<span>Livraison en personne<small>${LOCAL_AREA_SHORT}, frais confirmés avant le paiement</small></span>`
                 : `<span>Livraison au Canada<small>Calculée après la commande</small></span>`}</label>
             <label class="ship-opt"><input type="radio" name="reception" value="pickup">
               <span>Ramassage à ${PICKUP_CITY}<small>Gratuit, sur rendez-vous</small></span></label>
           </div>
-          ${local ? `<p class="hint" style="margin:8px 0 0">Cet article n'est pas expédié : ramassage à ${PICKUP_CITY} ou livraison en personne seulement.</p>` : ""}
+          ${local ? `<p class="hint" style="margin:8px 0 0">Cet article n'est pas expédié : ramassage à ${PICKUP_CITY}, ou livraison en personne à ${LOCAL_AREA_CITIES} seulement. Vous êtes plus loin? <a href="sms:${CONTACT_PHONE}">Écrivez-moi</a> avant de commander.</p>` : ""}
 
           <div class="fieldset-title">Destinataire</div>
           <div class="form-row">
@@ -717,7 +721,7 @@
           <div class="fieldset-title">Adresse</div>
           <label class="field"><span>Pays</span>
             <select name="country" disabled><option selected>Canada</option></select>
-            <span class="hint">${local ? "Livraison en personne : je vous confirme les frais selon la distance." : "Livraison au Canada seulement."}</span></label>
+            <span class="hint">${local ? `Livraison en personne (${LOCAL_AREA_SHORT}) : je vous confirme les frais selon la distance.` : "Livraison au Canada seulement."}</span></label>
 
           <div class="field" id="addrField">
             <label for="addrStreet"><span>Adresse (numéro civique et rue) <span class="req">*</span></span></label>
