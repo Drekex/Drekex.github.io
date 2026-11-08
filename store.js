@@ -21,8 +21,8 @@
               <li>Vous recevez le total, livraison incluse, avec le courriel ou le numéro pour le virement Interac.</li>
               <li>Le colis part dès la réception du virement.</li>`,
     pickup: `<li>Je vous écris pour confirmer la commande et fixer le moment du ramassage à ${PICKUP_CITY}.</li>
-              <li>Vous recevez le total, sans frais de livraison, avec le courriel ou le numéro pour le virement Interac.</li>
-              <li>L'article est réservé à votre nom dès la réception du virement.</li>`,
+              <li>Vous recevez le total, sans frais de livraison. Vous payez par virement Interac, ou comptant au moment du ramassage.</li>
+              <li>L'article est réservé à votre nom jusqu'au moment convenu.</li>`,
     local: `<li>Je vous écris pour confirmer la commande, les frais de livraison selon la distance et le moment de la livraison.</li>
               <li>Vous recevez le total, livraison incluse, avec le courriel ou le numéro pour le virement Interac.</li>
               <li>Je vous livre l'article en personne au moment convenu, une fois le virement reçu.</li>`
@@ -474,7 +474,7 @@
               <li><span class="k muted">Retours</span><span class="v">${RETURN_DAYS} jours après la réception</span></li>
               <li><span class="k muted">Garantie</span><span class="v">${esc(warrantyShort(p))}</span></li>
               ${hasLegalPcWarranty(p) ? `<li><span class="k muted">Garantie légale</span><span class="v">3 ans (bon fonctionnement)</span></li>` : ""}
-              <li><span class="k muted">Paiement</span><span class="v">Virement Interac</span></li>
+              <li><span class="k muted">Paiement</span><span class="v">Virement Interac, ou comptant au ramassage</span></li>
               <li><span class="k muted">Référence</span><span class="v">${esc(p.id)}</span></li>
             </ul>
           </div>
@@ -521,7 +521,7 @@
             <ol class="how-steps">
               <li>Vous remplissez le formulaire de commande : ${local ? `livraison en personne à votre adresse (${LOCAL_AREA_SHORT})` : "livraison à votre adresse"}, ou ramassage gratuit à Blainville.</li>
               <li>Je vous envoie le total (livraison incluse s'il y a lieu) avec les coordonnées pour le virement Interac.</li>
-              <li>Vous envoyez le virement. L'article est réservé à votre nom.</li>
+              <li>Vous envoyez le virement, ou vous payez comptant au ramassage. L'article est réservé à votre nom.</li>
               <li>${local ? "On fixe ensemble le moment de la livraison ou du ramassage." : "J'expédie le colis et vous recevez le numéro de suivi, ou on fixe ensemble le moment du ramassage."}</li>
             </ol>
           </article>
@@ -1097,8 +1097,8 @@
           <p class="eyebrow">Commande reçue</p>
           <h2 style="margin-top:14px">Merci ${esc(o.fullname.split(" ")[0])}, votre commande est envoyée.</h2>
           <p class="muted">${o.pickup
-            ? `Je vous écris ${how} pour fixer le moment du ramassage à ${PICKUP_CITY}, avec le total et les coordonnées
-          pour le virement Interac. L'article est réservé à votre nom dès la réception du paiement.`
+            ? `Je vous écris ${how} pour fixer le moment du ramassage à ${PICKUP_CITY}, avec le total. Vous payez
+          par virement Interac, ou comptant au moment du ramassage. L'article est réservé à votre nom d'ici là.`
             : local
             ? `Je vous écris ${how} avec les frais de livraison selon la distance, le total et les coordonnées
           pour le virement Interac. On fixe ensemble le moment de la livraison en personne.`

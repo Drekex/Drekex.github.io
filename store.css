@@ -191,6 +191,8 @@
 .price-meta li:first-child{ border-top:none; padding-top:0; }
 .price-meta .k{ width:auto; }
 .price-meta .v{ color:var(--text); font-weight:600; text-align:right; }
+/* .v:hover (styles.css) souligne les liens de contact; pas les valeurs de cette liste. */
+.price-meta .v:hover{ text-decoration:none; }
 
 .promo-box{
   margin-top:14px; padding:16px 18px; border-radius: var(--radius-sm);
