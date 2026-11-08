@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-08",
+  "updated": "2026-11-07",
   "boxes": [
     {
       "name": "Petite boîte",
@@ -33,6 +33,7 @@
       "condition_note": "Commandé directement du manufacturier, neuf et scellé.",
       "warranty": "",
       "status": "available",
+      "local_only": false,
       "price": 224.99,
       "promo": {
         "active": true,
@@ -162,6 +163,7 @@
       "condition_note": "Test prolongé effectué avec MemTest86 sans aucune erreur (voir les photos). Le kit de RAM a été utilisé précédemment, mais fonctionne comme neuf.",
       "warranty": "",
       "status": "available",
+      "local_only": false,
       "price": 208,
       "promo": {
         "active": false,
@@ -246,6 +248,7 @@
       "condition_note": "Presque neuf : 4 heures de fonctionnement, 3 démarrages et santé à 100 % selon CrystalDiskInfo, aucune erreur. Les 2 To écrits viennent du test H2testw, qui remplit le disque au complet pour vérifier chaque cellule. Mesuré à 3565 Mo/s en lecture et 3050 Mo/s en écriture avec CrystalDiskMark (voir les photos).",
       "warranty": "",
       "status": "available",
+      "local_only": false,
       "price": 271,
       "promo": {
         "active": false,
@@ -342,6 +345,7 @@
       "condition_note": "Commandé directement du manufacturier, neuf et scellé.",
       "warranty": "",
       "status": "available",
+      "local_only": false,
       "price": 299.99,
       "promo": {
         "active": true,
@@ -435,6 +439,7 @@
       "condition_note": "Neuf, dans sa boîte d'origine jamais ouverte (fabriqué en mai 2026).",
       "warranty": "Samsung, 5 ans ou 600 TBW",
       "status": "available",
+      "local_only": false,
       "price": 450,
       "promo": {
         "active": true,
@@ -537,6 +542,129 @@
       },
       "date_added": "2026-10-07",
       "updated": "2026-10-08"
+    },
+    {
+      "id": "pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to",
+      "name": "PC gaming Skytech Ryzen 7 5700X3D + RTX 4070 SUPER, 32 Go DDR4, SSD 2 To",
+      "category": "pc",
+      "condition": "light_wear",
+      "condition_note": "Pré-assemblé Skytech de novembre 2023, mis à niveau par l'ancien propriétaire il y a environ un an (processeur, carte graphique, RAM, bloc d'alimentation et refroidisseur). Quelques égratignures, surtout sur le boîtier (voir les photos). Tous les tests ont passé sans erreur : OCCT pendant 1 heure, MemTest86 (4 passes), 3DMark, CrystalDiskInfo et CrystalDiskMark.",
+      "warranty": "",
+      "status": "available",
+      "local_only": true,
+      "price": 1699,
+      "promo": {
+        "active": false,
+        "price": null,
+        "label": "",
+        "details": "",
+        "ends": ""
+      },
+      "summary": "Prêt pour le 1440p à haut taux de rafraîchissement : Ryzen 7 5700X3D, RTX 4070 SUPER, 32 Go et SSD 2 To. Testé à fond, Windows 11 activé.",
+      "description": "Un PC gaming fait pour le 1440p. Le Ryzen 7 5700X3D, avec ses 96 Mo de cache 3D V-Cache, est l'un des meilleurs processeurs de jeu sur la plateforme AM4. Il est jumelé à une MSI GeForce RTX 4070 SUPER Ventus 2X OC de 12 Go, qui prend en charge le ray tracing et le DLSS 3 avec génération d'images. Selon l'estimation de 3DMark, Battlefield V tourne à plus de 180 images par seconde en 1440p Ultra.\n\nIl a 32 Go de DDR4-3200 CL16 en double canal (profil XMP activé) et un SSD Kingston KC3000 de 2 To en PCIe 4.0, mesuré à 7370 Mo/s en lecture. Le tout est alimenté par un Corsair RM750x de 750 W (80 Plus Gold, modulaire) et refroidi par un DeepCool AK500. Le boîtier Skytech d'origine a une façade en mesh, trois ventilateurs RGB à l'avant et un à l'arrière.\n\nÀ l'origine, c'est un PC pré-assemblé Skytech Shadow 4 de novembre 2023 (l'étiquette est à l'arrière, voir les photos). Il y a environ un an, l'ancien propriétaire a remplacé le processeur, la carte graphique, la RAM, le bloc d'alimentation et le refroidisseur. Comme ces pièces sont encore récentes, je les ai laissées telles quelles après les avoir toutes testées. Le SSD de 1 To qui s'y trouvait a été retiré : le PC est vendu avec le SSD de 2 To seulement.\n\nLa carte mère ASRock B550M-C R2.0 est une version OEM faite pour Skytech. Son BIOS (P3.90, septembre 2025) est récent et prend en charge le 5700X3D sans problème. L'ancien propriétaire avait mis un mot de passe sur le BIOS, que j'ai désactivé. Je ne recommande pas de mettre le BIOS à jour : sur cette carte OEM, une mise à jour remet les réglages à zéro et pourrait réactiver ce mot de passe.\n\nWindows 11 Famille est installé et activé, avec une licence OEM liée à l'ordinateur. Tous les pilotes sont à jour. J'ai aussi installé Firefox avec uBlock Origin, Discord, Steam, l'application NVIDIA (pour les pilotes de la carte graphique) et SignalRGB pour régler l'éclairage. Un compte local est déjà configuré. Je vous remets le mot de passe avec l'ordinateur, et vous pouvez ensuite le changer ou passer à votre compte Microsoft.\n\nBranchez l'écran sur la carte graphique (1 HDMI et 3 DisplayPort). Le port HDMI de la carte mère ne fonctionne pas avec ce processeur, qui n'a pas de graphiques intégrés. Wi-Fi 6E et Bluetooth intégrés (antennes incluses), plus un port Ethernet de 1 Gb/s.\n\nTests effectués : OCCT CPU + RAM pendant 1 heure sans erreur (processeur à 75 °C au maximum), MemTest86 avec 4 passes complètes sans erreur, 3DMark Steel Nomad à 4641 points (la moyenne pour le même matériel est de 4689), santé du SSD à 99 % selon CrystalDiskInfo et vitesses vérifiées avec CrystalDiskMark. Les captures sont dans les photos.\n\nÉtat : quelques égratignures, surtout sur le boîtier. Écran, clavier et souris non inclus.\n\nRamassage à Blainville ou livraison en personne seulement. Ce PC acheté usagé n'a plus sa boîte d'origine, et je préfère ne pas l'expédier sans un emballage qui le protège bien.",
+      "specs": [
+        [
+          "Modèle d'origine",
+          "Skytech Gaming Shadow 4 (STT-SHADOW4-0601-C05), assemblé en novembre 2023, mis à niveau en 2025"
+        ],
+        [
+          "Processeur",
+          "AMD Ryzen 7 5700X3D, 8 cœurs et 16 fils, 3,0 GHz de base, jusqu'à 4,1 GHz, 96 Mo de cache L3 (3D V-Cache)"
+        ],
+        [
+          "Refroidisseur",
+          "DeepCool AK500 (refroidisseur à air)"
+        ],
+        [
+          "Carte graphique",
+          "MSI GeForce RTX 4070 SUPER 12G Ventus 2X OC, 12 Go GDDR6X, PCIe 4.0 x16, Resizable BAR activé"
+        ],
+        [
+          "Mémoire (RAM)",
+          "32 Go (2 x 16 Go) Gigastone DDR4-3200 CL16 RGB, double canal, XMP activé"
+        ],
+        [
+          "Évolution de la RAM",
+          "2 emplacements libres sur 4, jusqu'à 128 Go"
+        ],
+        [
+          "Stockage",
+          "Kingston KC3000 2 To, SSD NVMe M.2 PCIe 4.0 x4"
+        ],
+        [
+          "Vitesse mesurée du SSD",
+          "7370 Mo/s en lecture, 6962 Mo/s en écriture (CrystalDiskMark)"
+        ],
+        [
+          "Santé du SSD",
+          "99 %, 1810 heures d'utilisation (CrystalDiskInfo)"
+        ],
+        [
+          "Carte mère",
+          "ASRock B550M-C R2.0 (micro-ATX, version OEM Skytech), BIOS P3.90 de septembre 2025"
+        ],
+        [
+          "Bloc d'alimentation",
+          "Corsair RM750x, 750 W, 80 Plus Gold, modulaire"
+        ],
+        [
+          "Boîtier",
+          "Skytech d'origine (logo Skytech sur la façade et les ventilateurs; modèle exact non précisé), façade en mesh, panneau latéral vitré, 3 ventilateurs RGB en façade et 1 à l'arrière, éclairage sous le boîtier"
+        ],
+        [
+          "Sorties vidéo",
+          "1 HDMI et 3 DisplayPort (sur la carte graphique)"
+        ],
+        [
+          "Réseau",
+          "Wi-Fi 6E et Bluetooth (antennes incluses), Ethernet 1 Gb/s"
+        ],
+        [
+          "Système d'exploitation",
+          "Windows 11 Famille 64 bits, activé (licence OEM liée à l'ordinateur), TPM 2.0 et démarrage sécurisé activés"
+        ],
+        [
+          "Logiciels installés",
+          "Firefox avec uBlock Origin, Discord, Steam, application NVIDIA, SignalRGB"
+        ],
+        [
+          "Tests",
+          "OCCT CPU + RAM 1 h sans erreur, MemTest86 4 passes sans erreur, 3DMark Steel Nomad 4641 points, CPU Profile 6898 points"
+        ],
+        [
+          "Non inclus",
+          "Écran, clavier, souris"
+        ]
+      ],
+      "thumb": "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73df38sct-apercu.jpg",
+      "images": [
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73df1i4ht.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73df3q20s.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73df4t10k.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73df67er2.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73df6st64.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73df85o1s.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73df9jvo4.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73dfaxmsz.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73dfcc4xd.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73dfcn4lv.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73dfcuosx.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73dfd4g8w.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73dfddz34.jpg",
+        "assets/store/pc-gaming-skytech-ryzen-7-5700x3d-rtx-4070-super-32-go-ssd-2-to-mw73dfdkbxx.jpg"
+      ],
+      "package": {
+        "box": "",
+        "length_cm": null,
+        "width_cm": null,
+        "height_cm": null,
+        "item_kg": null,
+        "pack_kg": null,
+        "weight_kg": null,
+        "notes": "Pas de boîte d'origine : ramassage ou livraison en personne seulement."
+      },
+      "date_added": "2026-11-07",
+      "updated": "2026-11-07"
     }
   ]
 }

@@ -22,8 +22,15 @@
               <li>Le colis part dès la réception du virement.</li>`,
     pickup: `<li>Je vous écris pour confirmer la commande et fixer le moment du ramassage à ${PICKUP_CITY}.</li>
               <li>Vous recevez le total, sans frais de livraison, avec le courriel ou le numéro pour le virement Interac.</li>
-              <li>L'article est réservé à votre nom dès la réception du virement.</li>`
+              <li>L'article est réservé à votre nom dès la réception du virement.</li>`,
+    local: `<li>Je vous écris pour confirmer la commande, les frais de livraison selon la distance et le moment de la livraison.</li>
+              <li>Vous recevez le total, livraison incluse, avec le courriel ou le numéro pour le virement Interac.</li>
+              <li>Je vous livre l'article en personne au moment convenu, une fois le virement reçu.</li>`
   };
+  // Article sans expédition (ex. : PC usagé sans sa boîte d'origine) : ramassage
+  // ou livraison en personne seulement. Champ « local_only » dans products.json,
+  // case « Pas d'expédition » dans editor.html.
+  const isLocalOnly = (p) => p.local_only === true;
 
   const CATEGORIES = [
     ["cpu",     "Processeur (CPU)"],
@@ -155,7 +162,7 @@
         ${st ? `<div class="status-ribbon">${st}</div>` : ""}
       </div>
       <div class="product-body">
-        <div class="product-cat">${esc(CAT_LABEL[p.category] || "")}</div>
+        <div class="product-cat">${esc(CAT_LABEL[p.category] || "")}${isLocalOnly(p) ? " · Ramassage ou livraison en personne" : ""}</div>
         <h3 class="product-name">${esc(p.name)}</h3>
         ${promo && p.promo.label ? `<p class="product-promo">${esc(p.promo.label)}</p>` : ""}
         ${summary ? `<p class="product-summary">${esc(summary)}</p>` : ""}
@@ -419,7 +426,7 @@
     const metaDesc = $('meta[name="description"]');
     if (metaDesc) {
       const lead = (cardSummary(p) || String(p.description || "").split(/(?<=[.!?])\s/)[0] || p.name).trim();
-      metaDesc.setAttribute("content", `${lead}${/[.!?]$/.test(lead) ? "" : "."} Prix taxes incluses, livraison partout au Canada ou ramassage gratuit à Blainville.`);
+      metaDesc.setAttribute("content", `${lead}${/[.!?]$/.test(lead) ? "" : "."} Prix taxes incluses, ${isLocalOnly(p) ? "livraison en personne" : "livraison partout au Canada"} ou ramassage gratuit à Blainville.`);
     }
     // produit.html n'a pas de canonique fixe : une canonique vers boutique.html
     // dans le HTML poussait Google a ignorer chaque fiche comme doublon.
@@ -433,6 +440,7 @@
     const save = hasPromoPrice(p) ? Number(p.price) - Number(p.promo.price) : 0;
     const specs = (p.specs || []).filter((s) => s && (s[0] || s[1]));
     const askText = `Bonjour, j'ai une question sur l'article « ${p.name} » (${SITE_URL}/${productUrl(p)}).`;
+    const local = isLocalOnly(p);
 
     root.innerHTML = `
       <a class="back-link" href="boutique.html${p.category ? "?cat=" + encodeURIComponent(p.category) : ""}">Retour à la boutique</a>
@@ -454,7 +462,10 @@
             <div class="price-line">${priceHtml(p)}${save > 0 ? `<span class="save">Économisez ${money(save)}</span>` : ""}</div>
             <ul class="price-meta">
               <li><span class="k muted">Taxes</span><span class="v">Incluses dans le prix</span></li>
-              <li><span class="k muted">Livraison</span><span class="v">Calculée à la commande (Canada)</span></li>
+              ${local
+                ? `<li><span class="k muted">Livraison</span><span class="v">En personne, frais selon la distance</span></li>
+              <li><span class="k muted">Expédition</span><span class="v">Non offerte pour cet article</span></li>`
+                : `<li><span class="k muted">Livraison</span><span class="v">Calculée à la commande (Canada)</span></li>`}
               <li><span class="k muted">Ramassage</span><span class="v">Gratuit à Blainville</span></li>
               <li><span class="k muted">Retours</span><span class="v">${RETURN_DAYS} jours après la réception</span></li>
               <li><span class="k muted">Garantie</span><span class="v">${esc(warrantyShort(p))}</span></li>
@@ -504,10 +515,10 @@
           <article class="card">
             <h2 style="margin:0 0 4px;font-size:1.25rem">Comment se passe l'achat</h2>
             <ol class="how-steps">
-              <li>Vous remplissez le formulaire de commande : livraison à votre adresse, ou ramassage gratuit à Blainville.</li>
+              <li>Vous remplissez le formulaire de commande : ${local ? "livraison en personne à votre adresse" : "livraison à votre adresse"}, ou ramassage gratuit à Blainville.</li>
               <li>Je vous envoie le total (livraison incluse s'il y a lieu) avec les coordonnées pour le virement Interac.</li>
               <li>Vous envoyez le virement. L'article est réservé à votre nom.</li>
-              <li>J'expédie le colis et vous recevez le numéro de suivi, ou on fixe ensemble le moment du ramassage.</li>
+              <li>${local ? "On fixe ensemble le moment de la livraison ou du ramassage." : "J'expédie le colis et vous recevez le numéro de suivi, ou on fixe ensemble le moment du ramassage."}</li>
             </ol>
           </article>
           <article class="card">
@@ -673,6 +684,7 @@
 
     document.title = `Commander : ${p.name} | Boutique Raymond PC`;
     const promo = promoActive(p);
+    const local = isLocalOnly(p);
 
     root.innerHTML = `
       <a class="back-link" href="${productUrl(p)}">Retour à l'article</a>
@@ -684,10 +696,13 @@
           <div class="fieldset-title">Réception</div>
           <div class="ship-choice" role="radiogroup" aria-label="Mode de réception">
             <label class="ship-opt"><input type="radio" name="reception" value="ship" checked>
-              <span>Livraison au Canada<small>Calculée après la commande</small></span></label>
+              ${local
+                ? `<span>Livraison en personne<small>Frais selon la distance, confirmés avant le paiement</small></span>`
+                : `<span>Livraison au Canada<small>Calculée après la commande</small></span>`}</label>
             <label class="ship-opt"><input type="radio" name="reception" value="pickup">
               <span>Ramassage à ${PICKUP_CITY}<small>Gratuit, sur rendez-vous</small></span></label>
           </div>
+          ${local ? `<p class="hint" style="margin:8px 0 0">Cet article n'est pas expédié : ramassage à ${PICKUP_CITY} ou livraison en personne seulement.</p>` : ""}
 
           <div class="fieldset-title">Destinataire</div>
           <div class="form-row">
@@ -702,7 +717,7 @@
           <div class="fieldset-title">Adresse</div>
           <label class="field"><span>Pays</span>
             <select name="country" disabled><option selected>Canada</option></select>
-            <span class="hint">Livraison au Canada seulement.</span></label>
+            <span class="hint">${local ? "Livraison en personne : je vous confirme les frais selon la distance." : "Livraison au Canada seulement."}</span></label>
 
           <div class="field" id="addrField">
             <label for="addrStreet"><span>Adresse (numéro civique et rue) <span class="req">*</span></span></label>
@@ -740,7 +755,7 @@
               <span class="err" data-err="phone" hidden></span></label>
             <label class="field"><span>Courriel <span class="req">*</span></span>
               <input name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" maxlength="120">
-              <span class="hint">C'est là que je vous envoie le total avec la livraison et le suivi du colis.</span>
+              <span class="hint">${local ? "C'est là que je vous envoie le total avec la livraison et le moment convenu." : "C'est là que je vous envoie le total avec la livraison et le suivi du colis."}</span>
               <span class="err" data-err="email" hidden></span></label>
           </div>
 
@@ -764,7 +779,7 @@
             <ul class="order-lines">
               <li><span class="muted">Prix (taxes incluses)</span><span>${hasPromoPrice(p) ? `<span class="price-old" style="margin-right:6px">${money(p.price)}</span>` : ""}${money(finalPrice(p))}</span></li>
               ${promo ? `<li><span class="muted">Promotion</span><span style="color:#ff8a8d">${esc(p.promo.label || "Promo")}</span></li>` : ""}
-              <li><span class="muted" id="shipLabel">Livraison</span><span id="shipValue">Calculée après la commande</span></li>
+              <li><span class="muted" id="shipLabel">Livraison</span><span id="shipValue">${local ? "En personne, selon la distance" : "Calculée après la commande"}</span></li>
               <li><span class="muted">Retours</span><span>${RETURN_DAYS} jours</span></li>
               <li><span class="muted">Garantie</span><span>${esc(warrantyShort(p))}</span></li>
               ${hasLegalPcWarranty(p) ? `<li><span class="muted">Garantie légale</span><span>3 ans (bon fonctionnement)</span></li>` : ""}
@@ -772,7 +787,7 @@
           </div>
           <div class="card order-after">
             <h3 style="font-size:1.05rem">Après l'envoi</h3>
-            <ol class="how-steps" id="afterSteps">${AFTER_STEPS.ship}</ol>
+            <ol class="how-steps" id="afterSteps">${AFTER_STEPS[local ? "local" : "ship"]}</ol>
           </div>
         </aside>
       </div>`;
@@ -794,6 +809,7 @@
     const touched = new Set();
     let verified = false; // adresse choisie dans les suggestions et non modifiee depuis
     const isPickup = () => f.reception.value === "pickup";
+    const local = isLocalOnly(p);
 
     function validate() {
       const e = {};
@@ -866,8 +882,8 @@
       const pickup = isPickup();
       $("#addrBlock").hidden = pickup;
       $("#shipLabel").textContent = pickup ? "Ramassage" : "Livraison";
-      $("#shipValue").textContent = pickup ? `Gratuit (${PICKUP_CITY})` : "Calculée après la commande";
-      $("#afterSteps").innerHTML = AFTER_STEPS[pickup ? "pickup" : "ship"];
+      $("#shipValue").textContent = pickup ? `Gratuit (${PICKUP_CITY})` : local ? "En personne, selon la distance" : "Calculée après la commande";
+      $("#afterSteps").innerHTML = AFTER_STEPS[pickup ? "pickup" : local ? "local" : "ship"];
       if (pickup) closeBox();
     }
 
@@ -1003,13 +1019,13 @@
         "",
         ...(o.pickup
           ? [`RAMASSAGE À ${PICKUP_CITY.toUpperCase()} (gratuit)`, o.fullname, ...(o.company ? [o.company] : [])]
-          : ["EXPÉDIER À", o.fullname, ...(o.company ? [o.company] : []),
+          : [local ? "LIVRER EN PERSONNE À" : "EXPÉDIER À", o.fullname, ...(o.company ? [o.company] : []),
              o.street + (o.unit ? `, ${o.unit}` : ""), `${o.city} ${o.province}  ${o.postal}`, "CANADA"]),
         ...(o.phone ? [`Tél. : ${o.phone}`] : []),
         ...(o.email ? [`Courriel : ${o.email}`] : []),
         ...(forSeller && !o.pickup ? [`Adresse choisie dans les suggestions : ${verified ? "oui" : "non, saisie manuelle"}`] : [])
       ];
-      if (forSeller && !o.pickup) {
+      if (forSeller && !o.pickup && !local) {
         lines.push("", "COLIS",
           `Poids total : ${pk.weight_kg ? kg(pk.weight_kg) : "à peser"}`,
           `Dimensions : ${dims}${pk.box ? ` (${pk.box})` : ""}`,
@@ -1031,7 +1047,8 @@
       statusEl.hidden = true;
 
       const pk = p.package || {};
-      const subject = `[Raymond PC] Commande boutique${o.pickup ? " (ramassage)" : ""} : ${p.name}`;
+      const subject = `[Raymond PC] Commande boutique${o.pickup ? " (ramassage)" : local ? " (livraison en personne)" : ""} : ${p.name}`;
+      const noParcel = o.pickup || local;
       const body = recap(o, true);
       try {
         const res = await fetch(WEB3FORMS_URL, {
@@ -1049,10 +1066,10 @@
             entreprise: o.company || "-",
             telephone: o.phone || "-",
             courriel: o.email || "-",
-            reception: o.pickup ? `Ramassage à ${PICKUP_CITY} (gratuit)` : "Livraison",
+            reception: o.pickup ? `Ramassage à ${PICKUP_CITY} (gratuit)` : local ? "Livraison en personne (frais selon la distance)" : "Livraison",
             adresse: o.pickup ? "-" : `${o.street}${o.unit ? ", " + o.unit : ""}\n${o.city} ${o.province}  ${o.postal}\nCANADA`,
-            colis_poids: o.pickup ? "-" : pk.weight_kg ? kg(pk.weight_kg) : "à peser",
-            colis_dimensions: o.pickup ? "-" : [pk.length_cm, pk.width_cm, pk.height_cm].every((n) => Number(n) > 0) ? `${pk.length_cm} x ${pk.width_cm} x ${pk.height_cm} cm` : "à mesurer",
+            colis_poids: noParcel ? "-" : pk.weight_kg ? kg(pk.weight_kg) : "à peser",
+            colis_dimensions: noParcel ? "-" : [pk.length_cm, pk.width_cm, pk.height_cm].every((n) => Number(n) > 0) ? `${pk.length_cm} x ${pk.width_cm} x ${pk.height_cm} cm` : "à mesurer",
             message: body
           })
         });
@@ -1078,6 +1095,9 @@
           <p class="muted">${o.pickup
             ? `Je vous écris ${how} pour fixer le moment du ramassage à ${PICKUP_CITY}, avec le total et les coordonnées
           pour le virement Interac. L'article est réservé à votre nom dès la réception du paiement.`
+            : local
+            ? `Je vous écris ${how} avec les frais de livraison selon la distance, le total et les coordonnées
+          pour le virement Interac. On fixe ensemble le moment de la livraison en personne.`
             : `Je calcule la livraison vers votre adresse et je vous écris ${how} avec le total, livraison incluse,
           et les coordonnées pour le virement Interac. Le colis part dès la réception du paiement.`}</p>
           <div class="order-recap">${esc(recap(o, false))}</div>
