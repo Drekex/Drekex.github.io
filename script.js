@@ -5,6 +5,97 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  /* ========= EFFETS AU DEFILEMENT ========= */
+  // Tout ce bloc est decoratif : sans lui la page reste complete et lisible.
+  const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // 1) En-tete plus opaque une fois la page defilee, fil de progression,
+  //    ton du fond selon la section a l'ecran, leger decalage de la photo du hero.
+  const siteHeader = document.querySelector(".site-header");
+  const heroImg = document.querySelector(".hero-figure img");
+  const toneBlocks = Array.from(document.querySelectorAll(
+    ".hero, .promise, .page-hero, .section, .shop-hero, .shop-section, .product-page"
+  ));
+  if (toneBlocks.length) document.body.classList.add("has-tones");
+
+  const toneOf = (el) => {
+    if (el.id === "contact" || el.hasAttribute("data-tone-accent")) return "accent";
+    return el.classList.contains("alt") ? "alt" : "base";
+  };
+
+  let scrollTicking = false;
+  const onScrollFrame = () => {
+    scrollTicking = false;
+    const y = window.scrollY || 0;
+    const vh = window.innerHeight || 1;
+    const max = Math.max(1, document.documentElement.scrollHeight - vh);
+
+    if (siteHeader) {
+      siteHeader.classList.toggle("is-scrolled", y > 12);
+      siteHeader.style.setProperty("--progress", Math.min(1, y / max).toFixed(4));
+    }
+
+    // La section qui traverse le milieu de l'ecran donne le ton.
+    const probe = vh * 0.5;
+    let tone = "base";
+    for (const el of toneBlocks) {
+      const r = el.getBoundingClientRect();
+      if (r.top <= probe && r.bottom > probe) { tone = toneOf(el); break; }
+    }
+    if (document.body.dataset.tone !== tone) document.body.dataset.tone = tone;
+
+    if (heroImg && !reduceMotion && y < vh * 1.5 && window.innerWidth > 980) {
+      heroImg.style.setProperty("--parallax", (-Math.min(y * 0.07, 60)).toFixed(1) + "px");
+    }
+  };
+  const requestScrollFrame = () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(onScrollFrame);
+  };
+  window.addEventListener("scroll", requestScrollFrame, { passive: true });
+  window.addEventListener("resize", requestScrollFrame, { passive: true });
+  onScrollFrame();
+
+  // 2) Apparition en douceur des blocs. Seuls ceux qui sont sous l'ecran au
+  //    chargement sont masques, donc rien ne clignote en haut de page.
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    const revealTargets = document.querySelectorAll(
+      ".section-head, .service-row, .promise-item, .step, .price.card, " +
+      ".section .card, .img-btn, .review-btn, .rating-summary, .note, .disc-pricing, .hero-stats li"
+    );
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+
+    const viewportH = window.innerHeight;
+    revealTargets.forEach((el) => {
+      // Pas de bloc anime dans un bloc anime, ni dans un panneau repliable.
+      if (el.parentElement && el.parentElement.closest(".reveal, .card, .disc-pricing")) return;
+      if (el.getBoundingClientRect().top < viewportH * 0.92) return;
+      // Decalage en cascade entre voisins d'une meme rangee.
+      const siblings = Array.from(el.parentElement.children).filter((c) => c.tagName === el.tagName);
+      const idx = Math.min(siblings.indexOf(el), 5);
+      el.style.setProperty("--reveal-delay", (idx * 55) + "ms");
+      el.classList.add("reveal");
+      revealObserver.observe(el);
+    });
+
+    // Un bloc deja revele ne doit plus garder son delai : il ralentirait les
+    // effets de survol de la carte.
+    document.addEventListener("transitionend", (e) => {
+      const t = e.target;
+      if (t.classList && t.classList.contains("is-in") && e.propertyName === "transform") {
+        t.classList.remove("reveal", "is-in");
+        t.style.removeProperty("--reveal-delay");
+      }
+    });
+  }
+
   // Mobile nav toggle
   const toggle = document.querySelector(".nav-toggle");
   const links = document.getElementById("nav-links");

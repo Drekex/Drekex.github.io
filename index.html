@@ -8,7 +8,7 @@
   <meta name="description" content="Montage PC sur mesure, réparation d'ordinateur et upgrade à Blainville, Laval et Mirabel. Gaming, travail ou école : service local et soumission rapide." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://raymondpc.ca/" />
-  <meta name="theme-color" content="#0a0e17" />
+  <meta name="theme-color" content="#0a0b0d" />
 
   <!-- FAVICONS -->
   <link rel="icon" type="image/x-icon" href="/assets/favicon-48x48.ico">
@@ -33,11 +33,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" as="image" href="assets/hero-wide.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="store.css?v=7" />
+  <link rel="stylesheet" href="store.css?v=8" />
 
   <script type="application/ld+json">
   {
@@ -266,90 +267,73 @@
   <main id="main">
 
     <!-- ===================== HERO ===================== -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Local • Fiable • Testé</p>
-          <h1>Montage PC sur mesure et réparation d'ordinateur à Blainville et Laval.</h1>
-          <p class="lead">
-            Gaming, travail, école ou usage quotidien&nbsp;: je sélectionne les pièces, j'assemble proprement,
-            je teste en charge et j'optimise le bruit et les températures pour un PC stable à long terme.
-          </p>
+    <section class="hero hero--wide">
+      <div class="hero-stage">
+        <figure class="hero-figure">
+          <img src="assets/hero-wide.webp" alt="PC gaming monté sur mesure par Raymond PC à Blainville, boîtier vitré noir avec ventilateurs illuminés en bleu et câblage propre" width="1672" height="1035" fetchpriority="high" decoding="async">
+          <figcaption>Un des 50+ montages complétés à Blainville</figcaption>
+        </figure>
+        <div class="container">
+          <div class="hero-copy">
+            <p class="eyebrow">Blainville, Laval et la Rive-Nord</p>
+            <h1>Montage PC sur mesure et réparation d'ordinateur à Blainville et Laval.</h1>
+            <p class="lead">
+              Gaming, travail, école ou usage quotidien&nbsp;: je sélectionne les pièces, j'assemble proprement,
+              je teste en charge et j'optimise le bruit et les températures pour un PC stable à long terme.
+            </p>
 
-          <ul class="hero-bullets">
-            <li>50+ montages complétés</li>
-            <li>4,9★ sur 34 évaluations vérifiées (Facebook Marketplace)</li>
-            <li>BIOS, Windows, drivers, stabilité et températures</li>
-          </ul>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#contact">Demander une soumission</a>
+              <a class="btn btn-secondary" href="/planner.html">Planifier ma build</a>
+            </div>
 
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#contact">Demander une soumission</a>
-            <a class="btn btn-secondary" href="/planner.html">Planifier ma build</a>
-          </div>
-
-          <p class="micro muted">
-            Réponse rapide par SMS ou courriel. Basé à Blainville. Service autour de Laval, Mirabel et la Rive-Nord selon le projet.
-          </p>
-        </div>
-
-        <div class="hero-card" role="region" aria-label="Ce que vous obtenez">
-          <div class="card glass">
-            <div class="card-top">
-              <h2>Ce que vous obtenez</h2>
-              <p class="muted">Un PC propre, performant et prêt à utiliser.</p>
-            </div>
-            <div class="icon-row">
-              <span class="icon" aria-hidden="true"><img src="assets/checkmark-icon.svg" alt="" width="16" height="16" loading="lazy"></span>
-              <div>
-                <strong>Compatibilité vérifiée</strong>
-                <div class="muted">Choix des pièces, espace, alimentation et airflow.</div>
-              </div>
-            </div>
-            <div class="icon-row">
-              <span class="icon" aria-hidden="true"><img src="assets/checkmark-icon.svg" alt="" width="16" height="16" loading="lazy"></span>
-              <div>
-                <strong>Tests de stabilité</strong>
-                <div class="muted">Températures, charge CPU/GPU, RAM et stockage.</div>
-              </div>
-            </div>
-            <div class="icon-row">
-              <span class="icon" aria-hidden="true"><img src="assets/checkmark-icon.svg" alt="" width="16" height="16" loading="lazy"></span>
-              <div>
-                <strong>Optimisation du bruit</strong>
-                <div class="muted">Courbes de ventilateurs et réglages pour un PC plus silencieux.</div>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a class="btn btn-primary btn-full" href="#contact">Décrire mon projet</a>
-              <p class="micro muted" style="margin-top:12px;">Montage SFF, rétro-PC ou dépannage&nbsp;: prix sur demande.</p>
-            </div>
+            <p class="micro muted">
+              Réponse rapide par SMS ou courriel. Basé à Blainville. Service autour de Laval, Mirabel et la Rive-Nord selon le projet.
+            </p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ===================== TRUST STRIP ===================== -->
-    <section class="trust">
-      <div class="container trust-row" aria-label="En bref">
-        <div class="trust-item">
-          <div class="trust-big">50+</div>
-          <div class="trust-small">PC montés</div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-big">4,9★</div>
-          <div class="trust-small">Sur 34 avis vérifiés</div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-big">3</div>
-          <div class="trust-small">Régions desservies</div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-big">QA</div>
-          <div class="trust-small">Testé avant remise</div>
-        </div>
+      <div class="container">
+        <ul class="hero-stats" aria-label="En bref">
+          <li><strong>50+</strong><span>montages complétés</span></li>
+          <li><strong>4,9★</strong><span>sur 34 évaluations vérifiées (Facebook Marketplace)</span></li>
+          <li><strong>3</strong><span>régions desservies autour de Blainville</span></li>
+          <li><strong>100&nbsp;%</strong><span>des PC testés avant la remise</span></li>
+        </ul>
       </div>
     </section>
 
+    <!-- ===================== CE QUE VOUS OBTENEZ ===================== -->
+    <section class="promise" aria-labelledby="promiseTitle">
+      <div class="container promise-grid">
+        <div class="promise-intro">
+          <h2 id="promiseTitle">Ce que vous obtenez</h2>
+          <p class="muted">Un PC propre, performant et prêt à utiliser&nbsp;: BIOS, Windows, drivers, stabilité et températures sont réglés avant la remise.</p>
+          <a class="btn btn-secondary" href="#contact">Décrire mon projet</a>
+        </div>
+        <div>
+          <div class="promise-list">
+            <div class="promise-item">
+              <span class="num" aria-hidden="true">01</span>
+              <h3>Compatibilité vérifiée</h3>
+              <p class="muted">Choix des pièces, espace, alimentation et airflow.</p>
+            </div>
+            <div class="promise-item">
+              <span class="num" aria-hidden="true">02</span>
+              <h3>Tests de stabilité</h3>
+              <p class="muted">Températures, charge CPU/GPU, RAM et stockage.</p>
+            </div>
+            <div class="promise-item">
+              <span class="num" aria-hidden="true">03</span>
+              <h3>Optimisation du bruit</h3>
+              <p class="muted">Courbes de ventilateurs et réglages pour un PC plus silencieux.</p>
+            </div>
+          </div>
+          <p class="micro muted">Montage SFF, rétro-PC ou dépannage&nbsp;: prix sur demande.</p>
+        </div>
+      </div>
+    </section>
     <!-- ===================== SERVICES ===================== -->
     <section class="section" id="services">
       <div class="container">
@@ -361,8 +345,8 @@
           </p>
         </div>
 
-        <div class="grid-2" id="local-pages">
-          <article class="card">
+        <div class="service-list" id="local-pages">
+          <article class="service-row">
             <h3>Montage PC sur mesure</h3>
             <p class="muted">
               Un nouveau PC gaming, de travail ou pour la maison, équilibré selon votre budget,
@@ -373,12 +357,10 @@
               <li>Windows installé (activé ou non, sur demande)</li>
               <li>Tests de stabilité et températures</li>
             </ul>
-            <div class="card-actions">
-              <a class="btn btn-secondary btn-full" href="/montage-pc-gaming-blainville.html">Voir le montage PC</a>
-            </div>
+            <a class="service-link" href="/montage-pc-gaming-blainville.html"><span class="label">Voir le montage PC</span><span class="arrow" aria-hidden="true">→</span></a>
           </article>
 
-          <article class="card">
+          <article class="service-row">
             <h3>Réparation et dépannage d'ordinateur</h3>
             <p class="muted">
               Pour un ordinateur lent, qui chauffe, fait du bruit, plante en jeu, affiche un écran bleu
@@ -389,12 +371,10 @@
               <li>Nettoyage, airflow et températures</li>
               <li>Upgrade RAM, SSD, GPU et entretien</li>
             </ul>
-            <div class="card-actions">
-              <a class="btn btn-secondary btn-full" href="/reparation-pc-blainville.html">Voir la réparation</a>
-            </div>
+            <a class="service-link" href="/reparation-pc-blainville.html"><span class="label">Voir la réparation</span><span class="arrow" aria-hidden="true">→</span></a>
           </article>
 
-          <article class="card">
+          <article class="service-row">
             <h3>Sauvegarde et création de disques</h3>
             <p class="muted">
               Vos vieux disques deviennent des fichiers que vous gardez pour de bon, et vos fichiers
@@ -406,12 +386,10 @@
               <li>Copie de disque à disque et récupération</li>
               <li>Création de DVD et de Blu-ray lisibles</li>
             </ul>
-            <div class="card-actions">
-              <a class="btn btn-secondary btn-full" href="/sauvegarde-disque-blainville.html">Voir le service de disques</a>
-            </div>
+            <a class="service-link" href="/sauvegarde-disque-blainville.html"><span class="label">Voir le service de disques</span><span class="arrow" aria-hidden="true">→</span></a>
           </article>
 
-          <article class="card">
+          <article class="service-row">
             <h3>Numérisation de cassettes VHS</h3>
             <p class="muted">
               Vos vidéos de famille sur VHS deviennent des fichiers numériques avant que le ruban
@@ -423,12 +401,10 @@
               <li>Fichier MP4, et fichier maître DV sur demande</li>
               <li>Inspection de chaque cassette avant la lecture</li>
             </ul>
-            <div class="card-actions">
-              <a class="btn btn-secondary btn-full" href="/numerisation-vhs-blainville.html">Voir la numérisation VHS</a>
-            </div>
+            <a class="service-link" href="/numerisation-vhs-blainville.html"><span class="label">Voir la numérisation VHS</span><span class="arrow" aria-hidden="true">→</span></a>
           </article>
 
-          <article class="card">
+          <article class="service-row">
             <h3>Planificateur guidé</h3>
             <p class="muted">
               Idéal si vous connaissez surtout le résultat voulu, sans choisir vous-même chaque pièce.
@@ -439,12 +415,10 @@
               <li>Format du boîtier et préférences</li>
               <li>Demande prête à envoyer</li>
             </ul>
-            <div class="card-actions">
-              <a class="btn btn-primary btn-full" href="/planner.html">Ouvrir le planificateur</a>
-            </div>
+            <a class="service-link" href="/planner.html"><span class="label">Ouvrir le planificateur</span><span class="arrow" aria-hidden="true">→</span></a>
           </article>
 
-          <article class="card">
+          <article class="service-row">
             <h3>Rachat de PC usagé</h3>
             <p class="muted">
               Un PC de bureau ou un portable qui ne sert plus? Je le rachète, je le teste et je le remets
@@ -456,9 +430,7 @@
               <li>Test complet avant de conclure la transaction</li>
               <li>Paiement par virement Interac ou autre option</li>
             </ul>
-            <div class="card-actions">
-              <a class="btn btn-secondary btn-full" href="/achat-pc-usage-blainville.html">Voir le rachat de PC</a>
-            </div>
+            <a class="service-link" href="/achat-pc-usage-blainville.html"><span class="label">Voir le rachat de PC</span><span class="arrow" aria-hidden="true">→</span></a>
           </article>
         </div>
 
@@ -486,32 +458,32 @@
       <div class="container">
         <div class="section-head">
           <h2>Comment ça marche</h2>
-          <p class="muted">Simple, clair, sans surprises.</p>
+          <p class="muted">Quatre étapes, et le prix est confirmé avant que le travail commence.</p>
         </div>
 
         <div class="steps">
-          <article class="step card">
+          <article class="step">
             <div class="step-num" aria-hidden="true">1</div>
             <div class="step-body">
               <h3>Contact</h3>
               <p class="muted">SMS, WhatsApp ou formulaire. Partagez votre budget, vos objectifs ou vos symptômes.</p>
             </div>
           </article>
-          <article class="step card">
+          <article class="step">
             <div class="step-num" aria-hidden="true">2</div>
             <div class="step-body">
               <h3>Soumission</h3>
               <p class="muted">Je confirme la compatibilité, le plan et le prix avant de commencer.</p>
             </div>
           </article>
-          <article class="step card">
+          <article class="step">
             <div class="step-num" aria-hidden="true">3</div>
             <div class="step-body">
               <h3>Montage / réparation</h3>
               <p class="muted">Assemblage propre, câblage, nettoyage ou upgrade selon le besoin.</p>
             </div>
           </article>
-          <article class="step card">
+          <article class="step">
             <div class="step-num" aria-hidden="true">4</div>
             <div class="step-body">
               <h3>Tests et remise</h3>
@@ -867,7 +839,7 @@
             <h3>RAM, SSD et GPU face à la demande de l'IA</h3>
             <p class="muted">Pourquoi les pièces coûtent jusqu'à quatre fois plus cher en 2026, et quoi faire avec votre PC.</p>
             <div class="card-actions">
-              <a class="btn btn-primary" href="/guide-prix-ram-ssd-gpu-ia-2026.html">Lire l'article</a>
+              <a class="arrow-link" href="/guide-prix-ram-ssd-gpu-ia-2026.html">Lire l'article <span class="arrow" aria-hidden="true">→</span></a>
             </div>
           </article>
 
@@ -876,7 +848,7 @@
             <h3>Fin du support de Windows 10&nbsp;: quoi faire?</h3>
             <p class="muted">Mises à jour gratuites jusqu'en 2027, exigences de Windows 11 et options pour les PC non compatibles.</p>
             <div class="card-actions">
-              <a class="btn btn-primary" href="/guide-fin-support-windows-10.html">Lire l'article</a>
+              <a class="arrow-link" href="/guide-fin-support-windows-10.html">Lire l'article <span class="arrow" aria-hidden="true">→</span></a>
             </div>
           </article>
 
@@ -885,7 +857,7 @@
             <h3>Quelle carte graphique acheter en 2026?</h3>
             <p class="muted">AMD, NVIDIA ou Intel : les forces de chaque marque et le bon choix selon votre usage.</p>
             <div class="card-actions">
-              <a class="btn btn-primary" href="/guide-meilleure-carte-graphique-canada-2026.html">Lire l'article</a>
+              <a class="arrow-link" href="/guide-meilleure-carte-graphique-canada-2026.html">Lire l'article <span class="arrow" aria-hidden="true">→</span></a>
             </div>
           </article>
 
@@ -894,7 +866,7 @@
             <h3>PC gaming budget au Canada en 2026</h3>
             <p class="muted">Mieux répartir le budget entre CPU, GPU, alimentation, RAM et stockage sans mauvais compromis.</p>
             <div class="card-actions">
-              <a class="btn btn-primary" href="/guide-pc-gaming-budget-canada-2026.html">Lire l'article</a>
+              <a class="arrow-link" href="/guide-pc-gaming-budget-canada-2026.html">Lire l'article <span class="arrow" aria-hidden="true">→</span></a>
             </div>
           </article>
 
@@ -903,7 +875,7 @@
             <h3>PC préassemblé ou sur mesure en 2026?</h3>
             <p class="muted">Comparer la valeur, les pièces, l'évolutivité et le service avant d'acheter.</p>
             <div class="card-actions">
-              <a class="btn btn-primary" href="/guide-pc-preassemble-vs-pc-sur-mesure-2026.html">Lire l'article</a>
+              <a class="arrow-link" href="/guide-pc-preassemble-vs-pc-sur-mesure-2026.html">Lire l'article <span class="arrow" aria-hidden="true">→</span></a>
             </div>
           </article>
 
@@ -912,7 +884,7 @@
             <h3>Upgrader son PC ou en acheter un neuf?</h3>
             <p class="muted">Quatre scénarios pour savoir si une seule pièce suffit ou s'il vaut mieux repartir à neuf.</p>
             <div class="card-actions">
-              <a class="btn btn-primary" href="/guide-upgrade-pc-ou-acheter-neuf-2026.html">Lire l'article</a>
+              <a class="arrow-link" href="/guide-upgrade-pc-ou-acheter-neuf-2026.html">Lire l'article <span class="arrow" aria-hidden="true">→</span></a>
             </div>
           </article>
         </div>
@@ -921,7 +893,7 @@
 
     <!-- ===================== FAQ ===================== -->
     <section class="section" id="faq">
-      <div class="container">
+      <div class="container faq-layout">
         <div class="section-head">
           <h2>FAQ</h2>
           <p class="muted">Les questions qui reviennent le plus.</p>
