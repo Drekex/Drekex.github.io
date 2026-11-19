@@ -809,9 +809,14 @@
 
       if (mode === "email") {
         const fd = new FormData(plannerForm);
+        if (fd.get("botcheck")) return; // robot : on ignore silencieusement
         const clientName = (fd.get("name") || "").toString().trim();
         const clientContact = (fd.get("contact") || "").toString().trim();
 
+        // Un double-clic envoyait la demande deux fois : bouton bloque pendant l'envoi.
+        const sendBtn = plannerForm.querySelector('button[type="submit"]');
+        if (sendBtn && sendBtn.disabled) return;
+        if (sendBtn) sendBtn.disabled = true;
         validationEl.textContent = "Envoi en cours…";
         postToWeb3Forms({
           subject,
@@ -827,7 +832,8 @@
           .catch(() => {
             validationEl.textContent = "L'envoi automatique a échoué. Ouverture de votre application courriel…";
             window.location.href = `mailto:${plannerEmail}?subject=${encodedSubject}&body=${encodedBody}`;
-          });
+          })
+          .finally(() => { if (sendBtn) sendBtn.disabled = false; });
         return;
       }
 

@@ -2,12 +2,13 @@
    Raymond PC : boutique
    Une seule source de donnees (data/products.json), modifiee avec
    l'editeur de boutique. Ce fichier sert les trois pages :
-   boutique.html (catalogue), produit.html (fiche) et commande.html.
+   boutique.html (catalogue), produits/<id>.html (fiches statiques ecrites
+   par l'editeur, et l'ancienne adresse produit.html?id=...) et commande.html.
    ========================================================= */
 (() => {
   const DATA_URL = "/data/products.json";
   const SITE_URL = "https://raymondpc.ca";
-  const PLACEHOLDER = "assets/store/placeholder.svg";
+  const PLACEHOLDER = "/assets/store/placeholder.svg";
 
   // Meme cle publique Web3Forms que script.js (sans danger cote client).
   const WEB3FORMS_KEY = "6a913f0b-3127-4563-ba95-920b98ade156";
@@ -131,9 +132,15 @@
   const hasPromoPrice = (p) => promoActive(p) && Number(p.promo.price) > 0 && Number(p.promo.price) < Number(p.price);
   const finalPrice = (p) => (hasPromoPrice(p) ? Number(p.promo.price) : Number(p.price));
   const isBuyable = (p) => (p.status || "available") === "available";
-  const thumbOf = (p) => p.thumb || (p.images && p.images[0]) || PLACEHOLDER;
-  const imagesOf = (p) => (p.images && p.images.length ? p.images : [p.thumb || PLACEHOLDER]);
-  const productUrl = (p) => `produit.html?id=${encodeURIComponent(p.id)}`;
+  // Chemins absolus : les fiches statiques sont dans /produits/, ou un chemin
+  // relatif comme « assets/store/x.jpg » pointerait vers /produits/assets/...
+  const abs = (u) => (!u || /^([a-z]+:|\/)/i.test(u) ? u : "/" + u);
+  const thumbOf = (p) => abs(p.thumb || (p.images && p.images[0])) || PLACEHOLDER;
+  const imagesOf = (p) => (p.images && p.images.length ? p.images : [p.thumb || PLACEHOLDER]).map(abs);
+  // Fiche statique ecrite par l'editeur de boutique a chaque enregistrement :
+  // titre, description et donnees structurees sont deja dans le HTML, lisibles
+  // sans JavaScript. Garder ce chemin identique a productPagePath() dans editor.html.
+  const productUrl = (p) => `/produits/${encodeURIComponent(p.id)}.html`;
 
   function condBadge(c) {
     const cond = COND[c];
@@ -413,7 +420,9 @@
      ========================================================= */
   async function initProduct() {
     const root = $("#productRoot");
-    const id = new URLSearchParams(location.search).get("id");
+    // Fiche statique (/produits/<id>.html) : l'id est dans <body data-product-id>.
+    // L'ancienne adresse produit.html?id=... reste servie, avec une canonique vers la fiche statique.
+    const id = document.body.dataset.productId || new URLSearchParams(location.search).get("id");
     let all = [];
     try { all = await loadProducts(); }
     catch (e) { loadError(root); return; }
@@ -421,7 +430,7 @@
     if (!p) {
       root.innerHTML = `<div class="card shop-empty"><h3>Article introuvable</h3>
         <p class="muted">Cet article a peut-être été vendu ou retiré de la boutique.</p>
-        <div class="inline-links" style="justify-content:center"><a class="btn btn-primary" href="boutique.html">Voir la boutique</a></div></div>`;
+        <div class="inline-links" style="justify-content:center"><a class="btn btn-primary" href="/boutique.html">Voir la boutique</a></div></div>`;
       return;
     }
 
@@ -431,22 +440,23 @@
       const lead = (cardSummary(p) || String(p.description || "").split(/(?<=[.!?])\s/)[0] || p.name).trim();
       metaDesc.setAttribute("content", `${lead}${/[.!?]$/.test(lead) ? "" : "."} Prix taxes incluses, ${isLocalOnly(p) ? "livraison en personne à Blainville et environs" : "livraison partout au Canada"} ou ramassage gratuit à Blainville.`);
     }
-    // produit.html n'a pas de canonique fixe : une canonique vers boutique.html
-    // dans le HTML poussait Google a ignorer chaque fiche comme doublon.
+    // Canonique vers la fiche statique, aussi depuis l'ancienne adresse
+    // produit.html?id=... (une canonique vers boutique.html poussait Google a
+    // ignorer chaque fiche comme doublon).
     let canon = $('link[rel="canonical"]');
     if (!canon) { canon = document.createElement("link"); canon.rel = "canonical"; document.head.appendChild(canon); }
-    canon.setAttribute("href", `${SITE_URL}/${productUrl(p)}`);
+    canon.setAttribute("href", `${SITE_URL}${productUrl(p)}`);
 
     const imgs = imagesOf(p);
     const st = statusLabel(p);
     const promo = promoActive(p);
     const save = hasPromoPrice(p) ? Number(p.price) - Number(p.promo.price) : 0;
     const specs = (p.specs || []).filter((s) => s && (s[0] || s[1]));
-    const askText = `Bonjour, j'ai une question sur l'article « ${p.name} » (${SITE_URL}/${productUrl(p)}).`;
+    const askText = `Bonjour, j'ai une question sur l'article « ${p.name} » (${SITE_URL}${productUrl(p)}).`;
     const local = isLocalOnly(p);
 
     root.innerHTML = `
-      <a class="back-link" href="boutique.html${p.category ? "?cat=" + encodeURIComponent(p.category) : ""}">Retour à la boutique</a>
+      <a class="back-link" href="/boutique.html${p.category ? "?cat=" + encodeURIComponent(p.category) : ""}">Retour à la boutique</a>
       <div class="product-layout">
         <div class="product-gallery">
           <button class="gallery-main" type="button" id="galleryMain" aria-label="Agrandir l'image">
@@ -487,7 +497,7 @@
 
           <div class="buy-row">
             ${isBuyable(p)
-              ? `<a class="btn btn-primary btn-full" href="commande.html?id=${encodeURIComponent(p.id)}">Acheter</a>`
+              ? `<a class="btn btn-primary btn-full" href="/commande.html?id=${encodeURIComponent(p.id)}">Acheter</a>`
               : `<button class="btn btn-secondary btn-full" type="button" disabled>${st === "Vendu" ? "Cet article est vendu" : "Article réservé pour le moment"}</button>`}
             <div class="lead-alt-actions">
               <a class="btn btn-secondary" href="sms:${CONTACT_PHONE}?&body=${encodeURIComponent(askText)}">Question par SMS</a>
@@ -533,7 +543,9 @@
         </div>
       </div>`;
 
-    // Donnees structurees Product pour Google (rendues par JS, lues au rendu).
+    // Donnees structurees Product. La fiche statique les contient deja
+    // (#productLd, ecrites par l'editeur) : on les remplace par une version a
+    // jour, au cas ou une promo s'est terminee depuis le dernier enregistrement.
     const ld = {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -545,7 +557,7 @@
       itemCondition: SCHEMA_COND[p.condition] || "https://schema.org/UsedCondition",
       offers: {
         "@type": "Offer",
-        url: `${SITE_URL}/${productUrl(p)}`,
+        url: `${SITE_URL}${productUrl(p)}`,
         priceCurrency: "CAD",
         price: finalPrice(p).toFixed(2),
         availability: p.status === "sold" ? "https://schema.org/SoldOut" : p.status === "reserved" ? "https://schema.org/LimitedAvailability" : "https://schema.org/InStock",
@@ -561,10 +573,20 @@
         }
       }
     };
-    const s = document.createElement("script");
-    s.type = "application/ld+json";
-    s.textContent = JSON.stringify(ld);
-    document.head.appendChild(s);
+    const staticLd = $("#productLd");
+    if (staticLd) {
+      // Garde le fil d'Ariane (BreadcrumbList) ecrit par l'editeur.
+      let graph = [];
+      try { graph = JSON.parse(staticLd.textContent)["@graph"] || []; } catch (e) { /* illisible : on remplace */ }
+      const others = graph.filter((x) => x && x["@type"] !== "Product");
+      delete ld["@context"];
+      staticLd.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": [ld, ...others] });
+    } else {
+      const s = document.createElement("script");
+      s.type = "application/ld+json";
+      s.textContent = JSON.stringify(ld);
+      document.head.appendChild(s);
+    }
 
     setupGallery(imgs, p.name);
 
@@ -574,7 +596,7 @@
     const bar = $("#actionBar");
     const barBuy = bar && $(".btn-primary", bar);
     if (barBuy && isBuyable(p)) {
-      barBuy.href = `commande.html?id=${encodeURIComponent(p.id)}`;
+      barBuy.href = `/commande.html?id=${encodeURIComponent(p.id)}`;
       barBuy.textContent = `Acheter · ${money(finalPrice(p))}`;
       barBuy.classList.add("btn-buy");
       const buyRow = $(".buy-row", root);
@@ -675,13 +697,13 @@
     if (!p) {
       root.innerHTML = `<div class="card shop-empty"><h3>Aucun article sélectionné</h3>
         <p class="muted">Choisissez d'abord un article dans la boutique, puis appuyez sur Acheter.</p>
-        <div class="inline-links" style="justify-content:center"><a class="btn btn-primary" href="boutique.html">Voir la boutique</a></div></div>`;
+        <div class="inline-links" style="justify-content:center"><a class="btn btn-primary" href="/boutique.html">Voir la boutique</a></div></div>`;
       return;
     }
     if (!isBuyable(p)) {
       root.innerHTML = `<div class="card shop-empty"><h3>${p.status === "sold" ? "Cet article est vendu" : "Cet article est réservé"}</h3>
         <p class="muted">Il n'est plus disponible à la commande pour le moment.</p>
-        <div class="inline-links" style="justify-content:center"><a class="btn btn-primary" href="boutique.html">Voir les autres articles</a>
+        <div class="inline-links" style="justify-content:center"><a class="btn btn-primary" href="/boutique.html">Voir les autres articles</a>
         <a class="btn btn-ghost" href="${productUrl(p)}">Revoir la fiche</a></div></div>`;
       return;
     }
@@ -1019,7 +1041,7 @@
         `Retour : ${RETURN_DAYS} jours après la réception`,
         `Garantie : ${warrantyShort(p)}`,
         ...(hasLegalPcWarranty(p) ? ["Garantie légale de bon fonctionnement : 3 ans"] : []),
-        `Lien : ${SITE_URL}/${productUrl(p)}`,
+        `Lien : ${SITE_URL}${productUrl(p)}`,
         "",
         ...(o.pickup
           ? [`RAMASSAGE À ${PICKUP_CITY.toUpperCase()} (gratuit)`, o.fullname, ...(o.company ? [o.company] : [])]
@@ -1106,7 +1128,7 @@
           et les coordonnées pour le virement Interac. Le colis part dès la réception du paiement.`}</p>
           <div class="order-recap">${esc(recap(o, false))}</div>
           <div class="inline-links" style="margin-top:18px">
-            <a class="btn btn-primary" href="boutique.html">Retour à la boutique</a>
+            <a class="btn btn-primary" href="/boutique.html">Retour à la boutique</a>
             <a class="btn btn-secondary" href="sms:${CONTACT_PHONE}">Une question? SMS</a>
           </div>
         </div>`;

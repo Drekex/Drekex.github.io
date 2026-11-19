@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-07",
+  "updated": "2026-11-18",
   "boxes": [
     {
       "name": "Petite boîte",
@@ -550,7 +550,7 @@
       "condition": "light_wear",
       "condition_note": "Pré-assemblé Skytech de novembre 2023, mis à niveau par l'ancien propriétaire il y a environ un an (processeur, carte graphique, RAM, bloc d'alimentation et refroidisseur). Quelques égratignures, surtout sur le boîtier (voir les photos). Tous les tests ont passé sans erreur : OCCT pendant 1 heure, MemTest86 (4 passes), 3DMark, CrystalDiskInfo et CrystalDiskMark.",
       "warranty": "",
-      "status": "available",
+      "status": "sold",
       "local_only": true,
       "price": 1699,
       "promo": {
@@ -664,7 +664,7 @@
         "notes": "Pas de boîte d'origine : ramassage ou livraison en personne seulement."
       },
       "date_added": "2026-11-07",
-      "updated": "2026-11-07"
+      "updated": "2026-11-18"
     }
   ]
 }
