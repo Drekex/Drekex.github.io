@@ -7,7 +7,7 @@
   </url>
   <url>
     <loc>https://raymondpc.ca/boutique.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -119,6 +119,11 @@
   <url>
     <loc>https://raymondpc.ca/produits/samsung-9100-pro-ssd-nvme-m-2-pcie-5-0-x4-1-to.html</loc>
     <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raymondpc.ca/produits/pc-gaming-intel-core-i7-8700-rtx-2070-16-go-ssd-1-to.html</loc>
+    <lastmod>2026-11-22</lastmod>
     <priority>0.7</priority>
   </url>
   <!-- boutique:fin -->
