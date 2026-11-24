@@ -152,7 +152,8 @@ strong, b{ font-weight:600; }
 }
 .brand-text span{ color: var(--brand); }
 .brand-logo{
-  width:38px; height:38px; border-radius: var(--radius);
+  /* Le logo est plus large que haut : on fixe la hauteur, la largeur suit. */
+  width:auto; height:38px;
   object-fit:contain;
   transition: transform .5s var(--ease);
 }
